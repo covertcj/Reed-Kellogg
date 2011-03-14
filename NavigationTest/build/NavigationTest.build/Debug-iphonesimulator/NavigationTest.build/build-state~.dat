@@ -1,814 +1,0 @@
-TNavigationTest
-v7
-r0
-t321306334.611795
-cCheck dependencies
-cProcessInfoPlistFile /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/Info.plist NavigationTest-Info.plist
-cCompileXIB /Users/prodvend04/ReedKellogg/Code/NavigationTest/MainWindow.xib
-cCompileXIB /Users/prodvend04/ReedKellogg/Code/NavigationTest/RootViewController.xib
-cCompileXIB /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.xib
-cCompileXIB /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.xib
-cCompileXIB /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.xib
-cCompileXIB /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.xib
-cCpResource build/Debug-iphonesimulator/NavigationTest.app/Icon.png Icon.png
-cProcessPCH /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch.gch NavigationTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cDataModelCompile /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest.mom /Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/main.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/NavigationTestAppDelegate.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/NavigationTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/RootViewController.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/LessonViewController.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/TouchViewController.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/addNameViewController.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/CustomView.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/CustomView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/SentenceViewController.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/SentenceViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Sentence.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Sentence.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Student.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Student.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/GenericTableView.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/GenericTableView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Layout.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Layout.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/LineData.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/LineData.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/WordData.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/WordData.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Lesson.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Lesson.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest normal i386
-cGenerateDSYMFile /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app.dSYM /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest
-cTouch /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk
-c000000004D0BF4F90000000000000110
-t1292629241
-s272
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/CoreData.framework/CoreData
-c000000004BD2002300000000001D2E00
-t1272053795
-s1912320
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.h
-c000000004BD1FFED000000000000046B
-t1272053741
-s1131
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004BD1CD90000000000026F020
-t1272040848
-s2551840
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004BD1FFC200000000002A96A0
-t1272053698
-s2791072
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004BD1FF9E0000000000001355
-t1272053662
-s4949
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004BD20412000000000000098F
-t1272054802
-s2447
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004BD20471000000000222E640
-t1272054897
-s35841600
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/usr/include/Availability.h
-c000000004BD1CFC10000000000001A1A
-t1272041409
-s6682
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/CustomView.h
-c000000004D52F7BB0000000000000266
-t1297283003
-s614
-i<UIKit/UIKit.h>
-i"UpdateCustomView.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/CustomView.m
-c000000004D5C8B09000000000000201B
-t1297910537
-s8219
-i"CustomView.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/GenericTableView.h
-c000000004D5EBC5D0000000000000576
-t1298054237
-s1398
-i<UIKit/UIKit.h>
-i"addNameViewController.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/GenericTableView.m
-c000000004D5EBC5D0000000000001E96
-t1298054237
-s7830
-i"GenericTableView.h"
-i"Student.h"
-i"Sentence.h"
-i"Lesson.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.h
-c000000004D5EBC5D00000000000003E3
-t1298054237
-s995
-i<UIKit/UIKit.h>
-i"Student.h"
-i"GenericTableView.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.m
-c000000004D5EBC5D0000000000000923
-t1298054237
-s2339
-i"LessonViewController.h"
-i"NavigationTestAppDelegate.h"
-i"SentenceViewController.h"
-i"addNameViewController.h"
-i"Lesson.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.xib
-c000000004D52F7BB000000000000185C
-t1297283003
-s6236
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/NavigationTestAppDelegate.h
-c000000004D52F7BB0000000000000364
-t1297283003
-s868
-i<UIKit/UIKit.h>
-i<CoreData/CoreData.h>
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/NavigationTestAppDelegate.m
-c000000004D52F7BB00000000000017E3
-t1297283003
-s6115
-i"NavigationTestAppDelegate.h"
-i"RootViewController.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/RootViewController.h
-c000000004D5EBC5D000000000000032D
-t1298054237
-s813
-i<UIKit/UIKit.h>
-i"GenericTableView.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/RootViewController.m
-c000000004D5EBC5D00000000000008F1
-t1298054237
-s2289
-i"RootViewController.h"
-i"LessonViewController.h"
-i"Student.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/SentenceViewController.h
-c000000004D5EBC5D00000000000001C9
-t1298054237
-s457
-i<UIKit/UIKit.h>
-i"Student.h"
-i"Lesson.h"
-i"GenericTableView.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/SentenceViewController.m
-c000000004D5EBC5D0000000000000F00
-t1298054237
-s3840
-i"SentenceViewController.h"
-i"NavigationTestAppDelegate.h"
-i"SentenceViewController.h"
-i"addNameViewController.h"
-i"TouchViewController.h"
-i"Sentence.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.h
-c000000004D5C8B090000000000000675
-t1297910537
-s1653
-i<UIKit/UIKit.h>
-i"CustomView.h"
-i"UpdateCustomView.h"
-i"Student.h"
-i"Lesson.h"
-i"Sentence.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m
-c000000004D5EBC5D0000000000003D35
-t1298054237
-s15669
-i"TouchViewController.h"
-i"NavigationTestAppDelegate.h"
-i"CustomView.h"
-i"Layout.h"
-i"WordData.h"
-i"LineData.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.xib
-c000000004D5C8B09000000000000474B
-t1297910537
-s18251
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/UpdateCustomView.h
-c000000004D52F7BB0000000000000172
-t1297283003
-s370
-i<UIKit/UIKit.h>
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.h
-c000000004D5C8B0900000000000003A1
-t1297910537
-s929
-i<UIKit/UIKit.h>
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.m
-c000000004D5C8B090000000000000847
-t1297910537
-s2119
-i"addNameViewController.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.xib
-c000000004D5C8B090000000000006A8C
-t1297910537
-s27276
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Icon.png
-c000000004D5C8B090000000000001A60
-t1297910537
-s6752
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Layout.h
-c000000004D5C8B0900000000000003DC
-t1297910537
-s988
-i<CoreData/CoreData.h>
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Layout.m
-c000000004D5C8B090000000000000187
-t1297910537
-s391
-i"Layout.h"
-i"LineData.h"
-i"Sentence.h"
-i"Student.h"
-i"WordData.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Lesson.h
-c000000004D5EBC5D0000000000000266
-t1298054237
-s614
-i<CoreData/CoreData.h>
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Lesson.m
-c000000004D5EBC5D0000000000000173
-t1298054237
-s371
-i"Lesson.h"
-i"Sentence.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Lessons.m
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/LineData.h
-c000000004D5C8B09000000000000019C
-t1297910537
-s412
-i<CoreData/CoreData.h>
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/LineData.m
-c000000004D5C8B0900000000000000FE
-t1297910537
-s254
-i"LineData.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/MainWindow.xib
-c000000004D52F7BB0000000000006010
-t1297283003
-s24592
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel
-c000000004D5EBC5D00000000000000AA
-t1298054237
-s170
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest_Prefix.pch
-c000000004D52F7BB000000000000016E
-t1297283003
-s366
-i<Availability.h>
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-i<CoreData/CoreData.h>
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/RootViewController.xib
-c000000004D52F7BB0000000000004D8C
-t1297283003
-s19852
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Sentence.h
-c000000004D5C8B090000000000000147
-t1297910537
-s327
-i<CoreData/CoreData.h>
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Sentence.m
-c000000004D5EBC5D000000000000011B
-t1298054237
-s283
-i"Sentence.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Student.h
-c000000004D52F7BB0000000000000141
-t1297283003
-s321
-i<CoreData/CoreData.h>
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/Student.m
-c000000004D5C8B090000000000000115
-t1297910537
-s277
-i"Student.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/WordData.h
-c000000004D5C8B0900000000000001AB
-t1297910537
-s427
-i<CoreData/CoreData.h>
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/WordData.m
-c000000004D5C8B09000000000000010D
-t1297910537
-s269
-i"WordData.h"
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app
-t1299613534
-s408
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app.dSYM
-t1299613534
-s102
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/Icon.png
-t1299613532
-s6752
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/Info.plist
-t1299613525
-s683
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/LessonViewController.nib
-t1299613531
-s720
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/MainWindow.nib
-t1299613530
-s1516
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest
-t1299613534
-s104784
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest.mom
-t1299613533
-s5560
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/PkgInfo
-t1299613525
-s8
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/RootViewController.nib
-t1299613530
-s979
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/TouchViewController.nib
-t1299613532
-s1455
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/addNameViewController.nib
-t1299613532
-s2176
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/CustomView.o
-t1299613534
-s27100
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/GenericTableView.o
-t1299613534
-s71260
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Layout.o
-t1299613534
-s5408
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Lesson.o
-t1299613534
-s11292
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/LessonViewController.o
-t1299613534
-s45968
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Lessons.o
-t2
-s0
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/LineData.o
-t1299613534
-s5288
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/NavigationTest.LinkFileList
-c000000004D7687550000000000000927
-t1299613525
-s2343
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/NavigationTestAppDelegate.o
-t1299613533
-s58396
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/RootViewController.o
-t1299613533
-s43216
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Sentence.o
-t1299613534
-s10372
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/SentenceViewController.o
-t1299613534
-s51088
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Student.o
-t1299613534
-s10356
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/TouchViewController.o
-t1299613534
-s103788
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/WordData.o
-t1299613534
-s5300
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/addNameViewController.o
-t1299613534
-s44876
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/main.o
-t1299613533
-s6324
-
-N/Users/prodvend04/ReedKellogg/Code/NavigationTest/main.m
-c000000004D52F7BB0000000000000172
-t1297283003
-s370
-i<UIKit/UIKit.h>
-
-N/var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch.gch
-t1299613533
-s14670512
-
-NNavigationTest-Info.plist
-c000000004D5C8B0900000000000003DF
-t1297910537
-s991
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies321306325#321306326#0(0"0(0#1#0"8605977440#0"0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/CustomView.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/CustomView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306334.106053
-e321306334.209006
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/CustomView.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/CustomView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@78"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/CustomView.m321306334#321306334#0(0"0(0#0#70"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/CustomView.m8606599456#2236"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/CustomView.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/CustomView.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/GenericTableView.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/GenericTableView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306334.312901
-e321306334.469215
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/GenericTableView.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/GenericTableView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@84"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/GenericTableView.m321306334#321306334#0(0"0(0#0#76"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/GenericTableView.m8604325952#2248"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/GenericTableView.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/GenericTableView.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Layout.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Layout.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306334.341516
-e321306334.392514
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Layout.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Layout.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@66"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Layout.m321306334#321306334#0(0"0(0#0#58"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Layout.m8602785120#2220"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Layout.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Layout.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Lesson.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Lesson.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306334.469318
-e321306334.527661
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Lesson.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Lesson.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@66"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Lesson.m321306334#321306334#0(0"0(0#0#58"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Lesson.m8606365728#2220"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Lesson.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Lesson.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/LessonViewController.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306333.908005
-e321306334.017027
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/LessonViewController.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@88"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.m321306333#321306334#0(0"0(0#0#80"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.m8603704416#2256"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/LessonViewController.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Lessons.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Lessons.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s318975948.911897
-e318975948.917791
-r0
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Lessons.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Lessons.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-oi686-apple-darwin10-gcc-4.2.1: /Users/prodvend04/ReedKellogg/Code/NavigationTest/Lessons.m: No such file or directory
-oi686-apple-darwin10-gcc-4.2.1: warning: '-x objective-c' after last input file has no effect
-oi686-apple-darwin10-gcc-4.2.1: no input files
-lSLF07#2@67"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Lessons.m318975948#318975948#0(361"i686-apple-darwin10-gcc-4.2.1: /Users/prodvend04/ReedKellogg/Code/NavigationTest/Lessons.m: No such file or directoryi686-apple-darwin10-gcc-4.2.1: warning: '-x objective-c' after last input file has no effecti686-apple-darwin10-gcc-4.2.1: no input filesCommand /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 failed with exit code 11(4@103"Command /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 failed with exit code 1318975948#18446744073709551615#0#0(1@0"0(0#0#59"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Lessons.m8600770592#2222"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Lessons.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Lessons.o1#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/LineData.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/LineData.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306334.392619
-e321306334.453749
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/LineData.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/LineData.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@68"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/LineData.m321306334#321306334#0(0"0(0#0#60"/Users/prodvend04/ReedKellogg/Code/NavigationTest/LineData.m8605726560#2224"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/LineData.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/LineData.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/NavigationTestAppDelegate.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/NavigationTestAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306333.788837
-e321306333.934117
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/NavigationTestAppDelegate.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/NavigationTestAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@93"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/NavigationTestAppDelegate.m321306333#321306333#0(0"0(0#0#85"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/NavigationTestAppDelegate.m8605863104#2266"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/NavigationTestAppDelegate.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/NavigationTestAppDelegate.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/RootViewController.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306333.793546
-e321306333.907899
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/RootViewController.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/RootViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@86"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/RootViewController.m321306333#321306333#0(0"0(0#0#78"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/RootViewController.m8604090624#2252"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/RootViewController.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/RootViewController.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Sentence.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Sentence.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306334.209111
-e321306334.279623
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Sentence.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Sentence.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@68"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Sentence.m321306334#321306334#0(0"0(0#0#60"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Sentence.m8603735104#2224"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Sentence.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Sentence.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/SentenceViewController.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/SentenceViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306334.184974
-e321306334.312782
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/SentenceViewController.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/SentenceViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@90"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/SentenceViewController.m321306334#321306334#0(0"0(0#0#82"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/SentenceViewController.m8605997472#2260"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/SentenceViewController.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/SentenceViewController.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Student.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Student.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306334.279752
-e321306334.341410
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Student.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Student.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@67"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Student.m321306334#321306334#0(0"0(0#0#59"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Student.m8605913472#2222"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Student.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/Student.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/TouchViewController.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306333.934227
-e321306334.184859
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/TouchViewController.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m: In function '-[TouchViewController viewDidLoad]':
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:119: warning: 'TouchViewController' may not respond to '-fetchWordsAndSetLayout'
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:119: warning: (Messages without a matching method signature
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:119: warning: will be assumed to return 'id' and accept
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:119: warning: '...' as arguments.)
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m: In function '-[TouchViewController goToSentence:]':
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:168: warning: 'TouchViewController' may not respond to '-pressSave:'
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m: In function '-[TouchViewController pressSave:]':
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:258: warning: '-getLineList' not found in protocol(s)
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:258: warning: no '-getLineList' method found
-lSLF07#2@87"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m321306333#321306334#0(1354"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m: In function '-[TouchViewController viewDidLoad]':/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:119: warning: 'TouchViewController' may not respond to '-fetchWordsAndSetLayout'/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:119: warning: (Messages without a matching method signature/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:119: warning: will be assumed to return 'id' and accept/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:119: warning: '...' as arguments.)/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m: In function '-[TouchViewController goToSentence:]':/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:168: warning: 'TouchViewController' may not respond to '-pressSave:'/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m: In function '-[TouchViewController pressSave:]':/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:258: warning: '-getLineList' not found in protocol(s)/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m:258: warning: no '-getLineList' method found5(22@66"'TouchViewController' may not respond to '-fetchWordsAndSetLayout'321306333#131#161#0(6@79"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m319747037#119#0#119#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)321306333#292#140#0(6@79"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m319747037#119#0#119#0#0"0(22@54"'TouchViewController' may not respond to '-pressSave:'321306333#816#149#0(6@79"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m319747037#168#0#168#0#26"'*' may not respond to '*'0(22@39"'-getLineList' not found in protocol(s)321306333#1095#134#0(6@79"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m319747037#258#0#258#0#28"'*' not found in protocol(s)0(22@30"No '-getLineList' method found321306333#1229#125#0(6@79"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m319747037#258#0#258#0#19"no '*' method found0(0#0#79"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m8600742944#2254"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/TouchViewController.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/WordData.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/WordData.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306334.453852
-e321306334.508637
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/WordData.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/WordData.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@68"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/WordData.m321306334#321306334#0(0"0(0#0#60"/Users/prodvend04/ReedKellogg/Code/NavigationTest/WordData.m8607005344#2224"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/WordData.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/WordData.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/addNameViewController.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306334.017131
-e321306334.105952
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/addNameViewController.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@89"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.m321306334#321306334#0(0"0(0#0#81"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.m8604422528#2258"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/addNameViewController.o0#
-
-CCompileC build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/main.o /Users/prodvend04/ReedKellogg/Code/NavigationTest/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306333.726109
-e321306333.788736
-r1
-xCompileC
-xbuild/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/main.o
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@64"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/main.m321306333#321306333#0(0"0(0#0#56"/Users/prodvend04/ReedKellogg/Code/NavigationTest/main.m8599876576#2216"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -include /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/main.m -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/main.o0#
-
-CCompileXIB /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.xib
-s321306331.079586
-e321306331.486770
-r1
-xCompileXIB
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.xib
-lSLF07#2@43"CompileXIB Classes/LessonViewController.xib321306331#321306331#0(0"0(0#0#82"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.xib8604273376#638"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/LessonViewController.nib /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/LessonViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk0#
-
-CCompileXIB /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.xib
-s321306331.464779
-e321306332.171574
-r1
-xCompileXIB
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.xib
-o/* com.apple.ibtool.document.warnings */
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.xib:-1: warning: The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on CustomView.
-lSLF07#2@42"CompileXIB Classes/TouchViewController.xib321306331#321306332#0(242"/* com.apple.ibtool.document.warnings *//Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.xib:-1: warning: The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on CustomView.1(22@105"The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on CustomView.321306332#18446744073709551615#0#0(6@81"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.xib319603337#18446744073709551615#0#18446744073709551615#0#0"0(0#0#81"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.xib8599726464#636"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/TouchViewController.nib /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/TouchViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk0#
-
-CCompileXIB /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.xib
-s321306331.486866
-e321306332.186605
-r1
-xCompileXIB
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.xib
-lSLF07#2@44"CompileXIB Classes/addNameViewController.xib321306331#321306332#0(0"0(0#0#83"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.xib8607824416#640"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/addNameViewController.nib /Users/prodvend04/ReedKellogg/Code/NavigationTest/Classes/addNameViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk0#
-
-CCompileXIB /Users/prodvend04/ReedKellogg/Code/NavigationTest/MainWindow.xib
-s321306325.889406
-e321306330.971568
-r1
-xCompileXIB
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib321306325#321306330#0(0"0(0#0#64"/Users/prodvend04/ReedKellogg/Code/NavigationTest/MainWindow.xib8603335552#610"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/MainWindow.nib /Users/prodvend04/ReedKellogg/Code/NavigationTest/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk0#
-
-CCompileXIB /Users/prodvend04/ReedKellogg/Code/NavigationTest/RootViewController.xib
-s321306325.890102
-e321306331.079457
-r1
-xCompileXIB
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/RootViewController.xib
-lSLF07#2@33"CompileXIB RootViewController.xib321306325#321306331#0(0"0(0#0#72"/Users/prodvend04/ReedKellogg/Code/NavigationTest/RootViewController.xib8605820160#626"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/RootViewController.nib /Users/prodvend04/ReedKellogg/Code/NavigationTest/RootViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk0#
-
-CCpResource build/Debug-iphonesimulator/NavigationTest.app/Icon.png Icon.png
-s321306332.171665
-e321306332.193351
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/NavigationTest.app/Icon.png
-xIcon.png
-lSLF07#2@13"Copy Icon.png321306332#321306332#0(0"0(0#0#58"/Users/prodvend04/ReedKellogg/Code/NavigationTest/Icon.png27303270317031540#506"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/prodvend04/ReedKellogg/Code/NavigationTest/Icon.png /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app0#
-
-CDataModelCompile /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest.mom /Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel
-s321306333.724555
-e321306333.793416
-r1
-xDataModelCompile
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest.mom
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Lesson.sentences: warning: Lesson.sentences -- to-many relationship does not have an inverse:  this is an advanced setting (no object can be in multiple destinations for a specific relationship) 
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.LinesData: warning: Layout.LinesData -- to-many relationship does not have an inverse:  this is an advanced setting (no object can be in multiple destinations for a specific relationship) 
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.creator: warning: Layout.creator -- relationship has -No Action- for delete rule, this is an advanced setting 
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.creator: warning: Layout.creator -- relationship does not have an inverse 
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.WordsData: warning: Layout.WordsData -- to-many relationship does not have an inverse:  this is an advanced setting (no object can be in multiple destinations for a specific relationship) 
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.sentence: warning: Layout.sentence -- relationship has -No Action- for delete rule, this is an advanced setting 
-o/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.sentence: warning: Layout.sentence -- relationship does not have an inverse 
-lSLF07#2@84"Compile /Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel321306333#321306333#0(1531"/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Lesson.sentences: warning: Lesson.sentences -- to-many relationship does not have an inverse:  this is an advanced setting (no object can be in multiple destinations for a specific relationship) /Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.LinesData: warning: Layout.LinesData -- to-many relationship does not have an inverse:  this is an advanced setting (no object can be in multiple destinations for a specific relationship) /Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.creator: warning: Layout.creator -- relationship has -No Action- for delete rule, this is an advanced setting /Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.creator: warning: Layout.creator -- relationship does not have an inverse /Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.WordsData: warning: Layout.WordsData -- to-many relationship does not have an inverse:  this is an advanced setting (no object can be in multiple destinations for a specific relationship) /Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.sentence: warning: Layout.sentence -- relationship has -No Action- for delete rule, this is an advanced setting /Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel:Layout.sentence: warning: Layout.sentence -- relationship does not have an inverse 7(22@168"Lesson.sentences -- to-many relationship does not have an inverse:  this is an advanced setting (no object can be in multiple destinations for a specific relationship) 321306333#18446744073709551615#0#0(6@76"/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel319747037#0#0#0#0#0"0(22@168"Layout.LinesData -- to-many relationship does not have an inverse:  this is an advanced setting (no object can be in multiple destinations for a specific relationship) 321306333#18446744073709551615#0#0(6@76"/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel319747037#0#0#0#0#0"0(22@92"Layout.creator -- relationship has -No Action- for delete rule, this is an advanced setting 321306333#18446744073709551615#0#0(6@76"/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel319747037#0#0#0#0#0"0(22@56"Layout.creator -- relationship does not have an inverse 321306333#18446744073709551615#0#0(6@76"/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel319747037#0#0#0#0#0"0(22@168"Layout.WordsData -- to-many relationship does not have an inverse:  this is an advanced setting (no object can be in multiple destinations for a specific relationship) 321306333#18446744073709551615#0#0(6@76"/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel319747037#0#0#0#0#0"0(22@93"Layout.sentence -- relationship has -No Action- for delete rule, this is an advanced setting 321306333#18446744073709551615#0#0(6@76"/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel319747037#0#0#0#0#0"0(22@57"Layout.sentence -- relationship does not have an inverse 321306333#18446744073709551615#0#0(6@76"/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel319747037#0#0#0#0#0"0(0#0#76"/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel8603615392#438"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/momc -XD_MOMC_TARGET_VERSION=10.5 /Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest.xcdatamodel /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest.mom0#
-
-CGenerateDSYMFile /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app.dSYM /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest
-s321306334.572165
-e321306334.608558
-r1
-xGenerateDSYMFile
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app.dSYM
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest
-lSLF07#2@130"GenerateDSYMFile build/Debug-iphonesimulator/NavigationTest.app.dSYM build/Debug-iphonesimulator/NavigationTest.app/NavigationTest321306334#321306334#0(0"0(0#0#111"/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest8608229472#437"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app.dSYM0#
-
-CLd /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest normal i386
-s321306334.527758
-e321306334.572063
-r1
-xLd
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest
-xnormal
-xi386
-lSLF07#2@116"Link /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest321306334#321306334#0(0"0(0#0#0"8605774304#1010"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -L/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -filelist /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/Objects-normal/i386/NavigationTest.LinkFileList -mmacosx-version-min=10.5 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework CoreData -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/NavigationTest0#
-
-CProcessInfoPlistFile /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/Info.plist NavigationTest-Info.plist
-s321306325.885205
-e321306325.889321
-r1
-xProcessInfoPlistFile
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/Info.plist
-xNavigationTest-Info.plist
-lSLF07#2@33"Process NavigationTest-Info.plist321306325#321306326#0(0"0(0#0#75"/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest-Info.plist31244173394051168#533"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility NavigationTest-Info.plist -genpkginfo /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app/Info.plist0#
-
-CProcessPCH /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch.gch NavigationTest_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s321306332.193468
-e321306333.724137
-r1
-xProcessPCH
-x/var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch.gch
-xNavigationTest_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@36"Precompile NavigationTest_Prefix.pch321306332#321306333#0(0"0(0#0#75"/Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest_Prefix.pch8606620096#2090"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-generated-files.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-own-target-headers.hmap -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-all-target-headers.hmap -iquote /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/NavigationTest-project-headers.hmap -F/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/include -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources/i386 -I/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/NavigationTest.build/Debug-iphonesimulator/NavigationTest.build/DerivedSources -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/NavigationTest_Prefix.pch -o /var/folders/MP/MP2Wp2KPFQKrdyKG+IbBhU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/NavigationTest_Prefix-egnuoptoziernveakaohqijrxxgn/NavigationTest_Prefix.pch.gch0#
-
-CTouch /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app
-s321306334.608651
-e321306334.611702
-r1
-xTouch
-x/Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app
-lSLF07#2@102"Touch /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app321306334#321306334#0(0"0(0#0#0"8605799552#307"    cd /Users/prodvend04/ReedKellogg/Code/NavigationTest    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/prodvend04/ReedKellogg/Code/NavigationTest/build/Debug-iphonesimulator/NavigationTest.app0#
-
