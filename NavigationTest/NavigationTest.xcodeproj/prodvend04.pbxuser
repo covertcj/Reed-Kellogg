@@ -39,7 +39,6 @@
 		activeExecutable = 4FF9BE0213032FAC00BAFDE5 /* NavigationTest */;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* NavigationTest */;
 		breakpoints = (
-			4F137263132A8DDA003E5D4E /* GenericTableView.m:152 */,
 		);
 		codeSenseManager = 4FF9BE1413032FAE00BAFDE5 /* Code sense */;
 		executables = (
@@ -84,6 +83,17 @@
 			4F13728F132A9610003E5D4E = 4F13728F132A9610003E5D4E /* PBXTextBookmark */;
 			4F3C7DA71326A0100032DD83 = 4F3C7DA71326A0100032DD83 /* PBXTextBookmark */;
 			4F49435C132ED7CA00BD29DF /* PBXTextBookmark */ = 4F49435C132ED7CA00BD29DF /* PBXTextBookmark */;
+			4F494360132EDD5B00BD29DF /* PBXTextBookmark */ = 4F494360132EDD5B00BD29DF /* PBXTextBookmark */;
+			4F494361132EDD6100BD29DF /* PBXTextBookmark */ = 4F494361132EDD6100BD29DF /* PBXTextBookmark */;
+			4F494364132EDDF700BD29DF /* PBXTextBookmark */ = 4F494364132EDDF700BD29DF /* PBXTextBookmark */;
+			4F49436E132EDE0600BD29DF /* PBXTextBookmark */ = 4F49436E132EDE0600BD29DF /* PBXTextBookmark */;
+			4F494370132EDE1500BD29DF /* PBXTextBookmark */ = 4F494370132EDE1500BD29DF /* PBXTextBookmark */;
+			4F494375132EDE1F00BD29DF /* PBXTextBookmark */ = 4F494375132EDE1F00BD29DF /* PBXTextBookmark */;
+			4F494376132EDE1F00BD29DF /* PBXTextBookmark */ = 4F494376132EDE1F00BD29DF /* PBXTextBookmark */;
+			4F49437A132EDE2F00BD29DF /* PBXTextBookmark */ = 4F49437A132EDE2F00BD29DF /* PBXTextBookmark */;
+			4F49437B132EDE2F00BD29DF /* PBXTextBookmark */ = 4F49437B132EDE2F00BD29DF /* PBXTextBookmark */;
+			4F49437E132EDE3600BD29DF /* PBXTextBookmark */ = 4F49437E132EDE3600BD29DF /* PBXTextBookmark */;
+			4F49437F132EDE3A00BD29DF /* PBXTextBookmark */ = 4F49437F132EDE3A00BD29DF /* PBXTextBookmark */;
 			4F86CC0A1329424C00F2F00E = 4F86CC0A1329424C00F2F00E /* XDModelBookmark */;
 			4F86CC0F1329424C00F2F00E = 4F86CC0F1329424C00F2F00E /* PBXTextBookmark */;
 			4F881B16132A96DD00E0E0E0 = 4F881B16132A96DD00E0E0E0 /* PBXTextBookmark */;
@@ -104,23 +114,6 @@
 		sourceControlManager = 4FF9BE1313032FAE00BAFDE5 /* Source Control */;
 		userBuildSettings = {
 		};
-	};
-	4F137263132A8DDA003E5D4E /* GenericTableView.m:152 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = B73B42BC130782EA00219463 /* GenericTableView.m */;
-		functionName = "-fetchDataWithEntityName:";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 152;
-		modificationTime = 321555930.590606;
-		originalNumberOfMultipleMatches = 0;
-		state = 1;
 	};
 	4F137274132A929C003E5D4E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -248,6 +241,116 @@
 		rType = 0;
 		vrLen = 1796;
 		vrLoc = 2124;
+	};
+	4F494360132EDD5B00BD29DF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B42BC130782EA00219463 /* GenericTableView.m */;
+		name = "GenericTableView.m: 91";
+		rLen = 39;
+		rLoc = 2476;
+		rType = 0;
+		vrLen = 1796;
+		vrLoc = 2124;
+	};
+	4F494361132EDD6100BD29DF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B42BC130782EA00219463 /* GenericTableView.m */;
+		name = "GenericTableView.m: 91";
+		rLen = 39;
+		rLoc = 2476;
+		rType = 0;
+		vrLen = 1796;
+		vrLoc = 2124;
+	};
+	4F494364132EDDF700BD29DF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B42BC130782EA00219463 /* GenericTableView.m */;
+		name = "GenericTableView.m: 77";
+		rLen = 0;
+		rLoc = 2333;
+		rType = 0;
+		vrLen = 1769;
+		vrLoc = 2124;
+	};
+	4F49436E132EDE0600BD29DF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B42BC130782EA00219463 /* GenericTableView.m */;
+		name = "GenericTableView.m: 77";
+		rLen = 0;
+		rLoc = 2333;
+		rType = 0;
+		vrLen = 1769;
+		vrLoc = 2124;
+	};
+	4F494370132EDE1500BD29DF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B42BC130782EA00219463 /* GenericTableView.m */;
+		name = "GenericTableView.m: 77";
+		rLen = 0;
+		rLoc = 2333;
+		rType = 0;
+		vrLen = 2007;
+		vrLoc = 4070;
+	};
+	4F494375132EDE1F00BD29DF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B42BC130782EA00219463 /* GenericTableView.m */;
+		name = "GenericTableView.m: 77";
+		rLen = 0;
+		rLoc = 2333;
+		rType = 0;
+		vrLen = 2007;
+		vrLoc = 4070;
+	};
+	4F494376132EDE1F00BD29DF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B42BC130782EA00219463 /* GenericTableView.m */;
+		name = "GenericTableView.m: 77";
+		rLen = 0;
+		rLoc = 2333;
+		rType = 0;
+		vrLen = 2007;
+		vrLoc = 4070;
+	};
+	4F49437A132EDE2F00BD29DF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B42BC130782EA00219463 /* GenericTableView.m */;
+		name = "GenericTableView.m: 77";
+		rLen = 0;
+		rLoc = 2333;
+		rType = 0;
+		vrLen = 2007;
+		vrLoc = 4070;
+	};
+	4F49437B132EDE2F00BD29DF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B42BC130782EA00219463 /* GenericTableView.m */;
+		name = "GenericTableView.m: 77";
+		rLen = 0;
+		rLoc = 2333;
+		rType = 0;
+		vrLen = 2007;
+		vrLoc = 4070;
+	};
+	4F49437E132EDE3600BD29DF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B42BC130782EA00219463 /* GenericTableView.m */;
+		name = "GenericTableView.m: 142";
+		rLen = 0;
+		rLoc = 4360;
+		rType = 0;
+		vrLen = 2007;
+		vrLoc = 4070;
+	};
+	4F49437F132EDE3A00BD29DF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B42BC130782EA00219463 /* GenericTableView.m */;
+		name = "GenericTableView.m: 142";
+		rLen = 0;
+		rLoc = 4360;
+		rType = 0;
+		vrLen = 2007;
+		vrLoc = 4070;
 	};
 	4F86CC0A1329424C00F2F00E /* XDModelBookmark */ = {
 		isa = XDModelBookmark;
@@ -406,7 +509,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -423,9 +526,13 @@
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
 		name = NavigationTest;
+		savedGlobals = {
+		};
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
+		variableFormatDictionary = {
+		};
 	};
 	4FF9BE1313032FAE00BAFDE5 /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -693,9 +800,9 @@
 	};
 	B73B42BC130782EA00219463 /* GenericTableView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1055, 3276}}";
-			sepNavSelRange = "{2476, 39}";
-			sepNavVisRange = "{2124, 1796}";
+			sepNavIntBoundsRect = "{{0, 0}, {1055, 3224}}";
+			sepNavSelRange = "{4360, 0}";
+			sepNavVisRange = "{4070, 2007}";
 		};
 	};
 	B73B44911309903D00219463 /* Layout.h */ = {
