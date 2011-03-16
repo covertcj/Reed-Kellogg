@@ -6,22 +6,28 @@
 #import "Student.h"
 
 @implementation RootViewController
+@synthesize teacherLoginButton;
 
 - (void)viewDidLoad {
-	super.TeacherMode = YES;
+	super.TeacherMode = NO;
 	super.popFirstButton = @"Add Student";
-	super.popSecondButton = @"Enter Teacher Mode";
+	super.popSecondButton = @"Logout";
+	super.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+																		target:self action:@selector(showPopover)];
+	super.addButton.enabled = YES;	
+	self.teacherLoginButton = [[UIBarButtonItem alloc] initWithTitle:@"Login as Teacher"
+																   style:UIBarButtonItemStyleBordered
+																  target:self
+																  action:@selector(pushTeacher:)];
+	self.teacherLoginButton.enabled = YES;
+	self.navigationItem.rightBarButtonItem = self.teacherLoginButton;
 	
-	[super viewDidLoad];
 	
        // create a custom navigation bar button and set it to always say "Back"
        UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
        temporaryBarButtonItem.title = @"Back";
        self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
        [temporaryBarButtonItem release];
-	
-	self.navigationItem.leftBarButtonItem = self.editButtonItem;
-	
 	//set the title of the main view
 	self.title = @"Pick a Student";
 	
@@ -35,17 +41,36 @@
 	return @"Student";
 }
 
--(void)pushTeacher {
+-(void)pushTeacher:(id)sender {
 	[super.namePopover dismissPopoverAnimated:YES];
+	if (super.TeacherMode) {
+		super.TeacherMode= NO;
+		self.navigationItem.leftBarButtonItem = NULL;
+		self.navigationItem.rightBarButtonItem = self.teacherLoginButton;
+	}else {
+		self.navigationItem;
+		super.TeacherMode= YES;
+		self.navigationItem.leftBarButtonItem = self.editButtonItem;
+		self.navigationItem.rightBarButtonItem = self.addButton;
+	}
+
 	
+	/*
 	LessonViewController *newController = [[LessonViewController alloc] init];
 	newController.title = [NSString stringWithFormat: @"Teacher Screen - All Lessons"];  
 	newController.managedObjectContext = super.managedObjectContext;
 	newController.TeacherMode = YES;
-	
+	*/
     // Navigation logic may go here. Create and push another view controller.
-	[[self navigationController] pushViewController:newController animated:YES];
+	//[[self navigationController] pushViewController:newController animated:YES];
 	
+}
+
+-(void)pushTeacher{
+	
+	super.TeacherMode= NO;
+	self.navigationItem.leftBarButtonItem = NULL;
+	self.navigationItem.rightBarButtonItem = self.teacherLoginButton;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -55,6 +80,9 @@
 	newController.managedObjectContext = self.managedObjectContext;
 	newController.title = [NSString stringWithFormat: @"%@'s Lessons", student.name];  
 	newController.currStudent = student;
+	if (super.TeacherMode) {
+		newController.TeacherMode=YES;
+	}
 	
 	
     // Navigation logic may go here. Create and push another view controller.

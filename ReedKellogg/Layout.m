@@ -1,9 +1,9 @@
 // 
 //  Layout.m
-//  NavigationTest
+//  ReedKellogg
 //
-//  Created by Stephen Mayhew on 2/14/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Prodvend04 on 3/16/11.
+//  Copyright 2011 RHIT. All rights reserved.
 //
 
 #import "Layout.h"
@@ -15,7 +15,7 @@
 
 @implementation Layout 
 
-@dynamic Comments;
+@dynamic comments;
 @dynamic grade;
 @dynamic LinesData;
 @dynamic creator;

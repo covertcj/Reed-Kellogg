@@ -70,13 +70,13 @@
 	
 	//Add buttons
 	UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next"
-																   style:UIBarButtonItemStylePlain
+																   style:UIBarButtonItemStyleBordered
 																   target:self
 																  action:@selector(pressNext:)];
 
 	
 	UIBarButtonItem *prevButton = [[UIBarButtonItem alloc] initWithTitle:@"Prev"
-																   style:UIBarButtonItemStylePlain
+																   style:UIBarButtonItemStyleBordered
 																  target:self
 																  action:@selector(pressPrev:)];
 	
@@ -98,10 +98,10 @@
 	UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
 																			  target:nil
 																			  action:nil];
-	fixedItem.width = 50;	
+	fixedItem.width = 40;	
 	
 	//Add buttons to the array
-	NSArray *items = [NSArray arrayWithObjects: flexItem, prevButton, fixedItem, saveButton, fixedItem, nextButton, flexItem, nil];
+	NSArray *items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, fixedItem, saveButton, flexItem, nil];
 	
 	//release buttons
 	[prevButton release];
@@ -204,6 +204,31 @@
 	NSLog(@"Next Pressed");
 	[self goToSentence:1];
 }
+
+-(void) pressGrade:(id)sender{
+	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
+	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,currSentence]];
+	[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
+	NSError * error;
+	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
+	for(Layout *l in results){
+		if (l.grade) {
+			[l setGrade:[NSNumber numberWithBool: NO]];
+		}else {
+			[l setGrade:[NSNumber numberWithBool: YES]];
+		}
+	}
+	
+	//commit changes and handle error if it breaks
+	error = nil;
+	if (![managedObjectContext save:&error]) {
+		
+		NSLog(@"Error saving...");
+		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
+	}
+
+}
+
 - (void) pressSave:(id)sender{
 	NSLog(@"Save Pressed");
 	// Make sure that we override any previous entries that have the same creator and sentence
@@ -212,14 +237,16 @@
 	[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
 	NSError * error;
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
-	for(Layout *l in results){
+	NSNumber * grade = [NSNumber numberWithBool:NO];
+	for(Layout *l in results){ 
+		grade = [NSNumber numberWithBool:[l.grade boolValue]];
 		[managedObjectContext deleteObject:l];
-	}	
+	}
 	
 	error = nil;
 	
 	if (![managedObjectContext save:&error]) {
-		NSLog(@"Deletion failed (deletion): %@, %@", error, [error userInfo]);		
+		NSLog(@"Deletion failed (deletion): %@, %@", error, [error userInfo]);
 	}
 	
 	
@@ -249,7 +276,9 @@
 		
 		// Do something cool
 		[layout addWordsDataObject:wd];
-		
+		NSLog(@"Frame origin x:%@", grade);
+		//change grade to what it was before
+		layout.grade = grade;
 		
 		
 	}
@@ -277,14 +306,12 @@
 		
 	}
 	
+	//commit changes and handle error if it breaks
 	error = nil;
-	
 	if (![managedObjectContext save:&error]) {
 		
 		NSLog(@"Error saving...");
 		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
-
-		
 	}
 	
 	

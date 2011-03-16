@@ -1,9 +1,9 @@
 //
 //  Layout.h
-//  NavigationTest
+//  ReedKellogg
 //
-//  Created by Stephen Mayhew on 2/14/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Prodvend04 on 3/16/11.
+//  Copyright 2011 RHIT. All rights reserved.
 //
 
 #import <CoreData/CoreData.h>
@@ -17,8 +17,8 @@
 {
 }
 
-@property (nonatomic, retain) NSString * Comments;
-@property (nonatomic, retain) NSString * grade;
+@property (nonatomic, retain) NSString * comments;
+@property (nonatomic, retain) NSNumber * grade;
 @property (nonatomic, retain) NSSet* LinesData;
 @property (nonatomic, retain) Student * creator;
 @property (nonatomic, retain) NSSet* WordsData;

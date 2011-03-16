@@ -32,6 +32,7 @@
 		addButton.enabled = YES;	
 		self.navigationItem.rightBarButtonItem = addButton;
 	}
+
 		
 	
 }
