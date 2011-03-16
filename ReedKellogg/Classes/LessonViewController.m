@@ -7,7 +7,7 @@
 //
 
 #import "LessonViewController.h"
-#import "NavigationTestAppDelegate.h"
+#import "ReedKelloggAppDelegate.h"
 #import "SentenceViewController.h"
 #import "addNameViewController.h"
 #import "Lesson.h"

@@ -1,7 +1,7 @@
-#import "NavigationTestAppDelegate.h"
+#import "ReedKelloggAppDelegate.h"
 #import "RootViewController.h"
 
-@implementation NavigationTestAppDelegate
+@implementation ReedKelloggAppDelegate
 
 @synthesize window;
 @synthesize navigationController;
@@ -88,7 +88,7 @@
     if (managedObjectModel_ != nil) {
         return managedObjectModel_;
     }
-    NSString *modelPath = [[NSBundle mainBundle] pathForResource:@"NavigationTest" ofType:@"mom"];
+    NSString *modelPath = [[NSBundle mainBundle] pathForResource:@"ReedKellogg" ofType:@"mom"];
     NSURL *modelURL = [NSURL fileURLWithPath:modelPath];
     managedObjectModel_ = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
     return managedObjectModel_;
@@ -105,7 +105,7 @@
         return persistentStoreCoordinator_;
     }
     
-    NSURL *storeURL = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"NavigationTest.sqlite"]];
+    NSURL *storeURL = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"ReedKellogg.sqlite"]];
     
     NSError *error = nil;
     persistentStoreCoordinator_ = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

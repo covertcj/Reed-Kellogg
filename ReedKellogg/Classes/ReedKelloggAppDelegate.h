@@ -2,7 +2,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface NavigationTestAppDelegate : NSObject <UIApplicationDelegate> {
+@interface ReedKelloggAppDelegate : NSObject <UIApplicationDelegate> {
 	
 	
     UIWindow *window;
