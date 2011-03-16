@@ -7,7 +7,7 @@
 //
 
 #import "SentenceViewController.h"
-#import "NavigationTestAppDelegate.h"
+#import "ReedKelloggAppDelegate.h"
 #import "SentenceViewController.h"
 #import "addNameViewController.h"
 #import "TouchViewController.h"

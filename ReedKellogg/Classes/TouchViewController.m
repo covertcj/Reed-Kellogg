@@ -7,7 +7,7 @@
 //
 
 #import "TouchViewController.h"
-#import "NavigationTestAppDelegate.h"
+#import "ReedKelloggAppDelegate.h"
 #import "CustomView.h"
 #import "Layout.h"
 #import "WordData.h"
