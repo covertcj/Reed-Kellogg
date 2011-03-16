@@ -41,29 +41,37 @@
 	return @"Student";
 }
 
--(void)pushTeacher:(id)sender {
-	[super.namePopover dismissPopoverAnimated:YES];
-	if (super.TeacherMode) {
-		super.TeacherMode= NO;
-		self.navigationItem.leftBarButtonItem = NULL;
-		self.navigationItem.rightBarButtonItem = self.teacherLoginButton;
-	}else {
-		self.navigationItem;
+- (BOOL) verifyPassword:(NSString *)password {
+	NSLog(@"Verifying the password: %@", password);
+	return [password isEqualToString:@"pass"];
+}
+
+- (void) promptForPassword {
+	UIAlertView *passwordAlert = [[UIAlertView alloc] initWithTitle:@"Teacher Password" message:@"\n\n"
+														   delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+	
+	UITextField *passwordField = [[UITextField alloc] initWithFrame:CGRectMake(18,58,248,25)];
+	passwordField.font = [UIFont systemFontOfSize:18];
+	passwordField.backgroundColor = [UIColor whiteColor];
+	passwordField.secureTextEntry = YES;
+	passwordField.keyboardAppearance = UIKeyboardAppearanceAlert;
+	passwordField.delegate = self;
+	[passwordField becomeFirstResponder];
+	[passwordAlert addSubview:passwordField];
+	
+	[passwordAlert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if ([self verifyPassword: ((UITextField *)[alertView.subviews objectAtIndex:4]).text]) {	
 		super.TeacherMode= YES;
 		self.navigationItem.leftBarButtonItem = self.editButtonItem;
 		self.navigationItem.rightBarButtonItem = self.addButton;
 	}
+}
 
-	
-	/*
-	LessonViewController *newController = [[LessonViewController alloc] init];
-	newController.title = [NSString stringWithFormat: @"Teacher Screen - All Lessons"];  
-	newController.managedObjectContext = super.managedObjectContext;
-	newController.TeacherMode = YES;
-	*/
-    // Navigation logic may go here. Create and push another view controller.
-	//[[self navigationController] pushViewController:newController animated:YES];
-	
+-(void)pushTeacher:(id)sender {
+	[self promptForPassword];
 }
 
 -(void)pushTeacher{
@@ -71,6 +79,8 @@
 	super.TeacherMode= NO;
 	self.navigationItem.leftBarButtonItem = NULL;
 	self.navigationItem.rightBarButtonItem = self.teacherLoginButton;
+	
+	[super.namePopover dismissPopoverAnimated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -89,7 +99,5 @@
 	//UIViewController *targetViewController = [[views objectAtIndex:indexPath.row] objectForKey:@"controller"];
 	[[self navigationController] pushViewController:newController animated:YES];
 }
-
-
 
 @end

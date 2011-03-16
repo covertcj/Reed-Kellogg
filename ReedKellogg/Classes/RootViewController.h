@@ -12,7 +12,7 @@
 
 @class addNameViewController;
 
-@interface RootViewController : GenericTableView {
+@interface RootViewController : GenericTableView <UITextFieldDelegate, UIAlertViewDelegate> {
 
 	
 	//NSMutableArray *studentArray;
@@ -22,6 +22,9 @@
 	//UIPopoverController *namePopover;
 
 }
+
+- (BOOL) verifyPassword:(NSString *)password;
+- (void) promptForPassword;
 
 //@property (nonatomic, retain) NSMutableArray *studentArray;
 //@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
