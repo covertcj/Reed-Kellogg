@@ -7,30 +7,38 @@
 
 @implementation RootViewController
 @synthesize teacherLoginButton;
+@synthesize teacherLogoutButton;
+@synthesize doneButton;
 
 - (void)viewDidLoad {
 	super.TeacherMode = NO;
 	super.popFirstButton = @"Add Student";
-	super.popSecondButton = @"Logout";
+	super.popSecondButton = @"Remove Student";
+	
 	super.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
 																		target:self action:@selector(showPopover)];
-	super.addButton.enabled = YES;	
+	
 	self.teacherLoginButton = [[UIBarButtonItem alloc] initWithTitle:@"Login as Teacher"
 																   style:UIBarButtonItemStyleBordered
 																  target:self
-																  action:@selector(pushTeacher:)];
-	self.teacherLoginButton.enabled = YES;
-	self.navigationItem.rightBarButtonItem = self.teacherLoginButton;
+																  action:@selector(promptForPassword:)];
+	
+	self.teacherLogoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+															   style:UIBarButtonItemStyleBordered
+															  target:self
+															  action:@selector(logoutOfTeacher:)];
+	
+	self.doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+																style:UIBarButtonItemStyleBordered
+															   target:self
+															   action:@selector(doneRemoving:)];
 	
 	
-       // create a custom navigation bar button and set it to always say "Back"
-       UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
-       temporaryBarButtonItem.title = @"Back";
-       self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
-       [temporaryBarButtonItem release];
+	
+	self.navigationItem.leftBarButtonItem = self.teacherLoginButton;
+	
 	//set the title of the main view
 	self.title = @"Pick a Student";
-	
 	[super fetchDataWithEntityName:@"Student"];
 }
 
@@ -46,7 +54,7 @@
 	return [password isEqualToString:@"pass"];
 }
 
-- (void) promptForPassword {
+- (void) promptForPassword: (id)sender{
 	UIAlertView *passwordAlert = [[UIAlertView alloc] initWithTitle:@"Teacher Password" message:@"\n\n"
 														   delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
 	
@@ -58,30 +66,37 @@
 	passwordField.delegate = self;
 	[passwordField becomeFirstResponder];
 	[passwordAlert addSubview:passwordField];
-	
 	[passwordAlert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if ([self verifyPassword: ((UITextField *)[alertView.subviews objectAtIndex:4]).text]) {	
 		super.TeacherMode= YES;
-		self.navigationItem.leftBarButtonItem = self.editButtonItem;
+		//self.navigationItem.leftBarButtonItem = self.editButtonItem;
+		self.navigationItem.leftBarButtonItem = self.teacherLogoutButton;
 		self.navigationItem.rightBarButtonItem = self.addButton;
 	}
 }
 
--(void)pushTeacher:(id)sender {
-	[self promptForPassword];
+-(void)logoutOfTeacher:(id)sender {
+	super.TeacherMode= NO;
+	self.navigationItem.rightBarButtonItem = NULL;
+	self.navigationItem.leftBarButtonItem = self.teacherLoginButton;
+	[super.namePopover dismissPopoverAnimated:YES];
+}
+
+-(void)doneRemoving:(id)sender {
+	[self setEditing:NO animated:YES];
+	self.navigationItem.rightBarButtonItem = self.addButton;
 }
 
 -(void)pushTeacher{
-	
-	super.TeacherMode= NO;
-	self.navigationItem.leftBarButtonItem = NULL;
-	self.navigationItem.rightBarButtonItem = self.teacherLoginButton;
-	
+	[self setEditing:YES animated:YES];
 	[super.namePopover dismissPopoverAnimated:YES];
+	self.navigationItem.rightBarButtonItem = self.doneButton;
 }
+
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	Student * student = (Student *)[super.objectArray objectAtIndex:[indexPath row]];

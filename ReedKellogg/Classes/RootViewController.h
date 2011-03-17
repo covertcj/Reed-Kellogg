@@ -30,6 +30,8 @@
 //@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic, retain) UIBarButtonItem *teacherLoginButton;
+@property (nonatomic, retain) UIBarButtonItem *teacherLogoutButton;
+@property (nonatomic, retain) UIBarButtonItem *doneButton;
 //@property (nonatomic, retain) UIBarButtonItem *addButton;
 //@property (nonatomic, retain) addNameViewController *nameViewController;
 //@property (nonatomic, retain) UIPopoverController *namePopover;
