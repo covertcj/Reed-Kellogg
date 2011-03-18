@@ -10,26 +10,79 @@
 
 
 @implementation PasswordEntryModalViewController
-@synthesize acceptButton, cancelButton, passwordTextBox, delegate;
+
+@synthesize acceptButton, cancelButton, changePasswordButton;
+@synthesize passwordTextBox, newPasswordTextBox, newPasswordConfirmTextBox;
+@synthesize newPasswordLabel, newPasswordConfirmLabel;
+@synthesize delegate;
+@synthesize settingNewPassword;
+
 
 - (id) initWithDelegate: (id <PasswordEntryDelegate>) delegate {
 	self.delegate = delegate;
+	self.settingNewPassword = NO;
 	return self;
 }
 
 - (IBAction) acceptButtonPressed: (id)sender {
-	// tell the delegate that the user pressed accept and pass along the password
-	NSString * password = [[self passwordTextBox] text];
-	self.passwordTextBox.text = @"";
-	
-	[[self delegate] passwordEntryAcceptPressed: password];
-	[self dismissModalViewControllerAnimated:YES];
+	if (self.settingNewPassword) {
+		// TODO: Set the new password
+		NSLog(@"The teacher password has been set to %@.", self.newPasswordTextBox.text);
+		
+		// show the change password button
+		self.changePasswordButton.hidden = NO;
+		
+		// hide the password change textboxes and labels
+		self.newPasswordLabel.hidden = YES;
+		self.newPasswordTextBox.hidden = YES;
+		self.newPasswordConfirmLabel.hidden = YES;
+		self.newPasswordConfirmTextBox.hidden = YES;
+		
+		self.settingNewPassword = NO;
+	}
+	else {
+		// tell the delegate that the user pressed accept and pass along the password
+		NSString * password = [[self passwordTextBox] text];
+		self.passwordTextBox.text = @"";
+		
+		[[self delegate] passwordEntryAcceptPressed: password];
+		[self dismissModalViewControllerAnimated:YES];
+	}
 }
 
 - (IBAction) cancelButtonPressed: (id)sender {
-	// do nothing
+	if (self.settingNewPassword) {
+		// show the change password button
+		self.changePasswordButton.hidden = NO;
+		
+		// hide the password change textboxes and labels
+		self.newPasswordLabel.hidden = YES;
+		self.newPasswordTextBox.hidden = YES;
+		self.newPasswordConfirmLabel.hidden = YES;
+		self.newPasswordConfirmTextBox.hidden = YES;
+		
+		self.settingNewPassword = NO;
+	}
+	else {
+		[self dismissModalViewControllerAnimated:YES];
+	}
+	
 	self.passwordTextBox.text = @"";
-	[self dismissModalViewControllerAnimated:YES];
+	self.newPasswordTextBox.text = @"";
+	self.newPasswordConfirmTextBox.text = @"";
+}
+
+- (IBAction) changePasswordButtonPressed: (id)sender {
+	self.settingNewPassword = YES;
+	
+	// hide the button to enter password change mode
+	self.changePasswordButton.hidden = YES;
+	
+	// show the password change textboxes and labels
+	self.newPasswordLabel.hidden = NO;
+	self.newPasswordTextBox.hidden = NO;
+	self.newPasswordConfirmLabel.hidden = NO;
+	self.newPasswordConfirmTextBox.hidden = NO;
 }
 
 /*

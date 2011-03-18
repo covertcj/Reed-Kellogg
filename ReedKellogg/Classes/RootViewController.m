@@ -12,16 +12,6 @@
 @synthesize teacherLogoutButton;
 @synthesize doneButton;
 
-- (void) passwordEntryAcceptPressed:(NSString *) password {
-	NSLog(@"[RootViewController passwordEntryAcceptPressed %@]", password);
-	if ([self verifyPassword:password]) {
-		self.TeacherMode = YES;
-		// set the buttons to what they should be in teacher mode
-		self.navigationItem.leftBarButtonItem = self.teacherLogoutButton;
-		self.navigationItem.rightBarButtonItem = self.addButton;
-	}
-}
-
 - (void)viewDidLoad {
 	self.passwordEntryModal = [[PasswordEntryModalViewController alloc] initWithDelegate:self];
 	//self.passwordEntryModal.modalPresentationStyle = UIModalPresentationFormSheet;
@@ -80,6 +70,16 @@
 	self.navigationItem.rightBarButtonItem = NULL;
 	self.navigationItem.leftBarButtonItem = self.teacherLoginButton;
 	[super.namePopover dismissPopoverAnimated:YES];
+}
+
+- (void) passwordEntryAcceptPressed:(NSString *) password {
+	NSLog(@"[RootViewController passwordEntryAcceptPressed %@]", password);
+	if ([self verifyPassword:password]) {
+		self.TeacherMode = YES;
+		// set the buttons to what they should be in teacher mode
+		self.navigationItem.leftBarButtonItem = self.teacherLogoutButton;
+		self.navigationItem.rightBarButtonItem = self.addButton;
+	}
 }
 
 -(void)doneRemoving:(id)sender {
