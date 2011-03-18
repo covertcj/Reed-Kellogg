@@ -35,6 +35,11 @@
 @synthesize currLesson;
 @synthesize currSentence;
 
+@synthesize prevButton;
+@synthesize nextButton;
+@synthesize saveButton;
+@synthesize gradeButton;
+
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -69,20 +74,42 @@
 	toolbar.frame = CGRectMake(0, screenHeight-toolBarHeight-navigationBarHeight-20, screenWidth, toolBarHeight);
 	
 	//Add buttons
-	UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next"
+	self.nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next"
 																   style:UIBarButtonItemStyleBordered
 																   target:self
 																  action:@selector(pressNext:)];
 
 	
-	UIBarButtonItem *prevButton = [[UIBarButtonItem alloc] initWithTitle:@"Prev"
+	self.prevButton = [[UIBarButtonItem alloc] initWithTitle:@"Prev"
 																   style:UIBarButtonItemStyleBordered
 																  target:self
 																  action:@selector(pressPrev:)];
 	
-	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
+	self.saveButton = [[UIBarButtonItem alloc]
 									initWithBarButtonSystemItem:UIBarButtonSystemItemSave
 									target:self action:@selector(pressSave:)];
+	
+	
+	self.gradeButton = [[UIBarButtonItem alloc] initWithTitle:@"Not Completed"
+														style:UIBarButtonItemStyleBordered
+													   target:self
+													   action:@selector(pressGrade:)];
+	self.gradeButton.enabled = NO;
+	
+	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
+	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,currSentence]];
+	[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
+	NSError * error;
+	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
+	for(Layout *l in results){
+		if ([l.grade boolValue]) {
+			self.gradeButton.title = @"Mark Incorrect";
+			self.gradeButton.enabled=YES;
+		}else {
+			self.gradeButton.title = @"Mark Correct";
+			self.gradeButton.enabled=YES;
+		}
+	}
 	
 	if (TeacherMode) {
 		saveButton.enabled = NO;
@@ -101,7 +128,7 @@
 	fixedItem.width = 40;	
 	
 	//Add buttons to the array
-	NSArray *items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, fixedItem, saveButton, flexItem, nil];
+	NSArray *items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, fixedItem, saveButton, flexItem, gradeButton, nil];
 	
 	//release buttons
 	[prevButton release];
@@ -115,21 +142,7 @@
 	
 	[self.view addSubview:toolbar];
 	
-	
 	[self fetchWordsAndSetLayout];
-	
-	
-	
-	UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Reset"
-															style:UIBarButtonItemStyleBordered
-														   target:self
-														   action:@selector(reset:)]; 
-		
-	self.navigationItem.rightBarButtonItem = temporaryBarButtonItem;
-	
-	[temporaryBarButtonItem release];	
-	
-	//NSLog(@"self.words has %@ objects in it.", words);
 	
 	UIGestureRecognizer *recognizer;
 	
@@ -206,26 +219,30 @@
 }
 
 -(void) pressGrade:(id)sender{
+	NSLog(@"Grade Pressed");
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,currSentence]];
 	[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
 	NSError * error;
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
 	for(Layout *l in results){
-		if (l.grade) {
+		if ([l.grade boolValue]) {
+			NSLog(@"Marking incorrect");
+			self.gradeButton.title = @"Mark Correct";
 			[l setGrade:[NSNumber numberWithBool: NO]];
 		}else {
+			NSLog(@"Marking correct");
+			self.gradeButton.title = @"Mark Incorrect";
 			[l setGrade:[NSNumber numberWithBool: YES]];
 		}
 	}
 	
-	//commit changes and handle error if it breaks
-	error = nil;
+	//commit changes and handle error if it breaks		error = nil;
 	if (![managedObjectContext save:&error]) {
-		
 		NSLog(@"Error saving...");
 		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
 	}
+
 
 }
 

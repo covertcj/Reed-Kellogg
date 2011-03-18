@@ -40,6 +40,11 @@
 	id<UpdateCustomView> _delegate;
 	
 }
+@property (nonatomic, retain) UIBarButtonItem *nextButton;
+@property (nonatomic, retain) UIBarButtonItem *prevButton;
+@property (nonatomic, retain) UIBarButtonItem *saveButton;
+@property (nonatomic, retain) UIBarButtonItem *gradeButton;
+
 
 @property (nonatomic) BOOL TeacherMode;
 

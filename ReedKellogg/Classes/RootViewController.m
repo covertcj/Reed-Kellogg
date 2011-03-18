@@ -52,7 +52,7 @@
 	// Since the entity in question (being displayed on the table rows)
 	// is Student, we return Student
 	return @"Student";
-}
+} 
 
 - (BOOL) verifyPassword:(NSString *)password {
 	NSLog(@"Verifying the password: %@", password);
