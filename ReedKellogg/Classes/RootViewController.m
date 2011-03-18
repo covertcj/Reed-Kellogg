@@ -4,13 +4,28 @@
 #import "RootViewController.h"
 #import "LessonViewController.h"
 #import "Student.h"
+#import "PasswordEntryModalViewController.h"
+#import "PasswordEntryDelegate.h"
 
 @implementation RootViewController
-@synthesize teacherLoginButton;
+@synthesize teacherLoginButton, passwordEntryModal;
 @synthesize teacherLogoutButton;
 @synthesize doneButton;
 
+- (void) passwordEntryAcceptPressed:(NSString *) password {
+	NSLog(@"[RootViewController passwordEntryAcceptPressed %@]", password);
+	if ([self verifyPassword:password]) {
+		self.TeacherMode = YES;
+		// set the buttons to what they should be in teacher mode
+		self.navigationItem.leftBarButtonItem = self.teacherLogoutButton;
+		self.navigationItem.rightBarButtonItem = self.addButton;
+	}
+}
+
 - (void)viewDidLoad {
+	self.passwordEntryModal = [[PasswordEntryModalViewController alloc] initWithDelegate:self];
+	//self.passwordEntryModal.modalPresentationStyle = UIModalPresentationFormSheet;
+	
 	super.TeacherMode = NO;
 	super.popFirstButton = @"Add Student";
 	super.popSecondButton = @"Remove Student";
@@ -54,28 +69,10 @@
 	return [password isEqualToString:@"pass"];
 }
 
-- (void) promptForPassword: (id)sender{
-	UIAlertView *passwordAlert = [[UIAlertView alloc] initWithTitle:@"Teacher Password" message:@"\n\n"
-														   delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-	
-	UITextField *passwordField = [[UITextField alloc] initWithFrame:CGRectMake(18,58,248,25)];
-	passwordField.font = [UIFont systemFontOfSize:18];
-	passwordField.backgroundColor = [UIColor whiteColor];
-	passwordField.secureTextEntry = YES;
-	passwordField.keyboardAppearance = UIKeyboardAppearanceAlert;
-	passwordField.delegate = self;
-	[passwordField becomeFirstResponder];
-	[passwordAlert addSubview:passwordField];
-	[passwordAlert show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if ([self verifyPassword: ((UITextField *)[alertView.subviews objectAtIndex:4]).text]) {	
-		super.TeacherMode= YES;
-		//self.navigationItem.leftBarButtonItem = self.editButtonItem;
-		self.navigationItem.leftBarButtonItem = self.teacherLogoutButton;
-		self.navigationItem.rightBarButtonItem = self.addButton;
-	}
+-(void)promptForPassword:(id)sender {
+	UINavigationController * nvc = [[[UINavigationController alloc] initWithRootViewController:self.passwordEntryModal] autorelease];
+	nvc.modalPresentationStyle = UIModalPresentationFormSheet;
+	[self presentModalViewController:nvc animated:YES];
 }
 
 -(void)logoutOfTeacher:(id)sender {

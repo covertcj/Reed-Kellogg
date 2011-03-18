@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AA5E65513317FC200874C80 /* PasswordEntryModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */; };
+		0AA5E6631331806100874C80 /* PasswordEntryModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */; };
 		1D3623260D0F684500981E51 /* ReedKelloggAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ReedKelloggAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A6F670713324D7000907A24 /* PasswordEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryDelegate.h; path = ../PasswordEntryDelegate.h; sourceTree = "<group>"; };
+		0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PasswordEntryModalViewController.xib; path = Classes/PasswordEntryModalViewController.xib; sourceTree = "<group>"; };
+		0AA5E6611331806100874C80 /* PasswordEntryModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordEntryModalViewController.h; sourceTree = "<group>"; };
+		0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordEntryModalViewController.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* ReedKelloggAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReedKelloggAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* ReedKelloggAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReedKelloggAppDelegate.m; sourceTree = "<group>"; };
@@ -121,6 +127,9 @@
 				B73B3B6D12F1267700219463 /* CustomView.h */,
 				B73B3B6E12F1267700219463 /* CustomView.m */,
 				B73B3D0112F342BD00219463 /* UpdateCustomView.h */,
+				0AA5E6611331806100874C80 /* PasswordEntryModalViewController.h */,
+				0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */,
+				0A6F670713324D7000907A24 /* PasswordEntryDelegate.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -157,6 +166,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */,
 				B73B461F130D753B00219463 /* Lesson.h */,
 				B73B4620130D753B00219463 /* Lesson.m */,
 				B73B4507130A1FCC00219463 /* WordData.h */,
@@ -248,6 +258,7 @@
 				B73B382412E7867200219463 /* LessonViewController.xib in Resources */,
 				B73B390C12E7E73400219463 /* addNameViewController.xib in Resources */,
 				B73B43C913097BEC00219463 /* Icon.png in Resources */,
+				0AA5E65513317FC200874C80 /* PasswordEntryModalViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +285,7 @@
 				B73B44FD130A1EF900219463 /* LineData.m in Sources */,
 				B73B4509130A1FCC00219463 /* WordData.m in Sources */,
 				B73B4621130D753B00219463 /* Lesson.m in Sources */,
+				0AA5E6631331806100874C80 /* PasswordEntryModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

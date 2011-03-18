@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "GenericTableView.h"
-
+#import "PasswordEntryDelegate.h"
 
 @class addNameViewController;
+@class PasswordEntryModalViewController;
 
-@interface RootViewController : GenericTableView <UITextFieldDelegate, UIAlertViewDelegate> {
+@interface RootViewController : GenericTableView <UITextFieldDelegate, UIAlertViewDelegate, PasswordEntryDelegate> {
 
 	
 	//NSMutableArray *studentArray;
@@ -21,15 +22,19 @@
 	//addNameViewController *nameViewController;
 	//UIPopoverController *namePopover;
 
+	PasswordEntryModalViewController * passwordEntryModal;
 }
 
 - (BOOL) verifyPassword:(NSString *)password;
-- (void) promptForPassword;
+- (void) promptForPassword:(id) sender;
 
 //@property (nonatomic, retain) NSMutableArray *studentArray;
 //@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic, retain) UIBarButtonItem *teacherLoginButton;
+
+@property (nonatomic, retain) IBOutlet PasswordEntryModalViewController * passwordEntryModal;
+
 @property (nonatomic, retain) UIBarButtonItem *teacherLogoutButton;
 @property (nonatomic, retain) UIBarButtonItem *doneButton;
 //@property (nonatomic, retain) UIBarButtonItem *addButton;
