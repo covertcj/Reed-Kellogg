@@ -45,5 +45,6 @@
 - (IBAction) changePasswordButtonPressed: (id)sender;
 
 - (id) initWithDelegate: (id <PasswordEntryDelegate>) delegate;
+- (void) setChangeFieldsVisibility:(BOOL)visible;
 
 @end

@@ -327,7 +327,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0A206C8213330856001DC53E</string>
+										<string>0A206CE0133383AB001DC53E</string>
 										<key>history</key>
 										<array>
 											<string>0A018656132FCBA2005EC556</string>
@@ -351,8 +351,8 @@
 											<string>0A6F67B61332FD0C00907A24</string>
 											<string>0A206C7E13330856001DC53E</string>
 											<string>0A206C7F13330856001DC53E</string>
-											<string>0A206C8013330856001DC53E</string>
-											<string>0A206C8113330856001DC53E</string>
+											<string>0A206CD313331164001DC53E</string>
+											<string>0A206CD413331164001DC53E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -550,6 +550,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>0A206CC213330FC8001DC53E</string>
+		<string>0A206CC013330FB6001DC53E</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>0A0185D3132FC7B4005EC556</string>
@@ -577,7 +579,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>PasswordEntryModalViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -594,6 +596,8 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -880,6 +884,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -892,7 +898,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {650, 209}}</string>
 								<key>RubberWindowFrame</key>
-								<string>98 515 650 250 0 0 1440 878 </string>
+								<string>58 508 650 250 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -921,7 +927,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>98 515 650 250 0 0 1440 878 </string>
+			<string>58 508 650 250 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

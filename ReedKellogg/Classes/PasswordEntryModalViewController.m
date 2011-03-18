@@ -18,27 +18,58 @@
 @synthesize settingNewPassword;
 
 
-- (id) initWithDelegate: (id <PasswordEntryDelegate>) delegate {
-	self.delegate = delegate;
+- (id) initWithDelegate: (id <PasswordEntryDelegate>) deleg {
+	self.delegate = deleg;
 	self.settingNewPassword = NO;
 	return self;
 }
 
+- (void) setChangeFieldsVisibility:(BOOL)visible {
+	NSLog(@"Setting password change visibility");
+	
+	// show/hide the change password button
+	self.changePasswordButton.hidden = visible;
+	
+	// show/hide the password change textboxes and labels
+	self.newPasswordLabel.hidden = !visible;
+	self.newPasswordTextBox.hidden = !visible;
+	self.newPasswordConfirmLabel.hidden = !visible;
+	self.newPasswordConfirmTextBox.hidden = !visible;
+	
+	// tell the view whether we are in password change mode
+	self.settingNewPassword = visible;
+	
+	// reset the text fields
+	self.passwordTextBox.text = @"";
+	self.newPasswordTextBox.text = @"";
+	self.newPasswordConfirmTextBox.text = @"";
+}
+
 - (IBAction) acceptButtonPressed: (id)sender {
 	if (self.settingNewPassword) {
-		// TODO: Set the new password
-		NSLog(@"The teacher password has been set to %@.", self.newPasswordTextBox.text);
-		
-		// show the change password button
-		self.changePasswordButton.hidden = NO;
-		
-		// hide the password change textboxes and labels
-		self.newPasswordLabel.hidden = YES;
-		self.newPasswordTextBox.hidden = YES;
-		self.newPasswordConfirmLabel.hidden = YES;
-		self.newPasswordConfirmTextBox.hidden = YES;
-		
-		self.settingNewPassword = NO;
+		// ensure the new password and it's confirmation match
+		if ([self.newPasswordTextBox.text isEqualToString:self.newPasswordConfirmTextBox.text]) {
+			// ensure the password is 5 chars
+			if ([self.newPasswordTextBox.text length] >= 5) {
+				// TODO: Set the new password
+				
+				NSLog(@"The teacher password has been set to %@. (WARNING: This is not implemented yet!)", self.newPasswordTextBox.text);
+				
+				[self setChangeFieldsVisibility:NO];
+			}
+			else {
+				NSLog(@"The new password length is too short.");
+				UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The password is less than 5 characters." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+				[alert show];
+				[alert release];
+			}
+		}
+		else {
+			NSLog(@"The new password and its confirmation are different");
+			UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The passwords do not match." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+			[alert show];
+			[alert release];
+		}
 	}
 	else {
 		// tell the delegate that the user pressed accept and pass along the password
@@ -52,16 +83,7 @@
 
 - (IBAction) cancelButtonPressed: (id)sender {
 	if (self.settingNewPassword) {
-		// show the change password button
-		self.changePasswordButton.hidden = NO;
-		
-		// hide the password change textboxes and labels
-		self.newPasswordLabel.hidden = YES;
-		self.newPasswordTextBox.hidden = YES;
-		self.newPasswordConfirmLabel.hidden = YES;
-		self.newPasswordConfirmTextBox.hidden = YES;
-		
-		self.settingNewPassword = NO;
+		[self setChangeFieldsVisibility:NO];
 	}
 	else {
 		[self dismissModalViewControllerAnimated:YES];
@@ -73,16 +95,8 @@
 }
 
 - (IBAction) changePasswordButtonPressed: (id)sender {
-	self.settingNewPassword = YES;
-	
-	// hide the button to enter password change mode
-	self.changePasswordButton.hidden = YES;
-	
-	// show the password change textboxes and labels
-	self.newPasswordLabel.hidden = NO;
-	self.newPasswordTextBox.hidden = NO;
-	self.newPasswordConfirmLabel.hidden = NO;
-	self.newPasswordConfirmTextBox.hidden = NO;
+	NSLog(@"Entering password change mode.");
+	[self setChangeFieldsVisibility:YES];
 }
 
 /*
