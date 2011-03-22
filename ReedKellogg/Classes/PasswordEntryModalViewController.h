@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PasswordEntryDelegate.h"
 
+@class KeychainItemWrapper;
+
 @interface PasswordEntryModalViewController : UIViewController {
 	UIButton * acceptButton;
 	UIButton * cancelButton; 
@@ -20,6 +22,9 @@
 	
 	UILabel * newPasswordLabel;
 	UILabel * newPasswordConfirmLabel;
+	
+	NSString * currentPassword;
+	KeychainItemWrapper * passwordKeychain;
 	
 	BOOL settingNewPassword;
 	
@@ -40,11 +45,17 @@
 @property (nonatomic, retain) IBOutlet id <PasswordEntryDelegate> delegate;
 @property BOOL settingNewPassword;
 
+@property (nonatomic, retain) NSString * currentPassword;
+@property (nonatomic, retain) KeychainItemWrapper * passwordKeychain;
+
 - (IBAction) acceptButtonPressed: (id)sender;
 - (IBAction) cancelButtonPressed: (id)sender;
 - (IBAction) changePasswordButtonPressed: (id)sender;
 
 - (id) initWithDelegate: (id <PasswordEntryDelegate>) delegate;
 - (void) setChangeFieldsVisibility:(BOOL)visible;
+- (void) setNewPassword;
+- (BOOL) checkPassword;
+- (BOOL) checkNewPassword;
 
 @end

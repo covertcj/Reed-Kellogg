@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3F76CD133389BB002F5F28 /* password.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A3F76CC133389BB002F5F28 /* password.plist */; };
 		0AA5E65513317FC200874C80 /* PasswordEntryModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */; };
 		0AA5E6631331806100874C80 /* PasswordEntryModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */; };
+		0AA9176C1333CB32008B4AC5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA9176B1333CB32008B4AC5 /* Security.framework */; };
+		0ABD4C0613386CEE00B8C601 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4C0513386CEE00B8C601 /* SFHFKeychainUtils.m */; };
 		1D3623260D0F684500981E51 /* ReedKelloggAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ReedKelloggAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -39,10 +42,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A3F76CC133389BB002F5F28 /* password.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = password.plist; sourceTree = "<group>"; };
 		0A6F670713324D7000907A24 /* PasswordEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryDelegate.h; path = ../PasswordEntryDelegate.h; sourceTree = "<group>"; };
 		0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PasswordEntryModalViewController.xib; path = Classes/PasswordEntryModalViewController.xib; sourceTree = "<group>"; };
 		0AA5E6611331806100874C80 /* PasswordEntryModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordEntryModalViewController.h; sourceTree = "<group>"; };
 		0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordEntryModalViewController.m; sourceTree = "<group>"; };
+		0AA9176B1333CB32008B4AC5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0ABD4C0413386CEE00B8C601 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		0ABD4C0513386CEE00B8C601 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* ReedKelloggAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReedKelloggAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* ReedKelloggAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReedKelloggAppDelegate.m; sourceTree = "<group>"; };
@@ -99,6 +106,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				B73B394C12E7ECDF00219463 /* CoreData.framework in Frameworks */,
+				0AA9176C1333CB32008B4AC5 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +138,8 @@
 				0AA5E6611331806100874C80 /* PasswordEntryModalViewController.h */,
 				0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */,
 				0A6F670713324D7000907A24 /* PasswordEntryDelegate.h */,
+				0ABD4C0413386CEE00B8C601 /* SFHFKeychainUtils.h */,
+				0ABD4C0513386CEE00B8C601 /* SFHFKeychainUtils.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -150,6 +160,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				B73B394B12E7ECDF00219463 /* CoreData.framework */,
+				0AA9176B1333CB32008B4AC5 /* Security.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -187,6 +198,7 @@
 				8D1107310486CEB800E47090 /* ReedKellogg-Info.plist */,
 				B73B394D12E7ED0E00219463 /* ReedKellogg.xcdatamodel */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				0A3F76CC133389BB002F5F28 /* password.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -259,6 +271,7 @@
 				B73B390C12E7E73400219463 /* addNameViewController.xib in Resources */,
 				B73B43C913097BEC00219463 /* Icon.png in Resources */,
 				0AA5E65513317FC200874C80 /* PasswordEntryModalViewController.xib in Resources */,
+				0A3F76CD133389BB002F5F28 /* password.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +299,7 @@
 				B73B4509130A1FCC00219463 /* WordData.m in Sources */,
 				B73B4621130D753B00219463 /* Lesson.m in Sources */,
 				0AA5E6631331806100874C80 /* PasswordEntryModalViewController.m in Sources */,
+				0ABD4C0613386CEE00B8C601 /* SFHFKeychainUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

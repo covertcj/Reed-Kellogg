@@ -7,6 +7,7 @@
 //
 
 #import "PasswordEntryModalViewController.h"
+#import "SFHFKeychainUtils.h"
 
 
 @implementation PasswordEntryModalViewController
@@ -14,6 +15,7 @@
 @synthesize acceptButton, cancelButton, changePasswordButton;
 @synthesize passwordTextBox, newPasswordTextBox, newPasswordConfirmTextBox;
 @synthesize newPasswordLabel, newPasswordConfirmLabel;
+@synthesize currentPassword, passwordKeychain;
 @synthesize delegate;
 @synthesize settingNewPassword;
 
@@ -21,6 +23,20 @@
 - (id) initWithDelegate: (id <PasswordEntryDelegate>) deleg {
 	self.delegate = deleg;
 	self.settingNewPassword = NO;
+	
+	// retrieve the Teacher's password
+	NSError * error = nil;
+	self.currentPassword = [SFHFKeychainUtils getPasswordForUsername:@"Teacher" andServiceName:@"ReedKellogg" error:&error];
+	
+	// initialize the password if there isn't one in the keychain
+	if (self.currentPassword == nil) {
+		NSLog(@"No password exists. Initializing password to \"\".");
+		self.currentPassword = @"pass";
+		[SFHFKeychainUtils storeUsername:@"Teacher" andPassword:self.currentPassword forServiceName:@"ReedKellogg" updateExisting:YES error:&error];
+	}
+	
+	NSLog(@"Password Loaded: %@", self.currentPassword);
+	
 	return self;
 }
 
@@ -45,38 +61,75 @@
 	self.newPasswordConfirmTextBox.text = @"";
 }
 
-- (IBAction) acceptButtonPressed: (id)sender {
-	if (self.settingNewPassword) {
-		// ensure the new password and it's confirmation match
-		if ([self.newPasswordTextBox.text isEqualToString:self.newPasswordConfirmTextBox.text]) {
-			// ensure the password is 5 chars
-			if ([self.newPasswordTextBox.text length] >= 5) {
-				// TODO: Set the new password
-				
-				NSLog(@"The teacher password has been set to %@. (WARNING: This is not implemented yet!)", self.newPasswordTextBox.text);
-				
-				[self setChangeFieldsVisibility:NO];
-			}
-			else {
-				NSLog(@"The new password length is too short.");
-				UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The password is less than 5 characters." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
-				[alert show];
-				[alert release];
-			}
+- (void) setNewPassword {
+	// ensure the new password and it's confirmation match
+	if ([self checkNewPassword]) {
+		NSString * newPass = self.newPasswordTextBox.text;
+		
+		// set the new password
+		self.currentPassword = newPass;
+		
+		// save the new teacher password from the password plist file
+		NSError * error = nil;
+		[SFHFKeychainUtils storeUsername:@"Teacher" andPassword:self.currentPassword forServiceName:@"ReedKellogg" updateExisting:YES error:&error];
+		
+		NSLog(@"The teacher password has been set to %@.", self.newPasswordTextBox.text);
+		
+		// change the UI to no longer show the password change fields
+		[self setChangeFieldsVisibility:NO];
+	}
+}
+
+- (BOOL) checkPassword {
+	if ([self.passwordTextBox.text isEqualToString:self.currentPassword]) {
+		return YES;
+	}
+	
+	// inform the user
+	NSLog(@"Incorrect password entered");
+	UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Incorrect password." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+	
+	return NO;
+}
+
+- (BOOL) checkNewPassword {
+	NSString * newPass = self.newPasswordTextBox.text;
+	NSString * newPassConf = self.newPasswordConfirmTextBox.text;
+	
+	// make sure the passwords match
+	if ([newPass isEqualToString:newPassConf]) {
+		// check password length
+		if ([newPass length] >= 5) {
+			return YES;
 		}
 		else {
-			NSLog(@"The new password and its confirmation are different");
-			UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The passwords do not match." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+			// the password was too short, alert the user
+			NSLog(@"The new password length is too short.");
+			UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The password is less than 5 characters." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
 			[alert show];
 			[alert release];
 		}
 	}
-	else {
-		// tell the delegate that the user pressed accept and pass along the password
-		NSString * password = [[self passwordTextBox] text];
+	
+	// warn the user
+	NSLog(@"The new password and its confirmation are different");
+	UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The passwords do not match." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+	
+	return NO;
+}
+
+- (IBAction) acceptButtonPressed: (id)sender {
+	if (self.settingNewPassword) {
+		[self setNewPassword];
+	}
+	else if ([self checkPassword]) {
 		self.passwordTextBox.text = @"";
 		
-		[[self delegate] passwordEntryAcceptPressed: password];
+		[[self delegate] passwordEnteredProperly];
 		[self dismissModalViewControllerAnimated:YES];
 	}
 }

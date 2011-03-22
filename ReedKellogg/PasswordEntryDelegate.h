@@ -12,6 +12,6 @@
 @protocol PasswordEntryDelegate
 
 @optional
-- (void) passwordEntryAcceptPressed:(NSString *) password;
+- (void) passwordEnteredProperly;
 
 @end

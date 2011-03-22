@@ -72,14 +72,11 @@
 	[super.namePopover dismissPopoverAnimated:YES];
 }
 
-- (void) passwordEntryAcceptPressed:(NSString *) password {
-	NSLog(@"[RootViewController passwordEntryAcceptPressed %@]", password);
-	if ([self verifyPassword:password]) {
-		self.TeacherMode = YES;
-		// set the buttons to what they should be in teacher mode
-		self.navigationItem.leftBarButtonItem = self.teacherLogoutButton;
-		self.navigationItem.rightBarButtonItem = self.addButton;
-	}
+- (void) passwordEnteredProperly {
+	self.TeacherMode = YES;
+	// set the buttons to what they should be in teacher mode
+	self.navigationItem.leftBarButtonItem = self.teacherLogoutButton;
+	self.navigationItem.rightBarButtonItem = self.addButton;
 }
 
 -(void)doneRemoving:(id)sender {

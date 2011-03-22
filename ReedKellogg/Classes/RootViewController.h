@@ -13,7 +13,7 @@
 @class addNameViewController;
 @class PasswordEntryModalViewController;
 
-@interface RootViewController : GenericTableView <UITextFieldDelegate, UIAlertViewDelegate, PasswordEntryDelegate> {
+@interface RootViewController : GenericTableView <PasswordEntryDelegate> {
 
 	
 	//NSMutableArray *studentArray;
@@ -33,7 +33,7 @@
 
 @property (nonatomic, retain) UIBarButtonItem *teacherLoginButton;
 
-@property (nonatomic, retain) IBOutlet PasswordEntryModalViewController * passwordEntryModal;
+@property (nonatomic, retain) PasswordEntryModalViewController * passwordEntryModal;
 
 @property (nonatomic, retain) UIBarButtonItem *teacherLogoutButton;
 @property (nonatomic, retain) UIBarButtonItem *doneButton;
