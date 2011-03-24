@@ -39,6 +39,9 @@
 @synthesize nextButton;
 @synthesize saveButton;
 @synthesize gradeButton;
+@synthesize correctButton;
+@synthesize incorrectButton;
+@synthesize commentButton;
 
 
 /*
@@ -88,12 +91,24 @@
 	self.saveButton = [[UIBarButtonItem alloc]
 									initWithBarButtonSystemItem:UIBarButtonSystemItemSave
 									target:self action:@selector(pressSave:)];
+						
+	self.commentButton = [[UIBarButtonItem alloc] initWithTitle:@"Comments"
+														  style:UIBarButtonItemStyleBordered
+														 target:self
+														 action:@selector(pressComment:)];
 	
+	self.correctButton = [[UIBarButtonItem alloc] initWithTitle:@"Mark Correct"
+														  style:UIBarButtonItemStyleBordered
+														 target:self
+														 action:@selector(pressCorrect:)];
+	self.correctButton.enabled = NO;
 	
-	self.gradeButton = [[UIBarButtonItem alloc] initWithTitle:@"Not Completed"
-														style:UIBarButtonItemStyleBordered
-													   target:self
-													   action:@selector(pressGrade:)];
+	self.incorrectButton = [[UIBarButtonItem alloc] initWithTitle:@"Mark Incorrect"
+														  style:UIBarButtonItemStyleBordered
+														 target:self
+														 action:@selector(pressIncorrect:)];
+	self.incorrectButton.enabled = NO;
+	
 	self.gradeButton.enabled = NO;
 	
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
@@ -103,11 +118,9 @@
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
 	for(Layout *l in results){
 		if ([l.grade boolValue]) {
-			self.gradeButton.title = @"Mark Incorrect";
-			self.gradeButton.enabled=YES;
+			self.incorrectButton.enabled=YES;
 		}else {
-			self.gradeButton.title = @"Mark Correct";
-			self.gradeButton.enabled=YES;
+			self.correctButton.enabled=YES;
 		}
 	}
 	
@@ -125,11 +138,14 @@
 	UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
 																			  target:nil
 																			  action:nil];
+	NSArray *items;
 	fixedItem.width = 40;	
-	
-	//Add buttons to the array
-	NSArray *items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, fixedItem, saveButton, flexItem, gradeButton, nil];
-	
+	if (self.TeacherMode) {
+		items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, flexItem, correctButton,incorrectButton, commentButton, nil];
+	}else {
+		items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, fixedItem, saveButton, flexItem, commentButton, nil];
+	}
+
 	//release buttons
 	[prevButton release];
 	[saveButton release];
@@ -218,23 +234,19 @@
 	[self goToSentence:1];
 }
 
--(void) pressGrade:(id)sender{
-	NSLog(@"Grade Pressed");
+
+-(void) pressCorrect:(id)sender{
+	NSLog(@"Correct Pressed");
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,currSentence]];
 	[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
 	NSError * error;
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
 	for(Layout *l in results){
-		if ([l.grade boolValue]) {
-			NSLog(@"Marking incorrect");
-			self.gradeButton.title = @"Mark Correct";
-			[l setGrade:[NSNumber numberWithBool: NO]];
-		}else {
-			NSLog(@"Marking correct");
-			self.gradeButton.title = @"Mark Incorrect";
-			[l setGrade:[NSNumber numberWithBool: YES]];
-		}
+		NSLog(@"Marking correct");
+		self.correctButton.enabled = NO;
+		self.incorrectButton.enabled = YES;
+		[l setGrade:[NSNumber numberWithBool: YES]];
 	}
 	
 	//commit changes and handle error if it breaks		error = nil;
@@ -242,8 +254,35 @@
 		NSLog(@"Error saving...");
 		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
 	}
+}
 
+-(void) pressIncorrect:(id)sender{
+	NSLog(@"Incorrect Pressed");
+	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
+	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,currSentence]];
+	[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
+	NSError * error;
+	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
+	for(Layout *l in results){
+		NSLog(@"Marking incorrect");
+		self.correctButton.enabled = YES;
+		self.incorrectButton.enabled = NO;
+		[l setGrade:[NSNumber numberWithBool: NO]];
+	}
+	
+	//commit changes and handle error if it breaks		error = nil;
+	if (![managedObjectContext save:&error]) {
+		NSLog(@"Error saving...");
+		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
+	}
+	
+}
 
+-(void) pressComment:(id)sender{
+	CommentViewController *targetViewController = [[CommentViewController alloc] init];
+	targetViewController.title = @"Comments";
+	// Navigation logic may go here. Create and push another view controller.
+	[[self navigationController] pushViewController:targetViewController animated:YES];
 }
 
 - (void) pressSave:(id)sender{

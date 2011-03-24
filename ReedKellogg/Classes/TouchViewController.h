@@ -12,6 +12,7 @@
 #import "Student.h"
 #import "Lesson.h"
 #import "Sentence.h"
+#import "CommentViewController.h"
 
 @interface TouchViewController : UIViewController {
 	NSMutableArray * words;
@@ -44,6 +45,11 @@
 @property (nonatomic, retain) UIBarButtonItem *prevButton;
 @property (nonatomic, retain) UIBarButtonItem *saveButton;
 @property (nonatomic, retain) UIBarButtonItem *gradeButton;
+@property (nonatomic, retain) UIBarButtonItem *commentButton;
+@property (nonatomic, retain) UIBarButtonItem *correctButton;
+@property (nonatomic, retain) UIBarButtonItem *incorrectButton;
+@property (nonatomic, retain) UISegmentedControl *difficultyControl;
+
 
 
 @property (nonatomic) BOOL TeacherMode;
