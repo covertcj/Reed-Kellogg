@@ -100,17 +100,7 @@
 	
 	// make sure the passwords match
 	if ([newPass isEqualToString:newPassConf]) {
-		// check password length
-		if ([newPass length] >= 5) {
-			return YES;
-		}
-		else {
-			// the password was too short, alert the user
-			NSLog(@"The new password length is too short.");
-			UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The password is less than 5 characters." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
-			[alert show];
-			[alert release];
-		}
+		return YES;
 	}
 	
 	// warn the user
