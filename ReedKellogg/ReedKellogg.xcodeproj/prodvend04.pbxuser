@@ -4,7 +4,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1216, 2392}}";
 			sepNavSelRange = "{3043, 0}";
-			sepNavVisRange = "{2179, 1507}";
+			sepNavVisRange = "{2239, 1447}";
 		};
 	};
 	0ABD4C0413386CEE00B8C601 /* SFHFKeychainUtils.h */ = {
@@ -157,6 +157,7 @@
 			4F649B21133CF38700DED74E /* PBXTextBookmark */ = 4F649B21133CF38700DED74E /* PBXTextBookmark */;
 			4F649B24133CF3EC00DED74E /* PBXTextBookmark */ = 4F649B24133CF3EC00DED74E /* PBXTextBookmark */;
 			4F649B25133CF42100DED74E /* PBXTextBookmark */ = 4F649B25133CF42100DED74E /* PBXTextBookmark */;
+			4F649B28133CF57200DED74E /* PBXTextBookmark */ = 4F649B28133CF57200DED74E /* PBXTextBookmark */;
 			4F67AFC9133C6F03009AF589 = 4F67AFC9133C6F03009AF589 /* PBXTextBookmark */;
 			4F67AFCA133C6F03009AF589 = 4F67AFCA133C6F03009AF589 /* PBXTextBookmark */;
 			4F67AFFB133C757A009AF589 = 4F67AFFB133C757A009AF589 /* PBXTextBookmark */;
@@ -543,6 +544,16 @@
 		rType = 0;
 		vrLen = 1507;
 		vrLoc = 2179;
+	};
+	4F649B28133CF57200DED74E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */;
+		name = "PasswordEntryModalViewController.m: 92";
+		rLen = 0;
+		rLoc = 3043;
+		rType = 0;
+		vrLen = 1447;
+		vrLoc = 2239;
 	};
 	4F67AFC9133C6F03009AF589 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
