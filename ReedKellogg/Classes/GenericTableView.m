@@ -31,6 +31,7 @@
 															  target:self action:@selector(showPopover)];
 		addButton.enabled = YES;	
 		self.navigationItem.rightBarButtonItem = addButton;
+		
 	}
 
 		

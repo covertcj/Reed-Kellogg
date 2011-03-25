@@ -28,7 +28,6 @@
     [super viewDidLoad];
 
 	NSArray * sortMe = [[self.currLesson.sentences allObjects] mutableCopy];
-	
 	// Sort the array based on number
 	NSSortDescriptor *sortDescriptor;
 	sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"number"
@@ -37,8 +36,23 @@
 	NSArray *sortedArray;
 	sortedArray = [sortMe sortedArrayUsingDescriptors:sortDescriptors];
 	
+	int numCorrect=0;
+	for (int i=0; i<[sortedArray count]; i++) {
+		//NSLog(((Sentence *)[sortedArray objectAtIndex:i]).text);
+		NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
+		[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,((Sentence *)[sortedArray objectAtIndex:i])]];
+		[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
+		NSError * error;
+		NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
+		for(Layout *l in results){
+			if ([l.grade boolValue]) {
+				numCorrect=numCorrect+1;
+			}
+		}
+	}
+	NSString *newtitle = [self.title stringByAppendingFormat: @" %@ / %@",[NSNumber numberWithInt: numCorrect], [NSNumber numberWithInt:[sortedArray count]]];
+	self.title = newtitle;
 	super.objectArray = [sortedArray mutableCopy];
-	
 }
 
 // This absolutely must be subclassed
