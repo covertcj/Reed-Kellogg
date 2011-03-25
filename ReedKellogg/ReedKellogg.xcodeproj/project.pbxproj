@@ -19,6 +19,8 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		4F4D3473133C23140072606F /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4D3471133C23140072606F /* correct.png */; };
+		4F4D3474133C23140072606F /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4D3472133C23140072606F /* incorrect.png */; };
 		4F76ECA0133BDE40007E4C5A /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F76EC9E133BDE40007E4C5A /* CommentViewController.m */; };
 		4F76ECA1133BDE40007E4C5A /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F76EC9F133BDE40007E4C5A /* CommentViewController.xib */; };
 		B739C99712DE06D500D3F493 /* LessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B739C99512DE06D500D3F493 /* LessonViewController.m */; };
@@ -62,6 +64,8 @@
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F4D3471133C23140072606F /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = correct.png; path = ../../../correct.png; sourceTree = SOURCE_ROOT; };
+		4F4D3472133C23140072606F /* incorrect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = incorrect.png; path = ../../../incorrect.png; sourceTree = SOURCE_ROOT; };
 		4F76EC9D133BDE40007E4C5A /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		4F76EC9E133BDE40007E4C5A /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		4F76EC9F133BDE40007E4C5A /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4F4D3471133C23140072606F /* correct.png */,
+				4F4D3472133C23140072606F /* incorrect.png */,
 				0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */,
 				B73B461F130D753B00219463 /* Lesson.h */,
 				B73B4620130D753B00219463 /* Lesson.m */,
@@ -277,6 +283,8 @@
 				B73B43C913097BEC00219463 /* Icon.png in Resources */,
 				0AA5E65513317FC200874C80 /* PasswordEntryModalViewController.xib in Resources */,
 				4F76ECA1133BDE40007E4C5A /* CommentViewController.xib in Resources */,
+				4F4D3473133C23140072606F /* correct.png in Resources */,
+				4F4D3474133C23140072606F /* incorrect.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

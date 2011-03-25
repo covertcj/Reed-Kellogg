@@ -13,6 +13,11 @@
 #import "Lesson.h"
 #import "Sentence.h"
 #import "CommentViewController.h"
+#import "ReedKelloggAppDelegate.h"
+#import "CustomView.h"
+#import "Layout.h"
+#import "WordData.h"
+#import "LineData.h"
 
 @interface TouchViewController : UIViewController {
 	NSMutableArray * words;
@@ -34,9 +39,6 @@
 	Student *currStudent;
 	Lesson *currLesson;
 	Sentence *currSentence;
-	BOOL teacherMode;
-	
-	
 @private
 	id<UpdateCustomView> _delegate;
 	
@@ -44,11 +46,10 @@
 @property (nonatomic, retain) UIBarButtonItem *nextButton;
 @property (nonatomic, retain) UIBarButtonItem *prevButton;
 @property (nonatomic, retain) UIBarButtonItem *saveButton;
-@property (nonatomic, retain) UIBarButtonItem *gradeButton;
 @property (nonatomic, retain) UIBarButtonItem *commentButton;
 @property (nonatomic, retain) UIBarButtonItem *correctButton;
 @property (nonatomic, retain) UIBarButtonItem *incorrectButton;
-@property (nonatomic, retain) UISegmentedControl *difficultyControl;
+@property (nonatomic, retain) UIImageView *correctMark;
 
 
 

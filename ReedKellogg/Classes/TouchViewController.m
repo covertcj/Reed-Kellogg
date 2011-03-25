@@ -7,11 +7,6 @@
 //
 
 #import "TouchViewController.h"
-#import "ReedKelloggAppDelegate.h"
-#import "CustomView.h"
-#import "Layout.h"
-#import "WordData.h"
-#import "LineData.h"
 
 @implementation TouchViewController
 
@@ -38,10 +33,10 @@
 @synthesize prevButton;
 @synthesize nextButton;
 @synthesize saveButton;
-@synthesize gradeButton;
 @synthesize correctButton;
 @synthesize incorrectButton;
 @synthesize commentButton;
+@synthesize correctMark;
 
 
 /*
@@ -96,6 +91,7 @@
 														  style:UIBarButtonItemStyleBordered
 														 target:self
 														 action:@selector(pressComment:)];
+	commentButton.enabled = NO;
 	
 	self.correctButton = [[UIBarButtonItem alloc] initWithTitle:@"Mark Correct"
 														  style:UIBarButtonItemStyleBordered
@@ -109,7 +105,10 @@
 														 action:@selector(pressIncorrect:)];
 	self.incorrectButton.enabled = NO;
 	
-	self.gradeButton.enabled = NO;
+	
+	correctMark = [[UIImageView alloc] initWithFrame:CGRectMake(700, 40, 40, 40)];
+	self.correctMark.opaque = YES; 
+	[self.view addSubview:self.correctMark];
 	
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,currSentence]];
@@ -118,9 +117,13 @@
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
 	for(Layout *l in results){
 		if ([l.grade boolValue]) {
+			[self.correctMark setImage:[UIImage imageNamed:@"correct.png"]]; 
 			self.incorrectButton.enabled=YES;
+			self.commentButton.enabled = YES;
 		}else {
+			[self.correctMark setImage:[UIImage imageNamed:@"incorrect.png"]]; 
 			self.correctButton.enabled=YES;
+			self.commentButton.enabled = YES;
 		}
 	}
 	
@@ -129,7 +132,7 @@
 	}else{
 		saveButton.enabled = YES;
 	}
-	
+
 	//Use this to put space in between your toolbox buttons
 	UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
 																			  target:nil
@@ -143,7 +146,7 @@
 	if (self.TeacherMode) {
 		items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, flexItem, correctButton,incorrectButton, commentButton, nil];
 	}else {
-		items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, fixedItem, saveButton, flexItem, commentButton, nil];
+		items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, fixedItem, saveButton, flexItem, commentButton,nil];
 	}
 
 	//release buttons
@@ -155,13 +158,14 @@
 	
 	//add array of buttons to toolbar
 	[toolbar setItems:items animated:NO];
-	
 	[self.view addSubview:toolbar];
 	
+ 
+	[self.correctMark release]; 
+
+	
 	[self fetchWordsAndSetLayout];
-	
 	UIGestureRecognizer *recognizer;
-	
 	recognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotationFrom:)];
 	[self.view addGestureRecognizer:recognizer];
 	[recognizer release];
@@ -244,12 +248,14 @@
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
 	for(Layout *l in results){
 		NSLog(@"Marking correct");
+		[self.correctMark setImage:[UIImage imageNamed:@"correct.png"]]; 
 		self.correctButton.enabled = NO;
 		self.incorrectButton.enabled = YES;
 		[l setGrade:[NSNumber numberWithBool: YES]];
 	}
 	
-	//commit changes and handle error if it breaks		error = nil;
+	//commit changes and handle error if it breaks		
+	error = nil;
 	if (![managedObjectContext save:&error]) {
 		NSLog(@"Error saving...");
 		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
@@ -264,13 +270,15 @@
 	NSError * error;
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
 	for(Layout *l in results){
+		[self.correctMark setImage:[UIImage imageNamed:@"incorrect.png"]]; 
 		NSLog(@"Marking incorrect");
 		self.correctButton.enabled = YES;
 		self.incorrectButton.enabled = NO;
 		[l setGrade:[NSNumber numberWithBool: NO]];
 	}
 	
-	//commit changes and handle error if it breaks		error = nil;
+	//commit changes and handle error if it breaks		
+	error = nil;
 	if (![managedObjectContext save:&error]) {
 		NSLog(@"Error saving...");
 		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
@@ -281,7 +289,11 @@
 -(void) pressComment:(id)sender{
 	CommentViewController *targetViewController = [[CommentViewController alloc] init];
 	targetViewController.title = @"Comments";
-	// Navigation logic may go here. Create and push another view controller.
+	targetViewController.managedObjectContext = self.managedObjectContext;
+	targetViewController.TeacherMode = self.TeacherMode;
+	targetViewController.currLesson = self.currLesson;
+	targetViewController.currSentence = self.currSentence;
+	targetViewController.currStudent = self.currStudent;
 	[[self navigationController] pushViewController:targetViewController animated:YES];
 }
 
@@ -293,22 +305,24 @@
 	[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
 	NSError * error;
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
-	NSNumber * grade = [NSNumber numberWithBool:NO];
-	for(Layout *l in results){ 
-		grade = [NSNumber numberWithBool:[l.grade boolValue]];
+	BOOL oldgrade = NO;
+	NSString * oldcomments=@"";
+	for(Layout *l in results){
+		oldcomments = [NSString stringWithString: l.comments];
+		oldgrade = [l.grade boolValue];
+		NSLog(@"%@ wat", oldcomments);
 		[managedObjectContext deleteObject:l];
 	}
-	
-	error = nil;
 	
 	if (![managedObjectContext save:&error]) {
 		NSLog(@"Deletion failed (deletion): %@, %@", error, [error userInfo]);
 	}
 	
-	
 	Layout *layout = (Layout *)[NSEntityDescription insertNewObjectForEntityForName:@"Layout" inManagedObjectContext:managedObjectContext];
 	layout.creator = currStudent;
 	layout.sentence = currSentence;
+	layout.grade = [NSNumber numberWithBool:oldgrade];
+	layout.comments = [NSString stringWithString:oldcomments];
 	// Save words coordinates, and rotation
 	for(int i = 0; i < [words count]; i++){
 		UILabel *w = [words objectAtIndex:i];
@@ -332,11 +346,6 @@
 		
 		// Do something cool
 		[layout addWordsDataObject:wd];
-		NSLog(@"Frame origin x:%@", grade);
-		//change grade to what it was before
-		layout.grade = grade;
-		
-		
 	}
 	
 	// Save lines coordinates
@@ -363,7 +372,6 @@
 	}
 	
 	//commit changes and handle error if it breaks
-	error = nil;
 	if (![managedObjectContext save:&error]) {
 		
 		NSLog(@"Error saving...");
