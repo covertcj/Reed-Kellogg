@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A74AA5D133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel in Resources */ = {isa = PBXBuildFile; fileRef = 0A74AA5C133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel */; };
 		0AA5E65513317FC200874C80 /* PasswordEntryModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */; };
 		0AA5E6631331806100874C80 /* PasswordEntryModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */; };
 		0AA9176C1333CB32008B4AC5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA9176B1333CB32008B4AC5 /* Security.framework */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		0A6F670713324D7000907A24 /* PasswordEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryDelegate.h; path = ../PasswordEntryDelegate.h; sourceTree = "<group>"; };
+		0A74AA5C133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = ReedKellogg_Diagram.xcclassmodel; sourceTree = "<group>"; };
 		0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PasswordEntryModalViewController.xib; path = Classes/PasswordEntryModalViewController.xib; sourceTree = "<group>"; };
 		0AA5E6611331806100874C80 /* PasswordEntryModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordEntryModalViewController.h; sourceTree = "<group>"; };
 		0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordEntryModalViewController.m; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				B73B394B12E7ECDF00219463 /* CoreData.framework */,
 				0AA9176B1333CB32008B4AC5 /* Security.framework */,
+				0A74AA5C133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				4F76ECA1133BDE40007E4C5A /* CommentViewController.xib in Resources */,
 				4F649B01133CDE1900DED74E /* correct.png in Resources */,
 				4F649B02133CDE1900DED74E /* incorrect.png in Resources */,
+				0A74AA5D133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
