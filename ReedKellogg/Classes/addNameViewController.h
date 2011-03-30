@@ -10,8 +10,8 @@
 
 @protocol addNameViewControllerDelegate <NSObject>
 
--(void)didSubmit:(NSString *)string;
--(void)pushTeacher;
+-(void)popupButtonPressed:(NSString *)string;
+-(void)popupButton2Pressed;
 
 @end
 

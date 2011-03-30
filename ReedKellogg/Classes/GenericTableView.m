@@ -39,7 +39,7 @@
 }
 
 // The two addNameViewControllerDelegate methods
--(void)didSubmit:(NSString *)string{
+-(void)popupButtonPressed:(NSString *)string{
 	[self addObject:string];
 	
 	[self.namePopover dismissPopoverAnimated:YES];
@@ -48,7 +48,7 @@
 // This either enables begins Teacher mode (pushes a 
 // ViewController with TeacherMode = YES, or 
 // sets the editing mode to YES
--(void)pushTeacher{
+-(void)popupButton2Pressed{
 	// Perhaps will be a part of a protocol? IE, every subclass must implement this
 }
 
@@ -106,7 +106,7 @@
 }
 
 -(void)setEdit:(id) sender{
-	[self pushTeacher];
+	[self popupButton2Pressed];
 }
 
 // The popover on the righthand side

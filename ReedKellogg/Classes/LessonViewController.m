@@ -34,8 +34,8 @@
 }
 
 // This method responds to the edit lessons button...
--(void)pushTeacher{
-	NSLog(@"pushTeacher method");
+-(void)popupButton2Pressed{
+	NSLog(@"popupButton2Pressed method");
 	
 	if (self.editing) {
 		[self setEditing:NO animated:YES];

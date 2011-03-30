@@ -38,13 +38,13 @@
 		return;
 	}
 	
-	[self.delegate didSubmit:name];
+	[self.delegate popupButtonPressed:name];
 	[self.nameField setText:@""];
 }
 
 -(IBAction)teacherPressed:(id)sender{
 	
-	[self.delegate pushTeacher];
+	[self.delegate popupButton2Pressed];
 }
 
 

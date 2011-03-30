@@ -84,7 +84,7 @@
 	self.navigationItem.rightBarButtonItem = self.addButton;
 }
 
--(void)pushTeacher{
+-(void)popupButton2Pressed{
 	[self setEditing:YES animated:YES];
 	[super.namePopover dismissPopoverAnimated:YES];
 	self.navigationItem.rightBarButtonItem = self.doneButton;

@@ -39,8 +39,8 @@
 
 
 // To satisfy the addNameViewControllerDelegate
--(void)didSubmit:(NSString *)string;
--(void)pushTeacher;
+-(void)popupButtonPressed:(NSString *)string;
+-(void)popupButton2Pressed;
 
 -(void) fetchDataWithEntityName:(NSString *)entityName;
 - (void)addObject:(NSString *) name;
