@@ -513,6 +513,7 @@
 
 -(void) _handleTouch:(UITouch *) aTouch
 {
+	int gridSize = 20;
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:200];
 
@@ -521,8 +522,8 @@
 	if (self.current != nil) {
 		// Use the bias to move the center to.
 		CGPoint locWithBias;
-		locWithBias.x = touchLocation.x - biasX;
-		locWithBias.y = touchLocation.y - biasY;
+		locWithBias.x = roundf(touchLocation.x/gridSize)*gridSize - biasX;
+		locWithBias.y = roundf(touchLocation.y/gridSize)*gridSize - biasY;
 		self.current.center = locWithBias;
 	}
 	
@@ -569,12 +570,9 @@
 	self.biasX = touchLocation.x - self.current.center.x;
 	self.biasY = touchLocation.y - self.current.center.y;
 	
-	
-	
 	[self _handleTouch:[touches anyObject]];
-	
-	
 }
+
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	if (self.line1.x != -1) {

@@ -204,6 +204,13 @@
 			4FA6BB3E13441F3200AFBFBC /* PBXTextBookmark */ = 4FA6BB3E13441F3200AFBFBC /* PBXTextBookmark */;
 			4FA6BB4113441F5E00AFBFBC /* PBXTextBookmark */ = 4FA6BB4113441F5E00AFBFBC /* PBXTextBookmark */;
 			4FA6BB4213441F6600AFBFBC /* PBXTextBookmark */ = 4FA6BB4213441F6600AFBFBC /* PBXTextBookmark */;
+			4FA6BB4513441FB800AFBFBC /* PBXTextBookmark */ = 4FA6BB4513441FB800AFBFBC /* PBXTextBookmark */;
+			4FA6BB481344220300AFBFBC /* PBXTextBookmark */ = 4FA6BB481344220300AFBFBC /* PBXTextBookmark */;
+			4FA6BB4B1344241E00AFBFBC /* PBXTextBookmark */ = 4FA6BB4B1344241E00AFBFBC /* PBXTextBookmark */;
+			4FA6BB4C1344241E00AFBFBC /* PBXTextBookmark */ = 4FA6BB4C1344241E00AFBFBC /* PBXTextBookmark */;
+			4FA6BB4D1344241E00AFBFBC /* PBXTextBookmark */ = 4FA6BB4D1344241E00AFBFBC /* PBXTextBookmark */;
+			4FA6BB501344266200AFBFBC /* PBXTextBookmark */ = 4FA6BB501344266200AFBFBC /* PBXTextBookmark */;
+			4FA6BB511344269200AFBFBC /* PBXTextBookmark */ = 4FA6BB511344269200AFBFBC /* PBXTextBookmark */;
 			4FB235571343A41C00479237 = 4FB235571343A41C00479237 /* PBXTextBookmark */;
 			4FB235581343A41C00479237 = 4FB235581343A41C00479237 /* PBXTextBookmark */;
 			4FB2355A1343A41C00479237 = 4FB2355A1343A41C00479237 /* PBXTextBookmark */;
@@ -1084,6 +1091,76 @@
 		vrLen = 4516;
 		vrLoc = 1310;
 	};
+	4FA6BB4513441FB800AFBFBC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B3B6E12F1267700219463 /* CustomView.m */;
+		name = "CustomView.m: 191";
+		rLen = 0;
+		rLoc = 5056;
+		rType = 0;
+		vrLen = 4516;
+		vrLoc = 1310;
+	};
+	4FA6BB481344220300AFBFBC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B3B6E12F1267700219463 /* CustomView.m */;
+		name = "CustomView.m: 191";
+		rLen = 0;
+		rLoc = 5056;
+		rType = 0;
+		vrLen = 4360;
+		vrLoc = 1224;
+	};
+	4FA6BB4B1344241E00AFBFBC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B3B6E12F1267700219463 /* CustomView.m */;
+		name = "CustomView.m: 25";
+		rLen = 1;
+		rLoc = 459;
+		rType = 0;
+		vrLen = 2291;
+		vrLoc = 6135;
+	};
+	4FA6BB4C1344241E00AFBFBC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
+		name = "TouchViewController.m: 387";
+		rLen = 0;
+		rLoc = 13005;
+		rType = 0;
+		vrLen = 1228;
+		vrLoc = 16595;
+	};
+	4FA6BB4D1344241E00AFBFBC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
+		name = "TouchViewController.m: 34";
+		rLen = 0;
+		rLoc = 662;
+		rType = 0;
+		vrLen = 1012;
+		vrLoc = 15902;
+	};
+	4FA6BB501344266200AFBFBC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
+		name = "TouchViewController.m: 527";
+		rLen = 0;
+		rLoc = 16661;
+		rType = 0;
+		vrLen = 2323;
+		vrLoc = 16030;
+	};
+	4FA6BB511344269200AFBFBC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
+		name = "TouchViewController.m: 522";
+		rLen = 0;
+		rLoc = 16422;
+		rType = 0;
+		vrLen = 2327;
+		vrLoc = 16030;
+	};
 	4FB235571343A41C00479237 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */;
@@ -1269,10 +1346,10 @@
 	};
 	B739CBF812DEA25700D3F493 /* TouchViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1303, 4466}\";\n            s = 0;\n        },\n                {\n            r = \"{5804, 758}\";\n            s = 0;\n        },\n                {\n            r = \"{6674, 656}\";\n            s = 0;\n        },\n                {\n            r = \"{7363, 51}\";\n            s = 0;\n        },\n                {\n            r = \"{7446, 50}\";\n            s = 0;\n        },\n                {\n            r = \"{7532, 891}\";\n            s = 0;\n        },\n                {\n            r = \"{8460, 898}\";\n            s = 0;\n        },\n                {\n            r = \"{9393, 502}\";\n            s = 0;\n        },\n                {\n            r = \"{9928, 3032}\";\n            s = 0;\n        },\n                {\n            r = \"{13006, 2291}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 19831}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 3289}}";
-			sepNavSelRange = "{1710, 0}";
-			sepNavVisRange = "{3010, 1228}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1303, 4466}\";\n            s = 0;\n        },\n                {\n            r = \"{5804, 758}\";\n            s = 0;\n        },\n                {\n            r = \"{6674, 656}\";\n            s = 0;\n        },\n                {\n            r = \"{7363, 51}\";\n            s = 0;\n        },\n                {\n            r = \"{7446, 50}\";\n            s = 0;\n        },\n                {\n            r = \"{7532, 891}\";\n            s = 0;\n        },\n                {\n            r = \"{8460, 898}\";\n            s = 0;\n        },\n                {\n            r = \"{9393, 502}\";\n            s = 0;\n        },\n                {\n            r = \"{9928, 3032}\";\n            s = 0;\n        },\n                {\n            r = \"{13006, 2291}\";\n            s = 0;\n        },\n                {\n            r = \"{16764, 1125}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 19896}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 2613}}";
+			sepNavSelRange = "{2837, 0}";
+			sepNavVisRange = "{2445, 1203}";
 			sepNavWindowFrame = "{{15, 315}, {750, 558}}";
 		};
 	};
@@ -1461,8 +1538,8 @@
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{2073, 2982}\";\n            s = 0;\n        },\n                {\n            r = \"{6667, 78}\";\n            s = 0;\n        },\n                {\n            r = \"{6925, 1323}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 8426}\";\n    s = 0;\n}";
 			sepNavIntBoundsRect = "{{0, 0}, {1070, 2249}}";
-			sepNavSelRange = "{2074, 0}";
-			sepNavVisRange = "{1310, 1535}";
+			sepNavSelRange = "{459, 1}";
+			sepNavVisRange = "{3154, 892}";
 		};
 	};
 	B73B3D0112F342BD00219463 /* UpdateCustomView.h */ = {
