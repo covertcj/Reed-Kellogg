@@ -20,12 +20,11 @@
 
     }
 	self.lines = [NSMutableArray arrayWithCapacity:20];
-		
+	
     return self;
 }
 
 //Maintain array of lines
-
 
 - (void)drawRect:(CGRect)rect {
 	CGContextRef context = UIGraphicsGetCurrentContext();
@@ -58,19 +57,20 @@
 		//NSLog(@"diff: %.0f\n", fabs(startPoint.x - endPoint.x));
 		
 		
-		draw1PxStroke(context, startPoint, endPoint);
-		
+		draw1PxStroke(context, startPoint, endPoint);		
 	}
 	
 	//NSLog(@"Drawing now");
 	
 }
+
 void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint) {
 	
     CGContextSaveGState(context);
     CGContextSetLineCap(context, kCGLineCapSquare);
     CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
-    CGContextSetLineWidth(context, 3.0);
+    //CGContextSetLineWidth(context, 3.0);
+    CGContextSetLineWidth(context, 5.0);
     CGContextMoveToPoint(context, startPoint.x + 0.5, startPoint.y + 0.5);
     CGContextAddLineToPoint(context, endPoint.x + 0.5, endPoint.y + 0.5);
     CGContextStrokePath(context);
@@ -79,7 +79,13 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint) {
 }
 
 - (void)addLine:(CGPoint)begin end:(CGPoint)end{
+	gridSize = 20;
+	begin.x = roundf(begin.x/20)*20;
+	begin.y = roundf(begin.y/20)*20;
+	end.x = roundf(end.x/20)*20;
+	end.y = roundf(end.y/20)*20;
 	
+	/* Old snapping code
 	// If the distance is less than 15, then don't even
 	// draw the line. Typically, a double-tap will happen within
 	// a distance of 15, so this excludes double-taps.
@@ -182,8 +188,7 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint) {
 		
 		// If they are both touching, then...move both until they touch, and are straight
 	}
-	
-	
+	*/
 	
 	
 	NSLog(@"added line. dist: %d", [self distanceP1:begin P2:end]);

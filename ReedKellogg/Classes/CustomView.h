@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "UpdateCustomView.h"
+#import "math.h"
 
 
 @interface CustomView : UIView <UpdateCustomView> {
 
 	NSMutableArray *lines;
 	NSArray * tempLine;
+	int gridSize;
 	
 }
 
