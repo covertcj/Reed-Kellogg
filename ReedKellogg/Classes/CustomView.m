@@ -13,6 +13,7 @@
 
 @synthesize lines;
 @synthesize tempLine;
+@synthesize gridSize;
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
@@ -20,7 +21,6 @@
 
     }
 	self.lines = [NSMutableArray arrayWithCapacity:20];
-	
     return self;
 }
 
@@ -28,62 +28,63 @@
 
 - (void)drawRect:(CGRect)rect {
 	CGContextRef context = UIGraphicsGetCurrentContext();
+	CGFloat x = 0;
+	//draw grid
+	while (x<768) {
+		CGPoint start;
+		start.x = x;
+		start.y = 0;
+		CGPoint end;
+		end.x = x;
+		end.y = 1024;
+		draw1PxStroke(context, start, end, 1, [UIColor grayColor].CGColor);
+		x=x+self.gridSize;
+	}
+	
+	CGFloat y = 0;
+	while (y<1024) {
+		CGPoint start;
+		start.x = 0;
+		start.y = y;
+		CGPoint end;
+		end.x = 768;
+		end.y = y;
+		draw1PxStroke(context, start, end, 3, [UIColor grayColor].CGColor);
+		y=y+self.gridSize;
+	}
 	
 	if (tempLine != nil) {
 		// Draw temp line
 		NSValue *start = [self.tempLine objectAtIndex:0];
 		NSValue *end = [self.tempLine objectAtIndex:1];
-		
 		CGPoint tempStartPoint;
 		CGPoint tempEndPoint;
 		[start getValue:&tempStartPoint];
 		[end getValue:&tempEndPoint];
-		
-		
-		draw1PxStroke(context, tempStartPoint, tempEndPoint);
-	}
-
+		draw1PxStroke(context, tempStartPoint, tempEndPoint, 5, [UIColor blackColor].CGColor);
+	}	
+	
 	// Draw out of array
 	for(NSArray *line in self.lines){
-
 		NSValue *start = [line objectAtIndex:0];
 		NSValue *end = [line objectAtIndex:1];
-		
 		CGPoint startPoint;
 		CGPoint endPoint;
 		[start getValue:&startPoint];
 		[end getValue:&endPoint];
-		
-		//NSLog(@"diff: %.0f\n", fabs(startPoint.x - endPoint.x));'
-		/*
-		CGRect box;
-		box.origin = startPoint;
-		box.size.width = startPoint.x - endPoint.x;
-		box.size.height = startPoint.y - endPoint.y;
-		//drawBox(context, box);*/
-		draw1PxStroke(context, startPoint, endPoint);		
-	}
+		draw1PxStroke(context, startPoint, endPoint, 5, [UIColor blackColor].CGColor);		
+	}	
 	
 	//NSLog(@"Drawing now");
 }
 
-void drawBox(CGContextRef context, CGRect rect) {
-	CGContextSaveGState(context);
-    CGContextSetLineCap(context, kCGLineCapSquare);
-    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
-    CGContextSetLineWidth(context, 5.0);
-	CGContextAddRect(context, rect);
-    CGContextStrokePath(context);
-    CGContextRestoreGState(context);  
-}
-
-void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint) {
+void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint, CGFloat width, CGColorRef color) {
 	
     CGContextSaveGState(context);
     CGContextSetLineCap(context, kCGLineCapSquare);
-    CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
-    //CGContextSetLineWidth(context, 3.0);
-    CGContextSetLineWidth(context, 5.0);
+    //CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+	CGContextSetStrokeColorWithColor(context, color);
+    CGContextSetLineWidth(context, width);
     CGContextMoveToPoint(context, startPoint.x + 0.5, startPoint.y + 0.5);
     CGContextAddLineToPoint(context, endPoint.x + 0.5, endPoint.y + 0.5);
     CGContextStrokePath(context);
@@ -92,11 +93,10 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint) {
 }
 
 - (void)addLine:(CGPoint)begin end:(CGPoint)end{
-	gridSize = 20;
-	begin.x = roundf(begin.x/gridSize)*gridSize;
-	begin.y = roundf(begin.y/gridSize)*gridSize;
-	end.x = roundf(end.x/gridSize)*gridSize;
-	end.y = roundf(end.y/gridSize)*gridSize;
+	begin.x = roundf(begin.x/self.gridSize)*self.gridSize;
+	begin.y = roundf(begin.y/self.gridSize)*self.gridSize;
+	end.x = roundf(end.x/self.gridSize)*self.gridSize;
+	end.y = roundf(end.y/self.gridSize)*self.gridSize;
 	
 	/* Old snapping code
 	// If the distance is less than 15, then don't even

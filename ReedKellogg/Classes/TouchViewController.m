@@ -12,16 +12,14 @@
 
 @synthesize words;
 @synthesize current;
-@synthesize currentX;
-@synthesize currentY;
 @synthesize textField;
 @synthesize submit;
 @synthesize linesView;
 @synthesize startingTransform;
 @synthesize line1;
 @synthesize line2;
-@synthesize initialFrame;
 @synthesize managedObjectContext;
+@synthesize gridSize;
 
 @synthesize TeacherMode;
 
@@ -53,12 +51,13 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+	self.gridSize = 40;
 	NSLog(@"Student: %@, Lesson: %@, Sentence: %@", self.currStudent.name, self.currLesson.name, self.currSentence.text);
 	
 	CustomView *myView = [[[CustomView alloc] init] autorelease];
 	self.view = myView;
 	self.delegate = myView;
+	self.delegate.gridSize = self.gridSize;
 
 	// Create a bottom bar with buttons...
 	UIToolbar *toolbar = [[UIToolbar alloc] init];
@@ -467,12 +466,10 @@
 	
 }
 
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Overriden to allow any orientation.
     return YES;
 }
-
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -480,7 +477,6 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
-
 
 - (void)viewDidUnload {
     [super viewDidUnload];
@@ -492,7 +488,6 @@
 	self.submit = nil;
 	self.linesView = nil;
 }
-
 
 - (void)dealloc {
     [super dealloc];
@@ -507,15 +502,10 @@
 #pragma mark Touches
 
 - (void) _handleTouch:(UITouch *) aTouch{
-	//float gridSize = 20;
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:200];
 	CGPoint touchLocation = [aTouch locationInView:self.view];
 	if (self.current != nil) {
-		// Use the bias to move the center to.
-		//snapping code
-		//touchLocation.x = roundf(touchLocation.x/gridSize)*gridSize;
-		//touchLocation.y = roundf(touchLocation.y/gridSize)*gridSize;
 		current.center = touchLocation;
 	}
 	[UIView commitAnimations];
@@ -542,7 +532,6 @@
 		//[self.delegate drawBox: textFrame];
 		if(CGRectContainsPoint(textFrame, touchLocation)){
 			self.current = w;
-			self.initialFrame = w.frame;
 			break;
 		}
 	}
@@ -570,14 +559,13 @@
 	[self _handleTouch:[touches anyObject]];
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-	
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{	
 	[UIView beginAnimations:nil context:nil];
 	if (self.line1.x != -1) {
 		CGPoint dummy = CGPointMake(-1, -1);
 		[self.delegate setTempLine:dummy end:dummy];
 		
-		// Assume there is only one touch at a time
+		// Assume there is only one touch at a time 
 		UITouch * aTouch = [touches anyObject];
 		CGPoint touchLocation = [aTouch locationInView:self.view];
 		
@@ -585,17 +573,13 @@
 		//add touch to final point and call addline
 		[self.delegate addLine:self.line1 end:self.line2];
 	}else{
-		CGFloat gridSize = 20;
 		CGPoint snapcenter = current.center;
-		snapcenter.x = roundf(current.center.x/gridSize)*gridSize;
-		snapcenter.y = roundf(current.center.y/gridSize)*gridSize;
+		snapcenter.x = roundf(current.center.x/self.gridSize)*self.gridSize;
+		snapcenter.y = roundf(current.center.y/self.gridSize)*self.gridSize;
 		current.center = snapcenter;
 		[current setNeedsDisplay];
 	}
 	[UIView commitAnimations];
-
-	
-	
 	self.current = nil;
 	[self _handleTouch:[touches anyObject]];
 	

@@ -28,14 +28,13 @@
 	
 	NSManagedObjectContext *managedObjectContext;
 
-	NSInteger currentX;
-	NSInteger currentY;
 	CustomView * linesView;
 	
 	CGPoint line1;
 	CGPoint line2;
 	
-	CGRect initialFrame;
+	CGFloat gridSize;
+	
 	// State variables
 	Student *currStudent;
 	Lesson *currLesson;
@@ -65,9 +64,7 @@
 @property (nonatomic, retain) UILabel * current;
 @property (nonatomic) CGPoint line1;
 @property (nonatomic) CGPoint line2;
-@property (nonatomic) CGRect initialFrame;
-@property (nonatomic) NSInteger currentX;
-@property (nonatomic) NSInteger currentY;
+@property (nonatomic) CGFloat gridSize;
 @property (nonatomic) CGAffineTransform startingTransform;
 @property (nonatomic, retain) IBOutlet CustomView * linesView;
 @property (nonatomic, retain) IBOutlet UITextField * textField;

@@ -15,15 +15,16 @@
 
 	NSMutableArray *lines;
 	NSArray * tempLine;
-	int gridSize;
+	CGFloat gridSize;
 	
 }
 
 @property (nonatomic, retain) NSMutableArray *lines;
 @property (nonatomic, retain) NSArray *tempLine;
+@property (nonatomic) CGFloat gridSize;
 
 
-void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint);
+void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint, CGFloat width, CGColorRef color);
 
 -(BOOL) touchNearLine:(CGPoint) touch p1:(CGPoint) p1 p2:(CGPoint) p2;
 -(int) distanceP1:(CGPoint) p1 P2: (CGPoint)p2;
