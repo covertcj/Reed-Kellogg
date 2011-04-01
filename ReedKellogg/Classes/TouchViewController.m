@@ -12,14 +12,15 @@
 
 @synthesize words;
 @synthesize current;
-@synthesize biasX;
-@synthesize biasY;
+@synthesize currentX;
+@synthesize currentY;
 @synthesize textField;
 @synthesize submit;
 @synthesize linesView;
 @synthesize startingTransform;
 @synthesize line1;
 @synthesize line2;
+@synthesize initialFrame;
 @synthesize managedObjectContext;
 
 @synthesize TeacherMode;
@@ -48,7 +49,6 @@
     return self;
 }
 */
-
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -171,8 +171,7 @@
 	[recognizer release];
 }
 
--(void) fetchWordsAndSetLayout
-{
+-(void) fetchWordsAndSetLayout{
 	words = [[NSMutableArray alloc] init];
 	
 	
@@ -233,13 +232,13 @@
 	NSLog(@"Prev Pressed");
 	[self goToSentence:-1];
 }
+
 - (void) pressNext:(id)sender{
 	NSLog(@"Next Pressed");
 	[self goToSentence:1];
 }
 
-
--(void) pressCorrect:(id)sender{
+- (void) pressCorrect:(id)sender{
 	NSLog(@"Correct Pressed");
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,currSentence]];
@@ -262,7 +261,7 @@
 	}
 }
 
--(void) pressIncorrect:(id)sender{
+- (void) pressIncorrect:(id)sender{
 	NSLog(@"Incorrect Pressed");
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,currSentence]];
@@ -286,7 +285,7 @@
 	
 }
 
--(void) pressComment:(id)sender{
+- (void) pressComment:(id)sender{
 	CommentViewController *targetViewController = [[CommentViewController alloc] init];
 	targetViewController.title = @"Comments";
 	targetViewController.managedObjectContext = self.managedObjectContext;
@@ -381,10 +380,7 @@
 	
 }
 
-
-
--(void) setWordLayout:(Layout *) layout
-{
+- (void) setWordLayout:(Layout *) layout{
 	for(UILabel *lab in words){
 		[lab removeFromSuperview];
 	}
@@ -465,8 +461,7 @@
 }
 
 // Reset words and lines
--(void)reset:(id) sender
-{
+- (void)reset:(id) sender{
 	//NSLog(@"reset");
 	[self setWordLayout:nil];
 	
@@ -511,27 +506,22 @@
 #pragma mark -
 #pragma mark Touches
 
--(void) _handleTouch:(UITouch *) aTouch
-{
-	int gridSize = 20;
+- (void) _handleTouch:(UITouch *) aTouch{
+	//float gridSize = 20;
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:200];
-
-
 	CGPoint touchLocation = [aTouch locationInView:self.view];
 	if (self.current != nil) {
 		// Use the bias to move the center to.
-		CGPoint locWithBias;
-		locWithBias.x = roundf(touchLocation.x/gridSize)*gridSize - biasX;
-		locWithBias.y = roundf(touchLocation.y/gridSize)*gridSize - biasY;
-		self.current.center = locWithBias;
+		//snapping code
+		//touchLocation.x = roundf(touchLocation.x/gridSize)*gridSize;
+		//touchLocation.y = roundf(touchLocation.y/gridSize)*gridSize;
+		current.center = touchLocation;
 	}
-	
 	[UIView commitAnimations];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
 	self.line1  = CGPointMake(-1, -1);
 	UITouch * aTouch = [touches anyObject];
 	CGPoint touchLocation = [aTouch locationInView:self.view];
@@ -540,9 +530,6 @@
 		[self.delegate removeLine:touchLocation];
 		return;
 	}
-	
-	
-	
 	// This finds if the touch is inside a word. 
 	CGRect textFrame;
 	
@@ -551,8 +538,11 @@
 		
 		// if touchLocation is inside the frame of that word
 		textFrame = [w frame];
+		//[self.delegate addLine:CGPointMake(CGRectGetMinX(textFrame), CGRectGetMinY(textFrame)) end:CGPointMake(CGRectGetMaxX(textFrame), CGRectGetMaxY(textFrame))];
+		//[self.delegate drawBox: textFrame];
 		if(CGRectContainsPoint(textFrame, touchLocation)){
 			self.current = w;
+			self.initialFrame = w.frame;
 			break;
 		}
 	}
@@ -563,18 +553,11 @@
 		
 	}
 	
-
 	self.startingTransform = self.current.transform;
-	
-	// set bias as the difference from the center of the touchLocation, and the center of the frame
-	self.biasX = touchLocation.x - self.current.center.x;
-	self.biasY = touchLocation.y - self.current.center.y;
-	
 	[self _handleTouch:[touches anyObject]];
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
 	if (self.line1.x != -1) {
 		// Assume there is only one touch at a time
 		UITouch * aTouch = [touches anyObject];
@@ -584,14 +567,12 @@
 		//add touch to final point and call addline
 		[self.delegate setTempLine:self.line1 end:self.line2];
 	}
-	
-	
 	[self _handleTouch:[touches anyObject]];
-	
 }
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 	
+	[UIView beginAnimations:nil context:nil];
 	if (self.line1.x != -1) {
 		CGPoint dummy = CGPointMake(-1, -1);
 		[self.delegate setTempLine:dummy end:dummy];
@@ -603,20 +584,27 @@
 		self.line2  = CGPointMake(touchLocation.x, touchLocation.y);
 		//add touch to final point and call addline
 		[self.delegate addLine:self.line1 end:self.line2];
+	}else{
+		CGFloat gridSize = 20;
+		CGPoint snapcenter = current.center;
+		snapcenter.x = roundf(current.center.x/gridSize)*gridSize;
+		snapcenter.y = roundf(current.center.y/gridSize)*gridSize;
+		current.center = snapcenter;
+		[current setNeedsDisplay];
 	}
+	[UIView commitAnimations];
+
+	
 	
 	self.current = nil;
-	self.biasX = 0;
-	self.biasY = 0;
 	[self _handleTouch:[touches anyObject]];
 	
 }
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
 	//touchesEnded
 	NSLog(@"Touches cancelled");
 }
-
 
 - (void)handleRotationFrom:(UIRotationGestureRecognizer *)recognizer {
 
@@ -639,8 +627,5 @@
 	}
 	
 }
-
-
-
 
 @end

@@ -54,14 +54,27 @@
 		[start getValue:&startPoint];
 		[end getValue:&endPoint];
 		
-		//NSLog(@"diff: %.0f\n", fabs(startPoint.x - endPoint.x));
-		
-		
+		//NSLog(@"diff: %.0f\n", fabs(startPoint.x - endPoint.x));'
+		/*
+		CGRect box;
+		box.origin = startPoint;
+		box.size.width = startPoint.x - endPoint.x;
+		box.size.height = startPoint.y - endPoint.y;
+		//drawBox(context, box);*/
 		draw1PxStroke(context, startPoint, endPoint);		
 	}
 	
 	//NSLog(@"Drawing now");
-	
+}
+
+void drawBox(CGContextRef context, CGRect rect) {
+	CGContextSaveGState(context);
+    CGContextSetLineCap(context, kCGLineCapSquare);
+    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
+    CGContextSetLineWidth(context, 5.0);
+	CGContextAddRect(context, rect);
+    CGContextStrokePath(context);
+    CGContextRestoreGState(context);  
 }
 
 void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint) {
@@ -80,10 +93,10 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint) {
 
 - (void)addLine:(CGPoint)begin end:(CGPoint)end{
 	gridSize = 20;
-	begin.x = roundf(begin.x/20)*20;
-	begin.y = roundf(begin.y/20)*20;
-	end.x = roundf(end.x/20)*20;
-	end.y = roundf(end.y/20)*20;
+	begin.x = roundf(begin.x/gridSize)*gridSize;
+	begin.y = roundf(begin.y/gridSize)*gridSize;
+	end.x = roundf(end.x/gridSize)*gridSize;
+	end.y = roundf(end.y/gridSize)*gridSize;
 	
 	/* Old snapping code
 	// If the distance is less than 15, then don't even
@@ -190,7 +203,6 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint) {
 	}
 	*/
 	
-	
 	NSLog(@"added line. dist: %d", [self distanceP1:begin P2:end]);
 	
 	// This is a little clunky, but a line is represented as an NSArray of
@@ -203,7 +215,6 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint) {
 	
 	[lines addObject:line];
 	//NSLog(@"Addline: p1: (%.0f, %.0f),  p2: (%.0f, %.0f)\nLines size: %d", begin.x, begin.y, end.x, end.y, [lines count]);
-	
 	[self setNeedsDisplay];
 }
 

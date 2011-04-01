@@ -27,14 +27,15 @@
 	CGAffineTransform startingTransform;
 	
 	NSManagedObjectContext *managedObjectContext;
-	
-	NSInteger biasX;
-	NSInteger biasY;
+
+	NSInteger currentX;
+	NSInteger currentY;
 	CustomView * linesView;
 	
 	CGPoint line1;
 	CGPoint line2;
 	
+	CGRect initialFrame;
 	// State variables
 	Student *currStudent;
 	Lesson *currLesson;
@@ -64,8 +65,9 @@
 @property (nonatomic, retain) UILabel * current;
 @property (nonatomic) CGPoint line1;
 @property (nonatomic) CGPoint line2;
-@property (nonatomic) NSInteger biasX;
-@property (nonatomic) NSInteger biasY;
+@property (nonatomic) CGRect initialFrame;
+@property (nonatomic) NSInteger currentX;
+@property (nonatomic) NSInteger currentY;
 @property (nonatomic) CGAffineTransform startingTransform;
 @property (nonatomic, retain) IBOutlet CustomView * linesView;
 @property (nonatomic, retain) IBOutlet UITextField * textField;
