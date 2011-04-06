@@ -43,7 +43,7 @@
 			CGPoint end;
 			end.x = x;
 			end.y = 1024;
-			draw1PxStroke(context, start, end, 1, [UIColor cyanColor].CGColor);
+			draw1PxStroke(context, start, end, .5, [UIColor cyanColor].CGColor);
 			x=x+self.gridSize;
 		}
 	
@@ -56,7 +56,7 @@
 			CGPoint end;
 			end.x = 768;
 			end.y = y;
-			draw1PxStroke(context, start, end, 1, [UIColor cyanColor].CGColor);
+			draw1PxStroke(context, start, end, .5, [UIColor cyanColor].CGColor);
 			y=y+self.gridSize;
 		}
 	}

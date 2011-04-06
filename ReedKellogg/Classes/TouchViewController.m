@@ -597,7 +597,7 @@
 	}else{
 		CGPoint snapcenter = current.center;
 		snapcenter.x = roundf(current.center.x/self.gridSize)*self.gridSize;
-		snapcenter.y = roundf(current.center.y/(self.gridSize))*self.gridSize+self.gridSize/2;
+		snapcenter.y = floor(current.center.y/(self.gridSize))*self.gridSize+self.gridSize/2;
 		current.center = snapcenter;
 		[current setNeedsDisplay];
 	}
