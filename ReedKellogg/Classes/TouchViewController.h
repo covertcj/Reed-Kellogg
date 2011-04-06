@@ -49,6 +49,7 @@
 @property (nonatomic, retain) UIBarButtonItem *commentButton;
 @property (nonatomic, retain) UIBarButtonItem *correctButton;
 @property (nonatomic, retain) UIBarButtonItem *incorrectButton;
+@property (nonatomic, retain) UIBarButtonItem *gridButton;
 @property (nonatomic, retain) UIImageView *correctMark;
 
 
@@ -73,5 +74,6 @@
 @property (nonatomic, assign) id<UpdateCustomView> delegate;
 
 -(void) setWordLayout:Layout;
+
 
 @end

@@ -14,8 +14,10 @@
 @synthesize lines;
 @synthesize tempLine;
 @synthesize gridSize;
+@synthesize showGrid;
 
 - (id)initWithFrame:(CGRect)frame {
+	showGrid = YES;
     if ((self = [super initWithFrame:frame])) {
         self.backgroundColor = [UIColor clearColor];
 
@@ -28,31 +30,36 @@
 
 - (void)drawRect:(CGRect)rect {
 	CGContextRef context = UIGraphicsGetCurrentContext();
-	CGFloat x = 0;
-	//draw grid
-	while (x<768) {
-		CGPoint start;
-		start.x = x;
-		start.y = 0;
-		CGPoint end;
-		end.x = x;
-		end.y = 1024;
-		draw1PxStroke(context, start, end, 1, [UIColor grayColor].CGColor);
-		x=x+self.gridSize;
-	}
+
+	if(showGrid){
+		//draw grid
+		
+		//vertical
+		CGFloat x = 0;
+		while (x<768) {
+			CGPoint start;
+			start.x = x;
+			start.y = 0;
+			CGPoint end;
+			end.x = x;
+			end.y = 1024;
+			draw1PxStroke(context, start, end, 1, [UIColor cyanColor].CGColor);
+			x=x+self.gridSize;
+		}
 	
-	CGFloat y = 0;
-	while (y<1024) {
-		CGPoint start;
-		start.x = 0;
-		start.y = y;
-		CGPoint end;
-		end.x = 768;
-		end.y = y;
-		draw1PxStroke(context, start, end, 3, [UIColor grayColor].CGColor);
-		y=y+self.gridSize;
+		//horizontal 
+		CGFloat y = 0;
+		while (y<1024) {
+			CGPoint start;
+			start.x = 0;
+			start.y = y;
+			CGPoint end;
+			end.x = 768;
+			end.y = y;
+			draw1PxStroke(context, start, end, 1, [UIColor cyanColor].CGColor);
+			y=y+self.gridSize;
+		}
 	}
-	
 	if (tempLine != nil) {
 		// Draw temp line
 		NSValue *start = [self.tempLine objectAtIndex:0];
@@ -262,6 +269,10 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint, C
 	return lines;
 }
 
+- (BOOL) showGrid
+{
+	return showGrid;
+}
 
 -(void) removeAll{
 	//NSLog(@"Remove all");

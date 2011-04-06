@@ -16,17 +16,19 @@
 	NSMutableArray *lines;
 	NSArray * tempLine;
 	CGFloat gridSize;
-	
+	BOOL showGrid;
 }
 
 @property (nonatomic, retain) NSMutableArray *lines;
 @property (nonatomic, retain) NSArray *tempLine;
 @property (nonatomic) CGFloat gridSize;
+@property (nonatomic) BOOL showGrid;
 
 
 void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint, CGFloat width, CGColorRef color);
 
 -(BOOL) touchNearLine:(CGPoint) touch p1:(CGPoint) p1 p2:(CGPoint) p2;
 -(int) distanceP1:(CGPoint) p1 P2: (CGPoint)p2;
+-(BOOL) showGrid;
 void drawBox(CGContextRef context,CGRect rect);
 @end

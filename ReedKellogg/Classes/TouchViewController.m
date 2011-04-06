@@ -36,6 +36,7 @@
 @synthesize incorrectButton;
 @synthesize commentButton;
 @synthesize correctMark;
+@synthesize gridButton;
 
 
 /*
@@ -104,6 +105,15 @@
 														 action:@selector(pressIncorrect:)];
 	self.incorrectButton.enabled = NO;
 	
+	self.incorrectButton = [[UIBarButtonItem alloc] initWithTitle:@"Mark Incorrect"
+															style:UIBarButtonItemStyleBordered
+														   target:self
+														   action:@selector(pressIncorrect:)];
+	
+	self.gridButton = [[UIBarButtonItem alloc] initWithTitle:@"Hide Grid"
+															style:UIBarButtonItemStyleBordered
+														   target:self
+														   action:@selector(pressGrid:)];
 	
 	correctMark = [[UIImageView alloc] initWithFrame:CGRectMake(700, 40, 40, 40)];
 	self.correctMark.opaque = YES; 
@@ -140,12 +150,13 @@
 	UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
 																			  target:nil
 																			  action:nil];
+	
 	NSArray *items;
 	fixedItem.width = 40;	
 	if (self.TeacherMode) {
-		items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, flexItem, correctButton,incorrectButton, commentButton, nil];
+		items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, fixedItem, gridButton, flexItem, correctButton,incorrectButton, commentButton, nil];
 	}else {
-		items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, fixedItem, saveButton, flexItem, commentButton,nil];
+		items = [NSArray arrayWithObjects: prevButton, fixedItem, nextButton, fixedItem, saveButton, fixedItem, gridButton, flexItem, commentButton,nil];
 	}
 
 	//release buttons
@@ -156,7 +167,7 @@
 	[fixedItem release];
 	
 	//add array of buttons to toolbar
-	[toolbar setItems:items animated:NO];
+	[toolbar setItems:items animated:NO];	
 	[self.view addSubview:toolbar];
 	
  
@@ -379,6 +390,17 @@
 	
 }
 
+- (void) pressGrid:(id)sender{
+	if ([self.delegate showGrid]) {
+		self.delegate.showGrid = NO;
+		[self.delegate setNeedsDisplay];
+		self.gridButton.title = @"Show Grid";
+	}else {
+		self.delegate.showGrid = YES;
+		[self.delegate setNeedsDisplay];
+		self.gridButton.title = @"Hide Grid";
+	}}
+
 - (void) setWordLayout:(Layout *) layout{
 	for(UILabel *lab in words){
 		[lab removeFromSuperview];
@@ -575,7 +597,7 @@
 	}else{
 		CGPoint snapcenter = current.center;
 		snapcenter.x = roundf(current.center.x/self.gridSize)*self.gridSize;
-		snapcenter.y = roundf(current.center.y/self.gridSize)*self.gridSize;
+		snapcenter.y = roundf(current.center.y/(self.gridSize))*self.gridSize+self.gridSize/2;
 		current.center = snapcenter;
 		[current setNeedsDisplay];
 	}
