@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A49AF6113566FED0034F0E6 /* Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A49AF6013566FED0034F0E6 /* Frame.m */; };
 		0A74AA5D133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel in Resources */ = {isa = PBXBuildFile; fileRef = 0A74AA5C133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel */; };
 		0AA5E65513317FC200874C80 /* PasswordEntryModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */; };
 		0AA5E6631331806100874C80 /* PasswordEntryModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */; };
@@ -46,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A49AF5F13566FED0034F0E6 /* Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Frame.h; sourceTree = "<group>"; };
+		0A49AF6013566FED0034F0E6 /* Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Frame.m; sourceTree = "<group>"; };
 		0A6F670713324D7000907A24 /* PasswordEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryDelegate.h; path = ../PasswordEntryDelegate.h; sourceTree = "<group>"; };
 		0A74AA5C133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = ReedKellogg_Diagram.xcclassmodel; sourceTree = "<group>"; };
 		0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PasswordEntryModalViewController.xib; path = Classes/PasswordEntryModalViewController.xib; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				4F76EC9D133BDE40007E4C5A /* CommentViewController.h */,
 				4F76EC9E133BDE40007E4C5A /* CommentViewController.m */,
 				4F76EC9F133BDE40007E4C5A /* CommentViewController.xib */,
+				0A49AF5F13566FED0034F0E6 /* Frame.h */,
+				0A49AF6013566FED0034F0E6 /* Frame.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				0AA5E6631331806100874C80 /* PasswordEntryModalViewController.m in Sources */,
 				0ABD4C0613386CEE00B8C601 /* SFHFKeychainUtils.m in Sources */,
 				4F76ECA0133BDE40007E4C5A /* CommentViewController.m in Sources */,
+				0A49AF6113566FED0034F0E6 /* Frame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
