@@ -319,6 +319,12 @@
 }
 
 - (void) pressSave:(id)sender{
+	// move the screen to the origin, so as to properly place words before saving
+	CGPoint origin = CGPointMake(0, 0);
+	CGPoint tempScreenPosition = CGPointMake([self.delegate getScreenPositionX], [self.delegate getScreenPositionY]);
+	self.delegate.screenPosition = origin;
+	[self updateWordPositioning];
+	
 	NSLog(@"Save Pressed");
 	// Make sure that we override any previous entries that have the same creator and sentence
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
@@ -399,7 +405,9 @@
 		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
 	}
 	
-	
+	// move the screen back to it's proper position
+	self.delegate.screenPosition = tempScreenPosition;
+	[self updateWordPositioning];
 }
 
 - (void) pressGrid:(id)sender{
@@ -608,50 +616,50 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-	if ([touches count] > 1) {
-		CGPoint dummy = CGPointMake(-1, -1);
-		[self.delegate setTempLine:dummy end:dummy];
-		[current setNeedsDisplay];
-		return;
+	if ([touches count] == 1) {
+		[UIView beginAnimations:nil context:nil];
+		if (self.drawingLine) {
+			CGPoint dummy = CGPointMake(-1, -1);
+			[self.delegate setTempLine:dummy end:dummy];
+			
+			// Assume there is only one touch at a time 
+			UITouch * aTouch = [touches anyObject];
+			CGPoint touchLocation = [aTouch locationInView:self.view];
+			
+			self.line2  = CGPointMake(touchLocation.x + [self.delegate getScreenPositionX], touchLocation.y + [self.delegate getScreenPositionY]);
+			//add touch to final point and call addline
+			[self.delegate addLine:self.line1 end:self.line2];
+		} else if (current != nil) {
+			Frame * center = [wordPositions objectAtIndex:[words indexOfObject:current]];
+			CGPoint snapcenter = current.center;
+			
+			double shiftOffsetX = fmodf([self.delegate getScreenPositionX], self.gridSize);
+			double shiftOffsetY = fmodf([self.delegate getScreenPositionY], self.gridSize);
+			snapcenter.x = roundf((current.center.x)/self.gridSize)*self.gridSize - shiftOffsetX;
+			snapcenter.y = floor ((current.center.y)/(self.gridSize))*self.gridSize+self.gridSize/2 - shiftOffsetY;
+			/*if ([self.delegate getScreenPositionX] > 0) {
+				snapcenter.x += self.gridSize;
+			}
+			if ([self.delegate getScreenPositionY] > 0) {
+				snapcenter.y += self.gridSize;
+			}*/
+			
+			current.center = snapcenter;
+			
+			center.x = current.center.x + [self.delegate getScreenPositionX];
+			center.y = current.center.y + [self.delegate getScreenPositionY];
+			
+			[wordPositions replaceObjectAtIndex:[words indexOfObject:current] withObject:center];
+			
+			[current setNeedsDisplay];
+			
+			self.current = nil;
+		}
 	}
-	
-	[UIView beginAnimations:nil context:nil];
-	if (self.drawingLine) {
+	else {
 		CGPoint dummy = CGPointMake(-1, -1);
 		[self.delegate setTempLine:dummy end:dummy];
-		
-		// Assume there is only one touch at a time 
-		UITouch * aTouch = [touches anyObject];
-		CGPoint touchLocation = [aTouch locationInView:self.view];
-		
-		self.line2  = CGPointMake(touchLocation.x + [self.delegate getScreenPositionX], touchLocation.y + [self.delegate getScreenPositionY]);
-		//add touch to final point and call addline
-		[self.delegate addLine:self.line1 end:self.line2];
-	} else if (current != nil) {
-		Frame * center = [wordPositions objectAtIndex:[words indexOfObject:current]];
-		CGPoint snapcenter = current.center;
-		
-		double shiftOffsetX = fmodf([self.delegate getScreenPositionX], self.gridSize);
-		double shiftOffsetY = fmodf([self.delegate getScreenPositionY], self.gridSize);
-		snapcenter.x = roundf((current.center.x)/self.gridSize)*self.gridSize - shiftOffsetX;
-		snapcenter.y = floor ((current.center.y)/(self.gridSize))*self.gridSize+self.gridSize/2 - shiftOffsetY;
-		if ([self.delegate getScreenPositionX] > 0) {
-			snapcenter.x += self.gridSize;
-		}
-		if ([self.delegate getScreenPositionY] > 0) {
-			snapcenter.y += self.gridSize;
-		}
-		
-		current.center = snapcenter;
-		
-		center.x = current.center.x + [self.delegate getScreenPositionX];
-		center.y = current.center.y + [self.delegate getScreenPositionY];
-		
-		[wordPositions replaceObjectAtIndex:[words indexOfObject:current] withObject:center];
-		
 		[current setNeedsDisplay];
-		
-		self.current = nil;
 	}
 	
 	[UIView commitAnimations];

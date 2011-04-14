@@ -271,7 +271,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>19</integer>
+									<integer>16</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -314,7 +314,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CustomView.m</string>
+								<string>TouchViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,11 +322,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CustomView.m</string>
+										<string>TouchViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0A578F141356ABF3009408E5</string>
+										<string>0AA8B55513573CFA00A7685F</string>
 										<key>history</key>
 										<array>
 											<string>0A018656132FCBA2005EC556</string>
@@ -353,12 +353,12 @@
 											<string>0A578EEF1356A6DF009408E5</string>
 											<string>0A578EF01356A6DF009408E5</string>
 											<string>0A578F0D1356ABF3009408E5</string>
-											<string>0A578F0E1356ABF3009408E5</string>
 											<string>0A578F0F1356ABF3009408E5</string>
 											<string>0A578F101356ABF3009408E5</string>
 											<string>0A578F111356ABF3009408E5</string>
-											<string>0A578F121356ABF3009408E5</string>
-											<string>0A578F131356ABF3009408E5</string>
+											<string>0A578F361356B3AA009408E5</string>
+											<string>0AA8B5451357399700A7685F</string>
+											<string>0AA8B5461357399700A7685F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -416,9 +416,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>0A578EF31356A6DF009408E5</string>
+				<string>0AA8B5331357350E00A7685F</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>0A578EF41356A6DF009408E5</string>
+				<string>0AA8B5341357350E00A7685F</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -556,13 +556,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>0A578F151356ABF3009408E5</string>
-		<string>0A578EB91356A319009408E5</string>
-		<string>0A578EF51356A6DF009408E5</string>
-		<string>0A578EF61356A6DF009408E5</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>0A0185D3132FC7B4005EC556</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/csse/Documents/Courses/CSSE375/reedkellogg/trunk/ReedKellogg/ReedKellogg.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -587,7 +583,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TouchViewController.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -604,8 +600,6 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -645,7 +639,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>0A0185D3132FC7B4005EC556</string>
-				<string>0A578EB01356A319009408E5</string>
+				<string>0AA8B5351357350E00A7685F</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -658,7 +652,7 @@
 			<key>WindowToolGUID</key>
 			<string>0A0185D3132FC7B4005EC556</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -767,13 +761,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>0A578EB11356A319009408E5</string>
+				<string>0AA8B5361357350E00A7685F</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>0A578EB21356A319009408E5</string>
-				<string>0A578EB31356A319009408E5</string>
-				<string>0A578EB41356A319009408E5</string>
-				<string>0A578EB51356A319009408E5</string>
-				<string>0A578EB61356A319009408E5</string>
+				<string>0AA8B5371357350E00A7685F</string>
+				<string>0AA8B5381357350E00A7685F</string>
+				<string>0AA8B5391357350E00A7685F</string>
+				<string>0AA8B53A1357350E00A7685F</string>
+				<string>0AA8B53B1357350E00A7685F</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -929,7 +923,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>0A578EB71356A319009408E5</string>
+				<string>0AA8B53C1357350E00A7685F</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -939,7 +933,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
