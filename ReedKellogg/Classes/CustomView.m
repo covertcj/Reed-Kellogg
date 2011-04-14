@@ -31,7 +31,7 @@
 	NSLog(@"%f", p.x);
 	
 	
-	self.multipleTouchEnabled = YES;
+	//self.multipleTouchEnabled = YES;
 	
     return self;
 }
@@ -262,8 +262,8 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint, C
 	}
 	*/
 	
-	NSLog(@"added line. dist: %d, (%d, %d) to (%d, %d) with a screen offset of (%d, %d)", 
-		  [self distanceP1:begin P2:end], begin.x, begin.y, end.x, end.y, self.screenPosition.x, self.screenPosition.y);
+//	NSLog(@"added line. dist: %d, (%d, %d) to (%d, %d) with a screen offset of (%d, %d)", 
+//		  [self distanceP1:begin P2:end], begin.x, begin.y, end.x, end.y, self.screenPosition.x, self.screenPosition.y);
 	
 	// This is a little clunky, but a line is represented as an NSArray of
 	// NSValues which encapsulate CGPoints, which are the endpoints

@@ -279,7 +279,7 @@
 		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
 		name = "TouchViewController.m: 604";
 		rLen = 0;
-		rLoc = 20460;
+		rLoc = 20617;
 		rType = 0;
 		vrLen = 1958;
 		vrLoc = 18432;
@@ -289,7 +289,7 @@
 		fRef = B73B3B6E12F1267700219463 /* CustomView.m */;
 		name = "CustomView.m: 47";
 		rLen = 0;
-		rLoc = 981;
+		rLoc = 983;
 		rType = 0;
 		vrLen = 988;
 		vrLoc = 629;
@@ -299,7 +299,7 @@
 		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
 		name = "TouchViewController.m: 623";
 		rLen = 0;
-		rLoc = 20649;
+		rLoc = 20866;
 		rType = 0;
 		vrLen = 1952;
 		vrLoc = 20017;
@@ -382,7 +382,7 @@
 		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
 		name = "TouchViewController.m: 647";
 		rLen = 0;
-		rLoc = 22214;
+		rLoc = 22431;
 		rType = 0;
 		vrLen = 1967;
 		vrLoc = 20113;
@@ -402,7 +402,7 @@
 		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
 		name = "TouchViewController.m: 687";
 		rLen = 0;
-		rLoc = 23343;
+		rLoc = 23337;
 		rType = 0;
 		vrLen = 2471;
 		vrLoc = 10382;
@@ -432,7 +432,7 @@
 		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
 		name = "TouchViewController.m: 645";
 		rLen = 0;
-		rLoc = 21905;
+		rLoc = 22122;
 		rType = 0;
 		vrLen = 1995;
 		vrLoc = 20858;
@@ -582,7 +582,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 0A0185C4132FC7B0005EC556 /* NavigationTest */;
-		activeSDKPreference = iphonesimulator3.2;
+		activeSDKPreference = iphoneos3.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* ReedKellogg */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* ReedKellogg */,
@@ -759,9 +759,9 @@
 	};
 	B739CBF812DEA25700D3F493 /* TouchViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1202, 9594}}";
-			sepNavSelRange = "{21905, 0}";
-			sepNavVisRange = "{20858, 1995}";
+			sepNavIntBoundsRect = "{{0, 0}, {1202, 9672}}";
+			sepNavSelRange = "{22615, 0}";
+			sepNavVisRange = "{20770, 2012}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
@@ -948,9 +948,9 @@
 	};
 	B73B3B6E12F1267700219463 /* CustomView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1087, 5642}}";
-			sepNavSelRange = "{981, 0}";
-			sepNavVisRange = "{629, 988}";
+			sepNavIntBoundsRect = "{{0, 0}, {1087, 5018}}";
+			sepNavSelRange = "{7115, 0}";
+			sepNavVisRange = "{6270, 1777}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};

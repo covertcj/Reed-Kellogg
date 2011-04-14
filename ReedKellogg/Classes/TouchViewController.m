@@ -595,6 +595,12 @@
 		self.startingTransform = self.current.transform;
 		[self _handleTouch:[touches anyObject]];
 	}
+	else {
+		CGPoint dummy = CGPointMake(-1, -1);
+		[self.delegate setTempLine:dummy end:dummy];
+		[self.delegate setNeedsDisplay];
+		self.drawingLine = NO;
+	}
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -612,6 +618,8 @@
 	} else {
 		CGPoint dummy = CGPointMake(-1, -1);
 		[self.delegate setTempLine:dummy end:dummy];
+		[self.delegate setNeedsDisplay];
+		self.drawingLine = NO;
 	}
 }
 
@@ -659,7 +667,8 @@
 	else {
 		CGPoint dummy = CGPointMake(-1, -1);
 		[self.delegate setTempLine:dummy end:dummy];
-		[current setNeedsDisplay];
+		[self.delegate setNeedsDisplay];
+		self.drawingLine = NO;
 	}
 	
 	[UIView commitAnimations];
@@ -685,17 +694,19 @@
 		cent.y = frame.y - [self.delegate getScreenPositionY];
 		
 		word.center = cent;
-	}		
+	}
 }
 
 - (void)handleTwoFingerDragWith:(UIPanGestureRecognizer *)recognizer {
-	// set the screen position
-	CGPoint vel = [recognizer velocityInView:self.delegate];
-	NSLog(@"2 Touches Moved: (%f, %f)", [self.delegate getScreenPositionX], [self.delegate getScreenPositionY]);
-	[self.delegate addToScreenPositionX: vel.x * -0.025 andY: vel.y * -0.025];
-	
-	// move the words
-	[self updateWordPositioning];
+	if (self.current == nil) {
+		// set the screen position
+		CGPoint vel = [recognizer velocityInView:self.delegate];
+		NSLog(@"2 Touches Moved: (%f, %f)", [self.delegate getScreenPositionX], [self.delegate getScreenPositionY]);
+		[self.delegate addToScreenPositionX: vel.x * -0.025 andY: vel.y * -0.025];
+		
+		// move the words
+		[self updateWordPositioning];
+	}
 }
 
 - (void)handleRotationFrom:(UIRotationGestureRecognizer *)recognizer {
