@@ -165,7 +165,7 @@
 
 #pragma mark -
 #pragma mark Event Passing
-
+/*
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	[self.nextResponder touchesBegan:touches withEvent:event];
 }
@@ -177,7 +177,7 @@
 }
 - (BOOL)touchesShouldCancelInContentView:(UIView *)view {
 	return NO;
-}
+}*/
 
 - (void)dealloc {
 	if (self.lines    != nil) {

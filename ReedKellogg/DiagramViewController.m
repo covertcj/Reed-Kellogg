@@ -61,11 +61,17 @@
 	[self.diagramView addGestureRecognizer:doubleDragRecognizer];
 	[doubleDragRecognizer release];
 	
+	UITapGestureRecognizer * doubleTapRecognizer  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapFrom:)];
+	doubleTapRecognizer.numberOfTapsRequired      = 2;
+	doubleTapRecognizer.cancelsTouchesInView      = YES;
+	[self.diagramView addGestureRecognizer:doubleTapRecognizer];
+	
 	UITapGestureRecognizer * singleTapRecognizer  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapFrom:)];
 	singleTapRecognizer.numberOfTapsRequired      = 1;
 	singleTapRecognizer.cancelsTouchesInView      = YES;
 	[self.diagramView addGestureRecognizer:singleTapRecognizer];
 	[singleTapRecognizer release];
+	[doubleTapRecognizer release];
 }
 
 
@@ -488,24 +494,9 @@
 			return;
 		}
 	}
-	
-/*	//NSLog(@"Rotation happening, %@", self.current.text);
-	
-	self.current.transform = CGAffineTransformRotate(self.startingTransform, [recognizer rotation]);
-	
-	// Handle rotation snap. NOTE: if you want to see continuous rotation, and THEN snap, 
-	// put the following block of code into the if(recognizer.state == ...) block. 
-	float angle = atan2(self.current.transform.b, self.current.transform.a);
-	float angleStep = M_PI/4.0;
-	float factor = angle/angleStep;
-	self.current.transform = CGAffineTransformMakeRotation(rintf(factor)*angleStep);
-	
-	// Turns out that touchesEnded isn't called after this. hmm.
-	if (recognizer.state == UIGestureRecognizerStateEnded) {
-		//NSLog(@"Finished rotation");
-		
-		self.current = nil;
-	}*/
+}
+
+- (void) handleDoubleTapFrom:(UITapGestureRecognizer *)recognizer {
 }
 
 #pragma mark -
