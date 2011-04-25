@@ -7,7 +7,6 @@
 //
 
 #import "CustomView.h"
-#import "tgmath.h"
 
 
 @implementation CustomView
@@ -16,7 +15,6 @@
 @synthesize tempLine;
 @synthesize gridSize;
 @synthesize showGrid;
-@synthesize screenPosition;
 
 - (id)initWithFrame:(CGRect)frame {
 	showGrid = YES;
@@ -25,45 +23,7 @@
 
     }
 	self.lines = [NSMutableArray arrayWithCapacity:20];
-	
-	[self setScreenPosition: CGPointMake(0, 0)];
-	CGPoint p = self.screenPosition;
-	NSLog(@"%f", p.x);
-	
-	
-	//self.multipleTouchEnabled = YES;
-	
     return self;
-}
-
-- (void) addToScreenPositionX: (int) x andY: (int) y {
-	[self setScreenPosition:CGPointMake(self.screenPosition.x + x, self.screenPosition.y + y)];
-	CGPoint bounded = self.screenPosition;
-	
-	if (bounded.x < 0) {
-		bounded.x = 0;
-	}
-	if (bounded.x > 2000) {
-		bounded.x = 2000;
-	}
-	if (bounded.y < 0) {
-		bounded.y = 0;
-	}
-	if (bounded.y > 500) {
-		bounded.y = 500;
-	}
-	
-	self.screenPosition = bounded;
-	
-	[self setNeedsDisplay];
-}
-
-- (CGFloat) getScreenPositionX {
-	return self.screenPosition.x;
-}
-
-- (CGFloat) getScreenPositionY {
-	return self.screenPosition.y;
 }
 
 //Maintain array of lines
@@ -75,34 +35,30 @@
 		//draw grid
 		
 		//vertical
-		CGFloat x = fmodf(self.screenPosition.x, self.gridSize);
-		x = self.gridSize - x;
-		while (x<768) {
+		CGFloat x = 0;
+		while (x<self.frame.size.width) {
 			CGPoint start;
 			start.x = x;
 			start.y = 0;
 			CGPoint end;
 			end.x = x;
-			end.y = 1024;
+			end.y = self.frame.size.height;
 			draw1PxStroke(context, start, end, .5, [UIColor cyanColor].CGColor);
 			x=x+self.gridSize;
 		}
 	
 		//horizontal 
-		CGFloat y = fmodf(self.screenPosition.y, self.gridSize);
-		y = self.gridSize - y;
-		while (y<1024) {
+		CGFloat y = 0;
+		while (y<self.frame.size.height) {
 			CGPoint start;
 			start.x = 0;
 			start.y = y;
 			CGPoint end;
-			end.x = 768;
+			end.x = self.frame.size.width;
 			end.y = y;
 			draw1PxStroke(context, start, end, .5, [UIColor cyanColor].CGColor);
 			y=y+self.gridSize;
 		}
-		
-//		NSLog(@"Grid Origins: %@, %@", &x, &y);
 	}
 	if (tempLine != nil) {
 		// Draw temp line
@@ -112,10 +68,6 @@
 		CGPoint tempEndPoint;
 		[start getValue:&tempStartPoint];
 		[end getValue:&tempEndPoint];
-		tempStartPoint.x -= self.screenPosition.x;
-		tempStartPoint.y -= self.screenPosition.y;
-		tempEndPoint.x   -= self.screenPosition.x;
-		tempEndPoint.y   -= self.screenPosition.y;
 		draw1PxStroke(context, tempStartPoint, tempEndPoint, 5, [UIColor blackColor].CGColor);
 	}	
 	
@@ -127,10 +79,6 @@
 		CGPoint endPoint;
 		[start getValue:&startPoint];
 		[end getValue:&endPoint];
-		startPoint.x -= self.screenPosition.x;
-		startPoint.y -= self.screenPosition.y;
-		endPoint.x   -= self.screenPosition.x;
-		endPoint.y   -= self.screenPosition.y;
 		draw1PxStroke(context, startPoint, endPoint, 5, [UIColor blackColor].CGColor);		
 	}	
 	
@@ -262,8 +210,7 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint, C
 	}
 	*/
 	
-//	NSLog(@"added line. dist: %d, (%d, %d) to (%d, %d) with a screen offset of (%d, %d)", 
-//		  [self distanceP1:begin P2:end], begin.x, begin.y, end.x, end.y, self.screenPosition.x, self.screenPosition.y);
+	NSLog(@"added line. dist: %d", [self distanceP1:begin P2:end]);
 	
 	// This is a little clunky, but a line is represented as an NSArray of
 	// NSValues which encapsulate CGPoints, which are the endpoints
@@ -295,9 +242,6 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint, C
 }
 
 -(void)removeLine:(CGPoint)touch{
-	
-	touch.x = touch.x + screenPosition.x;
-	touch.y = touch.y + screenPosition.y;
 	
 	for(NSArray *line in lines){
 		NSValue *start = [line objectAtIndex:0];

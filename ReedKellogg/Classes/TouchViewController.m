@@ -7,7 +7,6 @@
 //
 
 #import "TouchViewController.h"
-#import "Frame.h"
 
 @implementation TouchViewController
 
@@ -19,7 +18,6 @@
 @synthesize startingTransform;
 @synthesize line1;
 @synthesize line2;
-@synthesize drawingLine;
 @synthesize managedObjectContext;
 @synthesize gridSize;
 
@@ -30,7 +28,6 @@
 @synthesize currStudent;
 @synthesize currLesson;
 @synthesize currSentence;
-@synthesize wordPositions;
 
 @synthesize prevButton;
 @synthesize nextButton;
@@ -57,10 +54,37 @@
     [super viewDidLoad];
 	self.gridSize = 40;
 	NSLog(@"Student: %@, Lesson: %@, Sentence: %@", self.currStudent.name, self.currLesson.name, self.currSentence.text);
-	self.wordPositions = [[NSMutableArray alloc] initWithCapacity:20];
 	
-	CustomView *myView = [[[CustomView alloc] init] autorelease];
-	self.view = myView;
+	CustomView *myView = [[[CustomView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)] autorelease];
+	myView.backgroundColor = [UIColor whiteColor];
+	
+	// set the size of the view
+	CGRect myViewFrame = myView.frame;
+	myViewFrame.size.width *= 2;
+	myViewFrame.size.height *= 2;
+	myView.frame = myViewFrame;
+	
+	// create the scroll view to hold our custom view
+	UIScrollView * scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, myView.frame.size.width, myView.frame.size.height)];
+	[scrollView addSubview:myView];
+	scrollView.backgroundColor = [UIColor darkGrayColor];
+	scrollView.minimumZoomScale = 0.5;
+	scrollView.maximumZoomScale = 1.0;
+//	scrollView.delegate = self;
+	scrollView.contentSize = CGSizeMake(myView.frame.size.width, myView.frame.size.height);
+	
+	// make the scroll view only use two finger scrolling
+	for (UIGestureRecognizer *gestureRecognizer in scrollView.gestureRecognizers) {     
+		if ([gestureRecognizer  isKindOfClass:[UIPanGestureRecognizer class]])
+		{
+			UIPanGestureRecognizer *panGR = (UIPanGestureRecognizer *) gestureRecognizer;
+			panGR.minimumNumberOfTouches = 2;
+			panGR.maximumNumberOfTouches = 2;
+		}
+    }
+	
+	// setup the view and the delegate
+	self.view = scrollView;
 	self.delegate = myView;
 	self.delegate.gridSize = self.gridSize;
 
@@ -155,8 +179,6 @@
 																			  target:nil
 																			  action:nil];
 	
-	self.drawingLine = NO;
-	
 	NSArray *items;
 	fixedItem.width = 40;	
 	if (self.TeacherMode) {
@@ -181,16 +203,10 @@
 
 	
 	[self fetchWordsAndSetLayout];
-	UIGestureRecognizer *rotrecognizer;
-	UIPanGestureRecognizer *panrecognizer;
-	rotrecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotationFrom:)];
-	panrecognizer = [[UIPanGestureRecognizer alloc]      initWithTarget:self action:@selector(handleTwoFingerDragWith:)];
-	panrecognizer.minimumNumberOfTouches = 2;
-	panrecognizer.maximumNumberOfTouches = 2;
-	[self.view addGestureRecognizer:panrecognizer];
-	[self.view addGestureRecognizer:rotrecognizer];
-	[rotrecognizer release];
-	[panrecognizer release];
+	UIGestureRecognizer *recognizer;
+	recognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotationFrom:)];
+	[self.view addGestureRecognizer:recognizer];
+	[recognizer release];
 }
 
 -(void) fetchWordsAndSetLayout{
@@ -319,12 +335,6 @@
 }
 
 - (void) pressSave:(id)sender{
-	// move the screen to the origin, so as to properly place words before saving
-	CGPoint origin = CGPointMake(0, 0);
-	CGPoint tempScreenPosition = CGPointMake([self.delegate getScreenPositionX], [self.delegate getScreenPositionY]);
-	self.delegate.screenPosition = origin;
-	[self updateWordPositioning];
-	
 	NSLog(@"Save Pressed");
 	// Make sure that we override any previous entries that have the same creator and sentence
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
@@ -405,9 +415,7 @@
 		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
 	}
 	
-	// move the screen back to it's proper position
-	self.delegate.screenPosition = tempScreenPosition;
-	[self updateWordPositioning];
+	
 }
 
 - (void) pressGrid:(id)sender{
@@ -467,8 +475,8 @@
 				if([wd.wdIndex intValue] == i){
 					//NSLog("Setting word position: %@, %@",[wd.wdx floatValue],[wd.wdy floatValue]);
 					
-					newFrame.origin.x = [wd.wdx floatValue] - [self.delegate getScreenPositionX];
-					newFrame.origin.y = [wd.wdy floatValue] - [self.delegate getScreenPositionY];
+					newFrame.origin.x = [wd.wdx floatValue];
+					newFrame.origin.y = [wd.wdy floatValue];
 					
 					aword.frame = newFrame;
 					[aword sizeToFit];
@@ -486,11 +494,6 @@
 		leftSidePos = newFrame.origin.x + newFrame.size.width;
 		
 		[words addObject:aword];
-		CGPoint r = aword.frame.origin;
-		Frame * frame = [[Frame alloc] init];
-		frame.x = aword.frame.origin.x + aword.frame.size.width/2;
-		frame.y = aword.frame.origin.y + aword.frame.size.height/2;
-		[wordPositions addObject:frame];
 		[self.view addSubview:aword];
 		
 		
@@ -559,119 +562,75 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-	self.line1 = CGPointMake(-1, -1);
-	self.drawingLine = false;
+	self.line1  = CGPointMake(-1, -1);
 	UITouch * aTouch = [touches anyObject];
 	CGPoint touchLocation = [aTouch locationInView:self.view];
 
-	if ([touches count] == 1) {
-		if (aTouch.tapCount == 2) {
-			[self.delegate removeLine:touchLocation];
-			return;
-		}
-		// This finds if the touch is inside a word. 
-		CGRect textFrame;
-		
-		for (UILabel * w in self.words) {
-			//NSLog(@"Touches: %d, Position of word %@: (%.0f, %.0f)", [touches count],w.text, w.center.x, w.center.y);
-			
-			// if touchLocation is inside the frame of that word
-			textFrame = [w frame];
-			//[self.delegate addLine:CGPointMake(CGRectGetMinX(textFrame), CGRectGetMinY(textFrame)) end:CGPointMake(CGRectGetMaxX(textFrame), CGRectGetMaxY(textFrame))];
-			//[self.delegate drawBox: textFrame];
-			if(CGRectContainsPoint(textFrame, touchLocation)){
-				self.current = w;
-				break;
-			}
-		}
-		// if the touch is not inside a word, then use it to draw a line.
-		if (self.current == nil) {
-			//NSLog(@"First touch of line\n");
-			self.drawingLine = YES;
-			self.line1  = CGPointMake(touchLocation.x + [self.delegate getScreenPositionX], touchLocation.y + [self.delegate getScreenPositionY]);
-			
-		}
-		
-		self.startingTransform = self.current.transform;
-		[self _handleTouch:[touches anyObject]];
+	if (aTouch.tapCount == 2) {
+		[self.delegate removeLine:touchLocation];
+		return;
 	}
-	else {
-		CGPoint dummy = CGPointMake(-1, -1);
-		[self.delegate setTempLine:dummy end:dummy];
-		[self.delegate setNeedsDisplay];
-		self.drawingLine = NO;
+	// This finds if the touch is inside a word. 
+	CGRect textFrame;
+	
+	for (UILabel * w in self.words) {
+		//NSLog(@"Touches: %d, Position of word %@: (%.0f, %.0f)", [touches count],w.text, w.center.x, w.center.y);
+		
+		// if touchLocation is inside the frame of that word
+		textFrame = [w frame];
+		//[self.delegate addLine:CGPointMake(CGRectGetMinX(textFrame), CGRectGetMinY(textFrame)) end:CGPointMake(CGRectGetMaxX(textFrame), CGRectGetMaxY(textFrame))];
+		//[self.delegate drawBox: textFrame];
+		if(CGRectContainsPoint(textFrame, touchLocation)){
+			self.current = w;
+			break;
+		}
 	}
+	// if the touch is not inside a word, then use it to draw a line.
+	if (self.current == nil) {
+		//NSLog(@"First touch of line\n");
+		self.line1  = CGPointMake(touchLocation.x, touchLocation.y);
+		
+	}
+	
+	self.startingTransform = self.current.transform;
+	[self _handleTouch:[touches anyObject]];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-	if ([touches count] == 1) {
-		if (self.drawingLine) {
-			// Assume there is only one touch at a time
-			UITouch * aTouch = [touches anyObject];
-			CGPoint touchLocation = [aTouch locationInView:self.view];
-			
-			self.line2  = CGPointMake(touchLocation.x + [self.delegate getScreenPositionX], touchLocation.y + [self.delegate getScreenPositionY]);
-			//add touch to final point and call addline
-			[self.delegate setTempLine:self.line1 end:self.line2];
-		}
-		[self _handleTouch:[touches anyObject]];
-	} else {
-		CGPoint dummy = CGPointMake(-1, -1);
-		[self.delegate setTempLine:dummy end:dummy];
-		[self.delegate setNeedsDisplay];
-		self.drawingLine = NO;
+	if (self.line1.x != -1) {
+		// Assume there is only one touch at a time
+		UITouch * aTouch = [touches anyObject];
+		CGPoint touchLocation = [aTouch locationInView:self.view];
+		
+		self.line2  = CGPointMake(touchLocation.x, touchLocation.y);
+		//add touch to final point and call addline
+		[self.delegate setTempLine:self.line1 end:self.line2];
 	}
+	[self _handleTouch:[touches anyObject]];
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-	if ([touches count] == 1) {
-		[UIView beginAnimations:nil context:nil];
-		if (self.drawingLine) {
-			CGPoint dummy = CGPointMake(-1, -1);
-			[self.delegate setTempLine:dummy end:dummy];
-			
-			// Assume there is only one touch at a time 
-			UITouch * aTouch = [touches anyObject];
-			CGPoint touchLocation = [aTouch locationInView:self.view];
-			
-			self.line2  = CGPointMake(touchLocation.x + [self.delegate getScreenPositionX], touchLocation.y + [self.delegate getScreenPositionY]);
-			//add touch to final point and call addline
-			[self.delegate addLine:self.line1 end:self.line2];
-		} else if (current != nil) {
-			Frame * center = [wordPositions objectAtIndex:[words indexOfObject:current]];
-			CGPoint snapcenter = current.center;
-			
-			double shiftOffsetX = fmodf([self.delegate getScreenPositionX], self.gridSize);
-			double shiftOffsetY = fmodf([self.delegate getScreenPositionY], self.gridSize);
-			snapcenter.x = roundf((current.center.x)/self.gridSize)*self.gridSize - shiftOffsetX;
-			snapcenter.y = floor ((current.center.y)/(self.gridSize))*self.gridSize+self.gridSize/2 - shiftOffsetY;
-			/*if ([self.delegate getScreenPositionX] > 0) {
-				snapcenter.x += self.gridSize;
-			}
-			if ([self.delegate getScreenPositionY] > 0) {
-				snapcenter.y += self.gridSize;
-			}*/
-			
-			current.center = snapcenter;
-			
-			center.x = current.center.x + [self.delegate getScreenPositionX];
-			center.y = current.center.y + [self.delegate getScreenPositionY];
-			
-			[wordPositions replaceObjectAtIndex:[words indexOfObject:current] withObject:center];
-			
-			[current setNeedsDisplay];
-			
-			self.current = nil;
-		}
-	}
-	else {
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{	
+	[UIView beginAnimations:nil context:nil];
+	if (self.line1.x != -1) {
 		CGPoint dummy = CGPointMake(-1, -1);
 		[self.delegate setTempLine:dummy end:dummy];
-		[self.delegate setNeedsDisplay];
-		self.drawingLine = NO;
+		
+		// Assume there is only one touch at a time 
+		UITouch * aTouch = [touches anyObject];
+		CGPoint touchLocation = [aTouch locationInView:self.view];
+		
+		self.line2  = CGPointMake(touchLocation.x, touchLocation.y);
+		//add touch to final point and call addline
+		[self.delegate addLine:self.line1 end:self.line2];
+	}else{
+		CGPoint snapcenter = current.center;
+		snapcenter.x = roundf(current.center.x/self.gridSize)*self.gridSize;
+		snapcenter.y = floor(current.center.y/(self.gridSize))*self.gridSize+self.gridSize/2;
+		current.center = snapcenter;
+		[current setNeedsDisplay];
 	}
-	
 	[UIView commitAnimations];
+	self.current = nil;
 	[self _handleTouch:[touches anyObject]];
 	
 }
@@ -679,34 +638,6 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
 	//touchesEnded
 	NSLog(@"Touches cancelled");
-	CGPoint dummy = CGPointMake(-1, -1);
-	[self.delegate setTempLine:dummy end:dummy];
-	[current setNeedsDisplay];
-}
-
-- (void ) updateWordPositioning {
-	for(int i = 0; i < [words count]; i++) {
-		UILabel * word  = [words objectAtIndex:i];
-		Frame   * frame = [wordPositions objectAtIndex:i];
-		CGPoint cent;
-		
-		cent.x = frame.x - [self.delegate getScreenPositionX];
-		cent.y = frame.y - [self.delegate getScreenPositionY];
-		
-		word.center = cent;
-	}
-}
-
-- (void)handleTwoFingerDragWith:(UIPanGestureRecognizer *)recognizer {
-	if (self.current == nil) {
-		// set the screen position
-		CGPoint vel = [recognizer velocityInView:self.delegate];
-		NSLog(@"2 Touches Moved: (%f, %f)", [self.delegate getScreenPositionX], [self.delegate getScreenPositionY]);
-		[self.delegate addToScreenPositionX: vel.x * -0.025 andY: vel.y * -0.025];
-		
-		// move the words
-		[self updateWordPositioning];
-	}
 }
 
 - (void)handleRotationFrom:(UIRotationGestureRecognizer *)recognizer {
@@ -729,6 +660,10 @@
 		self.current = nil;
 	}
 	
+}
+
+- (UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView {
+	return self.view;
 }
 
 @end

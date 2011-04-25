@@ -10,8 +10,9 @@
 #import "ReedKelloggAppDelegate.h"
 #import "SentenceViewController.h"
 #import "addNameViewController.h"
-#import "TouchViewController.h"
+#import "DiagramViewController.h"
 #import "Sentence.h"
+#import "Layout.h"
 
 @implementation SentenceViewController
 
@@ -84,14 +85,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	TouchViewController *targetViewController = [[TouchViewController alloc] init];
+	DiagramViewController * targetViewController = [[DiagramViewController alloc] init];
+	
+	Sentence * selectedSentence = [super.objectArray objectAtIndex:indexPath.row];
+	
 	
 	targetViewController.managedObjectContext = self.managedObjectContext;
-	Sentence *s =[super.objectArray objectAtIndex:indexPath.row];
-	targetViewController.currLesson = self.currLesson;
-	targetViewController.currSentence = s;
-	targetViewController.currStudent = self.currStudent;
-	targetViewController.TeacherMode = self.TeacherMode;
+	targetViewController.selectedLesson       = self.currLesson;
+	targetViewController.selectedSentence     = selectedSentence;
+	targetViewController.selectedStudent      = self.currStudent;
+	targetViewController.teacherMode          = self.TeacherMode;
 	
 	// Navigation logic may go here. Create and push another view controller.
 	[[self navigationController] pushViewController:targetViewController animated:YES];
