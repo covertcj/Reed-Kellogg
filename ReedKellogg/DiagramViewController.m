@@ -469,14 +469,21 @@
 	// check if the touch is in a word
 	for (UILabel * word in self.words) {
 		CGRect wordFrame = word.frame;
-		// if a word is touched, set is as moving
 		
+		// if the word is touched, rotate it
 		if (CGRectContainsPoint(wordFrame, touchLoc)) {
 			self.touchedWord = word;
 			
 			float angle = atan2(self.touchedWord.transform.b, self.touchedWord.transform.a);
-			angle = angle + M_PI/4.0;
-			self.touchedWord.transform = CGAffineTransformMakeRotation(rintf(angle));
+			if (angle > 0.77f && angle < 0.79f) {
+				angle = angle - M_PI / 2.0f;
+			}	
+			else {
+				angle = angle + M_PI / 4.0f;
+			}
+			
+			self.touchedWord.transform = CGAffineTransformMakeRotation(angle);
+			self.touchedWord = nil;
 			
 			return;
 		}
