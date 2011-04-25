@@ -23,6 +23,31 @@
     return self;
 }
 
+- (void) setupView {
+	// set the size of the window
+	CGRect viewFrame       = self.frame;
+	viewFrame.size.width  *= 3.0f;
+	viewFrame.size.height *= 1.5f;
+	self.contentSize = CGSizeMake(viewFrame.size.width, viewFrame.size.height);
+	
+	// set the grid size
+	self.gridSize     = 40;
+	self.showGrid     = YES;
+	
+	// allow only two finger scrolling
+	self.multipleTouchEnabled  = YES;
+	for (id gestureRecognizer in self.gestureRecognizers) {     
+		if ([gestureRecognizer  isKindOfClass:[UIPanGestureRecognizer class]])
+		{
+			UIPanGestureRecognizer * panGR = gestureRecognizer;
+			panGR.minimumNumberOfTouches   = 2;
+			panGR.maximumNumberOfTouches   = 2;
+		}
+    }
+	
+	[self setNeedsDisplay];
+}
+
 - (void) drawRect:(CGRect)rect {
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
@@ -31,7 +56,6 @@
 		// vertical lines
 		CGFloat x = 0;
 		while (x < self.contentSize.width) {
-			NSLog(@"x loop: %f", x);
 			// draw a single grid line
 			CGPoint start = CGPointMake(x, 0);
 			CGPoint end   = CGPointMake(x, self.contentSize.height);
@@ -47,7 +71,6 @@
 		// horizontal lines
 		CGFloat y = 0;
 		while (y < self.contentSize.height) {
-			NSLog(@"y loop: %f", y);
 			// draw a single grid line
 			CGPoint start   = CGPointMake(0, y);
 			CGPoint end     = CGPointMake(self.contentSize.width, y);
@@ -85,6 +108,9 @@
 }
 
 - (void) addLine:(Line *)line {
+	NSLog(@"addLineLine: (%f, %f) to (%f, %f)", line.start.x, line.start.y, line.end.x, line.end.y);
+	
+	NSLog(@"addLine: %@", self.lines);
 	
 	// TODO: Implement DiagramView.addLine
 	if (self.lines == nil) {
@@ -95,6 +121,8 @@
 	myline.start   = CGPointMake(roundf(line.start.x / self.gridSize) * self.gridSize, roundf(line.start.y / self.gridSize) * self.gridSize);
 	myline.end     = CGPointMake(roundf(line.end.x   / self.gridSize) * self.gridSize, roundf(line.end.y   / self.gridSize) * self.gridSize);
 	[self.lines addObject:myline];
+	
+	NSLog(@"addLine2: %@", self.lines);
 	
 	[self setNeedsDisplay];
 }

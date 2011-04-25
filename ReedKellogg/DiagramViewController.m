@@ -24,6 +24,7 @@
 @synthesize words;
 @synthesize teacherMode, correct;
 @synthesize lineStart, touchedWord, startingTransform;
+@synthesize previousScale, previousOffset, previousLocation, location;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -40,33 +41,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	// set the size of the window
-	CGRect viewFrame       = self.view.frame;
-	viewFrame.size.width  *= 3.0f;
-	viewFrame.size.height *= 1.5f;
-//	self.view.frame        = viewFrame;
-	((UIScrollView *)(self.view)).contentSize = CGSizeMake(viewFrame.size.width, viewFrame.size.height);
-	
-	// set the grid size
-	((DiagramView *)(self.view)).gridSize     = 40;
-	((DiagramView *)(self.view)).showGrid     = YES;
-	
 	// load the layout
 	self.words = [[NSMutableArray alloc] init];
 	[self setLayout:[self loadLayout]];
 	
-	// allow only two finger scrolling
-	for (UIGestureRecognizer *gestureRecognizer in self.view.gestureRecognizers) {     
-		if ([gestureRecognizer  isKindOfClass:[UIPanGestureRecognizer class]])
-		{
-			UIPanGestureRecognizer * panGR = (UIPanGestureRecognizer *) gestureRecognizer;
-			panGR.minimumNumberOfTouches   = 2;
-			panGR.maximumNumberOfTouches   = 2;
-			panGR.enabled = YES;
-		}
-    }
+	[self.diagramView setupView];
 	
-	[self.view setNeedsDisplay];
+	UIPanGestureRecognizer * singleDragRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleDragFrom:)];
+	singleDragRecognizer.minimumNumberOfTouches   = 1;
+	singleDragRecognizer.maximumNumberOfTouches   = 1;
+	singleDragRecognizer.cancelsTouchesInView     = YES;
+	[self.diagramView addGestureRecognizer:singleDragRecognizer];
+	[singleDragRecognizer release];
+	
+	UIPanGestureRecognizer * doubleDragRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleDragFrom:)];
+	doubleDragRecognizer.minimumNumberOfTouches   = 2;
+	doubleDragRecognizer.maximumNumberOfTouches   = 2;
+	doubleDragRecognizer.cancelsTouchesInView     = YES;
+	[self.diagramView addGestureRecognizer:doubleDragRecognizer];
+	[doubleDragRecognizer release];
+	
+	UITapGestureRecognizer * singleTapRecognizer  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapFrom:)];
+	singleTapRecognizer.numberOfTapsRequired      = 1;
+	singleTapRecognizer.cancelsTouchesInView      = YES;
+	[self.diagramView addGestureRecognizer:singleTapRecognizer];
+	[singleTapRecognizer release];
 }
 
 
@@ -200,12 +199,12 @@
 		distFromLeft = word.frame.origin.x + word.frame.size.width;
 		
 		[self.words addObject:word];
-		[self.view addSubview:word];
+		[self.diagramView addSubview:word];
 	}
 }
 
 - (void) setLayoutLines:(Layout *) layout {
-	[self.view removeAllLines];
+	[self.diagramView removeAllLines];
 	
 	// if save data exists
 	if (layout) {
@@ -214,7 +213,7 @@
 			Line * line = [[Line alloc] init];
 			line.start  = CGPointMake([lineData.x1 floatValue], [lineData.y1 floatValue]);
 			line.end    = CGPointMake([lineData.x2 floatValue], [lineData.y2 floatValue]);
-			[self.view addLine:line];
+			[self.diagramView addLine:line];
 		}
 	}
 }
@@ -255,7 +254,7 @@
 }
 
 - (UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView {
-	return self.view;
+	return self.diagramView;
 }
 
 #pragma mark -
@@ -263,12 +262,12 @@
 
 - (void) moveTouchedWordToLocation:(CGPoint)location {
 	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:200];
 	self.touchedWord.center = location;
+	[self.touchedWord setNeedsDisplay];
 	[UIView commitAnimations];
 }
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+/*- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	// find all touches, not just the single touch that just started
 	NSSet * allTouches = [touches setByAddingObjectsFromSet:[event touchesForView:self]];
 	// set the start of the line to a dummy locaton that is out of bounds
@@ -277,7 +276,7 @@
 	if ([allTouches count] == 1) {
 		// extract the touch and its location
 		UITouch * touch    = [touches anyObject];
-		CGPoint   touchLoc = [touch locationInView:self.view];
+		CGPoint   touchLoc = [touch locationInView:self.diagramView];
 		
 		if (touch.tapCount == 2) {
 			// TODO: Implement line removal
@@ -307,7 +306,7 @@
 	if ([touches count] == 1) {
 		// grab the touch and its location
 		UITouch * touch  = [touches anyObject];
-		CGPoint touchLoc = [touch locationInView:self.view];
+		CGPoint touchLoc = [touch locationInView:self.diagramView];
 		
 		if (self.lineStart.x != -1) {
 			// find the end point of the line being drawn (a temp line)
@@ -317,7 +316,7 @@
 			line.end        = lineEnd;
 			
 			// add the touch as the endpoint of a temp
-			[self.view setTemp:line];
+			[self.diagramView setTemp:line];
 			
 			[line release];
 		}
@@ -326,14 +325,14 @@
 		}
 	}
 	else {
-		[self.view setTemp:nil];
+		[self.diagramView setTemp:nil];
 	}
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	// clear the animations so that snapping may animate
 	[UIView beginAnimations:nil context:nil];
-	
+	NSLog(@"Touches: %d", [touches count]);
 	if ([touches count] == 1) {
 		// if we are drawing a line
 		if (self.lineStart.x != -1) {
@@ -342,12 +341,12 @@
 			Line * dummyLine = [[Line alloc] init];
 			dummyLine.start  = dummyLinePoint;
 			dummyLine.end    = dummyLinePoint;
-			[self.view setTempLine:dummyLine];
+			[self.diagramView setTempLine:dummyLine];
 			[dummyLine release];
 			
 			// find the information about this touch
 			UITouch * touch    = [touches anyObject];
-			CGPoint   touchLoc = [touch locationInView:self.view];
+			CGPoint   touchLoc = [touch locationInView:self.diagramView];
 			
 			// create the endpoint for the drawn line
 			CGPoint   lineEnd  = CGPointMake(touchLoc.x, touchLoc.y);
@@ -356,15 +355,15 @@
 			Line * line        = [[Line alloc] init];
 			line.start         = self.lineStart;
 			line.end           = lineEnd;
-			[self.view addLine:line];
+			[self.diagramView addLine:line];
 			[line release];
 		}
 		else {
 			// snap a word that is being moved
-			CGPoint snapTo  = self.touchedWord.center;
-			CGFloat gridSize = ((DiagramView *)(self.view)).gridSize;
-			snapTo.x        = roundf(snapTo.x / gridSize) * gridSize;
-			snapTo.y        =  floor(snapTo.y / gridSize) * gridSize + gridSize / 2;
+			CGPoint snapTo   = self.touchedWord.center;
+			CGFloat gridSize = self.diagramView.gridSize;
+			snapTo.x         = roundf(snapTo.x / gridSize) * gridSize;
+			snapTo.y         =  floor(snapTo.y / gridSize) * gridSize + gridSize / 2;
 			
 			// push the data back into the word label
 			self.touchedWord.center = snapTo;
@@ -382,6 +381,124 @@
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
 	// do nothing
 	NSLog(@"Touches Cancelled");
+}*/
+
+- (void) handleSingleDragFrom:(UIPanGestureRecognizer *)recognizer {
+	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, [recognizer locationInView:self.diagramView].y);
+	
+	if (recognizer.state      == UIGestureRecognizerStateBegan) {
+		// check if the touch is in a word
+		for (UILabel * word in self.words) {
+			CGRect wordFrame = word.frame;
+			// if a word is touched, set is as moving
+			
+			if (CGRectContainsPoint(wordFrame, touchLoc)) {
+				self.touchedWord = word;
+				return;
+			}
+		}
+		
+		// otherwise set the start point of the temporary line
+		self.lineStart  = touchLoc;
+	}
+	else if (recognizer.state == UIGestureRecognizerStateChanged) {
+		if (touchedWord != nil) {
+			[self moveTouchedWordToLocation: touchLoc];
+		}
+		else {
+			// create a temporary line to be drawn
+			Line * line     = [[Line alloc] init];
+			line.start      = self.lineStart;
+			line.end        = touchLoc;
+
+			[self.diagramView setTemp:line];
+			
+			[line release];
+		}
+	}
+	else if (recognizer.state == UIGestureRecognizerStateEnded) {
+		if (self.touchedWord != nil) {
+			CGPoint snapTo   = self.touchedWord.center;
+			CGFloat gridSize = self.diagramView.gridSize;
+			snapTo.y         =  floor(snapTo.y / gridSize) * gridSize + gridSize / 2;
+			
+			[self moveTouchedWordToLocation:snapTo];
+			
+			self.touchedWord = nil;
+		}
+		else {
+			// remove the temp line
+			CGPoint endPoint = self.diagramView.tempLine.end;
+			[self.diagramView setTemp:nil];
+			
+			// create a permenant line
+			Line * line     = [[Line alloc] init];
+			line.start      = self.lineStart;
+
+			line.end        = endPoint;
+			[self.diagramView addLine:line];
+			
+			[line release];
+		}
+	}
+	else {
+		NSLog(@"handleSingleDrag: Unknown Gesture State");
+		if (self.touchedWord == nil) {
+			CGPoint snapTo   = self.touchedWord.center;
+			CGFloat gridSize = self.diagramView.gridSize;
+			snapTo.y         =  floor(snapTo.y / gridSize) * gridSize + gridSize / 2;
+			
+			[self moveTouchedWordToLocation:snapTo];
+			
+			self.touchedWord = nil;
+		}
+		[self.diagramView setTemp: nil];
+	}
+}
+
+- (void) handleDoubleDragFrom:(UIPanGestureRecognizer *)recognizer {
+	NSLog(@"handleDoubleDrag");
+	CGPoint touchLoc = [recognizer locationInView:self.diagramView];
+	
+	self.diagramView.contentOffset = touchLoc;
+}
+
+- (void) handleSingleTapFrom:(UITapGestureRecognizer *)recognizer {
+	CGPoint touchLoc = [recognizer locationInView:self.diagramView];
+	
+	// check if the touch is in a word
+	for (UILabel * word in self.words) {
+		CGRect wordFrame = word.frame;
+		// if a word is touched, set is as moving
+		
+		if (CGRectContainsPoint(wordFrame, touchLoc)) {
+			self.touchedWord = word;
+			
+			float angle = atan2(self.touchedWord.transform.b, self.touchedWord.transform.a);
+			angle = angle + M_PI/4.0;
+			self.touchedWord.transform = CGAffineTransformMakeRotation(rintf(angle));
+			
+			return;
+		}
+	}
+	
+/*	//NSLog(@"Rotation happening, %@", self.current.text);
+	
+	self.current.transform = CGAffineTransformRotate(self.startingTransform, [recognizer rotation]);
+	
+	// Handle rotation snap. NOTE: if you want to see continuous rotation, and THEN snap, 
+	// put the following block of code into the if(recognizer.state == ...) block. 
+	float angle = atan2(self.current.transform.b, self.current.transform.a);
+	float angleStep = M_PI/4.0;
+	float factor = angle/angleStep;
+	self.current.transform = CGAffineTransformMakeRotation(rintf(factor)*angleStep);
+	
+	// Turns out that touchesEnded isn't called after this. hmm.
+	if (recognizer.state == UIGestureRecognizerStateEnded) {
+		//NSLog(@"Finished rotation");
+		
+		self.current = nil;
+	}*/
 }
 
 #pragma mark -

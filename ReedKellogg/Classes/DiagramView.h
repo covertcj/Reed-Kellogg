@@ -24,6 +24,8 @@
 @property (nonatomic) BOOL showGrid;
 @property (nonatomic) CGFloat gridSize;
 
+- (void) setupView;
+
 - (void) drawLine:(Line *)line withWidth:(CGFloat)width andColor:(CGColorRef)color andContext:(CGContextRef)context;
 - (void) addLine:(Line *)line;
 - (void) setTemp:(Line *)line;

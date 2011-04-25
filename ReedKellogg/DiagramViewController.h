@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import "CustomView.h"
+#import "DiagramViewDelegate.h"
 
 @class DiagramView;
 @class Layout, Lesson, Sentence, Student;
 
-@interface DiagramViewController : UIViewController <UIScrollViewDelegate> {
+@interface DiagramViewController : UIViewController <UIScrollViewDelegate, DiagramViewDelegate> {
 	UIBarButtonItem * nextButton;
 	UIBarButtonItem * prevButton;
 	UIBarButtonItem * saveButton;
@@ -39,6 +39,11 @@
 	CGPoint           lineStart;
 	UILabel *         touchedWord;
 	CGAffineTransform startingTransform;
+	
+	CGFloat previousScale;
+	CGPoint previousOffset;
+	CGPoint previousLocation;
+	CGPoint location;
 }
 
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * nextButton;
@@ -67,6 +72,11 @@
 @property (nonatomic) UILabel *         touchedWord;
 @property (nonatomic) CGAffineTransform startingTransform;
 
+@property (nonatomic) CGFloat previousScale;
+@property (nonatomic) CGPoint previousOffset;
+@property (nonatomic) CGPoint previousLocation;
+@property (nonatomic) CGPoint location;
+
 - (Layout *) loadLayout;
 - (void) setLayout:(Layout *) layout;
 - (void) setLayoutWords:(Layout *) layout;
@@ -74,5 +84,7 @@
 - (UILabel *) createWord:(NSString *)text withOrigin:(CGPoint)frameOrigin andRotation:(CGAffineTransform)rotation;
 
 - (void) moveTouchedWordToLocation:(CGPoint)location;
+
+- (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)sender;
 
 @end
