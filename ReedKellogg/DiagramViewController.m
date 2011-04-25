@@ -24,7 +24,7 @@
 @synthesize words;
 @synthesize teacherMode, correct;
 @synthesize lineStart, touchedWord, startingTransform;
-@synthesize previousScale, previousOffset, previousLocation, location;
+@synthesize previousScrollTouchLoc;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -463,10 +463,25 @@
 }
 
 - (void) handleDoubleDragFrom:(UIPanGestureRecognizer *)recognizer {
-	NSLog(@"handleDoubleDrag");
-	CGPoint touchLoc = [recognizer locationInView:self.diagramView];
+	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, 
+								   [recognizer locationInView:self.diagramView].y);
+	float speedCoeff = 1;
 	
-	self.diagramView.contentOffset = touchLoc;
+	if (recognizer.state == UIGestureRecognizerStateBegan) {
+		self.previousScrollTouchLoc     = touchLoc;
+	}
+	else if (recognizer.state == UIGestureRecognizerStateChanged) {
+		NSLog(@"ScrollX's: (%f, %f)", self.previousScrollTouchLoc.x, touchLoc.x);
+		NSLog(@"ScrollDeltas: (%f, %f)", (self.previousScrollTouchLoc.x - touchLoc.x) , (self.previousScrollTouchLoc.y - touchLoc.y) );
+		CGRect rect = CGRectMake((self.previousScrollTouchLoc.x - touchLoc.x) + self.diagramView.contentOffset.x,
+		                         (self.previousScrollTouchLoc.y - touchLoc.y) + self.diagramView.contentOffset.y,
+								 self.diagramView.frame.size.width, 
+								 self.diagramView.frame.size.height);
+		
+		[self.diagramView scrollRectToVisible:rect animated:NO];
+	}
+	
+	[self.diagramView setNeedsDisplay];
 }
 
 - (void) handleSingleTapFrom:(UITapGestureRecognizer *)recognizer {

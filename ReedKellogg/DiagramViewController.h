@@ -40,10 +40,7 @@
 	UILabel *         touchedWord;
 	CGAffineTransform startingTransform;
 	
-	CGFloat previousScale;
-	CGPoint previousOffset;
-	CGPoint previousLocation;
-	CGPoint location;
+	CGPoint previousScrollTouchLoc;
 }
 
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * nextButton;
@@ -72,10 +69,7 @@
 @property (nonatomic) UILabel *         touchedWord;
 @property (nonatomic) CGAffineTransform startingTransform;
 
-@property (nonatomic) CGFloat previousScale;
-@property (nonatomic) CGPoint previousOffset;
-@property (nonatomic) CGPoint previousLocation;
-@property (nonatomic) CGPoint location;
+@property (nonatomic) CGPoint previousScrollTouchLoc;
 
 - (Layout *) loadLayout;
 - (void) setLayout:(Layout *) layout;

@@ -35,7 +35,7 @@
 	self.showGrid     = YES;
 	
 	// allow only two finger scrolling
-	self.multipleTouchEnabled  = YES;
+//	self.multipleTouchEnabled  = YES;
 	for (id gestureRecognizer in self.gestureRecognizers) {     
 		if ([gestureRecognizer  isKindOfClass:[UIPanGestureRecognizer class]])
 		{
@@ -165,18 +165,18 @@
 
 #pragma mark -
 #pragma mark Event Passing
-/*
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	[self.nextResponder touchesBegan:touches withEvent:event];
+
+/*- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	[super touchesBegan:touches withEvent:event];
+	NSLog(@"began: %d", [touches count]);
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	[self.nextResponder touchesMoved:touches withEvent:event];
+	[super touchesMoved:touches withEvent:event];
+	NSLog(@"moved: %d", [touches count]);
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	[self.nextResponder touchesEnded:touches withEvent:event];
-}
-- (BOOL)touchesShouldCancelInContentView:(UIView *)view {
-	return NO;
+	[super touchesEnded:touches withEvent:event];
+	NSLog(@"ended: %d", [touches count]);
 }*/
 
 - (void)dealloc {
