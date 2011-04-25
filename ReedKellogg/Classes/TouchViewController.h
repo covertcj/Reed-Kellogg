@@ -32,7 +32,6 @@
 	
 	CGPoint line1;
 	CGPoint line2;
-	BOOL drawingLine;
 	
 	CGFloat gridSize;
 	
@@ -40,8 +39,6 @@
 	Student *currStudent;
 	Lesson *currLesson;
 	Sentence *currSentence;
-	
-	NSMutableArray * wordPositions;
 @private
 	id<UpdateCustomView> _delegate;
 	
@@ -62,14 +59,12 @@
 @property (nonatomic, retain) Student *currStudent;
 @property (nonatomic, retain) Lesson *currLesson;
 @property (nonatomic, retain) Sentence *currSentence;
-@property (nonatomic, retain) NSMutableArray * wordPositions;
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSMutableArray * words;
 @property (nonatomic, retain) UILabel * current;
 @property (nonatomic) CGPoint line1;
 @property (nonatomic) CGPoint line2;
-@property (nonatomic) BOOL drawingLine;
 @property (nonatomic) CGFloat gridSize;
 @property (nonatomic) CGAffineTransform startingTransform;
 @property (nonatomic, retain) IBOutlet CustomView * linesView;

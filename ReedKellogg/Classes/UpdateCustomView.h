@@ -18,11 +18,5 @@
 -(void)removeLine:(CGPoint)touch;
 
 -(void)removeAll;
-/*
-- (CGFloat) getScreenPositionX;
-- (CGFloat) getScreenPositionY;
-- (void) setGridSize: (int) size;
-- (BOOL) showGrid;
-- (void) setShowGrid: (BOOL) flag;*/
 
 @end
