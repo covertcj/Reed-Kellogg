@@ -90,6 +90,16 @@
 		fRef = B73B394D12E7ED0E00219463 /* ReedKellogg.xcdatamodel */;
 		fallbackIsa = PBXBookmark;
 	};
+	0A5140B31365073500D52693 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B390912E7E71E00219463 /* addNameViewController.m */;
+		name = "addNameViewController.m: 20";
+		rLen = 1;
+		rLoc = 394;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
 	0A6538D61342EEC200B76CE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = B73B3D0112F342BD00219463 /* UpdateCustomView.h */;
@@ -106,6 +116,16 @@
 			sepNavSelRange = "{281, 0}";
 			sepNavVisRange = "{0, 289}";
 		};
+	};
+	0A98EA7D1366233C005BCF2D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B73B390912E7E71E00219463 /* addNameViewController.m */;
+		name = "addNameViewController.m: 19";
+		rLen = 0;
+		rLoc = 372;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
 	};
 	0AA5E6611331806100874C80 /* PasswordEntryModalViewController.h */ = {
 		uiCtxt = {
@@ -180,16 +200,6 @@
 			sepNavSelRange = "{14067, 0}";
 			sepNavVisRange = "{12063, 1855}";
 		};
-	};
-	0AC4B89D1365061100EB3C78 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B73B390912E7E71E00219463 /* addNameViewController.m */;
-		name = "addNameViewController.m: 20";
-		rLen = 1;
-		rLoc = 394;
-		rType = 0;
-		vrLen = 1331;
-		vrLoc = 0;
 	};
 	0AF88AA91343A219001C4501 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -411,16 +421,6 @@
 		vrLen = 929;
 		vrLoc = 0;
 	};
-	0AF88AC01343A219001C4501 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = B73B390912E7E71E00219463 /* addNameViewController.m */;
-		name = "addNameViewController.m: 42";
-		rLen = 0;
-		rLoc = 914;
-		rType = 0;
-		vrLen = 1222;
-		vrLoc = 322;
-	};
 	1D3623240D0F684500981E51 /* ReedKelloggAppDelegate.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1171, 741}}";
@@ -553,16 +553,17 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 325387726;
-			PBXWorkspaceStateSaveDate = 325387726;
+			PBXPerProjectTemplateStateSaveDate = 325459767;
+			PBXWorkspaceStateSaveDate = 325459767;
 		};
 		perUserProjectItems = {
 			0A018656132FCBA2005EC556 /* PBXTextBookmark */ = 0A018656132FCBA2005EC556 /* PBXTextBookmark */;
 			0A3F76D113338B0B002F5F28 /* PlistBookmark */ = 0A3F76D113338B0B002F5F28 /* PlistBookmark */;
 			0A3F76D213338B0B002F5F28 /* XDModelBookmark */ = 0A3F76D213338B0B002F5F28 /* XDModelBookmark */;
+			0A5140B31365073500D52693 /* PBXTextBookmark */ = 0A5140B31365073500D52693 /* PBXTextBookmark */;
 			0A6538D61342EEC200B76CE0 /* PBXTextBookmark */ = 0A6538D61342EEC200B76CE0 /* PBXTextBookmark */;
+			0A98EA7D1366233C005BCF2D /* PBXTextBookmark */ = 0A98EA7D1366233C005BCF2D /* PBXTextBookmark */;
 			0AA9171B13339E24008B4AC5 /* PlistBookmark */ = 0AA9171B13339E24008B4AC5 /* PlistBookmark */;
-			0AC4B89D1365061100EB3C78 /* PBXTextBookmark */ = 0AC4B89D1365061100EB3C78 /* PBXTextBookmark */;
 			0AF88AA91343A219001C4501 /* PBXTextBookmark */ = 0AF88AA91343A219001C4501 /* PBXTextBookmark */;
 			0AF88AAA1343A219001C4501 /* PBXTextBookmark */ = 0AF88AAA1343A219001C4501 /* PBXTextBookmark */;
 			0AF88AAB1343A219001C4501 /* PBXTextBookmark */ = 0AF88AAB1343A219001C4501 /* PBXTextBookmark */;
@@ -585,7 +586,6 @@
 			0AF88ABC1343A219001C4501 /* PBXTextBookmark */ = 0AF88ABC1343A219001C4501 /* PBXTextBookmark */;
 			0AF88ABD1343A219001C4501 /* PBXTextBookmark */ = 0AF88ABD1343A219001C4501 /* PBXTextBookmark */;
 			0AF88ABE1343A219001C4501 /* PBXTextBookmark */ = 0AF88ABE1343A219001C4501 /* PBXTextBookmark */;
-			0AF88AC01343A219001C4501 /* PBXTextBookmark */ = 0AF88AC01343A219001C4501 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 0A0185D5132FC7B4005EC556 /* Source Control */;
 		userBuildSettings = {
@@ -649,8 +649,8 @@
 	};
 	B73B390912E7E71E00219463 /* addNameViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 1248}}";
-			sepNavSelRange = "{394, 1}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 1261}}";
+			sepNavSelRange = "{372, 0}";
 			sepNavVisRange = "{0, 1331}";
 		};
 	};
