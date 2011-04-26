@@ -274,9 +274,12 @@
 }
 
 - (void) handleSingleDragFrom:(UIPanGestureRecognizer *)recognizer {
+	CGPoint vel      = CGPointMake([recognizer velocityInView:self.diagramView].x * 0.025, [recognizer velocityInView:self.diagramView].y * 0.025);
 	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, [recognizer locationInView:self.diagramView].y);
 	
 	if (recognizer.state      == UIGestureRecognizerStateBegan) {
+		touchLoc = CGPointMake(touchLoc.x - vel.x, touchLoc.y - vel.y);
+		
 		// check if the touch is in a word
 		for (UILabel * word in self.words) {
 			CGRect wordFrame = word.frame;
@@ -284,9 +287,38 @@
 			
 			if (CGRectContainsPoint(wordFrame, touchLoc)) {
 				self.touchedWord = word;
+				self.diagramView.touchedLine = nil;
 				return;
 			}
 		}
+		
+		// if we have a line selected
+		if (self.diagramView.touchedLine != nil) {
+			int offset = 20;
+			
+			// and we touched the first point
+			if (touchLoc.x > self.diagramView.touchedLine.start.x - offset &&
+				touchLoc.x < self.diagramView.touchedLine.start.x + offset &&
+				touchLoc.y > self.diagramView.touchedLine.start.y - offset &&
+				touchLoc.y < self.diagramView.touchedLine.start.y + offset) {
+				self.lineStart = self.diagramView.touchedLine.end;
+				[self.diagramView removeLine:self.diagramView.touchedLine];
+				return;
+			}
+			
+			// and we touched the second point
+			else if (touchLoc.x > self.diagramView.touchedLine.end.x - offset &&
+					 touchLoc.x < self.diagramView.touchedLine.end.x + offset &&
+					 touchLoc.y > self.diagramView.touchedLine.end.y - offset &&
+					 touchLoc.y < self.diagramView.touchedLine.end.y + offset) {
+				self.lineStart = self.diagramView.touchedLine.start;
+				[self.diagramView removeLine:self.diagramView.touchedLine];
+				return;
+			}
+		}
+		
+		
+		self.diagramView.touchedLine = nil;
 		
 		// otherwise set the start point of the temporary line
 		self.lineStart  = touchLoc;
@@ -370,6 +402,7 @@
 
 - (void) handleSingleTapFrom:(UITapGestureRecognizer *)recognizer {
 	CGPoint touchLoc = [recognizer locationInView:self.diagramView];
+	self.diagramView.touchedLine = nil;
 	
 	// check if the touch is in a word
 	for (UILabel * word in self.words) {
@@ -381,7 +414,7 @@
 			
 			float angle = atan2(self.touchedWord.transform.b, self.touchedWord.transform.a);
 			if (angle > 0.77f && angle < 0.79f) {
-				angle = angle - M_PI / 2.0f;
+				angle = -M_PI / 4.0f;
 			}	
 			else {
 				angle = angle + M_PI / 4.0f;
@@ -390,6 +423,15 @@
 			self.touchedWord.transform = CGAffineTransformMakeRotation(angle);
 			self.touchedWord = nil;
 			
+			return;
+		}
+	}
+	
+	// otherwise check if we are selecting a line
+	for (Line * line in self.diagramView.lines) {
+		if ([self.diagramView touch:touchLoc nearLine:line]) {
+			self.diagramView.touchedLine = line;
+			[self.diagramView setNeedsDisplay];
 			return;
 		}
 	}

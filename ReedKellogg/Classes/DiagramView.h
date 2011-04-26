@@ -13,6 +13,7 @@
 @interface DiagramView : UIScrollView {
 	NSMutableArray * lines;
 	Line           * tempLine;
+	Line           * touchedLine;
 	
 	BOOL showGrid;
 	CGFloat gridSize;
@@ -20,6 +21,7 @@
 
 @property (nonatomic, retain) NSMutableArray * lines;
 @property (nonatomic, retain) Line           * tempLine;
+@property (nonatomic, retain) Line           * touchedLine;
 
 @property (nonatomic) BOOL showGrid;
 @property (nonatomic) CGFloat gridSize;

@@ -12,7 +12,7 @@
 
 @implementation DiagramView
 
-@synthesize lines, tempLine;
+@synthesize lines, tempLine, touchedLine;
 @synthesize showGrid, gridSize;
 
 
@@ -91,7 +91,12 @@
 	
 	// Draw the array of lines
 	for (Line * line in self.lines) {
-		[self drawLine:line withWidth:4.0f andColor:[UIColor blackColor].CGColor andContext:context];
+		if (self.touchedLine == line) {
+			[self drawLine:line withWidth:4.0f andColor:[UIColor blueColor].CGColor andContext:context];
+		}
+		else {
+			[self drawLine:line withWidth:4.0f andColor:[UIColor blackColor].CGColor andContext:context];
+		}
 	}
 }
 
