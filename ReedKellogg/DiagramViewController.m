@@ -23,7 +23,7 @@
 @synthesize diagramView;
 @synthesize words;
 @synthesize teacherMode, correct;
-@synthesize lineStart, touchedWord, startingTransform;
+@synthesize lineStart, touchedWord;
 @synthesize previousScrollTouchLoc;
 
 /*
@@ -273,122 +273,6 @@
 	[UIView commitAnimations];
 }
 
-/*- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	// find all touches, not just the single touch that just started
-	NSSet * allTouches = [touches setByAddingObjectsFromSet:[event touchesForView:self]];
-	// set the start of the line to a dummy locaton that is out of bounds
-	self.lineStart   = CGPointMake(-1, -1);
-	// 2 touches should pass through to the scroll view
-	if ([allTouches count] == 1) {
-		// extract the touch and its location
-		UITouch * touch    = [touches anyObject];
-		CGPoint   touchLoc = [touch locationInView:self.diagramView];
-		
-		if (touch.tapCount == 2) {
-			// TODO: Implement line removal
-		}
-		
-		// check if the touch is in a word
-		for (UILabel * word in self.words) {
-			CGRect wordFrame = word.frame;
-			// if a word is touched, set is as moving
-			
-			if (CGRectContainsPoint(wordFrame, touchLoc)) {
-				self.touchedWord = word;
-				return;
-			}
-		}
-		
-		// if not inside a word, start drawing a line
-		self.lineStart = CGPointMake(touchLoc.x, touchLoc.y);
-		
-		self.startingTransform = self.touchedWord.transform;
-		
-	}
-}
-
-- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	// ensure that the two touches can just fall through
-	if ([touches count] == 1) {
-		// grab the touch and its location
-		UITouch * touch  = [touches anyObject];
-		CGPoint touchLoc = [touch locationInView:self.diagramView];
-		
-		if (self.lineStart.x != -1) {
-			// find the end point of the line being drawn (a temp line)
-			CGPoint lineEnd = CGPointMake(touchLoc.x, touchLoc.y);
-			Line * line     = [[Line alloc] init];
-			line.start      = self.lineStart;
-			line.end        = lineEnd;
-			
-			// add the touch as the endpoint of a temp
-			[self.diagramView setTemp:line];
-			
-			[line release];
-		}
-		else if (self.touchedWord != nil) {
-			[self moveTouchedWordToLocation:touchLoc];
-		}
-	}
-	else {
-		[self.diagramView setTemp:nil];
-	}
-}
-
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	// clear the animations so that snapping may animate
-	[UIView beginAnimations:nil context:nil];
-	NSLog(@"Touches: %d", [touches count]);
-	if ([touches count] == 1) {
-		// if we are drawing a line
-		if (self.lineStart.x != -1) {
-			// remove the dummy line
-			CGPoint dummyLinePoint = CGPointMake(-1, -1);
-			Line * dummyLine = [[Line alloc] init];
-			dummyLine.start  = dummyLinePoint;
-			dummyLine.end    = dummyLinePoint;
-			[self.diagramView setTempLine:dummyLine];
-			[dummyLine release];
-			
-			// find the information about this touch
-			UITouch * touch    = [touches anyObject];
-			CGPoint   touchLoc = [touch locationInView:self.diagramView];
-			
-			// create the endpoint for the drawn line
-			CGPoint   lineEnd  = CGPointMake(touchLoc.x, touchLoc.y);
-			
-			// create the final line and pass to the view
-			Line * line        = [[Line alloc] init];
-			line.start         = self.lineStart;
-			line.end           = lineEnd;
-			[self.diagramView addLine:line];
-			[line release];
-		}
-		else {
-			// snap a word that is being moved
-			CGPoint snapTo   = self.touchedWord.center;
-			CGFloat gridSize = self.diagramView.gridSize;
-			snapTo.x         = roundf(snapTo.x / gridSize) * gridSize;
-			snapTo.y         =  floor(snapTo.y / gridSize) * gridSize + gridSize / 2;
-			
-			// push the data back into the word label
-			self.touchedWord.center = snapTo;
-			
-			// force a refresh
-			[self.touchedWord setNeedsDisplay];
-		}
-		
-		// tell the animations to start
-		[UIView commitAnimations];
-		self.touchedWord = nil;
-	}
-}
-
-- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-	// do nothing
-	NSLog(@"Touches Cancelled");
-}*/
-
 - (void) handleSingleDragFrom:(UIPanGestureRecognizer *)recognizer {
 	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, [recognizer locationInView:self.diagramView].y);
 	
@@ -512,6 +396,22 @@
 }
 
 - (void) handleDoubleTapFrom:(UITapGestureRecognizer *)recognizer {
+	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, 
+								   [recognizer locationInView:self.diagramView].y);
+	
+	Line * toRemove = nil;
+	
+	NSLog(@"double tap");
+	for (Line * line in self.diagramView.lines) {
+		NSLog(@"double tap - check line: (%f, %f) to (%f, %f) against (%f, %f)", line.start.x, line.start.y, line.end.x, line.end.y, touchLoc.x, touchLoc.y);
+		if ([self.diagramView touch:touchLoc nearLine:(Line *)line]) {
+			toRemove = line;
+		}
+	}
+	
+	if (toRemove != nil) {
+		[self.diagramView removeLine:toRemove];
+	}
 }
 
 #pragma mark -

@@ -144,6 +144,85 @@
 	[self setNeedsDisplay];
 }
 
+- (void) removeLine:(Line *)line {
+	Line * toRemove;
+	
+	for (Line * storedLine in self.lines) {
+		if (line.start.x == storedLine.start.x &&
+			line.start.y == storedLine.start.y &&
+			line.end.x   == storedLine.end.x   &&
+			line.end.y   == storedLine.end.y) {
+			
+			toRemove     = line;
+			break;
+		}
+	}
+	
+	if (toRemove != nil) {
+		[self.lines removeObject:toRemove];
+		toRemove  = nil;
+		[toRemove release];
+	}
+	
+	[self setNeedsDisplay];
+}
+
+- (BOOL) touch:(CGPoint)touch nearLine:(Line *)line {
+	CGPoint p1 = line.start;
+	CGPoint p2 = line.end;
+	
+	//on the line
+	float rise      = (p2.y - p1.y);
+	float run       = (p2.x - p1.x);
+	float slope     =  rise / run; 
+	float intercept =  p1.y - p1.x * slope;
+	
+	BOOL vertical = NO;
+	BOOL horizontal = NO;
+	
+	if(fabs(slope) == INFINITY) {
+		vertical   = YES;
+	}
+	
+	// Turns out there is such thing as -0
+	if (fabs(slope) == 0) {
+		horizontal = YES;
+	}
+	
+	
+	// within the box - WARNING! Makes horizontal and vertical touches remove nothing
+	
+	// If the touch is not between the x points of the start and end, then return
+	// Ignore if line is vertical 
+	if (!vertical  && !(fmin(p1.x, p2.x) < touch.x && touch.x < fmax(p1.x, p2.x))) {
+		return NO;
+	}
+	
+	// If the touch is not between the x points of the start and end, then return
+	// Ignore if line is horizontal
+	if(!horizontal && !(fmin(p1.y, p2.y) < touch.y && touch.y < fmax(p1.y, p2.y))) {
+		return NO;
+	}
+	
+	
+	
+	int distFromLine = 25;
+	// Because of the snap, the line is probably vertical, so it will have a high slope
+	if (vertical) {
+		BOOL left  = touch.x < p1.x + distFromLine;
+		BOOL right = touch.x > p1.x - distFromLine;
+		
+		return left && right;
+	}
+	
+	
+	BOOL above = (touch.y - distFromLine) < (slope * touch.x + intercept);
+	BOOL below = (touch.y + distFromLine) > (slope * touch.x + intercept);
+	
+	// I know this isn't the prettiest, but I know it works.
+	return above && below;
+}
+
 - (void) removeAllLines {
 	if (self.lines != nil) {
 		for (Line * line in self.lines) {

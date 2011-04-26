@@ -324,7 +324,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0A70784F1366394D006B69C7</string>
+										<string>0A7078C313664813006B69C7</string>
 										<key>history</key>
 										<array>
 											<string>0A3F76D113338B0B002F5F28</string>
@@ -404,7 +404,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0A7078501366394D006B69C7</string>
+										<string>0A7078C413664813006B69C7</string>
 										<key>history</key>
 										<array>
 											<string>0A3F76D113338B0B002F5F28</string>
@@ -488,7 +488,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0A7078511366394D006B69C7</string>
+										<string>0A7078C513664813006B69C7</string>
 										<key>history</key>
 										<array>
 											<string>0A3F76D113338B0B002F5F28</string>
@@ -517,20 +517,20 @@
 											<string>0A3E2BA11363457300D619C8</string>
 											<string>0A3E2BA21363457300D619C8</string>
 											<string>0A3E2BDD136352BB00D619C8</string>
-											<string>0A3E2C6E1364B1C000D619C8</string>
-											<string>0A2AF7501364F5C400031A65</string>
 											<string>0A98E880136525F9005BCF2D</string>
-											<string>0A98E8E91365D0E2005BCF2D</string>
 											<string>0A98E9051365D246005BCF2D</string>
 											<string>0A98E9061365D246005BCF2D</string>
 											<string>0A98E9AB1366169D005BCF2D</string>
 											<string>0A98E9EA13661B80005BCF2D</string>
-											<string>0A98EA0A13661D27005BCF2D</string>
-											<string>0A2344EF1366249000743853</string>
-											<string>0A7077F313663002006B69C7</string>
-											<string>0A7077F413663002006B69C7</string>
-											<string>0A70781213663212006B69C7</string>
-											<string>0A70781313663212006B69C7</string>
+											<string>0A7078601366422E006B69C7</string>
+											<string>0A7078611366422E006B69C7</string>
+											<string>0A7078621366422E006B69C7</string>
+											<string>0A7078631366422E006B69C7</string>
+											<string>0A7078641366422E006B69C7</string>
+											<string>0A7078651366422E006B69C7</string>
+											<string>0A70789013664385006B69C7</string>
+											<string>0A7078BA136647C3006B69C7</string>
+											<string>0A7078BB136647C3006B69C7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -1074,18 +1074,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {650, 209}}</string>
+								<string>{{0, 0}, {652, 272}}</string>
 								<key>RubberWindowFrame</key>
-								<string>122 359 650 250 0 0 1440 878 </string>
+								<string>121 371 652 313 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
 							<key>Proportion</key>
-							<string>209pt</string>
+							<string>272pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>209pt</string>
+					<string>272pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -1105,7 +1105,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>122 359 650 250 0 0 1440 878 </string>
+			<string>121 371 652 313 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

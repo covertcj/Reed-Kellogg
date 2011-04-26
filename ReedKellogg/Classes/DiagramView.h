@@ -29,6 +29,8 @@
 - (void) drawLine:(Line *)line withWidth:(CGFloat)width andColor:(CGColorRef)color andContext:(CGContextRef)context;
 - (void) addLine:(Line *)line;
 - (void) setTemp:(Line *)line;
+- (void) removeLine:(Line *)line;
+- (BOOL) touch:(CGPoint)touch nearLine:(Line *)line;
 - (void) removeAllLines;
 - (Line *) lineAt:(CGPoint)touch;
 

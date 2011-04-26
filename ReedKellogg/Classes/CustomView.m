@@ -283,7 +283,7 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint, C
 
 // This is used for removing lines (by a double-tap) but could also be used
 // for changing line position
--(BOOL) touchNearLine:(CGPoint) touch p1:(CGPoint) p1 p2:(CGPoint) p2{
+- (BOOL) touchNearLine:(CGPoint) touch p1:(CGPoint) p1 p2:(CGPoint) p2{
 	
 	//on the line
 	float rise = (p2.y - p1.y);
@@ -331,11 +331,10 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint, C
 	
 	
 	BOOL above = (touch.y - distFromLine) < (slope*touch.x + intercept);
-	BOOL below = (slope*touch.x + intercept) < (touch.y+distFromLine);
+	BOOL below = (touch.y + distFromLine) > (slope*touch.x + intercept);
 	
 	// I know this isn't the prettiest, but I know it works.
 	return above && below;
-	
 }
 
 -(int) distanceP1:(CGPoint) p1 P2: (CGPoint)p2{
