@@ -7,7 +7,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -51,7 +51,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -61,7 +61,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -71,7 +71,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 179";
 		rLen = 0;
-		rLoc = 7002;
+		rLoc = 6972;
 		rType = 0;
 		vrLen = 1219;
 		vrLoc = 3963;
@@ -90,7 +90,7 @@
 		ignoreCount = 0;
 		lineNumber = 152;
 		location = ReedKellogg;
-		modificationTime = 325526802.954249;
+		modificationTime = 325528355.831426;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -119,7 +119,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 480";
 		rLen = 0;
-		rLoc = 13129;
+		rLoc = 13468;
 		rType = 0;
 		vrLen = 1719;
 		vrLoc = 13749;
@@ -129,7 +129,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -139,7 +139,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -149,7 +149,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 179";
 		rLen = 0;
-		rLoc = 6982;
+		rLoc = 6952;
 		rType = 0;
 		vrLen = 1134;
 		vrLoc = 3998;
@@ -159,7 +159,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 91";
 		rLen = 0;
-		rLoc = 3470;
+		rLoc = 3452;
 		rType = 0;
 		vrLen = 450;
 		vrLoc = 3727;
@@ -178,7 +178,7 @@
 		ignoreCount = 0;
 		lineNumber = 231;
 		location = ReedKellogg;
-		modificationTime = 325526802.95434;
+		modificationTime = 325528355.864809;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -496,7 +496,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -506,7 +506,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -536,7 +536,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 179";
 		rLen = 1;
-		rLoc = 7000;
+		rLoc = 6970;
 		rType = 0;
 		vrLen = 1288;
 		vrLoc = 89;
@@ -546,7 +546,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 480";
 		rLen = 0;
-		rLoc = 13129;
+		rLoc = 13468;
 		rType = 0;
 		vrLen = 1719;
 		vrLoc = 13749;
@@ -556,7 +556,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 57";
 		rLen = 0;
-		rLoc = 1760;
+		rLoc = 1784;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1344;
@@ -566,7 +566,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -576,7 +576,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -586,7 +586,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 57";
 		rLen = 0;
-		rLoc = 1760;
+		rLoc = 1784;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1344;
@@ -596,7 +596,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 179";
 		rLen = 1;
-		rLoc = 7000;
+		rLoc = 6970;
 		rType = 0;
 		vrLen = 1288;
 		vrLoc = 89;
@@ -606,7 +606,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 38";
 		rLen = 0;
-		rLoc = 776;
+		rLoc = 798;
 		rType = 0;
 		vrLen = 1290;
 		vrLoc = 89;
@@ -616,7 +616,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -626,7 +626,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -636,7 +636,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 169";
 		rLen = 0;
-		rLoc = 6540;
+		rLoc = 6510;
 		rType = 0;
 		vrLen = 1170;
 		vrLoc = 4033;
@@ -646,7 +646,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -656,7 +656,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -666,7 +666,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 44";
 		rLen = 0;
-		rLoc = 1082;
+		rLoc = 1104;
 		rType = 0;
 		vrLen = 1483;
 		vrLoc = 213;
@@ -676,7 +676,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 57";
 		rLen = 0;
-		rLoc = 1760;
+		rLoc = 1784;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1344;
@@ -686,7 +686,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 483";
 		rLen = 0;
-		rLoc = 13137;
+		rLoc = 13476;
 		rType = 0;
 		vrLen = 1649;
 		vrLoc = 14351;
@@ -696,7 +696,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -706,7 +706,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -716,7 +716,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 466";
 		rLen = 0;
-		rLoc = 12359;
+		rLoc = 12698;
 		rType = 0;
 		vrLen = 1689;
 		vrLoc = 13670;
@@ -726,7 +726,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -736,7 +736,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -746,7 +746,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 475";
 		rLen = 0;
-		rLoc = 12978;
+		rLoc = 13317;
 		rType = 0;
 		vrLen = 1820;
 		vrLoc = 13718;
@@ -756,7 +756,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -766,7 +766,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -776,7 +776,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 474";
 		rLen = 0;
-		rLoc = 12870;
+		rLoc = 13209;
 		rType = 0;
 		vrLen = 1820;
 		vrLoc = 13718;
@@ -786,7 +786,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -796,7 +796,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -806,7 +806,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 473";
 		rLen = 0;
-		rLoc = 12665;
+		rLoc = 13004;
 		rType = 0;
 		vrLen = 1879;
 		vrLoc = 13718;
@@ -816,7 +816,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -826,7 +826,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -836,7 +836,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 473";
 		rLen = 0;
-		rLoc = 12630;
+		rLoc = 12969;
 		rType = 0;
 		vrLen = 1825;
 		vrLoc = 13714;
@@ -846,7 +846,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -856,7 +856,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -866,7 +866,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 467";
 		rLen = 0;
-		rLoc = 12357;
+		rLoc = 12696;
 		rType = 0;
 		vrLen = 1906;
 		vrLoc = 13714;
@@ -876,7 +876,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -886,7 +886,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -896,7 +896,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 467";
 		rLen = 0;
-		rLoc = 12357;
+		rLoc = 12696;
 		rType = 0;
 		vrLen = 1836;
 		vrLoc = 13714;
@@ -906,7 +906,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -916,7 +916,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -926,7 +926,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 481";
 		rLen = 0;
-		rLoc = 13069;
+		rLoc = 13408;
 		rType = 0;
 		vrLen = 1838;
 		vrLoc = 13714;
@@ -936,7 +936,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 329";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -946,7 +946,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -956,7 +956,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 479";
 		rLen = 0;
-		rLoc = 13069;
+		rLoc = 13408;
 		rType = 0;
 		vrLen = 1927;
 		vrLoc = 13785;
@@ -966,7 +966,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -976,7 +976,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1046,7 +1046,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 404";
 		rLen = 0;
-		rLoc = 14705;
+		rLoc = 15108;
 		rType = 0;
 		vrLen = 1814;
 		vrLoc = 11215;
@@ -1056,7 +1056,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 159";
 		rLen = 21;
-		rLoc = 4698;
+		rLoc = 4668;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 3965;
@@ -1066,7 +1066,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 158";
 		rLen = 0;
-		rLoc = 4522;
+		rLoc = 4492;
 		rType = 0;
 		vrLen = 1274;
 		vrLoc = 4000;
@@ -1076,7 +1076,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1086,7 +1086,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1096,7 +1096,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 158";
 		rLen = 0;
-		rLoc = 4522;
+		rLoc = 4492;
 		rType = 0;
 		vrLen = 1200;
 		vrLoc = 0;
@@ -1106,7 +1106,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 404";
 		rLen = 0;
-		rLoc = 14705;
+		rLoc = 15108;
 		rType = 0;
 		vrLen = 1777;
 		vrLoc = 11215;
@@ -1116,7 +1116,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 399";
 		rLen = 0;
-		rLoc = 14308;
+		rLoc = 14711;
 		rType = 0;
 		vrLen = 1455;
 		vrLoc = 11594;
@@ -1126,7 +1126,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1136,7 +1136,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1146,7 +1146,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 401";
 		rLen = 0;
-		rLoc = 14407;
+		rLoc = 14810;
 		rType = 0;
 		vrLen = 1456;
 		vrLoc = 11594;
@@ -1156,7 +1156,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1166,7 +1166,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1176,7 +1176,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 403";
 		rLen = 0;
-		rLoc = 14618;
+		rLoc = 15021;
 		rType = 0;
 		vrLen = 1459;
 		vrLoc = 11702;
@@ -1186,7 +1186,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1196,7 +1196,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1206,7 +1206,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 403";
 		rLen = 0;
-		rLoc = 14618;
+		rLoc = 15021;
 		rType = 0;
 		vrLen = 1500;
 		vrLoc = 11702;
@@ -1216,7 +1216,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1226,7 +1226,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1236,7 +1236,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 403";
 		rLen = 0;
-		rLoc = 14618;
+		rLoc = 15021;
 		rType = 0;
 		vrLen = 1500;
 		vrLoc = 11702;
@@ -1256,7 +1256,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 158";
 		rLen = 0;
-		rLoc = 4522;
+		rLoc = 4492;
 		rType = 0;
 		vrLen = 1200;
 		vrLoc = 0;
@@ -1266,7 +1266,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 162";
 		rLen = 0;
-		rLoc = 4664;
+		rLoc = 4634;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 3357;
@@ -1276,7 +1276,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1286,7 +1286,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1296,7 +1296,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 157";
 		rLen = 0;
-		rLoc = 4512;
+		rLoc = 4482;
 		rType = 0;
 		vrLen = 1088;
 		vrLoc = 3708;
@@ -1306,7 +1306,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1316,7 +1316,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1326,7 +1326,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 162";
 		rLen = 0;
-		rLoc = 4557;
+		rLoc = 4527;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 3807;
@@ -1336,7 +1336,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1346,7 +1346,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1356,7 +1356,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 414";
 		rLen = 0;
-		rLoc = 14783;
+		rLoc = 15186;
 		rType = 0;
 		vrLen = 1418;
 		vrLoc = 11858;
@@ -1366,7 +1366,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 160";
 		rLen = 0;
-		rLoc = 4555;
+		rLoc = 4525;
 		rType = 0;
 		vrLen = 1078;
 		vrLoc = 3850;
@@ -1376,7 +1376,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 183";
 		rLen = 0;
-		rLoc = 5008;
+		rLoc = 4978;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 3877;
@@ -1386,7 +1386,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1396,7 +1396,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1426,7 +1426,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 406";
 		rLen = 5;
-		rLoc = 14563;
+		rLoc = 14966;
 		rType = 0;
 		vrLen = 1712;
 		vrLoc = 4976;
@@ -1436,7 +1436,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1446,7 +1446,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1456,7 +1456,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 402";
 		rLen = 0;
-		rLoc = 14395;
+		rLoc = 14798;
 		rType = 0;
 		vrLen = 1385;
 		vrLoc = 11878;
@@ -1466,7 +1466,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1476,7 +1476,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1516,7 +1516,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 398";
 		rLen = 0;
-		rLoc = 13957;
+		rLoc = 14328;
 		rType = 0;
 		vrLen = 1564;
 		vrLoc = 11839;
@@ -1546,12 +1546,12 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 95";
 		rLen = 0;
-		rLoc = 2521;
+		rLoc = 2593;
 		rType = 0;
 		vrLen = 1835;
 		vrLoc = 1248;
 	};
-	0A7078D313670ABA006B69C7 /* DiagramViewController.m:434 */ = {
+	0A7078D313670ABA006B69C7 /* DiagramViewController.m:448 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1563,9 +1563,9 @@
 		functionName = "-handleSingleTapFrom:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 434;
+		lineNumber = 448;
 		location = ReedKellogg;
-		modificationTime = 325526802.959698;
+		modificationTime = 325528355.867179;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1574,7 +1574,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1584,7 +1584,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1594,7 +1594,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 95";
 		rLen = 9;
-		rLoc = 2512;
+		rLoc = 2584;
 		rType = 0;
 		vrLen = 1835;
 		vrLoc = 1248;
@@ -1614,7 +1614,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 398";
 		rLen = 0;
-		rLoc = 13957;
+		rLoc = 14328;
 		rType = 0;
 		vrLen = 1538;
 		vrLoc = 11839;
@@ -1624,7 +1624,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 398";
 		rLen = 0;
-		rLoc = 13957;
+		rLoc = 14328;
 		rType = 0;
 		vrLen = 1562;
 		vrLoc = 11841;
@@ -1634,7 +1634,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1644,7 +1644,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1654,7 +1654,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 401";
 		rLen = 0;
-		rLoc = 14100;
+		rLoc = 14471;
 		rType = 0;
 		vrLen = 1539;
 		vrLoc = 11839;
@@ -1664,7 +1664,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1674,7 +1674,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1684,7 +1684,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 309";
 		rLen = 0;
-		rLoc = 10477;
+		rLoc = 10783;
 		rType = 0;
 		vrLen = 1762;
 		vrLoc = 8988;
@@ -1694,7 +1694,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1704,7 +1704,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1714,7 +1714,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 312";
 		rLen = 0;
-		rLoc = 10553;
+		rLoc = 10859;
 		rType = 0;
 		vrLen = 1920;
 		vrLoc = 8788;
@@ -1724,7 +1724,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1734,7 +1734,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1744,7 +1744,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 278";
 		rLen = 0;
-		rLoc = 8856;
+		rLoc = 9162;
 		rType = 0;
 		vrLen = 1969;
 		vrLoc = 8857;
@@ -1754,7 +1754,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1764,7 +1764,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1774,7 +1774,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 281";
 		rLen = 0;
-		rLoc = 9259;
+		rLoc = 9565;
 		rType = 0;
 		vrLen = 2002;
 		vrLoc = 8683;
@@ -1784,7 +1784,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1794,7 +1794,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1804,7 +1804,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 322";
 		rLen = 0;
-		rLoc = 10609;
+		rLoc = 10915;
 		rType = 0;
 		vrLen = 1743;
 		vrLoc = 9191;
@@ -1814,7 +1814,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1824,7 +1824,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1834,7 +1834,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 322";
 		rLen = 0;
-		rLoc = 10609;
+		rLoc = 10915;
 		rType = 0;
 		vrLen = 1899;
 		vrLoc = 8640;
@@ -1844,7 +1844,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 322";
 		rLen = 0;
-		rLoc = 10609;
+		rLoc = 10915;
 		rType = 0;
 		vrLen = 1906;
 		vrLoc = 8720;
@@ -1854,7 +1854,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1864,7 +1864,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1874,12 +1874,12 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 282";
 		rLen = 0;
-		rLoc = 9257;
+		rLoc = 9563;
 		rType = 0;
 		vrLen = 1943;
 		vrLoc = 8757;
 	};
-	0A70791A13672310006B69C7 /* DiagramViewController.m:281 */ = {
+	0A70791A13672310006B69C7 /* DiagramViewController.m:293 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1891,9 +1891,9 @@
 		functionName = "-handleSingleDragFrom:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 281;
+		lineNumber = 293;
 		location = ReedKellogg;
-		modificationTime = 325526802.959966;
+		modificationTime = 325528355.868057;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1902,7 +1902,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1912,7 +1912,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1922,7 +1922,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 282";
 		rLen = 0;
-		rLoc = 9257;
+		rLoc = 9563;
 		rType = 0;
 		vrLen = 2053;
 		vrLoc = 8787;
@@ -1932,7 +1932,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 282";
 		rLen = 0;
-		rLoc = 9257;
+		rLoc = 9563;
 		rType = 0;
 		vrLen = 1983;
 		vrLoc = 8857;
@@ -1942,7 +1942,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1952,7 +1952,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1962,7 +1962,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 277";
 		rLen = 0;
-		rLoc = 8993;
+		rLoc = 9299;
 		rType = 0;
 		vrLen = 1978;
 		vrLoc = 8640;
@@ -1972,7 +1972,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1982,7 +1982,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1992,7 +1992,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 281";
 		rLen = 0;
-		rLoc = 9198;
+		rLoc = 9504;
 		rType = 0;
 		vrLen = 2006;
 		vrLoc = 8787;
@@ -2002,7 +2002,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -2012,7 +2012,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -2022,7 +2022,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 281";
 		rLen = 0;
-		rLoc = 9198;
+		rLoc = 9504;
 		rType = 0;
 		vrLen = 1987;
 		vrLoc = 8857;
@@ -2032,7 +2032,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 274";
 		rLen = 0;
-		rLoc = 8786;
+		rLoc = 9059;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -2042,7 +2042,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 73";
 		rLen = 0;
-		rLoc = 1794;
+		rLoc = 1866;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -2052,10 +2052,435 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 281";
 		rLen = 0;
-		rLoc = 9198;
+		rLoc = 9504;
 		rType = 0;
 		vrLen = 1764;
 		vrLoc = 9131;
+	};
+	0A70794A136726C7006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 281";
+		rLen = 0;
+		rLoc = 9504;
+		rType = 0;
+		vrLen = 1810;
+		vrLoc = 9196;
+	};
+	0A70794B136726C7006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
+		name = "TouchViewController.m: 570";
+		rLen = 0;
+		rLoc = 18678;
+		rType = 0;
+		vrLen = 1696;
+		vrLoc = 18083;
+	};
+	0A70794C136726C7006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
+		name = "TouchViewController.m: 224";
+		rLen = 0;
+		rLoc = 8012;
+		rType = 0;
+		vrLen = 1624;
+		vrLoc = 14628;
+	};
+	0A70795113672866006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 283";
+		rLen = 0;
+		rLoc = 9059;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70795213672866006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 73";
+		rLen = 0;
+		rLoc = 1866;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70795313672866006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */;
+		name = "TouchViewController.m: 325";
+		rLen = 0;
+		rLoc = 11027;
+		rType = 0;
+		vrLen = 2237;
+		vrLoc = 10820;
+	};
+	0A70795413672866006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 281";
+		rLen = 0;
+		rLoc = 9504;
+		rType = 0;
+		vrLen = 1872;
+		vrLoc = 9133;
+	};
+	0A70795513672866006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 216";
+		rLen = 0;
+		rLoc = 7201;
+		rType = 0;
+		vrLen = 1809;
+		vrLoc = 4960;
+	};
+	0A70795A136728FC006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 283";
+		rLen = 0;
+		rLoc = 9059;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70795B136728FC006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 74";
+		rLen = 0;
+		rLoc = 1866;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70795C136728FC006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 280";
+		rLen = 0;
+		rLoc = 8992;
+		rType = 0;
+		vrLen = 1643;
+		vrLoc = 7997;
+	};
+	0A70795D136728FC006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 95";
+		rLen = 9;
+		rLoc = 2584;
+		rType = 0;
+		vrLen = 1926;
+		vrLoc = 1231;
+	};
+	0A70795E136728FC006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 102";
+		rLen = 0;
+		rLoc = 2763;
+		rType = 0;
+		vrLen = 1854;
+		vrLoc = 2241;
+	};
+	0A7079631367291C006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 283";
+		rLen = 0;
+		rLoc = 9059;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A7079641367291C006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 74";
+		rLen = 0;
+		rLoc = 1866;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A7079651367291C006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 118";
+		rLen = 0;
+		rLoc = 3380;
+		rType = 0;
+		vrLen = 1506;
+		vrLoc = 2683;
+	};
+	0A70796A13672983006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 285";
+		rLen = 0;
+		rLoc = 9059;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70796B13672983006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 77";
+		rLen = 0;
+		rLoc = 1866;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70796C13672983006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 51";
+		rLen = 0;
+		rLoc = 1167;
+		rType = 0;
+		vrLen = 1227;
+		vrLoc = 169;
+	};
+	0A70796D13672983006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47621357E9CC0048A27F /* DiagramViewController.h */;
+		name = "DiagramViewController.h: 40";
+		rLen = 0;
+		rLoc = 957;
+		rType = 0;
+		vrLen = 1913;
+		vrLoc = 753;
+	};
+	0A70796E13672983006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 280";
+		rLen = 0;
+		rLoc = 8992;
+		rType = 0;
+		vrLen = 1643;
+		vrLoc = 7997;
+	};
+	0A70796F13672983006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 76";
+		rLen = 0;
+		rLoc = 2893;
+		rType = 0;
+		vrLen = 2091;
+		vrLoc = 1220;
+	};
+	0A70797613672A01006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 285";
+		rLen = 0;
+		rLoc = 9059;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70797713672A01006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 77";
+		rLen = 0;
+		rLoc = 1866;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70797813672A01006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 288";
+		rLen = 0;
+		rLoc = 9138;
+		rType = 0;
+		vrLen = 2017;
+		vrLoc = 8858;
+	};
+	0A70797B13672A25006B69C7 /* DiagramViewController.m:76 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		functionName = "-viewDidLoad";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 76;
+		location = ReedKellogg;
+		modificationTime = 325528362.985481;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	0A70797C13672A25006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		rLen = 1;
+		rLoc = 75;
+		rType = 1;
+	};
+	0A70798213672A2A006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 285";
+		rLen = 0;
+		rLoc = 9059;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70798313672A2A006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 77";
+		rLen = 0;
+		rLoc = 1866;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70798413672A2A006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 76";
+		rLen = 29;
+		rLoc = 2868;
+		rType = 0;
+		vrLen = 1718;
+		vrLoc = 2180;
+	};
+	0A70798913672ADE006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 286";
+		rLen = 0;
+		rLoc = 9059;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70798A13672ADE006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 77";
+		rLen = 0;
+		rLoc = 1866;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70798B13672ADE006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 88";
+		rLen = 0;
+		rLoc = 3092;
+		rType = 0;
+		vrLen = 1570;
+		vrLoc = 2636;
+	};
+	0A70799013672AFB006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 285";
+		rLen = 0;
+		rLoc = 9059;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70799113672AFB006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 77";
+		rLen = 0;
+		rLoc = 1866;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70799213672AFB006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 87";
+		rLen = 0;
+		rLoc = 3092;
+		rType = 0;
+		vrLen = 1594;
+		vrLoc = 2376;
+	};
+	0A70799813672B23006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 285";
+		rLen = 0;
+		rLoc = 9059;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70799913672B23006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 77";
+		rLen = 0;
+		rLoc = 1866;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A70799A13672B23006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 270";
+		rLen = 0;
+		rLoc = 8719;
+		rType = 0;
+		vrLen = 1543;
+		vrLoc = 8331;
+	};
+	0A70799F13672B4A006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 285";
+		rLen = 0;
+		rLoc = 9059;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A7079A013672B4A006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
+		name = "DiagramView.m: 77";
+		rLen = 0;
+		rLoc = 1866;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	0A7079A113672B4A006B69C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
+		name = "DiagramViewController.m: 270";
+		rLen = 0;
+		rLoc = 8719;
+		rType = 0;
+		vrLen = 1372;
+		vrLoc = 13870;
 	};
 	0A98E873136525F9005BCF2D /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2092,7 +2517,7 @@
 		fRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */;
 		name = "DiagramViewController.m: 63";
 		rLen = 0;
-		rLoc = 2843;
+		rLoc = 2896;
 		rType = 0;
 		vrLen = 737;
 		vrLoc = 1479;
@@ -2212,7 +2637,7 @@
 		vrLen = 797;
 		vrLoc = 0;
 	};
-	0A98E99C1366161D005BCF2D /* DiagramViewController.m:344 */ = {
+	0A98E99C1366161D005BCF2D /* DiagramViewController.m:356 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2224,9 +2649,9 @@
 		functionName = "-handleSingleDragFrom:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 344;
+		lineNumber = 356;
 		location = ReedKellogg;
-		modificationTime = 325526802.954381;
+		modificationTime = 325528355.86591;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -2308,9 +2733,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 309;
-		modificationTime = 325526808.358038;
+		modificationTime = 325528393.482438;
 		originalNumberOfMultipleMatches = 1;
-		state = 0;
+		state = 1;
 	};
 	0AAB46CC1357CDD90048A27F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2346,14 +2771,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1064, 1105}}";
 			sepNavSelRange = "{957, 0}";
-			sepNavVisRange = "{801, 1865}";
+			sepNavVisRange = "{753, 1913}";
 		};
 	};
 	0AAB47631357E9CC0048A27F /* DiagramViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 6201}}";
-			sepNavSelRange = "{9198, 0}";
-			sepNavVisRange = "{9131, 1764}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 6214}}";
+			sepNavSelRange = "{8719, 0}";
+			sepNavVisRange = "{13870, 1372}";
 			sepNavWindowFrame = "{{273, 4}, {750, 874}}";
 		};
 	};
@@ -2366,8 +2791,8 @@
 	};
 	0AAB476B1357ECF60048A27F /* DiagramView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 3666}}";
-			sepNavSelRange = "{1794, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 3653}}";
+			sepNavSelRange = "{1866, 0}";
 			sepNavVisRange = "{0, 0}";
 		};
 	};
@@ -2786,9 +3211,10 @@
 			0A206CB813330FB3001DC53E /* PasswordEntryModalViewController.m:152 */,
 			0AA917CD1333D4D4008B4AC5 /* KeychainItemWrapper.m:309 */,
 			0A2AF68F1364EF3200031A65 /* CustomView.m:231 */,
-			0A98E99C1366161D005BCF2D /* DiagramViewController.m:344 */,
-			0A7078D313670ABA006B69C7 /* DiagramViewController.m:434 */,
-			0A70791A13672310006B69C7 /* DiagramViewController.m:281 */,
+			0A98E99C1366161D005BCF2D /* DiagramViewController.m:356 */,
+			0A7078D313670ABA006B69C7 /* DiagramViewController.m:448 */,
+			0A70791A13672310006B69C7 /* DiagramViewController.m:293 */,
+			0A70797B13672A25006B69C7 /* DiagramViewController.m:76 */,
 		);
 		codeSenseManager = 0A0185D6132FC7B4005EC556 /* Code sense */;
 		executables = (
@@ -3061,6 +3487,47 @@
 			0A70794413672519006B69C7 /* PBXTextBookmark */ = 0A70794413672519006B69C7 /* PBXTextBookmark */;
 			0A70794513672519006B69C7 /* PBXTextBookmark */ = 0A70794513672519006B69C7 /* PBXTextBookmark */;
 			0A70794613672519006B69C7 /* PBXTextBookmark */ = 0A70794613672519006B69C7 /* PBXTextBookmark */;
+			0A70794A136726C7006B69C7 /* PBXTextBookmark */ = 0A70794A136726C7006B69C7 /* PBXTextBookmark */;
+			0A70794B136726C7006B69C7 /* PBXTextBookmark */ = 0A70794B136726C7006B69C7 /* PBXTextBookmark */;
+			0A70794C136726C7006B69C7 /* PBXTextBookmark */ = 0A70794C136726C7006B69C7 /* PBXTextBookmark */;
+			0A70795113672866006B69C7 /* PBXTextBookmark */ = 0A70795113672866006B69C7 /* PBXTextBookmark */;
+			0A70795213672866006B69C7 /* PBXTextBookmark */ = 0A70795213672866006B69C7 /* PBXTextBookmark */;
+			0A70795313672866006B69C7 /* PBXTextBookmark */ = 0A70795313672866006B69C7 /* PBXTextBookmark */;
+			0A70795413672866006B69C7 /* PBXTextBookmark */ = 0A70795413672866006B69C7 /* PBXTextBookmark */;
+			0A70795513672866006B69C7 /* PBXTextBookmark */ = 0A70795513672866006B69C7 /* PBXTextBookmark */;
+			0A70795A136728FC006B69C7 /* PBXTextBookmark */ = 0A70795A136728FC006B69C7 /* PBXTextBookmark */;
+			0A70795B136728FC006B69C7 /* PBXTextBookmark */ = 0A70795B136728FC006B69C7 /* PBXTextBookmark */;
+			0A70795C136728FC006B69C7 /* PBXTextBookmark */ = 0A70795C136728FC006B69C7 /* PBXTextBookmark */;
+			0A70795D136728FC006B69C7 /* PBXTextBookmark */ = 0A70795D136728FC006B69C7 /* PBXTextBookmark */;
+			0A70795E136728FC006B69C7 /* PBXTextBookmark */ = 0A70795E136728FC006B69C7 /* PBXTextBookmark */;
+			0A7079631367291C006B69C7 /* PBXTextBookmark */ = 0A7079631367291C006B69C7 /* PBXTextBookmark */;
+			0A7079641367291C006B69C7 /* PBXTextBookmark */ = 0A7079641367291C006B69C7 /* PBXTextBookmark */;
+			0A7079651367291C006B69C7 /* PBXTextBookmark */ = 0A7079651367291C006B69C7 /* PBXTextBookmark */;
+			0A70796A13672983006B69C7 /* PBXTextBookmark */ = 0A70796A13672983006B69C7 /* PBXTextBookmark */;
+			0A70796B13672983006B69C7 /* PBXTextBookmark */ = 0A70796B13672983006B69C7 /* PBXTextBookmark */;
+			0A70796C13672983006B69C7 /* PBXTextBookmark */ = 0A70796C13672983006B69C7 /* PBXTextBookmark */;
+			0A70796D13672983006B69C7 /* PBXTextBookmark */ = 0A70796D13672983006B69C7 /* PBXTextBookmark */;
+			0A70796E13672983006B69C7 /* PBXTextBookmark */ = 0A70796E13672983006B69C7 /* PBXTextBookmark */;
+			0A70796F13672983006B69C7 /* PBXTextBookmark */ = 0A70796F13672983006B69C7 /* PBXTextBookmark */;
+			0A70797613672A01006B69C7 /* PBXTextBookmark */ = 0A70797613672A01006B69C7 /* PBXTextBookmark */;
+			0A70797713672A01006B69C7 /* PBXTextBookmark */ = 0A70797713672A01006B69C7 /* PBXTextBookmark */;
+			0A70797813672A01006B69C7 /* PBXTextBookmark */ = 0A70797813672A01006B69C7 /* PBXTextBookmark */;
+			0A70797C13672A25006B69C7 /* PBXTextBookmark */ = 0A70797C13672A25006B69C7 /* PBXTextBookmark */;
+			0A70798213672A2A006B69C7 /* PBXTextBookmark */ = 0A70798213672A2A006B69C7 /* PBXTextBookmark */;
+			0A70798313672A2A006B69C7 /* PBXTextBookmark */ = 0A70798313672A2A006B69C7 /* PBXTextBookmark */;
+			0A70798413672A2A006B69C7 /* PBXTextBookmark */ = 0A70798413672A2A006B69C7 /* PBXTextBookmark */;
+			0A70798913672ADE006B69C7 /* PBXTextBookmark */ = 0A70798913672ADE006B69C7 /* PBXTextBookmark */;
+			0A70798A13672ADE006B69C7 /* PBXTextBookmark */ = 0A70798A13672ADE006B69C7 /* PBXTextBookmark */;
+			0A70798B13672ADE006B69C7 /* PBXTextBookmark */ = 0A70798B13672ADE006B69C7 /* PBXTextBookmark */;
+			0A70799013672AFB006B69C7 /* PBXTextBookmark */ = 0A70799013672AFB006B69C7 /* PBXTextBookmark */;
+			0A70799113672AFB006B69C7 /* PBXTextBookmark */ = 0A70799113672AFB006B69C7 /* PBXTextBookmark */;
+			0A70799213672AFB006B69C7 /* PBXTextBookmark */ = 0A70799213672AFB006B69C7 /* PBXTextBookmark */;
+			0A70799813672B23006B69C7 /* PBXTextBookmark */ = 0A70799813672B23006B69C7 /* PBXTextBookmark */;
+			0A70799913672B23006B69C7 /* PBXTextBookmark */ = 0A70799913672B23006B69C7 /* PBXTextBookmark */;
+			0A70799A13672B23006B69C7 /* PBXTextBookmark */ = 0A70799A13672B23006B69C7 /* PBXTextBookmark */;
+			0A70799F13672B4A006B69C7 /* PBXTextBookmark */ = 0A70799F13672B4A006B69C7 /* PBXTextBookmark */;
+			0A7079A013672B4A006B69C7 /* PBXTextBookmark */ = 0A7079A013672B4A006B69C7 /* PBXTextBookmark */;
+			0A7079A113672B4A006B69C7 /* PBXTextBookmark */ = 0A7079A113672B4A006B69C7 /* PBXTextBookmark */;
 			0A98E873136525F9005BCF2D = 0A98E873136525F9005BCF2D /* PBXTextBookmark */;
 			0A98E874136525F9005BCF2D = 0A98E874136525F9005BCF2D /* PBXTextBookmark */;
 			0A98E875136525F9005BCF2D = 0A98E875136525F9005BCF2D /* PBXTextBookmark */;
@@ -3168,9 +3635,9 @@
 	};
 	B739CBF812DEA25700D3F493 /* TouchViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1174, 9113}}";
-			sepNavSelRange = "{18678, 0}";
-			sepNavVisRange = "{18083, 1696}";
+			sepNavIntBoundsRect = "{{0, 0}, {1174, 9087}}";
+			sepNavSelRange = "{11027, 0}";
+			sepNavVisRange = "{10820, 2237}";
 		};
 	};
 	B73B390812E7E71E00219463 /* addNameViewController.h */ = {

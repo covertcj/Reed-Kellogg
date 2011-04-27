@@ -39,6 +39,7 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	NSLog(@"viewDidLoad");
     [super viewDidLoad];
 	
 	// load the layout
@@ -72,6 +73,7 @@
 	[self.diagramView addGestureRecognizer:singleTapRecognizer];
 	[singleTapRecognizer release];
 	[doubleTapRecognizer release];
+	NSLog(@"viewDidLoad: end");
 }
 
 
@@ -128,6 +130,8 @@
 }
 
 - (Layout *) loadLayout {
+	NSLog(@"loadLayout");
+	
 	// create the core data request
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@", self.selectedStudent, selectedSentence]];
@@ -138,10 +142,12 @@
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
 	[request release];
 	
+	NSLog(@"loadLayout: end");
 	return ([results count] > 0) ? (Layout *)[results objectAtIndex:0] : nil;
 }
 
 - (void) setLayout:(Layout *)layout {
+	NSLog(@"setLayout");
 	// setup the correctness marking for all request results
 	if ([layout.grade boolValue]) {
 		[self.correctMark setImage:[UIImage imageNamed:@"correct.png"]];
@@ -157,9 +163,11 @@
 	// setup the words and lines
 	[self setLayoutWords:layout];
 	[self setLayoutLines:layout];
+	NSLog(@"setLayout: end");
 }
 
 - (void) setLayoutWords:(Layout *) layout {
+	NSLog(@"setLayoutWords");
 	// remove all current words from the view
 	for (UILabel * lab in words) {
 		[lab removeFromSuperview];
@@ -207,9 +215,11 @@
 		[self.words addObject:word];
 		[self.diagramView addSubview:word];
 	}
+	NSLog(@"setLayoutWords: end");
 }
 
 - (void) setLayoutLines:(Layout *) layout {
+	NSLog(@"setLayoutLines");
 	[self.diagramView removeAllLines];
 	
 	// if save data exists
@@ -222,6 +232,7 @@
 			[self.diagramView addLine:line];
 		}
 	}
+	NSLog(@"setLayoutLines: end");
 }
 
 - (UILabel *) createWord:(NSString *)text withOrigin:(CGPoint)frameOrigin andRotation:(CGAffineTransform)rotation {
@@ -274,6 +285,7 @@
 }
 
 - (void) handleSingleDragFrom:(UIPanGestureRecognizer *)recognizer {
+	NSLog(@"handleSingleDragFrom");
 	CGPoint vel      = CGPointMake([recognizer velocityInView:self.diagramView].x * 0.025, [recognizer velocityInView:self.diagramView].y * 0.025);
 	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, [recognizer locationInView:self.diagramView].y);
 	
@@ -379,6 +391,7 @@
 }
 
 - (void) handleDoubleDragFrom:(UIPanGestureRecognizer *)recognizer {
+	NSLog(@"handleDoubleDragFrom");
 	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, 
 								   [recognizer locationInView:self.diagramView].y);
 	float speedCoeff = 1;
@@ -401,6 +414,7 @@
 }
 
 - (void) handleSingleTapFrom:(UITapGestureRecognizer *)recognizer {
+	NSLog(@"handleSingleTapFrom");
 	CGPoint touchLoc = [recognizer locationInView:self.diagramView];
 	self.diagramView.touchedLine = nil;
 	
@@ -438,6 +452,7 @@
 }
 
 - (void) handleDoubleTapFrom:(UITapGestureRecognizer *)recognizer {
+	NSLog(@"handleDoubleTapFrom");
 	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, 
 								   [recognizer locationInView:self.diagramView].y);
 	

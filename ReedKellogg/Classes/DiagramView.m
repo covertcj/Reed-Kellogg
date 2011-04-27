@@ -24,6 +24,7 @@
 }
 
 - (void) setupView {
+	NSLog(@"setupView");
 	// set the size of the window
 	CGRect viewFrame       = self.frame;
 	viewFrame.size.width  *= 3.0f;
@@ -46,9 +47,12 @@
     }
 	
 	[self setNeedsDisplay];
+	
+	NSLog(@"setupView: end");
 }
 
 - (void) drawRect:(CGRect)rect {
+	NSLog(@"drawRect");
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
 	// draw the grid
@@ -98,6 +102,7 @@
 			[self drawLine:line withWidth:4.0f andColor:[UIColor blackColor].CGColor andContext:context];
 		}
 	}
+	NSLog(@"drawRect: end");
 }
 
 - (void) drawLine:(Line *)line withWidth:(CGFloat)width andColor:(CGColorRef)color andContext:(CGContextRef)context {
@@ -113,9 +118,7 @@
 }
 
 - (void) addLine:(Line *)line {
-	NSLog(@"addLineLine: (%f, %f) to (%f, %f)", line.start.x, line.start.y, line.end.x, line.end.y);
-	
-	NSLog(@"addLine: %@", self.lines);
+	NSLog(@"addLine");
 	
 	// TODO: Implement DiagramView.addLine
 	if (self.lines == nil) {
@@ -127,7 +130,7 @@
 	myline.end     = CGPointMake(roundf(line.end.x   / self.gridSize) * self.gridSize, roundf(line.end.y   / self.gridSize) * self.gridSize);
 	[self.lines addObject:myline];
 	
-	NSLog(@"addLine2: %@", self.lines);
+	NSLog(@"addLine: end");
 	
 	[self setNeedsDisplay];
 }
