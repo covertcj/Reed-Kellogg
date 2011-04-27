@@ -36,7 +36,6 @@
 	self.showGrid     = YES;
 	
 	// allow only two finger scrolling
-//	self.multipleTouchEnabled  = YES;
 	for (id gestureRecognizer in self.gestureRecognizers) {     
 		if ([gestureRecognizer  isKindOfClass:[UIPanGestureRecognizer class]])
 		{
@@ -136,6 +135,7 @@
 }
 
 - (void) setTemp:(Line *)line {
+	NSLog(@"setTemp");
 	if (line == nil) {
 		self.tempLine = nil;
 		[self.tempLine release];
@@ -150,6 +150,8 @@
 	self.tempLine.end   = line.end;
 	
 	[self setNeedsDisplay];
+	
+	NSLog(@"setTemp: end");
 }
 
 - (void) removeLine:(Line *)line {

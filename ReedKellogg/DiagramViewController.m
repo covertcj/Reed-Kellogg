@@ -140,7 +140,6 @@
 	// send the core data request
 	NSError * error;
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
-	[request release];
 	
 	NSLog(@"loadLayout: end");
 	return ([results count] > 0) ? (Layout *)[results objectAtIndex:0] : nil;
