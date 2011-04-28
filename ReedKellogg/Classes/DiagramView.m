@@ -15,7 +15,6 @@
 @synthesize lines, tempLine, touchedLine;
 @synthesize showGrid, gridSize;
 
-
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
     }
@@ -24,15 +23,13 @@
 }
 
 - (void) setupView {
-	NSLog(@"setupView");
 	// set the size of the window
+	self.gridSize     = 40;
 	CGRect viewFrame       = self.frame;
 	viewFrame.size.width  *= 3.0f;
 	viewFrame.size.height *= 1.5f;
 	self.contentSize = CGSizeMake(viewFrame.size.width, viewFrame.size.height);
-	
 	// set the grid size
-	self.gridSize     = 40;
 	self.showGrid     = YES;
 	
 	// allow only two finger scrolling
@@ -46,12 +43,9 @@
     }
 	
 	[self setNeedsDisplay];
-	
-	NSLog(@"setupView: end");
 }
 
 - (void) drawRect:(CGRect)rect {
-	NSLog(@"drawRect");
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
 	// draw the grid
@@ -101,7 +95,6 @@
 			[self drawLine:line withWidth:4.0f andColor:[UIColor blackColor].CGColor andContext:context];
 		}
 	}
-	NSLog(@"drawRect: end");
 }
 
 - (void) drawLine:(Line *)line withWidth:(CGFloat)width andColor:(CGColorRef)color andContext:(CGContextRef)context {
@@ -117,25 +110,31 @@
 }
 
 - (void) addLine:(Line *)line {
-	NSLog(@"addLine");
-	
+	NSLog(@"adding line from (%f, %f) to (%f, %f)",line.start.x, line.start.y, line.end.x, line.end.y);
 	// TODO: Implement DiagramView.addLine
 	if (self.lines == nil) {
 		self.lines = [[NSMutableArray alloc] init];
 	}
 	
 	Line * myline  = [[Line alloc] init];
-	myline.start   = CGPointMake(roundf(line.start.x / self.gridSize) * self.gridSize, roundf(line.start.y / self.gridSize) * self.gridSize);
-	myline.end     = CGPointMake(roundf(line.end.x   / self.gridSize) * self.gridSize, roundf(line.end.y   / self.gridSize) * self.gridSize);
+	myline.start   = line.start;
+	myline.start   = [self snapToGrid:myline.start];
+	myline.end     = line.end;
+	myline.end     = [self snapToGrid:myline.end];
+	[self snapToGrid:myline.end];
 	[self.lines addObject:myline];
-	
-	NSLog(@"addLine: end");
-	
+	NSLog(@"actually adding line from (%f, %f) to (%f, %f)",myline.start.x, myline.start.y, myline.end.x, myline.end.y);
 	[self setNeedsDisplay];
 }
 
+- (CGPoint) snapToGrid:(CGPoint) p{
+	p.x = roundf(p.x / self.gridSize) * self.gridSize;
+	p.y = roundf(p.y / self.gridSize) * self.gridSize;
+									
+	return p;
+}
+
 - (void) setTemp:(Line *)line {
-	NSLog(@"setTemp");
 	if (line == nil) {
 		self.tempLine = nil;
 		[self.tempLine release];
@@ -151,7 +150,6 @@
 	
 	[self setNeedsDisplay];
 	
-	NSLog(@"setTemp: end");
 }
 
 - (void) removeLine:(Line *)line {

@@ -414,8 +414,6 @@
 		NSLog(@"Error saving...");
 		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
 	}
-	
-	
 }
 
 - (void) pressGrid:(id)sender{

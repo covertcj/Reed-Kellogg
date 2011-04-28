@@ -1,4 +1,4 @@
-    //
+//
 //  DiagramViewController.m
 //  ReedKellogg
 //
@@ -39,14 +39,12 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	NSLog(@"viewDidLoad");
     [super viewDidLoad];
 	
 	// load the layout
+	[self.diagramView setupView];
 	self.words = [[NSMutableArray alloc] init];
 	[self setLayout:[self loadLayout]];
-	
-	[self.diagramView setupView];
 	
 	UIPanGestureRecognizer * singleDragRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleDragFrom:)];
 	singleDragRecognizer.minimumNumberOfTouches   = 1;
@@ -73,16 +71,12 @@
 	[self.diagramView addGestureRecognizer:singleTapRecognizer];
 	[singleTapRecognizer release];
 	[doubleTapRecognizer release];
-	NSLog(@"viewDidLoad: end");
 }
-
-
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Overriden to allow any orientation.
     return YES;
 }
-
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -91,13 +85,11 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-
 - (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
-
 
 - (void)dealloc {
 	self.nextButton           = nil;
@@ -130,7 +122,6 @@
 }
 
 - (Layout *) loadLayout {
-	NSLog(@"loadLayout");
 	
 	// create the core data request
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
@@ -141,12 +132,10 @@
 	NSError * error;
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
 	
-	NSLog(@"loadLayout: end");
 	return ([results count] > 0) ? (Layout *)[results objectAtIndex:0] : nil;
 }
 
 - (void) setLayout:(Layout *)layout {
-	NSLog(@"setLayout");
 	// setup the correctness marking for all request results
 	if ([layout.grade boolValue]) {
 		[self.correctMark setImage:[UIImage imageNamed:@"correct.png"]];
@@ -162,11 +151,9 @@
 	// setup the words and lines
 	[self setLayoutWords:layout];
 	[self setLayoutLines:layout];
-	NSLog(@"setLayout: end");
 }
 
 - (void) setLayoutWords:(Layout *) layout {
-	NSLog(@"setLayoutWords");
 	// remove all current words from the view
 	for (UILabel * lab in words) {
 		[lab removeFromSuperview];
@@ -214,11 +201,9 @@
 		[self.words addObject:word];
 		[self.diagramView addSubview:word];
 	}
-	NSLog(@"setLayoutWords: end");
 }
 
 - (void) setLayoutLines:(Layout *) layout {
-	NSLog(@"setLayoutLines");
 	[self.diagramView removeAllLines];
 	
 	// if save data exists
@@ -226,12 +211,16 @@
 		// add in all lines
 		for (LineData * lineData in layout.LinesData) {
 			Line * line = [[Line alloc] init];
-			line.start  = CGPointMake([lineData.x1 floatValue], [lineData.y1 floatValue]);
-			line.end    = CGPointMake([lineData.x2 floatValue], [lineData.y2 floatValue]);
+			CGFloat x1 = [lineData.x1 floatValue];
+			CGFloat y1 = [lineData.y1 floatValue];
+			CGFloat x2 = [lineData.x2 floatValue];
+			CGFloat y2 = [lineData.y2 floatValue];
+			
+			line.start  = CGPointMake(x1, y1);
+			line.end    = CGPointMake(x2, y2);
 			[self.diagramView addLine:line];
 		}
 	}
-	NSLog(@"setLayoutLines: end");
 }
 
 - (UILabel *) createWord:(NSString *)text withOrigin:(CGPoint)frameOrigin andRotation:(CGAffineTransform)rotation {
@@ -284,7 +273,6 @@
 }
 
 - (void) handleSingleDragFrom:(UIPanGestureRecognizer *)recognizer {
-	NSLog(@"handleSingleDragFrom");
 	CGPoint vel      = CGPointMake([recognizer velocityInView:self.diagramView].x * 0.025, [recognizer velocityInView:self.diagramView].y * 0.025);
 	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, [recognizer locationInView:self.diagramView].y);
 	
@@ -390,7 +378,6 @@
 }
 
 - (void) handleDoubleDragFrom:(UIPanGestureRecognizer *)recognizer {
-	NSLog(@"handleDoubleDragFrom");
 	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, 
 								   [recognizer locationInView:self.diagramView].y);
 	float speedCoeff = 1;
@@ -413,7 +400,6 @@
 }
 
 - (void) handleSingleTapFrom:(UITapGestureRecognizer *)recognizer {
-	NSLog(@"handleSingleTapFrom");
 	CGPoint touchLoc = [recognizer locationInView:self.diagramView];
 	self.diagramView.touchedLine = nil;
 	
@@ -451,7 +437,6 @@
 }
 
 - (void) handleDoubleTapFrom:(UITapGestureRecognizer *)recognizer {
-	NSLog(@"handleDoubleTapFrom");
 	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, 
 								   [recognizer locationInView:self.diagramView].y);
 	
@@ -467,6 +452,88 @@
 	
 	if (toRemove != nil) {
 		[self.diagramView removeLine:toRemove];
+	}
+}
+
+-(IBAction) saveDiagram:(id)sender{
+	NSLog(@"Save Pressed");
+	// Make sure that we override any previous entries that have the same creator and sentence
+	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
+	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",selectedStudent,selectedSentence]];
+	[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
+	NSError * error;
+	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
+	BOOL oldgrade = NO;
+	NSString * oldcomments=@"";
+	for(Layout *l in results){
+		oldcomments = [NSString stringWithString: l.comments];
+		oldgrade = [l.grade boolValue];
+		NSLog(@"%@ wat", oldcomments);
+		[managedObjectContext deleteObject:l];
+	}
+	
+	if (![managedObjectContext save:&error]) {
+		NSLog(@"Deletion failed (deletion): %@, %@", error, [error userInfo]);
+	}
+	
+	Layout *layout = (Layout *)[NSEntityDescription insertNewObjectForEntityForName:@"Layout" inManagedObjectContext:managedObjectContext];
+	layout.creator = selectedStudent;
+	layout.sentence = selectedSentence;
+	layout.grade = [NSNumber numberWithBool:oldgrade];
+	layout.comments = [NSString stringWithString:oldcomments];
+	// Save words coordinates, and rotation
+	for(int i = 0; i < [words count]; i++){
+		UILabel *w = [words objectAtIndex:i];
+		
+		//Rotate word to 0
+		CGAffineTransform origTransform = w.transform;
+		w.transform = CGAffineTransformMakeRotation(0);
+		
+		
+		WordData *wd = (WordData *)[NSEntityDescription insertNewObjectForEntityForName:@"WordData" inManagedObjectContext:managedObjectContext];
+		//NSLog(@"Frame origin x:%f, y:%f", w.frame.origin.x, w.frame.origin.y);
+		wd.wdx = [NSNumber numberWithFloat:w.frame.origin.x];
+		wd.wdy = [NSNumber numberWithFloat:w.frame.origin.y];
+		NSLog(@"Frame origin x:%@, y:%@", wd.wdx, wd.wdy);
+		
+		// Rotate words back
+		w.transform = origTransform;
+		
+		wd.wdRotation = [NSNumber numberWithFloat:atan2(w.transform.b, w.transform.a)];
+		wd.wdIndex = [NSNumber numberWithInt:i];
+		
+		// Do something cool
+		[layout addWordsDataObject:wd];
+	}
+	
+	// Save lines coordinates
+	NSMutableArray *lines = [diagramView lines];
+	for(Line *line in lines){
+		
+		LineData *ld = (LineData *)[NSEntityDescription insertNewObjectForEntityForName:@"LineData" inManagedObjectContext:managedObjectContext];
+		/*
+		 NSValue *start = [line objectAtIndex:0];
+		NSValue *end = [line objectAtIndex:1];
+		*/
+		CGPoint tempStartPoint = line.start;
+		CGPoint tempEndPoint = line.end;
+		
+		ld.x1 = [NSNumber numberWithFloat:tempStartPoint.x];
+		ld.y1 = [NSNumber numberWithFloat:tempStartPoint.y];
+		ld.x2 = [NSNumber numberWithFloat:tempEndPoint.x];
+		ld.y2 = [NSNumber numberWithFloat:tempEndPoint.y];
+		
+		[layout addLinesDataObject:ld];
+		
+		// Do more cool stuff
+		
+	}
+	
+	//commit changes and handle error if it breaks
+	if (![managedObjectContext save:&error]) {
+		
+		NSLog(@"Error saving...");
+		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
 	}
 }
 

@@ -35,5 +35,6 @@
 - (BOOL) touch:(CGPoint)touch nearLine:(Line *)line;
 - (void) removeAllLines;
 - (Line *) lineAt:(CGPoint)touch;
+- (CGPoint) snapToGrid:(CGPoint)point;
 
 @end

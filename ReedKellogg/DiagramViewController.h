@@ -71,6 +71,7 @@
 
 @property (nonatomic) CGPoint previousScrollTouchLoc;
 
+- (IBAction)saveDiagram:(id)sender;
 - (Layout *) loadLayout;
 - (void) setLayout:(Layout *) layout;
 - (void) setLayoutWords:(Layout *) layout;
