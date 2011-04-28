@@ -30,6 +30,6 @@
 @property (nonatomic, retain) Lesson *currLesson;
 @property (nonatomic, retain) Sentence *currSentence;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
--(IBAction)pressSave:(id)sender;
+-(IBAction)saveComments:(id)sender;
 
 @end

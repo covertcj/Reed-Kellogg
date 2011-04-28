@@ -489,7 +489,7 @@
 	[diagramView setNeedsDisplay];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
+- (void) viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:TRUE];
 	[self saveDiagram:nil];
 }
@@ -570,6 +570,7 @@
 }
 
 - (IBAction) showComments:(id)sender{
+	[self saveDiagram:nil];
 	CommentViewController *targetViewController = [[CommentViewController alloc] init];
 	targetViewController.title = @"Comments";
 	targetViewController.managedObjectContext = self.managedObjectContext;

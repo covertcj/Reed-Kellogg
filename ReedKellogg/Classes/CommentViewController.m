@@ -46,20 +46,24 @@
 	for(Layout *l in results){
 		self.commentBox.text = l.comments;
 	}
-	
 }
 
-- (void) pressSave:(id)sender{
-	NSLog(@"Save Pressed");
+
+- (void) viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:TRUE];
+	[self saveComments:nil];
+}
+
+- (void) saveComments:(id)sender{
+	NSLog(@"Saving comments");
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,currSentence]];
 	[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
 	NSError * error;
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
 	for(Layout *l in results){
-		NSLog(@"Setting comments to %@", self.commentBox.text);
+		NSLog(@"Saving comments as %@", self.commentBox.text);
 		l.comments = self.commentBox.text;
-		//[l setComments:self.commentBox.text];
 	}
 	
 	//commit changes and handle error if it breaks		
