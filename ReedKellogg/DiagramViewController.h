@@ -17,7 +17,6 @@
 @interface DiagramViewController : UIViewController <UIScrollViewDelegate, DiagramViewDelegate> {
 	UIBarButtonItem * nextButton;
 	UIBarButtonItem * prevButton;
-	UIBarButtonItem * saveButton;
 	UIBarButtonItem * viewCommentsButton;
 	UIBarButtonItem * showGridButton;
 	UISegmentedControl * correctButton;
@@ -47,7 +46,6 @@
 
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * nextButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * prevButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem * saveButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * viewCommentsButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * showGridButton;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *correctButton;

@@ -95,7 +95,6 @@
 - (void)dealloc {
 	self.nextButton           = nil;
 	self.prevButton           = nil;
-	self.saveButton           = nil;
 	self.viewCommentsButton   = nil;
 	self.showGridButton       = nil;
 	self.correctMark          = nil;
@@ -110,7 +109,6 @@
 
 	[self.nextButton         release];
 	[self.prevButton         release];
-	[self.saveButton         release];
 	[self.viewCommentsButton release];
 	[self.showGridButton     release];
 	[self.correctMark        release];
@@ -489,6 +487,11 @@
 	}
 	[self setLayout:[self loadLayout]];
 	[diagramView setNeedsDisplay];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:TRUE];
+	[self saveDiagram:nil];
 }
 
 - (IBAction) saveDiagram:(id)sender{
