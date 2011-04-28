@@ -18,13 +18,13 @@
 @implementation DiagramViewController
 
 @synthesize selectedLesson, selectedStudent, selectedSentence, managedObjectContext;
-@synthesize markCorrectButton;
 @synthesize correctMark, wholeSentence;
 @synthesize diagramView;
 @synthesize words;
-@synthesize teacherMode, correct;
+@synthesize teacherMode, correct, set;
 @synthesize lineStart, touchedWord;
 @synthesize previousScrollTouchLoc;
+@synthesize showGridButton, correctButton;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -40,6 +40,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.set = NO;
 	
 	// load the layout
 	[self.diagramView setupView];
@@ -96,7 +97,6 @@
 	self.prevButton           = nil;
 	self.saveButton           = nil;
 	self.viewCommentsButton   = nil;
-	self.markCorrectButton    = nil;
 	self.showGridButton       = nil;
 	self.correctMark          = nil;
 	self.wholeSentence        = nil;
@@ -106,17 +106,18 @@
 	self.managedObjectContext = nil;
 	self.words                = nil;
 	self.diagramView          = nil;
+	self.correctButton        = nil;
 
 	[self.nextButton         release];
 	[self.prevButton         release];
 	[self.saveButton         release];
 	[self.viewCommentsButton release];
-	[self.markCorrectButton  release];
 	[self.showGridButton     release];
 	[self.correctMark        release];
 	[self.wholeSentence      release];
 	[self.words              release];
 	[self.diagramView        release];
+	[self.correctButton      release];
 	
     [super dealloc];
 }
@@ -125,7 +126,7 @@
 	
 	// create the core data request
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
-	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@", self.selectedStudent, selectedSentence]];
+	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@", self.selectedStudent, self.selectedSentence]];
 	[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
 	
 	// send the core data request
@@ -136,21 +137,24 @@
 }
 
 - (void) setLayout:(Layout *)layout {
+	//boolean noting if done setting. It's needed to handle when the UISegmentedControl gets triggered.
+	self.set = NO; 
 	// setup the correctness marking for all request results
 	if ([layout.grade boolValue]) {
 		[self.correctMark setImage:[UIImage imageNamed:@"correct.png"]];
-		self.markCorrectButton.title = @"Mark Incorrect";
 		self.correct = YES;
+		[correctButton setSelectedSegmentIndex:0];
 	}
 	else {
 		[self.correctMark setImage:[UIImage imageNamed:@"incorrect.png"]];
-		self.markCorrectButton.title = @"Mark Correct";
 		self.correct = NO;
+		[correctButton setSelectedSegmentIndex:1];
 	}
 	
 	// setup the words and lines
 	[self setLayoutWords:layout];
 	[self setLayoutLines:layout];
+	self.set = YES;
 }
 
 - (void) setLayoutWords:(Layout *) layout {
@@ -455,7 +459,39 @@
 	}
 }
 
--(IBAction) saveDiagram:(id)sender{
+- (void) goToSentence:(int) direction{
+	// Save data first.
+	[self saveDiagram:nil];
+	
+	// We have access to currLesson, which means we have access to all sentences in this lesson.
+	BOOL recieved = NO;
+	
+	for(Sentence *st in [selectedLesson sentences]){
+		if (st.number == selectedSentence.number+direction) {
+			selectedSentence = st;
+			recieved = YES;
+			break;
+		}
+	}
+	
+	//No result so move up a screen
+	if (!recieved) {
+		NSLog(@"That was the first or the last sentence in the lesson");
+		[self.navigationController popViewControllerAnimated:YES];
+		return;
+	}
+	
+	//remove previous label
+	for(UIView *v in self.view.subviews){
+		if ([v isKindOfClass:[UILabel class]]) {
+			[v removeFromSuperview];
+		}
+	}
+	[self setLayout:[self loadLayout]];
+	[diagramView setNeedsDisplay];
+}
+
+- (IBAction) saveDiagram:(id)sender{
 	NSLog(@"Save Pressed");
 	// Make sure that we override any previous entries that have the same creator and sentence
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
@@ -463,12 +499,11 @@
 	[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
 	NSError * error;
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
-	BOOL oldgrade = NO;
-	NSString * oldcomments=@"";
+	
+	//retrieve old comments stored in coredata. Store them in a local variable because the coredata entry will be deleted.
+	NSString * comments=@"";
 	for(Layout *l in results){
-		oldcomments = [NSString stringWithString: l.comments];
-		oldgrade = [l.grade boolValue];
-		NSLog(@"%@ wat", oldcomments);
+		comments = [NSString stringWithString: l.comments];
 		[managedObjectContext deleteObject:l];
 	}
 	
@@ -479,8 +514,8 @@
 	Layout *layout = (Layout *)[NSEntityDescription insertNewObjectForEntityForName:@"Layout" inManagedObjectContext:managedObjectContext];
 	layout.creator = selectedStudent;
 	layout.sentence = selectedSentence;
-	layout.grade = [NSNumber numberWithBool:oldgrade];
-	layout.comments = [NSString stringWithString:oldcomments];
+	layout.grade = [[NSNumber alloc] initWithBool:self.correct];
+	layout.comments = [NSString stringWithString:comments];
 	// Save words coordinates, and rotation
 	for(int i = 0; i < [words count]; i++){
 		UILabel *w = [words objectAtIndex:i];
@@ -488,7 +523,6 @@
 		//Rotate word to 0
 		CGAffineTransform origTransform = w.transform;
 		w.transform = CGAffineTransformMakeRotation(0);
-		
 		
 		WordData *wd = (WordData *)[NSEntityDescription insertNewObjectForEntityForName:@"WordData" inManagedObjectContext:managedObjectContext];
 		//NSLog(@"Frame origin x:%f, y:%f", w.frame.origin.x, w.frame.origin.y);
@@ -509,7 +543,6 @@
 	// Save lines coordinates
 	NSMutableArray *lines = [diagramView lines];
 	for(Line *line in lines){
-		
 		LineData *ld = (LineData *)[NSEntityDescription insertNewObjectForEntityForName:@"LineData" inManagedObjectContext:managedObjectContext];
 		/*
 		 NSValue *start = [line objectAtIndex:0];
@@ -522,18 +555,63 @@
 		ld.y1 = [NSNumber numberWithFloat:tempStartPoint.y];
 		ld.x2 = [NSNumber numberWithFloat:tempEndPoint.x];
 		ld.y2 = [NSNumber numberWithFloat:tempEndPoint.y];
-		
 		[layout addLinesDataObject:ld];
-		
 		// Do more cool stuff
-		
 	}
 	
 	//commit changes and handle error if it breaks
 	if (![managedObjectContext save:&error]) {
-		
 		NSLog(@"Error saving...");
 		NSLog(@"Operation failed: %@, %@", error, [error userInfo]);
+	}
+}
+
+- (IBAction) showComments:(id)sender{
+	CommentViewController *targetViewController = [[CommentViewController alloc] init];
+	targetViewController.title = @"Comments";
+	targetViewController.managedObjectContext = self.managedObjectContext;
+	targetViewController.TeacherMode = self.teacherMode;
+	targetViewController.currLesson = self.selectedLesson;
+	targetViewController.currSentence = self.selectedSentence;
+	targetViewController.currStudent = self.selectedStudent;
+	[[self navigationController] pushViewController:targetViewController animated:YES];
+}
+
+- (IBAction) prevSentence:(id)sender{
+	NSLog(@"Prev Pressed");
+	[self goToSentence:-1];
+}
+
+- (IBAction) nextSentence:(id)sender{
+	NSLog(@"Next Pressed");
+	[self goToSentence:1];
+}
+
+- (IBAction) toggleGrid:(id)sender{
+	if (diagramView.showGrid) {
+		[self.showGridButton setTitle:@"Show Grid"];
+		diagramView.showGrid = NO;
+		[diagramView setNeedsDisplay];
+	} else {
+		[self.showGridButton setTitle:@"Hide Grid"];
+		diagramView.showGrid = YES;
+		[diagramView setNeedsDisplay];
+	}
+
+}
+
+- (IBAction) toggleCorrect:(id)sender{
+	if (set) {
+		NSLog(@"toggleCorrect");
+		if (correct) {
+			self.correct = NO;
+			[self.correctMark setImage:[UIImage imageNamed:@"incorrect.png"]];
+			[self.correctMark setNeedsDisplay];
+		}else {
+			self.correct = YES; 
+			[self.correctMark setImage:[UIImage imageNamed:@"correct.png"]];
+			[self.correctMark setNeedsDisplay];
+		}
 	}
 }
 

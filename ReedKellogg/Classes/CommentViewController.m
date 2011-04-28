@@ -43,7 +43,6 @@
 	NSError * error;
 	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
 	
-	self.commentBox.text = @"testing";
 	for(Layout *l in results){
 		self.commentBox.text = l.comments;
 	}

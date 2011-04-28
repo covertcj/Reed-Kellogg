@@ -239,7 +239,7 @@
 	
 	// We have access to currLesson, which means we have access to all sentences in this lesson.
 	BOOL gotit = NO;
-	
+
 	for(Sentence *st in [currLesson sentences]){
 		if (st.number == currSentence.number+direction) {
 			currSentence = st;
@@ -255,13 +255,13 @@
 		return;
 	}
 	
+	//remove previous label
 	for(UIView *v in self.view.subviews){
 		if ([v isKindOfClass:[UILabel class]]) {
 			[v removeFromSuperview];
 		}
 	}
 	[words removeAllObjects];
-	
 	[self fetchWordsAndSetLayout];
 	
 }

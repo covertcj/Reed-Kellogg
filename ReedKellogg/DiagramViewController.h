@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "DiagramViewDelegate.h"
+#import "CommentViewController.h"
 
 @class DiagramView;
 @class Layout, Lesson, Sentence, Student;
@@ -18,8 +19,8 @@
 	UIBarButtonItem * prevButton;
 	UIBarButtonItem * saveButton;
 	UIBarButtonItem * viewCommentsButton;
-	UIBarButtonItem * markCorrectButton;
 	UIBarButtonItem * showGridButton;
+	UISegmentedControl * correctButton;
 	
 	UIImageView * correctMark;
 	UILabel     * wholeSentence;
@@ -35,6 +36,7 @@
 	
 	BOOL teacherMode;
 	BOOL correct;
+	BOOL set;
 	
 	CGPoint           lineStart;
 	UILabel *         touchedWord;
@@ -47,8 +49,9 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * prevButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * saveButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * viewCommentsButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem * markCorrectButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * showGridButton;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *correctButton;
+
 
 @property (nonatomic, retain) IBOutlet UIImageView * correctMark;
 @property (nonatomic, retain) IBOutlet UILabel     * wholeSentence;
@@ -64,6 +67,7 @@
 
 @property (nonatomic) BOOL teacherMode;
 @property (nonatomic) BOOL correct;
+@property (nonatomic) BOOL set;
 
 @property (nonatomic) CGPoint           lineStart;
 @property (nonatomic) UILabel *         touchedWord;
@@ -71,7 +75,7 @@
 
 @property (nonatomic) CGPoint previousScrollTouchLoc;
 
-- (IBAction)saveDiagram:(id)sender;
+- (IBAction) saveDiagram:(id)sender;
 - (Layout *) loadLayout;
 - (void) setLayout:(Layout *) layout;
 - (void) setLayoutWords:(Layout *) layout;
@@ -80,6 +84,10 @@
 
 - (void) moveTouchedWordToLocation:(CGPoint)location;
 
-- (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)sender;
-
+- (IBAction) handlePinchGesture:(UIPinchGestureRecognizer *)sender;
+- (IBAction) showComments: (id)sender;
+- (IBAction) prevSentence: (id)sender;
+- (IBAction) nextSentence: (id)sender;
+- (IBAction) toggleGrid:   (id)sender;
+- (IBAction) toggleCorrect:(id)sender;
 @end

@@ -232,15 +232,10 @@
 }
 
 - (void) removeAllLines {
-	if (self.lines != nil) {
-		for (Line * line in self.lines) {
-			[line release];
-		}
-		
-		[self.lines removeAllObjects];
-		[self setNeedsDisplay];
-	}
+	[lines removeAllObjects];
+	[self setNeedsDisplay];
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

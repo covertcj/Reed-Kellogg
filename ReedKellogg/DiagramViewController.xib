@@ -45,6 +45,45 @@
 					<object class="IBUIToolbar" id="680606528">
 						<reference key="NSNextResponder" ref="472297879"/>
 						<int key="NSvFlags">266</int>
+						<object class="NSMutableArray" key="NSSubviews">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBUISegmentedControl" id="434668607">
+								<reference key="NSNextResponder" ref="680606528"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{289, 8}, {138, 30}}</string>
+								<reference key="NSSuperview" ref="680606528"/>
+								<bool key="IBUIOpaque">NO</bool>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<int key="IBSegmentControlStyle">2</int>
+								<int key="IBNumberOfSegments">2</int>
+								<int key="IBSelectedSegmentIndex">0</int>
+								<object class="NSArray" key="IBSegmentTitles">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>Correct</string>
+									<string>Incorrect</string>
+								</object>
+								<object class="NSMutableArray" key="IBSegmentWidths">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<real value="0.0"/>
+									<real value="0.0"/>
+								</object>
+								<object class="NSMutableArray" key="IBSegmentEnabledStates">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<boolean value="YES"/>
+									<boolean value="YES"/>
+								</object>
+								<object class="NSMutableArray" key="IBSegmentContentOffsets">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>{0, 0}</string>
+									<string>{0, 0}</string>
+								</object>
+								<object class="NSMutableArray" key="IBSegmentImages">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="NSNull" id="4"/>
+									<reference ref="4"/>
+								</object>
+							</object>
+						</object>
 						<string key="NSFrame">{{0, 919}, {768, 44}}</string>
 						<reference key="NSSuperview" ref="472297879"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -71,15 +110,14 @@
 								<reference key="IBUIToolbar" ref="680606528"/>
 							</object>
 							<object class="IBUIBarButtonItem" id="137327208">
-								<string key="IBUITitle">Show Grid</string>
+								<string key="IBUITitle">Hide Grid</string>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="680606528"/>
 							</object>
-							<object class="IBUIBarButtonItem" id="513370639">
-								<string key="IBUITitle">Mark Correct</string>
+							<object class="IBUIBarButtonItem" id="9112985">
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<int key="IBUIStyle">1</int>
+								<reference key="IBUICustomView" ref="434668607"/>
 								<reference key="IBUIToolbar" ref="680606528"/>
 							</object>
 							<object class="IBUIBarButtonItem" id="67183832">
@@ -203,22 +241,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">showGridButton</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="137327208"/>
-					</object>
-					<int key="connectionID">20</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">markCorrectButton</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="513370639"/>
-					</object>
-					<int key="connectionID">23</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">correctMark</string>
 						<reference key="source" ref="841351856"/>
 						<reference key="destination" ref="64229752"/>
@@ -264,6 +286,63 @@
 						<reference key="destination" ref="841351856"/>
 					</object>
 					<int key="connectionID">33</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">showComments:</string>
+						<reference key="source" ref="67183832"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">34</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">nextSentence:</string>
+						<reference key="source" ref="104432547"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">35</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">prevSentence:</string>
+						<reference key="source" ref="264398572"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">36</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">toggleGrid:</string>
+						<reference key="source" ref="137327208"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">37</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">showGridButton</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="137327208"/>
+					</object>
+					<int key="connectionID">42</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">correctButton</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="434668607"/>
+					</object>
+					<int key="connectionID">52</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">toggleCorrect:</string>
+						<reference key="source" ref="434668607"/>
+						<reference key="destination" ref="841351856"/>
+						<int key="IBEventType">13</int>
+					</object>
+					<int key="connectionID">55</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -325,8 +404,8 @@
 							<reference ref="104432547"/>
 							<reference ref="633468298"/>
 							<reference ref="137327208"/>
-							<reference ref="513370639"/>
 							<reference ref="67183832"/>
+							<reference ref="9112985"/>
 						</object>
 						<reference key="parent" ref="472297879"/>
 					</object>
@@ -351,14 +430,23 @@
 						<reference key="parent" ref="680606528"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">21</int>
-						<reference key="object" ref="513370639"/>
-						<reference key="parent" ref="680606528"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">28</int>
 						<reference key="object" ref="67183832"/>
 						<reference key="parent" ref="680606528"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">41</int>
+						<reference key="object" ref="9112985"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="434668607"/>
+						</object>
+						<reference key="parent" ref="680606528"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">40</int>
+						<reference key="object" ref="434668607"/>
+						<reference key="parent" ref="9112985"/>
 					</object>
 				</object>
 			</object>
@@ -376,7 +464,6 @@
 					<string>2.IBPluginDependency</string>
 					<string>2.IBViewBoundsToFrameTransform</string>
 					<string>2.IBViewEditorWindowController.showingLayoutRectangles</string>
-					<string>21.IBPluginDependency</string>
 					<string>24.IBPluginDependency</string>
 					<string>24.IBViewBoundsToFrameTransform</string>
 					<string>25.IBPluginDependency</string>
@@ -384,6 +471,7 @@
 					<string>28.IBPluginDependency</string>
 					<string>31.IBEditorWindowLastContentRect</string>
 					<string>31.IBPluginDependency</string>
+					<string>40.IBPluginDependency</string>
 					<string>6.IBEditorWindowLastContentRect</string>
 					<string>6.IBPluginDependency</string>
 					<string>6.IBViewBoundsToFrameTransform</string>
@@ -404,7 +492,6 @@
 					</object>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAABBoAAAwsAAAA</bytes>
 					</object>
@@ -414,6 +501,7 @@
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>{{396, 4}, {783, 852}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>{{0, 777}, {798, 68}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -439,7 +527,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">33</int>
+			<int key="maxID">55</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -460,11 +548,21 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>handlePinchGesture:</string>
+							<string>nextSentence:</string>
+							<string>prevSentence:</string>
 							<string>saveDiagram:</string>
+							<string>showComments:</string>
+							<string>toggleCorrect:</string>
+							<string>toggleGrid:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIPinchGestureRecognizer</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 						</object>
 					</object>
@@ -473,7 +571,12 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>handlePinchGesture:</string>
+							<string>nextSentence:</string>
+							<string>prevSentence:</string>
 							<string>saveDiagram:</string>
+							<string>showComments:</string>
+							<string>toggleCorrect:</string>
+							<string>toggleGrid:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -482,7 +585,27 @@
 								<string key="candidateClassName">UIPinchGestureRecognizer</string>
 							</object>
 							<object class="IBActionInfo">
+								<string key="name">nextSentence:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">prevSentence:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
 								<string key="name">saveDiagram:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showComments:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">toggleCorrect:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">toggleGrid:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>
@@ -491,9 +614,9 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>correctButton</string>
 							<string>correctMark</string>
 							<string>diagramView</string>
-							<string>markCorrectButton</string>
 							<string>nextButton</string>
 							<string>prevButton</string>
 							<string>saveButton</string>
@@ -503,9 +626,9 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UISegmentedControl</string>
 							<string>UIImageView</string>
 							<string>DiagramView</string>
-							<string>UIBarButtonItem</string>
 							<string>UIBarButtonItem</string>
 							<string>UIBarButtonItem</string>
 							<string>UIBarButtonItem</string>
@@ -518,9 +641,9 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>correctButton</string>
 							<string>correctMark</string>
 							<string>diagramView</string>
-							<string>markCorrectButton</string>
 							<string>nextButton</string>
 							<string>prevButton</string>
 							<string>saveButton</string>
@@ -531,16 +654,16 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
+								<string key="name">correctButton</string>
+								<string key="candidateClassName">UISegmentedControl</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">correctMark</string>
 								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">diagramView</string>
 								<string key="candidateClassName">DiagramView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">markCorrectButton</string>
-								<string key="candidateClassName">UIBarButtonItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">nextButton</string>
@@ -712,6 +835,14 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">UIControl</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">UIKit.framework/Headers/UIControl.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">UIGestureRecognizer</string>
 					<string key="superclassName">NSObject</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -777,6 +908,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">UIKit.framework/Headers/UISearchDisplayController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">UISegmentedControl</string>
+					<string key="superclassName">UIControl</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">UIKit.framework/Headers/UISegmentedControl.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
