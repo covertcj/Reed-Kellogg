@@ -274,6 +274,34 @@
 	[UIView commitAnimations];
 }
 
+- (CGPoint) snapPositionForWord:(UILabel *)word {
+	CGPoint snapTo   = word.center;
+	CGFloat gridSize = self.diagramView.gridSize;
+	
+	float angle = atan2(word.transform.b, word.transform.a);
+	if (angle > 0.77f && angle < 0.79f) {
+		float k = fmodf(snapTo.y - snapTo.x, gridSize);
+		snapTo.y = snapTo.y + k/2;
+		snapTo.x = snapTo.x - k/2;
+		
+		snapTo.y = snapTo.y - k * sqrt(2)/2;
+		snapTo.x = snapTo.x + k * sqrt(2)/2;
+	} 
+	else if (angle < -0.77f && angle > -0.79) {
+		float k = fmodf(snapTo.y - snapTo.x, gridSize);
+		snapTo.y = snapTo.y + k/2;
+		snapTo.x = snapTo.x + k/2;
+		
+		snapTo.y = snapTo.y - k * sqrt(2)/2;
+		snapTo.x = snapTo.x - k * sqrt(2)/2;
+	}
+	else {
+		snapTo.y         =  floor(snapTo.y / gridSize) * gridSize + gridSize / 2;
+	}
+	
+	return snapTo;
+}
+
 - (void) handleSingleDragFrom:(UIPanGestureRecognizer *)recognizer {
 	CGPoint vel      = CGPointMake([recognizer velocityInView:self.diagramView].x * 0.025, [recognizer velocityInView:self.diagramView].y * 0.025);
 	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, [recognizer locationInView:self.diagramView].y);
@@ -341,9 +369,7 @@
 	}
 	else if (recognizer.state == UIGestureRecognizerStateEnded) {
 		if (self.touchedWord != nil) {
-			CGPoint snapTo   = self.touchedWord.center;
-			CGFloat gridSize = self.diagramView.gridSize;
-			snapTo.y         =  floor(snapTo.y / gridSize) * gridSize + gridSize / 2;
+			CGPoint snapTo   = [self snapPositionForWord:self.touchedWord];
 			
 			[self moveTouchedWordToLocation:snapTo];
 			
@@ -367,9 +393,7 @@
 	else {
 		NSLog(@"handleSingleDrag: Unknown Gesture State");
 		if (self.touchedWord == nil) {
-			CGPoint snapTo   = self.touchedWord.center;
-			CGFloat gridSize = self.diagramView.gridSize;
-			snapTo.y         =  floor(snapTo.y / gridSize) * gridSize + gridSize / 2;
+			CGPoint snapTo   = [self snapPositionForWord:self.touchedWord];
 			
 			[self moveTouchedWordToLocation:snapTo];
 			

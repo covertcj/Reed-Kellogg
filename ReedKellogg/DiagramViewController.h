@@ -80,6 +80,8 @@
 - (void) setLayoutLines:(Layout *) layout;
 - (UILabel *) createWord:(NSString *)text withOrigin:(CGPoint)frameOrigin andRotation:(CGAffineTransform)rotation;
 
+- (CGPoint) snapPositionForWord:(UILabel *)word;
+
 - (void) moveTouchedWordToLocation:(CGPoint)location;
 
 - (IBAction) handlePinchGesture:(UIPinchGestureRecognizer *)sender;
