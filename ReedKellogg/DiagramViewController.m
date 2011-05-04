@@ -70,6 +70,11 @@
 	singleTapRecognizer.numberOfTapsRequired      = 1;
 	singleTapRecognizer.cancelsTouchesInView      = YES;
 	[self.diagramView addGestureRecognizer:singleTapRecognizer];
+	
+	if (!teacherMode) {
+		correctButton.enabled = FALSE;
+	}
+	
 	[singleTapRecognizer release];
 	[doubleTapRecognizer release];
 }
@@ -279,21 +284,21 @@
 	CGFloat gridSize = self.diagramView.gridSize;
 	
 	float angle = atan2(word.transform.b, word.transform.a);
-	if (angle > 0.77f && angle < 0.79f) {
+	if (TRUE) {
 		float k = fmodf(snapTo.y - snapTo.x, gridSize);
 		snapTo.y = snapTo.y + k/2;
 		snapTo.x = snapTo.x - k/2;
 		
-		snapTo.y = snapTo.y - k * sqrt(2)/2;
-		snapTo.x = snapTo.x + k * sqrt(2)/2;
+		//snapTo.y = snapTo.y - gridSize * sqrt(2)/8;
+		//snapTo.x = snapTo.x + gridSize * sqrt(2)/8;
 	} 
 	else if (angle < -0.77f && angle > -0.79) {
 		float k = fmodf(snapTo.y - snapTo.x, gridSize);
 		snapTo.y = snapTo.y + k/2;
 		snapTo.x = snapTo.x + k/2;
 		
-		snapTo.y = snapTo.y - k * sqrt(2)/2;
-		snapTo.x = snapTo.x - k * sqrt(2)/2;
+		snapTo.y = snapTo.y - k * sqrt(2)/4;
+		snapTo.x = snapTo.x - k * sqrt(2)/4;
 	}
 	else {
 		snapTo.y         =  floor(snapTo.y / gridSize) * gridSize + gridSize / 2;

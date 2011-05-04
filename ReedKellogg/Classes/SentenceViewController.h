@@ -19,4 +19,6 @@
 @property (nonatomic, retain) Student *currStudent;
 @property (nonatomic, retain) Lesson *currLesson;
 
+- (void) updateTitle;
+
 @end

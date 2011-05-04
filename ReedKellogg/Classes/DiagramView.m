@@ -80,6 +80,22 @@
 			y            += self.gridSize;
 		}
 	}
+	int k = self.contentSize.width/self.gridSize;
+	//draw diagnols
+	/*
+	CGFloat b = -k*gridSize;
+	while (b < self.contentSize.height) {
+		// draw a single grid line
+		CGPoint start = CGPointMake(0, b);
+		CGPoint end   = CGPointMake(self.contentSize.height - b, self.contentSize.height);
+		Line * gridLine = [[Line alloc] init];
+		gridLine.start  = start;
+		gridLine.end    = end;
+		[self drawLine:gridLine withWidth:0.5f andColor:[UIColor redColor].CGColor andContext:context];
+		[gridLine release];
+		b            += self.gridSize;
+	}*/
+	
 	
 	// draw the temporary line
 	if (self.tempLine != nil) {

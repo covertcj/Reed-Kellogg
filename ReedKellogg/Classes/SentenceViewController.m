@@ -36,12 +36,20 @@
 	NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
 	NSArray *sortedArray;
 	sortedArray = [sortMe sortedArrayUsingDescriptors:sortDescriptors];
-	
+	super.objectArray = [sortedArray mutableCopy];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:YES];
+	[self updateTitle];
+}
+
+- (void) updateTitle {
 	int numCorrect=0;
-	for (int i=0; i<[sortedArray count]; i++) {
+	for (int i=0; i<[super.objectArray count]; i++) {
 		//NSLog(((Sentence *)[sortedArray objectAtIndex:i]).text);
 		NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
-		[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,((Sentence *)[sortedArray objectAtIndex:i])]];
+		[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",currStudent,((Sentence *)[super.objectArray objectAtIndex:i])]];
 		[request setEntity:[NSEntityDescription entityForName:@"Layout" inManagedObjectContext:managedObjectContext]];
 		NSError * error;
 		NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
@@ -51,13 +59,12 @@
 			}
 		}
 	}
-	NSString *newtitle = [self.title stringByAppendingFormat: @" %@ / %@",[NSNumber numberWithInt: numCorrect], [NSNumber numberWithInt:[sortedArray count]]];
-	self.title = newtitle;
-	super.objectArray = [sortedArray mutableCopy];
+	
+	self.title = [NSString stringWithFormat: @"Lesson: %@, Grade: %@/%@",currLesson.name, [NSNumber numberWithInt: numCorrect], [NSNumber numberWithInt:[super.objectArray count]]];
 }
 
 // This absolutely must be subclassed
--(NSString*) getEntityName {
+- (NSString*) getEntityName {
 	// Since the entity in question (being displayed on the table rows)
 	// is Student, we return Student
 	return @"Sentence";
@@ -65,7 +72,6 @@
 
 // This overrides the superclass method of the same name
 - (void)addObject:(NSString *) name {
-	
 	Sentence *s = [NSEntityDescription insertNewObjectForEntityForName:@"Sentence" inManagedObjectContext:self.managedObjectContext];	
 	[s setText:name];
 	[s setNumber:[NSNumber numberWithInt:[self.objectArray count]+1]];
@@ -125,7 +131,6 @@
         }		
     }	
 }
-
 
 - (void)dealloc {
 	[currStudent dealloc];
