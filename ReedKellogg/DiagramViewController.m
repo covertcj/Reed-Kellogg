@@ -284,21 +284,25 @@
 	CGFloat gridSize = self.diagramView.gridSize;
 	
 	float angle = atan2(word.transform.b, word.transform.a);
-	if (TRUE) {
-		float k = fmodf(snapTo.y - snapTo.x, gridSize);
+	if (angle > 0.77f && angle < 0.79f) {
+		float k = fmodf(gridSize - fmodf(snapTo.y - snapTo.x, gridSize),gridSize);
+		NSLog(@"Snapping from (%f,%f) to (%f,%f), k = %f",snapTo.x,snapTo.y, snapTo.x - k/2, snapTo.y + k/2, k);
+		//move to line
 		snapTo.y = snapTo.y + k/2;
 		snapTo.x = snapTo.x - k/2;
-		
-		//snapTo.y = snapTo.y - gridSize * sqrt(2)/8;
-		//snapTo.x = snapTo.x + gridSize * sqrt(2)/8;
+		//move off of line
+		snapTo.y = snapTo.y - gridSize/4;
+		snapTo.x = snapTo.x + gridSize/4;
 	} 
 	else if (angle < -0.77f && angle > -0.79) {
-		float k = fmodf(snapTo.y - snapTo.x, gridSize);
+		float k = fmodf(gridSize - fmodf(snapTo.y + snapTo.x, gridSize),gridSize);
+		NSLog(@"Snapping from (%f,%f) to (%f,%f), k = %f",snapTo.x,snapTo.y, snapTo.x + k/2, snapTo.y + k/2, k);
+		//move to line
 		snapTo.y = snapTo.y + k/2;
 		snapTo.x = snapTo.x + k/2;
-		
-		snapTo.y = snapTo.y - k * sqrt(2)/4;
-		snapTo.x = snapTo.x - k * sqrt(2)/4;
+		//move off of line
+		snapTo.y = snapTo.y - gridSize/4;
+		snapTo.x = snapTo.x - gridSize/4;
 	}
 	else {
 		snapTo.y         =  floor(snapTo.y / gridSize) * gridSize + gridSize / 2;

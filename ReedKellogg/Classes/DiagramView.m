@@ -81,6 +81,7 @@
 		}
 	}
 	int k = self.contentSize.width/self.gridSize;
+	
 	//draw diagnols
 	/*
 	CGFloat b = -k*gridSize;
