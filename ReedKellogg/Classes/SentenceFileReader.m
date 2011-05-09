@@ -26,10 +26,10 @@
 	return l;
 }
 
-- (void) addSentence:(NSString *)sentence toLesson:(Lesson *)lesson sentenceNumber:n{
+- (void) addSentence:(NSString *)sentence toLesson:(Lesson *)lesson sentenceNumber:(int)n {
 	Sentence *s = [NSEntityDescription insertNewObjectForEntityForName:@"Sentence" inManagedObjectContext:self.managedObjectContext];	
 	[s setText:sentence];
-	[s setNumber:n];
+	[s setNumber:[NSNumber numberWithInt:n]];
 	[lesson addSentencesObject:s];
 }
 
@@ -37,10 +37,10 @@
 	NSString * contents = [NSString stringWithContentsOfFile:[NSString stringWithFormat:@"%@/%@", path, filename] encoding:NSUTF8StringEncoding error:nil];
 	NSArray  * lines    = [contents componentsSeparatedByString:@"\n"];
 	
-	NSString * lessonName = [filename stringByDeletingPathExtension];
+	Lesson * lesson     = [self addLesson:[filename stringByDeletingPathExtension]];
 	int i = 0;
 	for (NSString * sentence in lines) {
-		[self addSentence:sentence toLesson:lessonName sentenceNumber: i];
+		[self addSentence:sentence toLesson:lesson sentenceNumber: i];
 		i++;
 	}
 	

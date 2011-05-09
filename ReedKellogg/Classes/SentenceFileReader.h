@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 - (Lesson *) addLesson:(NSString *)lesson;
-- (void) addSentence:(NSString *)sentence toLesson:(NSString *)lesson sentenceNumber:n;
+- (void) addSentence:(NSString *)sentence toLesson:(Lesson *)lesson sentenceNumber:(int)n;
 - (void) readInFile:(NSString *)filename atPath:(NSString *)path;
 - (void) readInFiles;
 

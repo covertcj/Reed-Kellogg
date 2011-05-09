@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>0A8E5A091378512400E02F83</string>
+						<string>0AD1DFAC1378AAA700878D9A</string>
 						<key>history</key>
 						<array>
-							<string>0A8E59C513777AFD00E02F83</string>
+							<string>0A8E5A091378512400E02F83</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -515,7 +515,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0A8E5A081378512400E02F83</string>
+										<string>0AD1DFA91378AAA700878D9A</string>
 										<key>history</key>
 										<array>
 											<string>0A3F76D113338B0B002F5F28</string>
@@ -560,7 +560,7 @@
 											<string>0A8E59F31378475D00E02F83</string>
 											<string>0A8E59F41378475D00E02F83</string>
 											<string>0A8E59F51378475D00E02F83</string>
-											<string>0A8E59F61378475D00E02F83</string>
+											<string>0A8E5A081378512400E02F83</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -620,9 +620,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>0A8E59E4137846C900E02F83</string>
+				<string>0AD1DFAA1378AAA700878D9A</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>0A8E59E5137846C900E02F83</string>
+				<string>0AD1DFAB1378AAA700878D9A</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
@@ -762,9 +762,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>0A8E59F0137846C900E02F83</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>0A0185D3132FC7B4005EC556</string>
 		<string>0A8E58F6137762E000E02F83</string>
 		<string>/Users/csse/Documents/Courses/CSSE375/reedkellogg_scrollview/branches/scroll/ReedKellogg/ReedKellogg.xcodeproj</string>
@@ -847,7 +844,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>0A0185D3132FC7B4005EC556</string>
-				<string>0A8E59E7137846C900E02F83</string>
+				<string>0AD1DFAD1378AAA700878D9A</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
