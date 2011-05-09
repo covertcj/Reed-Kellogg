@@ -1,5 +1,6 @@
 #import "ReedKelloggAppDelegate.h"
 #import "RootViewController.h"
+#import "SentenceFileReader.h"
 
 @implementation ReedKelloggAppDelegate
 
@@ -10,35 +11,34 @@
 	
 	RootViewController *rootViewController = [[RootViewController alloc]									  
 											  init];
-	
     NSManagedObjectContext *context = [self managedObjectContext];
 	
     if (!context) {		
         // Handle the error.
     }
 	
+	SentenceFileReader *sentenceFileReader = [[SentenceFileReader alloc]									  
+											  init];
+	sentenceFileReader.managedObjectContext = context;
+	[sentenceFileReader readInFiles];
+	
     // Pass the managed object context to the view controller.
     rootViewController.managedObjectContext = context;
-	
     UINavigationController *aNavigationController = [[UINavigationController alloc]
 													 initWithRootViewController:rootViewController];
     self.navigationController = aNavigationController;
 	
 	[window addSubview:[navigationController view]];	
-    [window makeKeyAndVisible];		
+    [window makeKeyAndVisible];
 	
+	[sentenceFileReader release];
     [rootViewController release];	
     [aNavigationController release];
-	
-
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// Save data if appropriate
 }
-
-
-
 
 
 - (void)saveContext {
@@ -65,7 +65,6 @@
  If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
  */
 - (NSManagedObjectContext *)managedObjectContext {
-    
     if (managedObjectContext_ != nil) {
         return managedObjectContext_;
     }
@@ -151,19 +150,10 @@
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
-
-
-
 - (void)dealloc {
 	[navigationController release];
 	[window release];
 	[super dealloc];
 }
-
-
-
-
-
-
 
 @end

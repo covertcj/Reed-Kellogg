@@ -139,7 +139,7 @@
 	myline.end     = [self snapToGrid:myline.end];
 	[self snapToGrid:myline.end];
 	[self.lines addObject:myline];
-	
+	NSLog(@"adding line from (%f, %f) to (%f, %f)",myline.start.x, myline.start.y, myline.end.x, myline.end.y);
 	[self setNeedsDisplay];
 }
 

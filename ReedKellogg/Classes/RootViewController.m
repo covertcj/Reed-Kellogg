@@ -38,8 +38,6 @@
 															   target:self
 															   action:@selector(doneRemoving:)];
 	
-	
-	
 	self.navigationItem.leftBarButtonItem = self.teacherLoginButton;
 	
 	//set the title of the main view
@@ -90,8 +88,6 @@
 	self.navigationItem.rightBarButtonItem = self.doneButton;
 }
 
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	Student * student = (Student *)[super.objectArray objectAtIndex:[indexPath row]];
 	
@@ -102,7 +98,6 @@
 	if (super.TeacherMode) {
 		newController.TeacherMode=YES;
 	}
-	
 	
     // Navigation logic may go here. Create and push another view controller.
 	//UIViewController *targetViewController = [[views objectAtIndex:indexPath.row] objectForKey:@"controller"];

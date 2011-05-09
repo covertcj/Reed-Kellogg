@@ -70,7 +70,6 @@
 	[[self navigationController] pushViewController:targetViewController animated:YES];
 }
 
-
 - (void)dealloc {
 	[currStudent dealloc];
     [super dealloc];

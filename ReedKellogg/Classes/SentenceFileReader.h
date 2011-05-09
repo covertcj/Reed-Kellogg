@@ -9,9 +9,13 @@
 @class Sentence, Lesson;
 
 @interface SentenceFileReader : NSObject {
+	NSManagedObjectContext *managedObjectContext;
 }
 
-- (void) addSentence:(NSString *)sentence toLesson:(NSString *)lesson;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
+- (Lesson *) addLesson:(NSString *)lesson;
+- (void) addSentence:(NSString *)sentence toLesson:(NSString *)lesson sentenceNumber:n;
 - (void) readInFile:(NSString *)filename atPath:(NSString *)path;
 - (void) readInFiles;
 

@@ -11,8 +11,26 @@
 #import "Lesson.h"
 
 @implementation SentenceFileReader
+@synthesize managedObjectContext;
 
-- (void) addSentence:(NSString *)sentence toLesson:(NSString *)lesson {
+- (Lesson *) addLesson:(NSString *)lesson{
+	NSObject *o = [NSEntityDescription insertNewObjectForEntityForName:@"Lesson" inManagedObjectContext:self.managedObjectContext];	
+	Lesson * l = (Lesson *) o;
+	[l setName:lesson];
+	[l setNumber:[NSNumber numberWithInt:1]];
+	
+	NSError *error = nil;
+	if (![self.managedObjectContext save:&error]) {
+		// Handle the error.
+	}
+	return l;
+}
+
+- (void) addSentence:(NSString *)sentence toLesson:(Lesson *)lesson sentenceNumber:n{
+	Sentence *s = [NSEntityDescription insertNewObjectForEntityForName:@"Sentence" inManagedObjectContext:self.managedObjectContext];	
+	[s setText:sentence];
+	[s setNumber:n];
+	[lesson addSentencesObject:s];
 }
 
 - (void) readInFile:(NSString *)filename atPath:(NSString *)path {
@@ -20,9 +38,10 @@
 	NSArray  * lines    = [contents componentsSeparatedByString:@"\n"];
 	
 	NSString * lessonName = [filename stringByDeletingPathExtension];
-	
+	int i = 0;
 	for (NSString * sentence in lines) {
-		[self addSentence:sentence toLesson:lessonName];
+		[self addSentence:sentence toLesson:lessonName sentenceNumber: i];
+		i++;
 	}
 	
 	NSLog(@"File Read: %@", filename);

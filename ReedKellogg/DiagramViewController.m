@@ -249,8 +249,9 @@
 	[word sizeToFit];
 	
 	// resize the word's frame
+	
 	CGRect wordFrame        = word.frame;
-	wordFrame.size.width   += 20;
+	//wordFrame.size.width   += 20;
 	wordFrame.size.height   = word.bounds.size.height;
 	
 	// set the word's screen position
