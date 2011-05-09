@@ -20,6 +20,7 @@
 	UITextField * newPasswordTextBox;
 	UITextField * newPasswordConfirmTextBox;
 	
+	UILabel * passwordLabel;
 	UILabel * newPasswordLabel;
 	UILabel * newPasswordConfirmLabel;
 	
@@ -39,6 +40,7 @@
 @property (nonatomic, retain) IBOutlet UITextField * newPasswordTextBox;
 @property (nonatomic, retain) IBOutlet UITextField * newPasswordConfirmTextBox;
 
+@property (nonatomic, retain) IBOutlet UILabel * passwordLabel;
 @property (nonatomic, retain) IBOutlet UILabel * newPasswordLabel;
 @property (nonatomic, retain) IBOutlet UILabel * newPasswordConfirmLabel;
 

@@ -14,7 +14,7 @@
 
 @synthesize acceptButton, cancelButton, changePasswordButton;
 @synthesize passwordTextBox, newPasswordTextBox, newPasswordConfirmTextBox;
-@synthesize newPasswordLabel, newPasswordConfirmLabel;
+@synthesize passwordLabel, newPasswordLabel, newPasswordConfirmLabel;
 @synthesize currentPassword, passwordKeychain;
 @synthesize delegate;
 @synthesize settingNewPassword;
@@ -35,14 +35,15 @@
 		NSLog(@"Password Loaded: %@", self.currentPassword);
 	}
 	
-	
 	return self;
 }
 
 - (void) viewDidAppear:(BOOL)animated {
 	if (self.currentPassword == nil) {
-		self.passwordTextBox.hidden = YES;
+		self.passwordTextBox.hidden  = YES;
+		self.passwordLabel.hidden    = YES;
 		[self setChangeFieldsVisibility:YES];
+		self.cancelButton.hidden     = YES;
 	}
 }
 
@@ -51,19 +52,20 @@
 	
 	// show/hide the change password button
 	self.changePasswordButton.hidden = visible;
+	self.cancelButton.hidden         = NO;
 	
 	// show/hide the password change textboxes and labels
-	self.newPasswordLabel.hidden = !visible;
-	self.newPasswordTextBox.hidden = !visible;
-	self.newPasswordConfirmLabel.hidden = !visible;
+	self.newPasswordLabel.hidden          = !visible;
+	self.newPasswordTextBox.hidden        = !visible;
+	self.newPasswordConfirmLabel.hidden   = !visible;
 	self.newPasswordConfirmTextBox.hidden = !visible;
 	
 	// tell the view whether we are in password change mode
 	self.settingNewPassword = visible;
 	
 	// reset the text fields
-	self.passwordTextBox.text = @"";
-	self.newPasswordTextBox.text = @"";
+	self.passwordTextBox.text           = @"";
+	self.newPasswordTextBox.text        = @"";
 	self.newPasswordConfirmTextBox.text = @"";
 }
 
@@ -76,7 +78,6 @@
 		self.currentPassword = newPass;
 		
 		// save the new teacher password from the password plist file
-		NSError * error = nil;
 		[KeychainHelper storeUsername:@"Teacher" andPassword:self.currentPassword forService:@"ReedKellogg" updateExisting:YES];
 		
 		NSLog(@"The teacher password has been set to %@.", self.newPasswordTextBox.text);
