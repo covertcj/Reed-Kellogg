@@ -127,7 +127,6 @@
 }
 
 - (void) addLine:(Line *)line {
-	NSLog(@"adding line from (%f, %f) to (%f, %f)",line.start.x, line.start.y, line.end.x, line.end.y);
 	// TODO: Implement DiagramView.addLine
 	if (self.lines == nil) {
 		self.lines = [[NSMutableArray alloc] init];
@@ -140,7 +139,7 @@
 	myline.end     = [self snapToGrid:myline.end];
 	[self snapToGrid:myline.end];
 	[self.lines addObject:myline];
-	NSLog(@"actually adding line from (%f, %f) to (%f, %f)",myline.start.x, myline.start.y, myline.end.x, myline.end.y);
+	
 	[self setNeedsDisplay];
 }
 
@@ -189,6 +188,7 @@
 		[toRemove release];
 	}
 	
+	self.touchedLine = nil;
 	[self setNeedsDisplay];
 }
 

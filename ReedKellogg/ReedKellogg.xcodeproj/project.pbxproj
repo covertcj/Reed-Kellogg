@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		0A3E2C4913635B1600D619C8 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3E2C4813635B1600D619C8 /* Line.m */; };
 		0A74AA5D133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel in Resources */ = {isa = PBXBuildFile; fileRef = 0A74AA5C133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel */; };
+		0A8E586E137303FF00E02F83 /* SentenceFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E586D137303FF00E02F83 /* SentenceFileReader.m */; };
+		0A8E596D1377730400E02F83 /* KeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E596C1377730400E02F83 /* KeychainHelper.m */; };
 		0AA5E65513317FC200874C80 /* PasswordEntryModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */; };
 		0AA5E6631331806100874C80 /* PasswordEntryModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */; };
 		0AA9176C1333CB32008B4AC5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA9176B1333CB32008B4AC5 /* Security.framework */; };
 		0AAB47651357E9CC0048A27F /* DiagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */; };
 		0AAB47661357E9CC0048A27F /* DiagramViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAB47641357E9CC0048A27F /* DiagramViewController.xib */; };
 		0AAB476C1357ECF60048A27F /* DiagramView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */; };
-		0ABD4C0613386CEE00B8C601 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD4C0513386CEE00B8C601 /* SFHFKeychainUtils.m */; };
 		1D3623260D0F684500981E51 /* ReedKelloggAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ReedKelloggAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -54,6 +55,10 @@
 		0A3E2C4813635B1600D619C8 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		0A6F670713324D7000907A24 /* PasswordEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryDelegate.h; path = ../PasswordEntryDelegate.h; sourceTree = "<group>"; };
 		0A74AA5C133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = ReedKellogg_Diagram.xcclassmodel; sourceTree = "<group>"; };
+		0A8E586C137303FF00E02F83 /* SentenceFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentenceFileReader.h; sourceTree = "<group>"; };
+		0A8E586D137303FF00E02F83 /* SentenceFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentenceFileReader.m; sourceTree = "<group>"; };
+		0A8E596B1377730400E02F83 /* KeychainHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainHelper.h; sourceTree = "<group>"; };
+		0A8E596C1377730400E02F83 /* KeychainHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainHelper.m; sourceTree = "<group>"; };
 		0A98E8DD1365BC84005BCF2D /* DiagramViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagramViewDelegate.h; sourceTree = "<group>"; };
 		0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PasswordEntryModalViewController.xib; path = Classes/PasswordEntryModalViewController.xib; sourceTree = "<group>"; };
 		0AA5E6611331806100874C80 /* PasswordEntryModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordEntryModalViewController.h; sourceTree = "<group>"; };
@@ -64,8 +69,6 @@
 		0AAB47641357E9CC0048A27F /* DiagramViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiagramViewController.xib; sourceTree = "<group>"; };
 		0AAB476A1357ECF60048A27F /* DiagramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagramView.h; sourceTree = "<group>"; };
 		0AAB476B1357ECF60048A27F /* DiagramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagramView.m; sourceTree = "<group>"; };
-		0ABD4C0413386CEE00B8C601 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
-		0ABD4C0513386CEE00B8C601 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* ReedKelloggAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReedKelloggAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* ReedKelloggAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReedKelloggAppDelegate.m; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0A8E596B1377730400E02F83 /* KeychainHelper.h */,
+				0A8E596C1377730400E02F83 /* KeychainHelper.m */,
 				B73B390B12E7E73400219463 /* addNameViewController.xib */,
 				B73B390812E7E71E00219463 /* addNameViewController.h */,
 				B73B390912E7E71E00219463 /* addNameViewController.m */,
@@ -159,8 +164,6 @@
 				0AA5E6611331806100874C80 /* PasswordEntryModalViewController.h */,
 				0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */,
 				0A6F670713324D7000907A24 /* PasswordEntryDelegate.h */,
-				0ABD4C0413386CEE00B8C601 /* SFHFKeychainUtils.h */,
-				0ABD4C0513386CEE00B8C601 /* SFHFKeychainUtils.m */,
 				4F76EC9D133BDE40007E4C5A /* CommentViewController.h */,
 				4F76EC9E133BDE40007E4C5A /* CommentViewController.m */,
 				4F76EC9F133BDE40007E4C5A /* CommentViewController.xib */,
@@ -171,6 +174,8 @@
 				0A3E2C4713635B1600D619C8 /* Line.h */,
 				0A3E2C4813635B1600D619C8 /* Line.m */,
 				0A98E8DD1365BC84005BCF2D /* DiagramViewDelegate.h */,
+				0A8E586C137303FF00E02F83 /* SentenceFileReader.h */,
+				0A8E586D137303FF00E02F83 /* SentenceFileReader.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -337,11 +342,12 @@
 				B73B4509130A1FCC00219463 /* WordData.m in Sources */,
 				B73B4621130D753B00219463 /* Lesson.m in Sources */,
 				0AA5E6631331806100874C80 /* PasswordEntryModalViewController.m in Sources */,
-				0ABD4C0613386CEE00B8C601 /* SFHFKeychainUtils.m in Sources */,
 				4F76ECA0133BDE40007E4C5A /* CommentViewController.m in Sources */,
 				0AAB47651357E9CC0048A27F /* DiagramViewController.m in Sources */,
 				0AAB476C1357ECF60048A27F /* DiagramView.m in Sources */,
 				0A3E2C4913635B1600D619C8 /* Line.m in Sources */,
+				0A8E586E137303FF00E02F83 /* SentenceFileReader.m in Sources */,
+				0A8E596D1377730400E02F83 /* KeychainHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

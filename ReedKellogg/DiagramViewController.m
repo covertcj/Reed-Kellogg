@@ -15,6 +15,8 @@
 #import "Sentence.h"
 #import "WordData.h"
 
+#import "SentenceFileReader.h"
+
 @implementation DiagramViewController
 
 @synthesize selectedLesson, selectedStudent, selectedSentence, managedObjectContext;
@@ -40,6 +42,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
 	self.set = NO;
 	
 	// load the layout
@@ -286,7 +289,6 @@
 	float angle = atan2(word.transform.b, word.transform.a);
 	if (angle > 0.77f && angle < 0.79f) {
 		float k = fmodf(gridSize - fmodf(snapTo.y - snapTo.x, gridSize),gridSize);
-		NSLog(@"Snapping from (%f,%f) to (%f,%f), k = %f",snapTo.x,snapTo.y, snapTo.x - k/2, snapTo.y + k/2, k);
 		//move to line
 		snapTo.y = snapTo.y + k/2;
 		snapTo.x = snapTo.x - k/2;
@@ -296,7 +298,6 @@
 	} 
 	else if (angle < -0.77f && angle > -0.79) {
 		float k = fmodf(gridSize - fmodf(snapTo.y + snapTo.x, gridSize),gridSize);
-		NSLog(@"Snapping from (%f,%f) to (%f,%f), k = %f",snapTo.x,snapTo.y, snapTo.x + k/2, snapTo.y + k/2, k);
 		//move to line
 		snapTo.y = snapTo.y + k/2;
 		snapTo.x = snapTo.x + k/2;
@@ -317,18 +318,6 @@
 	
 	if (recognizer.state      == UIGestureRecognizerStateBegan) {
 		touchLoc = CGPointMake(touchLoc.x - vel.x, touchLoc.y - vel.y);
-		
-		// check if the touch is in a word
-		for (UILabel * word in self.words) {
-			CGRect wordFrame = word.frame;
-			// if a word is touched, set is as moving
-			
-			if (CGRectContainsPoint(wordFrame, touchLoc)) {
-				self.touchedWord = word;
-				self.diagramView.touchedLine = nil;
-				return;
-			}
-		}
 		
 		// if we have a line selected
 		if (self.diagramView.touchedLine != nil) {
@@ -355,6 +344,17 @@
 			}
 		}
 		
+		// check if the touch is in a word
+		for (UILabel * word in self.words) {
+			CGRect wordFrame = word.frame;
+			// if a word is touched, set is as moving
+			
+			if (CGRectContainsPoint(wordFrame, touchLoc)) {
+				self.touchedWord = word;
+				self.diagramView.touchedLine = nil;
+				return;
+			}
+		}
 		
 		self.diagramView.touchedLine = nil;
 		
@@ -400,7 +400,6 @@
 		}
 	}
 	else {
-		NSLog(@"handleSingleDrag: Unknown Gesture State");
 		if (self.touchedWord == nil) {
 			CGPoint snapTo   = [self snapPositionForWord:self.touchedWord];
 			
@@ -421,8 +420,6 @@
 		self.previousScrollTouchLoc     = touchLoc;
 	}
 	else if (recognizer.state == UIGestureRecognizerStateChanged) {
-		NSLog(@"ScrollX's: (%f, %f)", self.previousScrollTouchLoc.x, touchLoc.x);
-		NSLog(@"ScrollDeltas: (%f, %f)", (self.previousScrollTouchLoc.x - touchLoc.x) , (self.previousScrollTouchLoc.y - touchLoc.y) );
 		CGRect rect = CGRectMake((self.previousScrollTouchLoc.x - touchLoc.x) + self.diagramView.contentOffset.x,
 		                         (self.previousScrollTouchLoc.y - touchLoc.y) + self.diagramView.contentOffset.y,
 								 self.diagramView.frame.size.width, 
@@ -469,6 +466,8 @@
 			return;
 		}
 	}
+	
+	[self.diagramView setNeedsDisplay];
 }
 
 - (void) handleDoubleTapFrom:(UITapGestureRecognizer *)recognizer {
@@ -477,9 +476,7 @@
 	
 	Line * toRemove = nil;
 	
-	NSLog(@"double tap");
 	for (Line * line in self.diagramView.lines) {
-		NSLog(@"double tap - check line: (%f, %f) to (%f, %f) against (%f, %f)", line.start.x, line.start.y, line.end.x, line.end.y, touchLoc.x, touchLoc.y);
 		if ([self.diagramView touch:touchLoc nearLine:(Line *)line]) {
 			toRemove = line;
 		}
@@ -507,7 +504,6 @@
 	
 	//No result so move up a screen
 	if (!recieved) {
-		NSLog(@"That was the first or the last sentence in the lesson");
 		[self.navigationController popViewControllerAnimated:YES];
 		return;
 	}
@@ -528,7 +524,6 @@
 }
 
 - (IBAction) saveDiagram:(id)sender{
-	NSLog(@"Save Pressed");
 	// Make sure that we override any previous entries that have the same creator and sentence
 	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setPredicate:[NSPredicate predicateWithFormat:@"creator == %@ AND sentence == %@",selectedStudent,selectedSentence]];
@@ -564,7 +559,6 @@
 		//NSLog(@"Frame origin x:%f, y:%f", w.frame.origin.x, w.frame.origin.y);
 		wd.wdx = [NSNumber numberWithFloat:w.frame.origin.x];
 		wd.wdy = [NSNumber numberWithFloat:w.frame.origin.y];
-		NSLog(@"Frame origin x:%@, y:%@", wd.wdx, wd.wdy);
 		
 		// Rotate words back
 		w.transform = origTransform;

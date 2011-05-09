@@ -7,7 +7,7 @@
 //
 
 #import "PasswordEntryModalViewController.h"
-#import "SFHFKeychainUtils.h"
+#import "KeychainHelper.h"
 
 
 @implementation PasswordEntryModalViewController
@@ -25,19 +25,25 @@
 	self.settingNewPassword = NO;
 	
 	// retrieve the Teacher's password
-	NSError * error = nil;
-	self.currentPassword = [SFHFKeychainUtils getPasswordForUsername:@"Teacher" andServiceName:@"ReedKellogg" error:&error];
+	self.currentPassword = [KeychainHelper getPasswordForUsername:@"Teacher" andService:@"ReedKellogg"];
 	
 	// initialize the password if there isn't one in the keychain
 	if (self.currentPassword == nil) {
-		NSLog(@"No password exists. Initializing password to \"\".");
-		self.currentPassword = @"pass";
-		[SFHFKeychainUtils storeUsername:@"Teacher" andPassword:self.currentPassword forServiceName:@"ReedKellogg" updateExisting:YES error:&error];
+		NSLog(@"Password Does Not Exist");
+	}
+	else {
+		NSLog(@"Password Loaded: %@", self.currentPassword);
 	}
 	
-	NSLog(@"Password Loaded: %@", self.currentPassword);
 	
 	return self;
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+	if (self.currentPassword == nil) {
+		self.passwordTextBox.hidden = YES;
+		[self setChangeFieldsVisibility:YES];
+	}
 }
 
 - (void) setChangeFieldsVisibility:(BOOL)visible {
@@ -63,7 +69,7 @@
 
 - (void) setNewPassword {
 	// ensure the new password and it's confirmation match
-	if ([self checkNewPassword]) {
+	if (([self checkNewPassword] || self.passwordTextBox.hidden == YES) && [self.newPasswordTextBox.text length] > 0) {
 		NSString * newPass = self.newPasswordTextBox.text;
 		
 		// set the new password
@@ -71,11 +77,12 @@
 		
 		// save the new teacher password from the password plist file
 		NSError * error = nil;
-		[SFHFKeychainUtils storeUsername:@"Teacher" andPassword:self.currentPassword forServiceName:@"ReedKellogg" updateExisting:YES error:&error];
+		[KeychainHelper storeUsername:@"Teacher" andPassword:self.currentPassword forService:@"ReedKellogg" updateExisting:YES];
 		
 		NSLog(@"The teacher password has been set to %@.", self.newPasswordTextBox.text);
 		
 		// change the UI to no longer show the password change fields
+		self.passwordTextBox.hidden = NO;
 		[self setChangeFieldsVisibility:NO];
 	}
 }
