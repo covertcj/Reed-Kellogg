@@ -206,7 +206,7 @@
 		CGRect wordFrame = word.frame;
 		
 		// increment the distance from the left side of the screen
-		distFromLeft = word.frame.origin.x + word.frame.size.width;
+		distFromLeft = word.frame.origin.x + word.frame.size.width + 16;
 		
 		[self.words addObject:word];
 		[self.diagramView addSubview:word];
@@ -349,6 +349,10 @@
 		for (UILabel * word in self.words) {
 			CGRect wordFrame = word.frame;
 			// if a word is touched, set is as moving
+			wordFrame.origin.x    -= 10;
+			wordFrame.origin.y    -=  5;
+			wordFrame.size.width  += 20;
+			wordFrame.size.height += 10;
 			
 			if (CGRectContainsPoint(wordFrame, touchLoc)) {
 				self.touchedWord = word;
@@ -649,5 +653,10 @@
 
 #pragma mark -
 #pragma mark UI Event Response
+
+//- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+	[self.diagramView setNeedsDisplay];
+}
 
 @end

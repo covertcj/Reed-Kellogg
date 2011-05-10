@@ -128,7 +128,8 @@
 		[newPopover release];
 	}
 	
-	self.namePopover.popoverContentSize = CGSizeMake(300, 250);
+	CGRect viewFrame = self.view.frame;
+	self.namePopover.popoverContentSize = CGSizeMake(viewFrame.size.width, 250);
 	
 	// Present the Popover
 	[self.namePopover presentPopoverFromBarButtonItem:addButton
@@ -239,6 +240,8 @@
 }
 
 	
-
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+	return YES;
+}
 
 @end

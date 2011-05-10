@@ -24,7 +24,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	super.popFirstButton = @"Add sentence";
-	super.popSecondButton = @"Edit sentences";
+	super.popSecondButton = @"Remove Sentences Mode";
 	
     [super viewDidLoad];
 

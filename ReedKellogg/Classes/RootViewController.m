@@ -18,7 +18,7 @@
 	
 	super.TeacherMode = NO;
 	super.popFirstButton = @"Add Student";
-	super.popSecondButton = @"Remove Student";
+	super.popSecondButton = @"Remove Student Mode";
 	
 	super.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
 																		target:self action:@selector(showPopover)];

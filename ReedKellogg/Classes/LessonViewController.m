@@ -19,7 +19,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	super.popFirstButton = @"Add Lesson";
-	super.popSecondButton = @"Edit Lessons";
+	super.popSecondButton = @"Remove Lessons Mode";
 	
     [super viewDidLoad];
 	

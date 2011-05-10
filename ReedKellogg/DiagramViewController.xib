@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">800</int>
 		<string key="IBDocument.SystemVersion">10J869</string>
-		<string key="IBDocument.InterfaceBuilderVersion">823</string>
+		<string key="IBDocument.InterfaceBuilderVersion">804</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">132</string>
+			<string key="NS.object.0">123</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -50,7 +50,7 @@
 							<object class="IBUISegmentedControl" id="584535258">
 								<reference key="NSNextResponder" ref="680606528"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{323, 8}, {138, 30}}</string>
+								<string key="NSFrame">{{323, 7}, {138, 30}}</string>
 								<reference key="NSSuperview" ref="680606528"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -84,7 +84,7 @@
 								</object>
 							</object>
 						</object>
-						<string key="NSFrame">{{0, 919}, {768, 44}}</string>
+						<string key="NSFrame">{{0, 936}, {768, 44}}</string>
 						<reference key="NSSuperview" ref="472297879"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -134,7 +134,7 @@
 					</object>
 					<object class="IBUIView" id="766721923">
 						<reference key="NSNextResponder" ref="472297879"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">274</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUIImageView" id="64229752">
@@ -177,7 +177,7 @@
 								<float key="IBUIMinimumFontSize">10</float>
 							</object>
 						</object>
-						<string key="NSFrameSize">{768, 919}</string>
+						<string key="NSFrame">{{1, 0}, {768, 936}}</string>
 						<reference key="NSSuperview" ref="472297879"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -201,7 +201,6 @@
 					<bytes key="NSWhite">MQA</bytes>
 					<reference key="NSCustomColorSpace" ref="966866330"/>
 				</object>
-				<bool key="IBUIAutoresizesSubviews">NO</bool>
 				<object class="IBUISimulatedNavigationBarMetrics" key="IBUISimulatedTopBarMetrics">
 					<bool key="IBUIPrompted">NO</bool>
 				</object>
@@ -482,7 +481,7 @@
 					<string>{{399, 9}, {783, 847}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAxG+AAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAxGVAAA</bytes>
 					</object>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -494,7 +493,7 @@
 						<bytes key="NSTransformStruct">P4AAAL+AAABCiAAAwmAAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{396, 4}, {783, 852}}</string>
+					<string>{{92, 4}, {783, 842}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -502,7 +501,7 @@
 					<string>{{0, 777}, {798, 68}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAxG8AAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAxHBAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
@@ -985,6 +984,6 @@
 			<string key="NS.key.0">correct.png</string>
 			<string key="NS.object.0">{200, 200}</string>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">132</string>
+		<string key="IBCocoaTouchPluginVersion">123</string>
 	</data>
 </archive>
