@@ -66,7 +66,6 @@
 		o = [NSEntityDescription insertNewObjectForEntityForName:@"Lesson" inManagedObjectContext:self.managedObjectContext];	
 		Lesson * l = (Lesson *) o;
 		[l setName:name];
-		[l setNumber:[NSNumber numberWithInt:[self.objectArray count]+1]];
 	}else if ([type isEqualToString:@"Sentence"]) {
 		o = (Sentence *)[NSEntityDescription insertNewObjectForEntityForName:@"Sentence" inManagedObjectContext:self.managedObjectContext];	
 		Sentence *s = (Sentence *) o;

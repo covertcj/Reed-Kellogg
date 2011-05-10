@@ -17,6 +17,7 @@
 		0AAB47651357E9CC0048A27F /* DiagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB47631357E9CC0048A27F /* DiagramViewController.m */; };
 		0AAB47661357E9CC0048A27F /* DiagramViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAB47641357E9CC0048A27F /* DiagramViewController.xib */; };
 		0AAB476C1357ECF60048A27F /* DiagramView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */; };
+		0AD1E0D11378C16200878D9A /* Lesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD1E0D01378C16200878D9A /* Lesson.m */; };
 		1D3623260D0F684500981E51 /* ReedKelloggAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ReedKelloggAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -47,7 +48,6 @@
 		B73B44931309903D00219463 /* Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B44921309903D00219463 /* Layout.m */; };
 		B73B44FD130A1EF900219463 /* LineData.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B44FA130A1EF900219463 /* LineData.m */; };
 		B73B4509130A1FCC00219463 /* WordData.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B4508130A1FCC00219463 /* WordData.m */; };
-		B73B4621130D753B00219463 /* Lesson.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B4620130D753B00219463 /* Lesson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +69,8 @@
 		0AAB47641357E9CC0048A27F /* DiagramViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiagramViewController.xib; sourceTree = "<group>"; };
 		0AAB476A1357ECF60048A27F /* DiagramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagramView.h; sourceTree = "<group>"; };
 		0AAB476B1357ECF60048A27F /* DiagramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagramView.m; sourceTree = "<group>"; };
+		0AD1E0CF1378C16200878D9A /* Lesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lesson.h; sourceTree = "<group>"; };
+		0AD1E0D01378C16200878D9A /* Lesson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* ReedKelloggAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReedKelloggAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* ReedKelloggAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReedKelloggAppDelegate.m; sourceTree = "<group>"; };
@@ -117,8 +119,6 @@
 		B73B44FA130A1EF900219463 /* LineData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineData.m; sourceTree = "<group>"; };
 		B73B4507130A1FCC00219463 /* WordData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordData.h; sourceTree = "<group>"; };
 		B73B4508130A1FCC00219463 /* WordData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordData.m; sourceTree = "<group>"; };
-		B73B461F130D753B00219463 /* Lesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lesson.h; sourceTree = "<group>"; };
-		B73B4620130D753B00219463 /* Lesson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,12 +214,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0AD1E0CF1378C16200878D9A /* Lesson.h */,
+				0AD1E0D01378C16200878D9A /* Lesson.m */,
 				0AAB47641357E9CC0048A27F /* DiagramViewController.xib */,
 				4F649AFF133CDE1900DED74E /* correct.png */,
 				4F649B00133CDE1900DED74E /* incorrect.png */,
 				0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */,
-				B73B461F130D753B00219463 /* Lesson.h */,
-				B73B4620130D753B00219463 /* Lesson.m */,
 				B73B4507130A1FCC00219463 /* WordData.h */,
 				B73B4508130A1FCC00219463 /* WordData.m */,
 				B73B44F9130A1EF900219463 /* LineData.h */,
@@ -340,7 +340,6 @@
 				B73B44931309903D00219463 /* Layout.m in Sources */,
 				B73B44FD130A1EF900219463 /* LineData.m in Sources */,
 				B73B4509130A1FCC00219463 /* WordData.m in Sources */,
-				B73B4621130D753B00219463 /* Lesson.m in Sources */,
 				0AA5E6631331806100874C80 /* PasswordEntryModalViewController.m in Sources */,
 				4F76ECA0133BDE40007E4C5A /* CommentViewController.m in Sources */,
 				0AAB47651357E9CC0048A27F /* DiagramViewController.m in Sources */,
@@ -348,6 +347,7 @@
 				0A3E2C4913635B1600D619C8 /* Line.m in Sources */,
 				0A8E586E137303FF00E02F83 /* SentenceFileReader.m in Sources */,
 				0A8E596D1377730400E02F83 /* KeychainHelper.m in Sources */,
+				0AD1E0D11378C16200878D9A /* Lesson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

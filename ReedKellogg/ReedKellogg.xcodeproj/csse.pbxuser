@@ -224,7 +224,7 @@
 	};
 	0A3E2C4713635B1600D619C8 /* Line.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 703}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 728}}";
 			sepNavSelRange = "{221, 0}";
 			sepNavVisRange = "{0, 303}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
@@ -345,7 +345,7 @@
 	};
 	0A6F670713324D7000907A24 /* PasswordEntryDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 705}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 728}}";
 			sepNavSelRange = "{281, 0}";
 			sepNavVisRange = "{0, 289}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
@@ -361,19 +361,152 @@
 		vrLen = 303;
 		vrLoc = 0;
 	};
+	0A74AA5C133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel */ = {
+		uiCtxt = {
+			"Xdesign Model Editor Bookmark Key" = {
+				UIContextForClassArea = {
+					_indexOfSelectedView = 0;
+					chosenTableColumnns = (
+						"CT Class",
+						"CT Kind",
+						"CT Superclass",
+						"CT Documentation",
+					);
+					chosenTableColumnns_sortDirections = (
+					);
+					chosenTableColumnns_sortKeys = (
+					);
+					chosenTableColumnns_sortSelectors = (
+					);
+					chosenTableWidths = (
+						76.000000,
+						45.000000,
+						56.454102,
+						22.000000,
+					);
+				};
+				UIContextForDetailArea = {
+					_indexOfSelectedView = 1;
+				};
+				UIContextForLayoutManager = {
+					detailSplitGeometry = {
+						_collapsingFrameDimension = 0;
+						_indexOfCollapsedView = 0;
+						_percentageOfCollapsedView = 0;
+						isCollapsed = yes;
+						sizes = (
+							"{{0, 0}, {488, 179}}",
+							"{{493, 0}, {257, 179}}",
+						);
+					};
+					diagramSplitGeometry = {
+						_collapsingFrameDimension = 0;
+						_indexOfCollapsedView = 0;
+						_percentageOfCollapsedView = 0;
+						isCollapsed = yes;
+						sizes = (
+							"{{0, 0}, {750, 179}}",
+							"{{0, 184}, {750, 577}}",
+						);
+					};
+					tableSplitGeometry = {
+						_collapsingFrameDimension = 0;
+						_indexOfCollapsedView = 0;
+						_percentageOfCollapsedView = 0;
+						isCollapsed = yes;
+						sizes = (
+							"{{0, 0}, {160, 179}}",
+							"{{165, 0}, {323, 179}}",
+						);
+					};
+				};
+				UIContextForPropertyArea = {
+					_indexOfSelectedView = 0;
+					chosenTableColumnnsAT = (
+						"PR Type Icon",
+						"PR Member",
+						"PR Kind",
+						"PR Type",
+						"PR Visibility",
+						"PR Documentation",
+					);
+					chosenTableColumnnsAT_sortDirections = (
+					);
+					chosenTableColumnnsAT_sortKeys = (
+					);
+					chosenTableColumnnsAT_sortSelectors = (
+					);
+					chosenTableColumnnsPT = (
+						"AL Type Icon",
+						"AL Member",
+						"AL Kind",
+						"AL Type",
+						"AL Visibility",
+						"AL Documentation",
+					);
+					chosenTableColumnnsPT_sortDirections = (
+					);
+					chosenTableColumnnsPT_sortKeys = (
+					);
+					chosenTableColumnnsPT_sortSelectors = (
+					);
+					chosenTableColumnnsRT = (
+						"OP Type Icon",
+						"OP Member",
+						"OP Kind",
+						"OP Type",
+						"OP Visibility",
+						"OP Documentation",
+					);
+					chosenTableColumnnsRT_sortDirections = (
+					);
+					chosenTableColumnnsRT_sortKeys = (
+					);
+					chosenTableColumnnsRT_sortSelectors = (
+					);
+					chosenTableWidthsAT = (
+						22.000000,
+						122.000000,
+						66.000000,
+						82.000000,
+						44.000000,
+						22.000000,
+					);
+					chosenTableWidthsPT = (
+						22.000000,
+						122.000000,
+						61.000000,
+						87.000000,
+						44.000000,
+						22.000000,
+					);
+					chosenTableWidthsRT = (
+						22.000000,
+						122.000000,
+						62.000000,
+						86.000000,
+						44.000000,
+						22.000000,
+					);
+				};
+				"xdesign model browser state key - shown/hidden" = 1;
+				"xdesign model diagram view visible rect key" = "{{-1, 145}, {735, 562}}";
+			};
+		};
+	};
 	0A8E586C137303FF00E02F83 /* SentenceFileReader.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 705}}";
-			sepNavSelRange = "{504, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 746}}";
+			sepNavSelRange = "{383, 0}";
 			sepNavVisRange = "{0, 600}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
 	0A8E586D137303FF00E02F83 /* SentenceFileReader.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1097, 845}}";
-			sepNavSelRange = "{697, 89}";
-			sepNavVisRange = "{95, 1960}";
+			sepNavIntBoundsRect = "{{0, 0}, {1097, 871}}";
+			sepNavSelRange = "{539, 0}";
+			sepNavVisRange = "{95, 2058}";
 		};
 	};
 	0A8E58DF137762E000E02F83 /* PBXTextBookmark */ = {
@@ -830,9 +963,10 @@
 	};
 	0A98E8DD1365BC84005BCF2D /* DiagramViewDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 705}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 728}}";
 			sepNavSelRange = "{306, 0}";
 			sepNavVisRange = "{0, 306}";
+			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
 	0A98E9061365D246005BCF2D /* PBXTextBookmark */ = {
@@ -857,7 +991,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1216, 2535}}";
 			sepNavSelRange = "{2948, 1}";
-			sepNavVisRange = "{1933, 1832}";
+			sepNavVisRange = "{1931, 1836}";
 			sepNavWindowFrame = "{{37, 295}, {750, 558}}";
 		};
 	};
@@ -930,14 +1064,14 @@
 	0AAB47621357E9CC0048A27F /* DiagramViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1064, 1222}}";
-			sepNavSelRange = "{2586, 0}";
+			sepNavSelRange = "{1410, 0}";
 			sepNavVisRange = "{830, 1932}";
 			sepNavWindowFrame = "{{15, 4}, {750, 874}}";
 		};
 	};
 	0AAB47631357E9CC0048A27F /* DiagramViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 8268}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 8502}}";
 			sepNavSelRange = "{1265, 0}";
 			sepNavVisRange = "{733, 2330}";
 			sepNavWindowFrame = "{{720, 5}, {720, 873}}";
@@ -1211,6 +1345,20 @@
 		rType = 0;
 		vrLen = 597;
 		vrLoc = 0;
+	};
+	0AD1E0CF1378C16200878D9A /* Lesson.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 703}}";
+			sepNavSelRange = "{586, 0}";
+			sepNavVisRange = "{0, 586}";
+		};
+	};
+	0AD1E0D01378C16200878D9A /* Lesson.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 703}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 273}";
+		};
 	};
 	0AF88AA91343A219001C4501 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1590,9 +1738,9 @@
 	};
 	B739C99512DE06D500D3F493 /* LessonViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1090, 1105}}";
-			sepNavSelRange = "{1078, 0}";
-			sepNavVisRange = "{0, 1508}";
+			sepNavIntBoundsRect = "{{0, 0}, {1090, 1040}}";
+			sepNavSelRange = "{2021, 0}";
+			sepNavVisRange = "{650, 1701}";
 		};
 	};
 	B739CBF712DEA25700D3F493 /* TouchViewController.h */ = {
@@ -1650,7 +1798,7 @@
 					chosenTableWidths = (
 						103.000000,
 						22.000000,
-						110.080078,
+						88.080078,
 					);
 				};
 				UIContextForLayoutManager = {
@@ -1660,8 +1808,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {802, 218}}",
-							"{{807, 0}, {423, 218}}",
+							"{{0, 0}, {732, 218}}",
+							"{{737, 0}, {386, 218}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -1670,8 +1818,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {1230, 220}}",
-							"{{0, 225}, {1230, 391}}",
+							"{{0, 0}, {1123, 220}}",
+							"{{0, 225}, {1123, 495}}",
 						);
 					};
 					tableSplitGeometry = {
@@ -1680,8 +1828,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {260, 218}}",
-							"{{265, 0}, {535, 218}}",
+							"{{0, 0}, {238, 218}}",
+							"{{243, 0}, {489, 218}}",
 						);
 					};
 				};
@@ -1770,7 +1918,7 @@
 					chosenTableWidthsPT = (
 						128.000000,
 						108.110840,
-						272.570801,
+						226.570801,
 					);
 					chosenTableWidthsRT = (
 						128.000000,
@@ -1778,7 +1926,7 @@
 					);
 				};
 				"xdesign model browser state key - shown/hidden" = 1;
-				"xdesign model diagram view visible rect key" = "{{-284, 56}, {1215, 376}}";
+				"xdesign model diagram view visible rect key" = "{{-230, -24}, {1108, 480}}";
 			};
 			sepNavWindowFrame = "{{61, 273}, {750, 558}}";
 		};
@@ -1799,8 +1947,8 @@
 	};
 	B73B3D0112F342BD00219463 /* UpdateCustomView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 728}}";
-			sepNavSelRange = "{178, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 705}}";
+			sepNavSelRange = "{364, 0}";
 			sepNavVisRange = "{0, 370}";
 		};
 	};
@@ -1835,7 +1983,7 @@
 	};
 	B73B40161303090D00219463 /* Student.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1055, 730}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 703}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 321}";
 		};
@@ -1856,9 +2004,9 @@
 	};
 	B73B42BC130782EA00219463 /* GenericTableView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 3341}}";
-			sepNavSelRange = "{547, 0}";
-			sepNavVisRange = "{152, 1471}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 3211}}";
+			sepNavSelRange = "{2284, 0}";
+			sepNavVisRange = "{3969, 1857}";
 		};
 	};
 	B73B44911309903D00219463 /* Layout.h */ = {
@@ -1904,15 +2052,27 @@
 		};
 	};
 	B73B461F130D753B00219463 /* Lesson.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = Lesson.h;
+		path = /Users/csse/Documents/Courses/CSSE375/reedkellogg_scrollview/branches/scroll/ReedKellogg/Lesson.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1055, 403}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 680}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{35, 495}";
+			sepNavVisRange = "{0, 614}";
 		};
 	};
 	B73B4620130D753B00219463 /* Lesson.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = Lesson.m;
+		path = /Users/csse/Documents/Courses/CSSE375/reedkellogg_scrollview/branches/scroll/ReedKellogg/Lesson.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1087, 341}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 680}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 371}";
 		};

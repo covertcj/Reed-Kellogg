@@ -1,9 +1,9 @@
 // 
 //  Lesson.m
-//  NavigationTest
+//  ReedKellogg
 //
-//  Created by Stephen Mayhew on 2/17/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Christopher J. Covert on 5/9/11.
+//  Copyright 2011 Rose-Hulman Institute of Technology. All rights reserved.
 //
 
 #import "Lesson.h"
@@ -13,11 +13,10 @@
 @implementation Lesson 
 
 @dynamic name;
-@dynamic number;
 @dynamic sentences;
 
-- (NSString *)description {
-	return [NSString stringWithFormat:@"%@ - %@",self.number, self.name];
+- (NSString *) description {
+	return self.name;
 }
 
 @end
