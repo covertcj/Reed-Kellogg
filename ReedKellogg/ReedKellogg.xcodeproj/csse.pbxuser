@@ -440,7 +440,7 @@
 		fRef = 0AAB476B1357ECF60048A27F /* DiagramView.m */;
 		name = "DiagramView.m: 216";
 		rLen = 0;
-		rLoc = 5907;
+		rLoc = 5909;
 		rType = 0;
 		vrLen = 1095;
 		vrLoc = 6190;
@@ -1188,9 +1188,9 @@
 	};
 	0AAB47631357E9CC0048A27F /* DiagramViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1064, 9269}}";
-			sepNavSelRange = "{22476, 36}";
-			sepNavVisRange = "{21411, 1491}";
+			sepNavIntBoundsRect = "{{0, 0}, {1064, 9425}}";
+			sepNavSelRange = "{11742, 0}";
+			sepNavVisRange = "{10138, 2033}";
 			sepNavWindowFrame = "{{720, 5}, {720, 873}}";
 		};
 	};

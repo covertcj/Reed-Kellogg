@@ -132,7 +132,7 @@
 	
 	// make the line dashed if necessary
 	if (dashed) {
-		CGFloat dashArray[] = {2,6,4,2};
+		CGFloat dashArray[] = {2,20,20,2};
 		CGContextSetLineDash(context, 3, dashArray, 4);
 	}
 	
