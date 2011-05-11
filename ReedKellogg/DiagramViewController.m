@@ -173,7 +173,7 @@
 	[self.words removeAllObjects];
 	
 	// remove punctuation and separate the word's into an array
-	NSString * noPunctuation = [[self.selectedSentence.text componentsSeparatedByCharactersInSet:[[NSCharacterSet letterCharacterSet] invertedSet]] componentsJoinedByString:@" "];
+	NSString * noPunctuation = [[self.selectedSentence.text componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@",!.;:?)(\"[]"]] componentsJoinedByString:@""];
 	NSArray  * wordTextArray = [noPunctuation componentsSeparatedByString:@" "];
 	
 	// display the sentence to the user
