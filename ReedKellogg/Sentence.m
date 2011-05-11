@@ -15,7 +15,7 @@
 @dynamic text;
 
 - (NSString *)description {
-	return self.text;
+	return [NSString stringWithFormat:@"%@ - %@", self.number, self.text];
 }
 
 @end

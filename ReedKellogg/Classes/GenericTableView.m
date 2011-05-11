@@ -152,6 +152,11 @@
 		NSLog(@"Successfully fetched %d %@ objects", [results count], entityName);
 		self.objectArray = [results mutableCopy];
 	}
+	
+	if ([entityName isEqualToString:@"Sentences"]) 
+	{
+		NSLog(self.objectArray);
+	}
 }
 
 

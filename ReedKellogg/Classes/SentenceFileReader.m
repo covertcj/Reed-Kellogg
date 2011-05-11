@@ -63,7 +63,7 @@
 	}
 	
 	// add the sentences
-	int i = 0;
+	int i = 1;
 	for (NSString * sentence in lines) {
 		[self addSentence:sentence toLesson:lesson sentenceNumber: i];
 		i++;

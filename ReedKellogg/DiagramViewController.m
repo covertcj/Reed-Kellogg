@@ -536,7 +536,8 @@
 	BOOL recieved = NO;
 	
 	for(Sentence *st in [selectedLesson sentences]){
-		if (st.number == selectedSentence.number+direction) {
+		//NSLog(@"%@ vs %@", st.number, selectedSentence.number+direction);
+		if ([st.number isEqualToNumber:selectedSentence.number+direction]) {
 			selectedSentence = st;
 			recieved = YES;
 			break;
