@@ -528,16 +528,14 @@
 	}
 }
 
-- (void) goToSentence:(int) direction{
+- (void) goToSentence:(int) direction {	
 	// Save data first.
 	[self saveDiagram:nil];
 	
 	// We have access to currLesson, which means we have access to all sentences in this lesson.
 	BOOL recieved = NO;
-	
-	for(Sentence *st in [selectedLesson sentences]){
-		//NSLog(@"%@ vs %@", st.number, selectedSentence.number+direction);
-		if ([st.number isEqualToNumber:selectedSentence.number+direction]) {
+	for(Sentence *st in [self.selectedLesson sentences]){
+		if ([st.number intValue] == [selectedSentence.number intValue] + direction) {
 			selectedSentence = st;
 			recieved = YES;
 			break;
@@ -556,6 +554,7 @@
 			[v removeFromSuperview];
 		}
 	}
+	
 	[self setLayout:[self loadLayout]];
 	[diagramView setNeedsDisplay];
 }
