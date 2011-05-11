@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A3E2C4913635B1600D619C8 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3E2C4813635B1600D619C8 /* Line.m */; };
+		0A5F5CF3137A121E000001ED /* LineData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F5CF2137A121E000001ED /* LineData.m */; };
 		0A74AA5D133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel in Resources */ = {isa = PBXBuildFile; fileRef = 0A74AA5C133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel */; };
 		0A8E586E137303FF00E02F83 /* SentenceFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E586D137303FF00E02F83 /* SentenceFileReader.m */; };
 		0A8E596D1377730400E02F83 /* KeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E596C1377730400E02F83 /* KeychainHelper.m */; };
@@ -46,13 +47,14 @@
 		B73B42BD130782EA00219463 /* GenericTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B42BC130782EA00219463 /* GenericTableView.m */; };
 		B73B43C913097BEC00219463 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B73B43C813097BEC00219463 /* Icon.png */; };
 		B73B44931309903D00219463 /* Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B44921309903D00219463 /* Layout.m */; };
-		B73B44FD130A1EF900219463 /* LineData.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B44FA130A1EF900219463 /* LineData.m */; };
 		B73B4509130A1FCC00219463 /* WordData.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B4508130A1FCC00219463 /* WordData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A3E2C4713635B1600D619C8 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		0A3E2C4813635B1600D619C8 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		0A5F5CF1137A121E000001ED /* LineData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineData.h; sourceTree = "<group>"; };
+		0A5F5CF2137A121E000001ED /* LineData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineData.m; sourceTree = "<group>"; };
 		0A6F670713324D7000907A24 /* PasswordEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryDelegate.h; path = ../PasswordEntryDelegate.h; sourceTree = "<group>"; };
 		0A74AA5C133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = ReedKellogg_Diagram.xcclassmodel; sourceTree = "<group>"; };
 		0A8E586C137303FF00E02F83 /* SentenceFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentenceFileReader.h; sourceTree = "<group>"; };
@@ -115,8 +117,6 @@
 		B73B43C813097BEC00219463 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B73B44911309903D00219463 /* Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layout.h; sourceTree = "<group>"; };
 		B73B44921309903D00219463 /* Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Layout.m; sourceTree = "<group>"; };
-		B73B44F9130A1EF900219463 /* LineData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineData.h; sourceTree = "<group>"; };
-		B73B44FA130A1EF900219463 /* LineData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineData.m; sourceTree = "<group>"; };
 		B73B4507130A1FCC00219463 /* WordData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordData.h; sourceTree = "<group>"; };
 		B73B4508130A1FCC00219463 /* WordData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,6 +214,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0A5F5CF1137A121E000001ED /* LineData.h */,
+				0A5F5CF2137A121E000001ED /* LineData.m */,
 				0AD1E0CF1378C16200878D9A /* Lesson.h */,
 				0AD1E0D01378C16200878D9A /* Lesson.m */,
 				0AAB47641357E9CC0048A27F /* DiagramViewController.xib */,
@@ -222,8 +224,6 @@
 				0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */,
 				B73B4507130A1FCC00219463 /* WordData.h */,
 				B73B4508130A1FCC00219463 /* WordData.m */,
-				B73B44F9130A1EF900219463 /* LineData.h */,
-				B73B44FA130A1EF900219463 /* LineData.m */,
 				B73B44911309903D00219463 /* Layout.h */,
 				B73B44921309903D00219463 /* Layout.m */,
 				B73B43C813097BEC00219463 /* Icon.png */,
@@ -338,7 +338,6 @@
 				B73B40181303090D00219463 /* Student.m in Sources */,
 				B73B42BD130782EA00219463 /* GenericTableView.m in Sources */,
 				B73B44931309903D00219463 /* Layout.m in Sources */,
-				B73B44FD130A1EF900219463 /* LineData.m in Sources */,
 				B73B4509130A1FCC00219463 /* WordData.m in Sources */,
 				0AA5E6631331806100874C80 /* PasswordEntryModalViewController.m in Sources */,
 				4F76ECA0133BDE40007E4C5A /* CommentViewController.m in Sources */,
@@ -348,6 +347,7 @@
 				0A8E586E137303FF00E02F83 /* SentenceFileReader.m in Sources */,
 				0A8E596D1377730400E02F83 /* KeychainHelper.m in Sources */,
 				0AD1E0D11378C16200878D9A /* Lesson.m in Sources */,
+				0A5F5CF3137A121E000001ED /* LineData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

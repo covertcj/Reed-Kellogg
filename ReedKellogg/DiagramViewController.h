@@ -20,6 +20,7 @@
 	UIBarButtonItem * viewCommentsButton;
 	UIBarButtonItem * showGridButton;
 	UISegmentedControl * correctButton;
+	UISegmentedControl * dashedControl;
 	
 	UIImageView * correctMark;
 	UILabel     * wholeSentence;
@@ -39,7 +40,7 @@
 	
 	CGPoint           lineStart;
 	UILabel *         touchedWord;
-	CGAffineTransform startingTransform;
+//	CGAffineTransform startingTransform;
 	
 	CGPoint previousScrollTouchLoc;
 }
@@ -48,7 +49,8 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * prevButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * viewCommentsButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * showGridButton;
-@property (nonatomic, retain) IBOutlet UISegmentedControl *correctButton;
+@property (nonatomic, retain) IBOutlet UISegmentedControl * correctButton;
+@property (nonatomic, retain) IBOutlet UISegmentedControl * dashedControl;
 
 
 @property (nonatomic, retain) IBOutlet UIImageView * correctMark;
@@ -67,9 +69,9 @@
 @property (nonatomic) BOOL correct;
 @property (nonatomic) BOOL set;
 
-@property (nonatomic) CGPoint           lineStart;
-@property (nonatomic) UILabel *         touchedWord;
-@property (nonatomic) CGAffineTransform startingTransform;
+@property (nonatomic)         CGPoint           lineStart;
+@property (nonatomic, retain) UILabel *         touchedWord;
+//@property (nonatomic)         CGAffineTransform startingTransform;
 
 @property (nonatomic) CGPoint previousScrollTouchLoc;
 
@@ -84,10 +86,11 @@
 
 - (void) moveTouchedWordToLocation:(CGPoint)location;
 
-- (IBAction) handlePinchGesture:(UIPinchGestureRecognizer *)sender;
+//- (IBAction) handlePinchGesture:(UIPinchGestureRecognizer *)sender;
 - (IBAction) showComments: (id)sender;
 - (IBAction) prevSentence: (id)sender;
 - (IBAction) nextSentence: (id)sender;
 - (IBAction) toggleGrid:   (id)sender;
 - (IBAction) toggleCorrect:(id)sender;
+- (IBAction) toggleDashed: (id)sender;
 @end

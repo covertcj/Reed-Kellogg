@@ -1,9 +1,9 @@
 // 
 //  LineData.m
-//  NavigationTest
+//  ReedKellogg
 //
-//  Created by Stephen Mayhew on 2/14/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Christopher J. Covert on 5/10/11.
+//  Copyright 2011 Rose-Hulman Institute of Technology. All rights reserved.
 //
 
 #import "LineData.h"
@@ -13,6 +13,7 @@
 
 @dynamic x2;
 @dynamic x1;
+@dynamic dashed;
 @dynamic y2;
 @dynamic y1;
 

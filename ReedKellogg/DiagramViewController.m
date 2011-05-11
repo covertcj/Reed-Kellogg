@@ -28,6 +28,8 @@
 @synthesize previousScrollTouchLoc;
 @synthesize showGridButton, correctButton;
 
+@synthesize nextButton, prevButton, viewCommentsButton, dashedControl;
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -170,8 +172,9 @@
 	}
 	[self.words removeAllObjects];
 	
-	// separate the word's text into an array
-	NSArray * wordTextArray = [self.selectedSentence.text componentsSeparatedByString:@" "];
+	// remove punctuation and separate the word's into an array
+	NSString * noPunctuation = [[self.selectedSentence.text componentsSeparatedByCharactersInSet:[[NSCharacterSet letterCharacterSet] invertedSet]] componentsJoinedByString:@" "];
+	NSArray  * wordTextArray = [noPunctuation componentsSeparatedByString:@" "];
 	
 	// display the sentence to the user
 	self.wholeSentence.text = self.selectedSentence.text;
@@ -203,7 +206,7 @@
 		
 		// actually create the word
 		UILabel * word   = [self createWord:wordText withOrigin:wordOrigin andRotation:wordRotation];
-		CGRect wordFrame = word.frame;
+//		CGRect wordFrame = word.frame;
 		
 		// increment the distance from the left side of the screen
 		distFromLeft = word.frame.origin.x + word.frame.size.width + 16;
@@ -228,7 +231,9 @@
 			
 			line.start  = CGPointMake(x1, y1);
 			line.end    = CGPointMake(x2, y2);
-			[self.diagramView addLine:line];
+			
+			BOOL dashed = [lineData.dashed boolValue];
+			[self.diagramView addLine:line dashed:dashed];
 		}
 	}
 }
@@ -345,6 +350,8 @@
 			}
 		}
 		
+		[self toggleDashed:nil];
+		
 		// check if the touch is in a word
 		for (UILabel * word in self.words) {
 			CGRect wordFrame = word.frame;
@@ -375,8 +382,9 @@
 			Line * line     = [[Line alloc] init];
 			line.start      = self.lineStart;
 			line.end        = touchLoc;
-
-			[self.diagramView setTemp:line];
+			
+			BOOL dashed = self.diagramView.tempDashed;
+			[self.diagramView setTemp:line dashed:dashed];
 			
 			[line release];
 		}
@@ -392,17 +400,20 @@
 		else {
 			// remove the temp line
 			CGPoint endPoint = self.diagramView.tempLine.end;
-			[self.diagramView setTemp:nil];
+			BOOL dashed = self.diagramView.tempDashed;
+			[self.diagramView setTemp:nil dashed:dashed];
 			
 			// create a permenant line
 			Line * line     = [[Line alloc] init];
 			line.start      = self.lineStart;
 
 			line.end        = endPoint;
-			[self.diagramView addLine:line];
+			[self.diagramView addLine:line dashed:dashed];
 			
 			[line release];
 		}
+		
+		[self toggleDashed:nil];
 	}
 	else {
 		if (self.touchedWord == nil) {
@@ -412,14 +423,14 @@
 			
 			self.touchedWord = nil;
 		}
-		[self.diagramView setTemp: nil];
+		BOOL dashed = self.diagramView.tempDashed;
+		[self.diagramView setTemp:nil dashed:dashed];
 	}
 }
 
 - (void) handleDoubleDragFrom:(UIPanGestureRecognizer *)recognizer {
 	CGPoint touchLoc = CGPointMake([recognizer locationInView:self.diagramView].x, 
 								   [recognizer locationInView:self.diagramView].y);
-	float speedCoeff = 1;
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		self.previousScrollTouchLoc     = touchLoc;
@@ -449,8 +460,8 @@
 			self.touchedWord = word;
 			
 			float angle = atan2(self.touchedWord.transform.b, self.touchedWord.transform.a);
-			if (angle > 0.77f && angle < 0.79f) {
-				angle = -M_PI / 4.0f;
+			if (angle > 1.56f && angle < 1.58) {
+				angle = -M_PI / 2.0f;
 			}	
 			else {
 				angle = angle + M_PI / 4.0f;
@@ -467,6 +478,17 @@
 	for (Line * line in self.diagramView.lines) {
 		if ([self.diagramView touch:touchLoc nearLine:line]) {
 			self.diagramView.touchedLine = line;
+			self.diagramView.tempDashed  = NO;
+			[self.diagramView setNeedsDisplay];
+			return;
+		}
+	}
+	
+	// otherwise check if we are selecting a dashed line
+	for (Line * line in self.diagramView.dashedLines) {
+		if ([self.diagramView touch:touchLoc nearLine:line]) {
+			self.diagramView.touchedLine = line;
+			self.diagramView.tempDashed  = YES;
 			[self.diagramView setNeedsDisplay];
 			return;
 		}
@@ -485,6 +507,14 @@
 		if ([self.diagramView touch:touchLoc nearLine:(Line *)line]) {
 			toRemove = line;
 		}
+	}
+	
+	if (toRemove == nil) {
+		for (Line * line in self.diagramView.dashedLines) {
+			if ([self.diagramView touch:touchLoc nearLine:(Line *)line]) {
+				toRemove = line;
+			}
+		}	
 	}
 	
 	if (toRemove != nil) {
@@ -576,9 +606,10 @@
 	}
 	
 	// Save lines coordinates
-	NSMutableArray *lines = [diagramView lines];
-	for(Line *line in lines){
-		LineData *ld = (LineData *)[NSEntityDescription insertNewObjectForEntityForName:@"LineData" inManagedObjectContext:managedObjectContext];
+//	NSMutableArray *lines = [diagramView lines];
+	BOOL dashed = NO;
+	for(Line *line in self.diagramView.lines){
+		LineData * ld = (LineData *)[NSEntityDescription insertNewObjectForEntityForName:@"LineData" inManagedObjectContext:managedObjectContext];
 		/*
 		 NSValue *start = [line objectAtIndex:0];
 		NSValue *end = [line objectAtIndex:1];
@@ -590,6 +621,26 @@
 		ld.y1 = [NSNumber numberWithFloat:tempStartPoint.y];
 		ld.x2 = [NSNumber numberWithFloat:tempEndPoint.x];
 		ld.y2 = [NSNumber numberWithFloat:tempEndPoint.y];
+		ld.dashed = [NSNumber numberWithBool:dashed];
+		[layout addLinesDataObject:ld];
+		// Do more cool stuff
+	}
+	
+	dashed = YES;
+	for(Line *line in self.diagramView.dashedLines){
+		LineData * ld = (LineData *)[NSEntityDescription insertNewObjectForEntityForName:@"LineData" inManagedObjectContext:managedObjectContext];
+		/*
+		 NSValue *start = [line objectAtIndex:0];
+		 NSValue *end = [line objectAtIndex:1];
+		 */
+		CGPoint tempStartPoint = line.start;
+		CGPoint tempEndPoint = line.end;
+		
+		ld.x1 = [NSNumber numberWithFloat:tempStartPoint.x];
+		ld.y1 = [NSNumber numberWithFloat:tempStartPoint.y];
+		ld.x2 = [NSNumber numberWithFloat:tempEndPoint.x];
+		ld.y2 = [NSNumber numberWithFloat:tempEndPoint.y];
+		ld.dashed = [NSNumber numberWithBool:dashed];
 		[layout addLinesDataObject:ld];
 		// Do more cool stuff
 	}
@@ -649,6 +700,10 @@
 			[self.correctMark setNeedsDisplay];
 		}
 	}
+}
+
+- (IBAction) toggleDashed:(id)sender {
+	self.diagramView.tempDashed = (self.dashedControl.selectedSegmentIndex == 1);
 }
 
 #pragma mark -

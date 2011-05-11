@@ -12,8 +12,8 @@
 
 @implementation DiagramView
 
-@synthesize lines, tempLine, touchedLine;
-@synthesize showGrid, gridSize;
+@synthesize lines, dashedLines, tempLine, touchedLine;
+@synthesize showGrid, tempDashed, gridSize;
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
@@ -59,7 +59,7 @@
 			Line * gridLine = [[Line alloc] init];
 			gridLine.start  = start;
 			gridLine.end    = end;
-			[self drawLine:gridLine withWidth:0.5f andColor:[UIColor cyanColor].CGColor andContext:context];
+			[self drawLine:gridLine withWidth:0.5f color:[UIColor cyanColor].CGColor context:context dashed:NO];
 			[gridLine release];
 			
 			x            += self.gridSize;
@@ -74,13 +74,13 @@
 			Line * gridLine = [[Line alloc] init];
 			gridLine.start  = start;
 			gridLine.end    = end;
-			[self drawLine:gridLine withWidth:0.5f andColor:[UIColor cyanColor].CGColor andContext:context];
+			[self drawLine:gridLine withWidth:0.5f color:[UIColor cyanColor].CGColor context:context dashed:NO];
 			[gridLine release];
 			
 			y            += self.gridSize;
 		}
 	}
-	int k = self.contentSize.width/self.gridSize;
+	//int k = self.contentSize.width/self.gridSize;
 	
 	//draw diagnols
 	/*
@@ -97,48 +97,78 @@
 		b            += self.gridSize;
 	}*/
 	
-	
 	// draw the temporary line
 	if (self.tempLine != nil) {
-		[self drawLine:self.tempLine withWidth:4.0f andColor:[UIColor blackColor].CGColor andContext:context];
+		[self drawLine:self.tempLine withWidth:4.0f color:[UIColor blackColor].CGColor context:context dashed:self.tempDashed];
 	}
 	
 	// Draw the array of lines
 	for (Line * line in self.lines) {
 		if (self.touchedLine == line) {
-			[self drawLine:line withWidth:4.0f andColor:[UIColor blueColor].CGColor andContext:context];
+			[self drawLine:line withWidth:4.0f color:[UIColor blueColor].CGColor context:context dashed: NO];
 		}
 		else {
-			[self drawLine:line withWidth:4.0f andColor:[UIColor blackColor].CGColor andContext:context];
+			[self drawLine:line withWidth:4.0f color:[UIColor blackColor].CGColor context:context dashed:NO];
+		}
+	}
+	
+	// Draw the array of dashed lines
+	for (Line * line in self.dashedLines) {
+		if (self.touchedLine == line) {
+			[self drawLine:line withWidth:4.0f color:[UIColor blueColor].CGColor context:context dashed: YES];
+		}
+		else {
+			[self drawLine:line withWidth:4.0f color:[UIColor blackColor].CGColor context:context dashed:YES];
 		}
 	}
 }
 
-- (void) drawLine:(Line *)line withWidth:(CGFloat)width andColor:(CGColorRef)color andContext:(CGContextRef)context {
-	// TODO: Implement DiagramView.DrawLine
+- (void) drawLine:(Line *)line withWidth:(CGFloat)width color:(CGColorRef)color context:(CGContextRef)context dashed:(BOOL)dashed {
+	// setup the line style
     CGContextSaveGState(context);
 	CGContextSetLineCap(context, kCGLineCapSquare);
 	CGContextSetStrokeColorWithColor(context, color);
     CGContextSetLineWidth(context, width);
+	
+	// make the line dashed if necessary
+	if (dashed) {
+		CGFloat dashArray[] = {2,6,4,2};
+		CGContextSetLineDash(context, 3, dashArray, 4);
+	}
+	
+	// draw the line
     CGContextMoveToPoint(context, line.start.x + 0.5, line.start.y + 0.5);
     CGContextAddLineToPoint(context, line.end.x + 0.5, line.end.y + 0.5);
     CGContextStrokePath(context);
     CGContextRestoreGState(context);
 }
 
-- (void) addLine:(Line *)line {
-	// TODO: Implement DiagramView.addLine
+- (void) addLine:(Line *)line dashed:(BOOL)dashed {
+	// initialize the line arrays if necessary
 	if (self.lines == nil) {
 		self.lines = [[NSMutableArray alloc] init];
 	}
 	
+	if (self.dashedLines == nil) {
+		self.dashedLines = [[NSMutableArray alloc] init];
+	}
+	
+	// setup the line attributes
 	Line * myline  = [[Line alloc] init];
 	myline.start   = line.start;
 	myline.start   = [self snapToGrid:myline.start];
 	myline.end     = line.end;
 	myline.end     = [self snapToGrid:myline.end];
 	[self snapToGrid:myline.end];
-	[self.lines addObject:myline];
+	
+	// add the line to its respective array
+	if (dashed) {
+		[self.dashedLines addObject:myline];
+	}
+	else {
+		[self.lines addObject:myline];
+	}
+	
 	NSLog(@"adding line from (%f, %f) to (%f, %f)",myline.start.x, myline.start.y, myline.end.x, myline.end.y);
 	[self setNeedsDisplay];
 }
@@ -150,7 +180,7 @@
 	return p;
 }
 
-- (void) setTemp:(Line *)line {
+- (void) setTemp:(Line *)line dashed:(BOOL)dashed {
 	if (line == nil) {
 		self.tempLine = nil;
 		[self.tempLine release];
@@ -164,12 +194,14 @@
 	self.tempLine.start = line.start;
 	self.tempLine.end   = line.end;
 	
+	self.tempDashed     = dashed;
+	
 	[self setNeedsDisplay];
 	
 }
 
 - (void) removeLine:(Line *)line {
-	Line * toRemove;
+	Line * toRemove = nil;
 	
 	for (Line * storedLine in self.lines) {
 		if (line.start.x == storedLine.start.x &&
@@ -179,6 +211,27 @@
 			
 			toRemove     = line;
 			break;
+		}
+	}
+	
+	if (toRemove == nil) {
+		for (Line * storedLine in self.dashedLines) {
+			if (line.start.x == storedLine.start.x &&
+				line.start.y == storedLine.start.y &&
+				line.end.x   == storedLine.end.x   &&
+				line.end.y   == storedLine.end.y) {
+				
+				toRemove     = line;
+				break;
+			}
+		}
+		
+		if (toRemove != nil) {
+			[self.dashedLines removeObject:toRemove];
+			[toRemove release];
+			[self setNeedsDisplay];
+			self.touchedLine = nil;
+			return;
 		}
 	}
 	
@@ -279,15 +332,21 @@
 }*/
 
 - (void)dealloc {
-	if (self.lines    != nil) {
+	if ( self.lines   != nil) {
 		[self.lines    removeAllObjects];
-		self.lines     = nil;
+		 self.lines    = nil;
 		[self.lines    release];
 	}
 	
-	if (self.tempLine != nil) {
-		self.tempLine  = nil;
-		[self.tempLine release];
+	if ( self.dashedLines   != nil) {
+		[self.dashedLines    removeAllObjects];
+		 self.dashedLines    = nil;
+		[self.dashedLines    release];
+	}
+	
+	if ( self.tempLine != nil) {
+		 self.tempLine  = nil;
+		[self.tempLine  release];
 	}
 	
     [super dealloc];
