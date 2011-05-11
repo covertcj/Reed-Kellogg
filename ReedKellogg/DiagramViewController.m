@@ -311,6 +311,12 @@
 		snapTo.y = snapTo.y - gridSize/4;
 		snapTo.x = snapTo.x - gridSize/4;
 	}
+	else if (angle > 1.56 && angle < 1.58) {
+		snapTo.x         =  floor(snapTo.x / gridSize) * gridSize + gridSize / 2;
+	}
+	else if (angle < -1.56 && angle > -1.58) {
+		snapTo.x         =  floor(snapTo.x / gridSize) * gridSize + gridSize / 2;
+	}
 	else {
 		snapTo.y         =  floor(snapTo.y / gridSize) * gridSize + gridSize / 2;
 	}
