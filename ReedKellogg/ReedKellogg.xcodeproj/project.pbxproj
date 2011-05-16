@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A3E2C4913635B1600D619C8 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3E2C4813635B1600D619C8 /* Line.m */; };
+		0A54005D1381854C00DB489C /* DiagramInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A54005B1381854C00DB489C /* DiagramInfoViewController.m */; };
+		0A54005E1381854C00DB489C /* DiagramInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A54005C1381854C00DB489C /* DiagramInfoViewController.xib */; };
 		0A5F5CF3137A121E000001ED /* LineData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F5CF2137A121E000001ED /* LineData.m */; };
 		0A74AA5D133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel in Resources */ = {isa = PBXBuildFile; fileRef = 0A74AA5C133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel */; };
 		0A8E586E137303FF00E02F83 /* SentenceFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E586D137303FF00E02F83 /* SentenceFileReader.m */; };
@@ -53,6 +55,9 @@
 /* Begin PBXFileReference section */
 		0A3E2C4713635B1600D619C8 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		0A3E2C4813635B1600D619C8 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		0A54005A1381854C00DB489C /* DiagramInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagramInfoViewController.h; sourceTree = "<group>"; };
+		0A54005B1381854C00DB489C /* DiagramInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagramInfoViewController.m; sourceTree = "<group>"; };
+		0A54005C1381854C00DB489C /* DiagramInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DiagramInfoViewController.xib; path = Classes/DiagramInfoViewController.xib; sourceTree = "<group>"; };
 		0A5F5CF1137A121E000001ED /* LineData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineData.h; sourceTree = "<group>"; };
 		0A5F5CF2137A121E000001ED /* LineData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineData.m; sourceTree = "<group>"; };
 		0A6F670713324D7000907A24 /* PasswordEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordEntryDelegate.h; path = ../PasswordEntryDelegate.h; sourceTree = "<group>"; };
@@ -176,6 +181,8 @@
 				0A98E8DD1365BC84005BCF2D /* DiagramViewDelegate.h */,
 				0A8E586C137303FF00E02F83 /* SentenceFileReader.h */,
 				0A8E586D137303FF00E02F83 /* SentenceFileReader.m */,
+				0A54005A1381854C00DB489C /* DiagramInfoViewController.h */,
+				0A54005B1381854C00DB489C /* DiagramInfoViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -214,11 +221,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0A54005C1381854C00DB489C /* DiagramInfoViewController.xib */,
+				0AAB47641357E9CC0048A27F /* DiagramViewController.xib */,
 				0A5F5CF1137A121E000001ED /* LineData.h */,
 				0A5F5CF2137A121E000001ED /* LineData.m */,
 				0AD1E0CF1378C16200878D9A /* Lesson.h */,
 				0AD1E0D01378C16200878D9A /* Lesson.m */,
-				0AAB47641357E9CC0048A27F /* DiagramViewController.xib */,
 				4F649AFF133CDE1900DED74E /* correct.png */,
 				4F649B00133CDE1900DED74E /* incorrect.png */,
 				0AA5E65413317FC100874C80 /* PasswordEntryModalViewController.xib */,
@@ -315,6 +323,7 @@
 				4F649B02133CDE1900DED74E /* incorrect.png in Resources */,
 				0A74AA5D133D218300671B7B /* ReedKellogg_Diagram.xcclassmodel in Resources */,
 				0AAB47661357E9CC0048A27F /* DiagramViewController.xib in Resources */,
+				0A54005E1381854C00DB489C /* DiagramInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +357,7 @@
 				0A8E596D1377730400E02F83 /* KeychainHelper.m in Sources */,
 				0AD1E0D11378C16200878D9A /* Lesson.m in Sources */,
 				0A5F5CF3137A121E000001ED /* LineData.m in Sources */,
+				0A54005D1381854C00DB489C /* DiagramInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

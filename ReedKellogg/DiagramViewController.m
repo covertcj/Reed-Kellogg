@@ -6,8 +6,9 @@
 //  Copyright 2011 Rose-Hulman Institute of Technology. All rights reserved.
 //
 
-#import "DiagramViewController.h"
+#import "DiagramInfoViewController.h"
 #import "DiagramView.h"
+#import "DiagramViewController.h"
 
 #import "Layout.h"
 #import "Line.h"
@@ -721,6 +722,13 @@
 //- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	[self.diagramView setNeedsDisplay];
+}
+
+- (IBAction) showInfo:(id)sender {
+	DiagramInfoViewController * infoModal = [[DiagramInfoViewController alloc] init];
+	UINavigationController * nvc = [[[UINavigationController alloc] initWithRootViewController:infoModal] autorelease];
+	nvc.modalPresentationStyle = UIModalPresentationFormSheet;
+	[self presentModalViewController:nvc animated:YES];
 }
 
 @end

@@ -265,19 +265,20 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
+									<integer>39</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {236, 759}}</string>
+							<string>{{0, 35}, {236, 759}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -455,7 +456,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DiagramViewController.m</string>
+								<string>DiagramInfoViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -463,11 +464,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DiagramViewController.m</string>
+										<string>DiagramInfoViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0A54004B138183F100DB489C</string>
+										<string>0A54009D13818C3200DB489C</string>
 										<key>history</key>
 										<array>
 											<string>0AA9171B13339E24008B4AC5</string>
@@ -484,39 +485,43 @@
 											<string>0A5F5D79137B07E4000001ED</string>
 											<string>0A5F5D7A137B07E4000001ED</string>
 											<string>0A5F5D7B137B07E4000001ED</string>
-											<string>0A5F5D7D137B07E4000001ED</string>
-											<string>0A5F5D7E137B07E4000001ED</string>
-											<string>0A5F5D7F137B07E4000001ED</string>
-											<string>0A5F5D80137B07E4000001ED</string>
 											<string>0A5F5D82137B07E4000001ED</string>
-											<string>0A5F5D88137B07E4000001ED</string>
-											<string>0A8CDB06137B0F160033DE73</string>
-											<string>0A8CDB3B137B17E50033DE73</string>
-											<string>0A8CDB45137B17E50033DE73</string>
 											<string>0A8CDB47137B17E50033DE73</string>
 											<string>0A8CDB48137B17E50033DE73</string>
 											<string>0A540012137D850300DB489C</string>
 											<string>0A540013137D850300DB489C</string>
 											<string>0A540014137D850300DB489C</string>
-											<string>0A540015137D850300DB489C</string>
 											<string>0A540016137D850300DB489C</string>
-											<string>0A540017137D850300DB489C</string>
-											<string>0A540018137D850300DB489C</string>
 											<string>0A540019137D850300DB489C</string>
 											<string>0A54001E137D850300DB489C</string>
-											<string>0A54001F137D850300DB489C</string>
-											<string>0A540020137D850300DB489C</string>
-											<string>0A54003B1381805C00DB489C</string>
-											<string>0A54003C1381805C00DB489C</string>
-											<string>0A54003D1381805C00DB489C</string>
-											<string>0A54003E1381805C00DB489C</string>
-											<string>0A54003F1381805C00DB489C</string>
-											<string>0A5400401381805C00DB489C</string>
-											<string>0A5400411381805C00DB489C</string>
-											<string>0A5400421381805C00DB489C</string>
-											<string>0A5400431381805C00DB489C</string>
 											<string>0A540048138183A400DB489C</string>
-											<string>0A540049138183A400DB489C</string>
+											<string>0A540068138189A200DB489C</string>
+											<string>0A540069138189A200DB489C</string>
+											<string>0A54006B138189A200DB489C</string>
+											<string>0A54006C138189A200DB489C</string>
+											<string>0A540072138189A200DB489C</string>
+											<string>0A540073138189A200DB489C</string>
+											<string>0A540074138189A200DB489C</string>
+											<string>0A540075138189A200DB489C</string>
+											<string>0A540076138189A200DB489C</string>
+											<string>0A540077138189A200DB489C</string>
+											<string>0A540078138189A200DB489C</string>
+											<string>0A54007A138189A200DB489C</string>
+											<string>0A54007C138189A200DB489C</string>
+											<string>0A54008913818AA200DB489C</string>
+											<string>0A54008A13818AA200DB489C</string>
+											<string>0A54008B13818AA200DB489C</string>
+											<string>0A54008C13818AA200DB489C</string>
+											<string>0A54008D13818AA200DB489C</string>
+											<string>0A54008E13818AA200DB489C</string>
+											<string>0A54008F13818AA200DB489C</string>
+											<string>0A54009013818AA200DB489C</string>
+											<string>0A54009113818AA200DB489C</string>
+											<string>0A54009213818AA200DB489C</string>
+											<string>0A54009313818AA200DB489C</string>
+											<string>0A54009A13818C3200DB489C</string>
+											<string>0A54009B13818C3200DB489C</string>
+											<string>0A54009C13818C3200DB489C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -720,9 +725,9 @@
 	<array>
 		<string>0A54002A137D850300DB489C</string>
 		<string>0A54002B137D850300DB489C</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>0A0185D3132FC7B4005EC556</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/csse/Documents/Courses/CSSE375/reedkellogg_scrollview/branches/scroll/ReedKellogg/ReedKellogg.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -1097,7 +1102,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

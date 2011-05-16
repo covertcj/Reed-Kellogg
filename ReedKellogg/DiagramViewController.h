@@ -93,4 +93,5 @@
 - (IBAction) toggleGrid:   (id)sender;
 - (IBAction) toggleCorrect:(id)sender;
 - (IBAction) toggleDashed: (id)sender;
+- (IBAction) showInfo:     (id)sender;
 @end
