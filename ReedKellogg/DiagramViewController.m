@@ -205,11 +205,14 @@
 		}
 		
 		// actually create the word
-		UILabel * word   = [self createWord:wordText withOrigin:wordOrigin andRotation:wordRotation];
+		UILabel * word    = [self createWord:wordText withOrigin:wordOrigin andRotation:wordRotation];
 //		CGRect wordFrame = word.frame;
+		CGPoint snapped   = [self snapPositionForWord:word];
+		word.center       = snapped;
+		[word setNeedsDisplay];
 		
 		// increment the distance from the left side of the screen
-		distFromLeft = word.frame.origin.x + word.frame.size.width + 16;
+		distFromLeft = word.frame.origin.x + word.frame.size.width + 14;
 		
 		[self.words addObject:word];
 		[self.diagramView addSubview:word];

@@ -44,6 +44,29 @@
 	[self updateTitle];
 }
 
+// This method responds to the edit lessons button...
+-(void)popupButton2Pressed{
+	NSLog(@"popupButton2Pressed method");
+	
+	if (self.editing) {
+		[self setEditing:NO animated:YES];
+		
+		// Reset the back button
+		self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
+	}else{
+		// Set editing to true
+		[self setEditing:YES animated:YES];
+		
+		// Overlay the back button with an editbuttonitem (it will say Done)
+		UIBarButtonItem *editBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(setEdit:)];
+		self.navigationItem.leftBarButtonItem = editBtn;
+		[editBtn release];
+		
+	}	
+	
+	[namePopover dismissPopoverAnimated:YES];
+}
+
 - (void) updateTitle {
 	int numCorrect=0;
 	for (int i=0; i<[super.objectArray count]; i++) {
