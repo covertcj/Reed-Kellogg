@@ -10,9 +10,10 @@
 
 
 @interface DiagramInfoViewController : UIViewController {
-
+	UIBarButtonItem *doneButton;
 }
 
 - (IBAction) done:(id)sender;
+@property (nonatomic, retain) UIBarButtonItem *doneButton;
 
 @end

@@ -10,6 +10,7 @@
 
 
 @implementation DiagramInfoViewController
+@synthesize doneButton;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -21,12 +22,13 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+	self.title = @"Diagramming Help";
+	self.navigationItem.rightBarButtonItem = self.doneButton;
 }
-*/
 
 - (IBAction) done:(id)sender {
 	[self dismissModalViewControllerAnimated:YES];

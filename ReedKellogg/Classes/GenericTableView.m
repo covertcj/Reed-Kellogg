@@ -26,12 +26,10 @@
 - (void)viewDidLoad {
 	// Set up the buttons.
 	if (TeacherMode) {
-	
 		addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
 															  target:self action:@selector(showPopover)];
 		addButton.enabled = YES;	
 		self.navigationItem.rightBarButtonItem = addButton;
-		
 	}
 
 		

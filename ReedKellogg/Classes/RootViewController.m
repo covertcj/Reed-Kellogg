@@ -16,6 +16,7 @@
 	self.passwordEntryModal = [[PasswordEntryModalViewController alloc] initWithDelegate:self];
 	passwordEntryModal.managedObjectContext = self.managedObjectContext;
 	//self.passwordEntryModal.modalPresentationStyle = UIModalPresentationFormSheet;
+
 	
 	super.TeacherMode = NO;
 	super.popFirstButton = @"Add Student";
@@ -61,6 +62,8 @@
 -(void)promptForPassword:(id)sender {
 	UINavigationController * nvc = [[[UINavigationController alloc] initWithRootViewController:self.passwordEntryModal] autorelease];
 	nvc.modalPresentationStyle = UIModalPresentationFormSheet;
+	//self.passwordEntryModal.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	nvc.view.backgroundColor = [UIColor whiteColor];
 	[self presentModalViewController:nvc animated:YES];
 }
 

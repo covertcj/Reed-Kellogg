@@ -26,10 +26,9 @@
 	self.delegate = deleg;
 	self.settingNewPassword = NO;
 	self.hasBeenSet = YES;
-	
+	self.title = @"Teacher Login";
 	// retrieve the Teacher's password
 	self.currentPassword = [KeychainHelper getPasswordForUsername:@"Teacher" andService:@"ReedKellogg"];
-	
 	// initialize the password if there isn't one in the keychain
 	if (self.currentPassword == nil) {
 		NSLog(@"Password Does Not Exist");
@@ -37,7 +36,6 @@
 	else {
 		NSLog(@"Password Loaded: %@", self.currentPassword);
 	}
-	
 	return self;
 }
 
@@ -51,6 +49,7 @@
 		NSLog(@"Couldn't fetch; error was %@", error);
 		return;
 	}
+	self.view.backgroundColor = [UIColor whiteColor];
 
 	//If the password has never been set
 	if ([results count] == 0) {

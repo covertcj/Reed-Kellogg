@@ -65,8 +65,10 @@
 	// add the sentences
 	int i = 1;
 	for (NSString * sentence in lines) {
-		[self addSentence:sentence toLesson:lesson sentenceNumber: i];
-		i++;
+		if (![sentence isEqualToString:@""]) {
+			[self addSentence:sentence toLesson:lesson sentenceNumber: i];
+			i++;
+		}
 	}
 	
 	NSLog(@"File Read: %@", filename);

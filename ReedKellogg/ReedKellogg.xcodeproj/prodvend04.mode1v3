@@ -277,7 +277,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {413, 759}}</string>
+							<string>{{0, 196}, {413, 759}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -326,7 +326,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4F7FB65F1382130400BD9558</string>
+										<string>4F7FB7881382D39500BD9558</string>
 										<key>history</key>
 										<array>
 											<string>4F3C7DA71326A0100032DD83</string>
@@ -337,7 +337,6 @@
 											<string>4FDD27DB1326C2C2003CFE5E</string>
 											<string>4F76EC52133BA547007E4C5A</string>
 											<string>4F5155C5133C6BCE005F2E19</string>
-											<string>4F196BE41348DF5700966C12</string>
 											<string>4F955AD5134CBE65008A7BFF</string>
 											<string>4FAFFB9E1369196500E206AF</string>
 											<string>4FAFFB9F1369196500E206AF</string>
@@ -348,44 +347,45 @@
 											<string>4FB1C2EF1369F26B009BE45B</string>
 											<string>4FB1C31B1369F5E7009BE45B</string>
 											<string>4FDCC39E1378685E0042D8A0</string>
-											<string>4FDCC3B213786F990042D8A0</string>
 											<string>4FDCC3B6137876390042D8A0</string>
 											<string>4FDCC3EF1378856B0042D8A0</string>
-											<string>4FDCC40513788ABE0042D8A0</string>
 											<string>4FDCC40A13788ABE0042D8A0</string>
 											<string>4F910FB913798AC100C580DB</string>
 											<string>4FC89D4A1381B12200FA1A1F</string>
 											<string>4F7FB5CB1381E22700BD9558</string>
-											<string>4F7FB5CE1381E22700BD9558</string>
-											<string>4F7FB5D21381E22700BD9558</string>
-											<string>4F7FB5D71381E22700BD9558</string>
 											<string>4F7FB5D91381E22700BD9558</string>
-											<string>4F7FB5E41381E4FC00BD9558</string>
-											<string>4F7FB5E51381E4FC00BD9558</string>
 											<string>4F7FB5E61381E4FC00BD9558</string>
 											<string>4F7FB5E71381E4FC00BD9558</string>
-											<string>4F7FB5F11381E8AA00BD9558</string>
-											<string>4F7FB5F21381E8AA00BD9558</string>
 											<string>4F7FB5F31381E8AA00BD9558</string>
-											<string>4F7FB5F91381E8AA00BD9558</string>
-											<string>4F7FB6171381EC2600BD9558</string>
 											<string>4F7FB6181381EC2600BD9558</string>
 											<string>4F7FB6191381EC2600BD9558</string>
 											<string>4F7FB6341381FE1300BD9558</string>
 											<string>4F7FB6351381FE1300BD9558</string>
 											<string>4F7FB63D138201FB00BD9558</string>
 											<string>4F7FB63F138201FB00BD9558</string>
-											<string>4F7FB6431382096A00BD9558</string>
-											<string>4F7FB6441382096A00BD9558</string>
-											<string>4F7FB6471382096A00BD9558</string>
 											<string>4F7FB6481382096A00BD9558</string>
-											<string>4F7FB651138209E300BD9558</string>
-											<string>4F7FB652138209E300BD9558</string>
-											<string>4F7FB653138209E300BD9558</string>
 											<string>4F7FB654138209E300BD9558</string>
-											<string>4F7FB655138209E300BD9558</string>
-											<string>4F7FB656138209E300BD9558</string>
-											<string>4F7FB657138209E300BD9558</string>
+											<string>4F7FB66B13821BBC00BD9558</string>
+											<string>4F7FB6C7138239AF00BD9558</string>
+											<string>4F7FB6CE138239CF00BD9558</string>
+											<string>4F7FB6CF138239CF00BD9558</string>
+											<string>4F7FB7521382456B00BD9558</string>
+											<string>4F7FB7531382456B00BD9558</string>
+											<string>4F7FB7541382456B00BD9558</string>
+											<string>4F7FB7551382456B00BD9558</string>
+											<string>4F7FB7561382456B00BD9558</string>
+											<string>4F7FB7571382456B00BD9558</string>
+											<string>4F7FB7581382456B00BD9558</string>
+											<string>4F7FB7591382456B00BD9558</string>
+											<string>4F7FB75A1382456B00BD9558</string>
+											<string>4F7FB75B1382456B00BD9558</string>
+											<string>4F7FB75C1382456B00BD9558</string>
+											<string>4F7FB75D1382456B00BD9558</string>
+											<string>4F7FB75E1382456B00BD9558</string>
+											<string>4F7FB75F1382456B00BD9558</string>
+											<string>4F7FB76C138245FC00BD9558</string>
+											<string>4F7FB77D1382470B00BD9558</string>
+											<string>4F7FB77E1382470B00BD9558</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -586,6 +586,7 @@
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>4FF9BE1113032FAE00BAFDE5</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>/Users/prodvend04/Documents/reedkellogg2/branches/scroll/ReedKellogg/ReedKellogg.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -610,7 +611,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>RootViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -627,6 +628,8 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -826,7 +829,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string></string>
+										<string>GenericTableView.m</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -884,8 +887,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>4FDCC3CB137878620042D8A0</string>
-				<string>4FDCC3CC137878620042D8A0</string>
+				<string>4F7FB67113821BBC00BD9558</string>
+				<string>4F7FB67213821BBC00BD9558</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>
@@ -894,7 +897,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">800</int>
 		<string key="IBDocument.SystemVersion">10J869</string>
-		<string key="IBDocument.InterfaceBuilderVersion">804</string>
+		<string key="IBDocument.InterfaceBuilderVersion">823</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">123</string>
+			<string key="NS.object.0">132</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -111,7 +111,7 @@
 							<object class="IBUISegmentedControl" id="735974968">
 								<reference key="NSNextResponder" ref="680606528"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{150, 7}, {138, 30}}</string>
+								<string key="NSFrame">{{169, 8}, {138, 30}}</string>
 								<reference key="NSSuperview" ref="680606528"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -147,7 +147,7 @@
 							<object class="IBUISegmentedControl" id="584535258">
 								<reference key="NSNextResponder" ref="680606528"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{298, 7}, {138, 30}}</string>
+								<string key="NSFrame">{{317, 8}, {138, 30}}</string>
 								<reference key="NSSuperview" ref="680606528"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -199,7 +199,7 @@
 								<reference key="IBUIHighlightedTitleColor" ref="965357852"/>
 								<object class="NSColor" key="IBUINormalTitleColor">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+									<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjUyMTU2ODYyNzUAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUINormalTitleShadowColor">
 									<int key="NSColorSpace">3</int>
@@ -214,6 +214,12 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSMutableArray" key="IBUIItems">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBUIBarButtonItem" id="201865612">
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<float key="IBUIWidth">38</float>
+								<reference key="IBUIToolbar" ref="680606528"/>
+								<int key="IBUISystemItemIdentifier">6</int>
+							</object>
 							<object class="IBUIBarButtonItem" id="71725459">
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<reference key="IBUIToolbar" ref="680606528"/>
@@ -498,23 +504,14 @@
 							<reference ref="67183832"/>
 							<reference ref="104432547"/>
 							<reference ref="264398572"/>
-							<reference ref="71725459"/>
 							<reference ref="136707482"/>
 							<reference ref="315270932"/>
 							<reference ref="241209340"/>
 							<reference ref="593464719"/>
+							<reference ref="201865612"/>
+							<reference ref="71725459"/>
 						</object>
 						<reference key="parent" ref="472297879"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">7</int>
-						<reference key="object" ref="264398572"/>
-						<reference key="parent" ref="680606528"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">12</int>
-						<reference key="object" ref="104432547"/>
-						<reference key="parent" ref="680606528"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">15</int>
@@ -527,22 +524,13 @@
 						<reference key="parent" ref="680606528"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">41</int>
-						<reference key="object" ref="241209340"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="584535258"/>
-						</object>
+						<int key="objectID">12</int>
+						<reference key="object" ref="104432547"/>
 						<reference key="parent" ref="680606528"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">40</int>
-						<reference key="object" ref="584535258"/>
-						<reference key="parent" ref="241209340"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">58</int>
-						<reference key="object" ref="71725459"/>
+						<int key="objectID">7</int>
+						<reference key="object" ref="264398572"/>
 						<reference key="parent" ref="680606528"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -565,6 +553,20 @@
 						<reference key="parent" ref="315270932"/>
 					</object>
 					<object class="IBObjectRecord">
+						<int key="objectID">41</int>
+						<reference key="object" ref="241209340"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="584535258"/>
+						</object>
+						<reference key="parent" ref="680606528"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">40</int>
+						<reference key="object" ref="584535258"/>
+						<reference key="parent" ref="241209340"/>
+					</object>
+					<object class="IBObjectRecord">
 						<int key="objectID">68</int>
 						<reference key="object" ref="593464719"/>
 						<object class="NSMutableArray" key="children">
@@ -577,6 +579,16 @@
 						<int key="objectID">67</int>
 						<reference key="object" ref="515955909"/>
 						<reference key="parent" ref="593464719"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">75</int>
+						<reference key="object" ref="201865612"/>
+						<reference key="parent" ref="680606528"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">58</int>
+						<reference key="object" ref="71725459"/>
+						<reference key="parent" ref="680606528"/>
 					</object>
 				</object>
 			</object>
@@ -611,6 +623,7 @@
 					<string>67.IBPluginDependency</string>
 					<string>67.IBViewBoundsToFrameTransform</string>
 					<string>7.IBPluginDependency</string>
+					<string>75.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -622,7 +635,7 @@
 					<string>{{399, 9}, {783, 847}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAAA/gAAAxGmAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAxGmAAA</bytes>
 					</object>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -634,7 +647,7 @@
 						<bytes key="NSTransformStruct">P4AAAL+AAABCiAAAwmAAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{328, 4}, {783, 852}}</string>
+					<string>{{349, -72}, {783, 835}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -650,6 +663,7 @@
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAABDz4AAxBjAAA</bytes>
 					</object>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
 			</object>
@@ -669,7 +683,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">69</int>
+			<int key="maxID">75</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1130,6 +1144,6 @@
 			<string key="NS.key.0">correct.png</string>
 			<string key="NS.object.0">{200, 200}</string>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">123</string>
+		<string key="IBCocoaTouchPluginVersion">132</string>
 	</data>
 </archive>
