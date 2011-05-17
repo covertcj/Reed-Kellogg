@@ -28,7 +28,6 @@
 @property (nonatomic, retain) NSMutableArray *objectArray;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
-
 @property (nonatomic, retain) NSString * popFirstButton;
 @property (nonatomic, retain) NSString * popSecondButton;
 

@@ -8,6 +8,7 @@
 
 #import "PasswordEntryModalViewController.h"
 #import "KeychainHelper.h"
+#import "Password.h"
 
 
 @implementation PasswordEntryModalViewController
@@ -18,11 +19,13 @@
 @synthesize currentPassword, passwordKeychain;
 @synthesize delegate;
 @synthesize settingNewPassword;
-
+@synthesize managedObjectContext;
+@synthesize hasBeenSet;
 
 - (id) initWithDelegate: (id <PasswordEntryDelegate>) deleg {
 	self.delegate = deleg;
 	self.settingNewPassword = NO;
+	self.hasBeenSet = YES;
 	
 	// retrieve the Teacher's password
 	self.currentPassword = [KeychainHelper getPasswordForUsername:@"Teacher" andService:@"ReedKellogg"];
@@ -39,11 +42,23 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-	if (self.currentPassword == nil) {
+	//Check coredata to see if the password has ever been set
+	NSFetchRequest * request = [[[NSFetchRequest alloc] init] autorelease];
+	[request setEntity:[NSEntityDescription entityForName:@"Password" inManagedObjectContext:managedObjectContext]];
+	NSError * error;
+	NSArray * results = [managedObjectContext executeFetchRequest:request error:&error];
+	if(results == nil) {
+		NSLog(@"Couldn't fetch; error was %@", error);
+		return;
+	}
+
+	//If the password has never been set
+	if ([results count] == 0) {
 		self.passwordTextBox.hidden  = YES;
 		self.passwordLabel.hidden    = YES;
 		[self setChangeFieldsVisibility:YES];
 		self.cancelButton.hidden     = YES;
+		self.hasBeenSet = NO;
 	}
 }
 
@@ -85,6 +100,14 @@
 		// change the UI to no longer show the password change fields
 		self.passwordTextBox.hidden = NO;
 		[self setChangeFieldsVisibility:NO];
+		if (!self.hasBeenSet) {
+			[NSEntityDescription insertNewObjectForEntityForName:@"Password" inManagedObjectContext:self.managedObjectContext];
+			NSError *error = nil;
+			
+			if (![self.managedObjectContext save:&error]) {
+				NSLog(@"There was an error in saving the password: %@",error);
+			}
+		}
 	}
 }
 

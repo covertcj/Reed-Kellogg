@@ -33,6 +33,7 @@
 		4F649B02133CDE1900DED74E /* incorrect.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F649B00133CDE1900DED74E /* incorrect.png */; };
 		4F76ECA0133BDE40007E4C5A /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F76EC9E133BDE40007E4C5A /* CommentViewController.m */; };
 		4F76ECA1133BDE40007E4C5A /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F76EC9F133BDE40007E4C5A /* CommentViewController.xib */; };
+		4F7FB5F01381E84B00BD9558 /* Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FB5EF1381E84B00BD9558 /* Password.m */; };
 		B739C99712DE06D500D3F493 /* LessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B739C99512DE06D500D3F493 /* LessonViewController.m */; };
 		B739C99812DE06D600D3F493 /* LessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B739C99612DE06D500D3F493 /* LessonViewController.xib */; };
 		B739CBFA12DEA25700D3F493 /* TouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */; };
@@ -95,6 +96,8 @@
 		4F76EC9D133BDE40007E4C5A /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		4F76EC9E133BDE40007E4C5A /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		4F76EC9F133BDE40007E4C5A /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
+		4F7FB5EE1381E84A00BD9558 /* Password.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Password.h; sourceTree = "<group>"; };
+		4F7FB5EF1381E84B00BD9558 /* Password.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Password.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ReedKellogg-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ReedKellogg-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		B739C99412DE06D500D3F493 /* LessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonViewController.h; sourceTree = "<group>"; };
 		B739C99512DE06D500D3F493 /* LessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonViewController.m; sourceTree = "<group>"; };
@@ -221,6 +224,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4F7FB5EE1381E84A00BD9558 /* Password.h */,
+				4F7FB5EF1381E84B00BD9558 /* Password.m */,
 				0A54005C1381854C00DB489C /* DiagramInfoViewController.xib */,
 				0AAB47641357E9CC0048A27F /* DiagramViewController.xib */,
 				0A5F5CF1137A121E000001ED /* LineData.h */,
@@ -358,6 +363,7 @@
 				0AD1E0D11378C16200878D9A /* Lesson.m in Sources */,
 				0A5F5CF3137A121E000001ED /* LineData.m in Sources */,
 				0A54005D1381854C00DB489C /* DiagramInfoViewController.m in Sources */,
+				4F7FB5F01381E84B00BD9558 /* Password.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

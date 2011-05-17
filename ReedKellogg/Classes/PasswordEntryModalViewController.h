@@ -24,6 +24,9 @@
 	UILabel * newPasswordLabel;
 	UILabel * newPasswordConfirmLabel;
 	
+	BOOL hasBeenSet;
+	NSManagedObjectContext *managedObjectContext;
+	
 	NSString * currentPassword;
 	KeychainItemWrapper * passwordKeychain;
 	
@@ -44,8 +47,11 @@
 @property (nonatomic, retain) IBOutlet UILabel * newPasswordLabel;
 @property (nonatomic, retain) IBOutlet UILabel * newPasswordConfirmLabel;
 
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
 @property (nonatomic, retain) IBOutlet id <PasswordEntryDelegate> delegate;
 @property BOOL settingNewPassword;
+@property BOOL hasBeenSet;
 
 @property (nonatomic, retain) NSString * currentPassword;
 @property (nonatomic, retain) KeychainItemWrapper * passwordKeychain;
