@@ -19,6 +19,7 @@
 	UIBarButtonItem * prevButton;
 	UIBarButtonItem * viewCommentsButton;
 	UIBarButtonItem * showGridButton;
+	UIBarButtonItem * infoButton;
 	UISegmentedControl * correctButton;
 	UISegmentedControl * dashedControl;
 	
@@ -51,6 +52,7 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem * showGridButton;
 @property (nonatomic, retain) IBOutlet UISegmentedControl * correctButton;
 @property (nonatomic, retain) IBOutlet UISegmentedControl * dashedControl;
+@property (nonatomic, retain) UIBarButtonItem * infoButton;
 
 
 @property (nonatomic, retain) IBOutlet UIImageView * correctMark;

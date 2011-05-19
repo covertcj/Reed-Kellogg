@@ -79,7 +79,12 @@
 	
 	if (!teacherMode) {
 		correctButton.enabled = FALSE;
-	}
+	}    
+	UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    [button addTarget:self action:@selector(showInfo:) forControlEvents:UIControlEventTouchUpInside];
+	
+	infoButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+	self.navigationItem.rightBarButtonItem = infoButton;
 	
 	[singleTapRecognizer release];
 	[doubleTapRecognizer release];
@@ -117,6 +122,7 @@
 	self.words                = nil;
 	self.diagramView          = nil;
 	self.correctButton        = nil;
+	self.infoButton           = nil;
 
 	[self.nextButton         release];
 	[self.prevButton         release];
@@ -127,6 +133,7 @@
 	[self.words              release];
 	[self.diagramView        release];
 	[self.correctButton      release];
+	[self.infoButton         release];
 	
     [super dealloc];
 }

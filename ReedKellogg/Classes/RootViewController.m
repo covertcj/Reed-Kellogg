@@ -15,9 +15,7 @@
 - (void)viewDidLoad {
 	self.passwordEntryModal = [[PasswordEntryModalViewController alloc] initWithDelegate:self];
 	passwordEntryModal.managedObjectContext = self.managedObjectContext;
-	//self.passwordEntryModal.modalPresentationStyle = UIModalPresentationFormSheet;
 
-	
 	super.TeacherMode = NO;
 	super.popFirstButton = @"Add Student";
 	super.popSecondButton = @"Remove Student Mode";

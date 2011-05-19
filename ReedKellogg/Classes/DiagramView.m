@@ -303,6 +303,7 @@
 
 - (void) removeAllLines {
 	[lines removeAllObjects];
+	[dashedLines removeAllObjects];
 	[self setNeedsDisplay];
 }
 

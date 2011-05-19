@@ -36,14 +36,12 @@
 		4F7FB5F01381E84B00BD9558 /* Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FB5EF1381E84B00BD9558 /* Password.m */; };
 		B739C99712DE06D500D3F493 /* LessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B739C99512DE06D500D3F493 /* LessonViewController.m */; };
 		B739C99812DE06D600D3F493 /* LessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B739C99612DE06D500D3F493 /* LessonViewController.xib */; };
-		B739CBFA12DEA25700D3F493 /* TouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B739CBF812DEA25700D3F493 /* TouchViewController.m */; };
 		B739CBFB12DEA25700D3F493 /* TouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B739CBF912DEA25700D3F493 /* TouchViewController.xib */; };
 		B73B382412E7867200219463 /* LessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B73B382312E7867200219463 /* LessonViewController.xib */; };
 		B73B390A12E7E71E00219463 /* addNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B390912E7E71E00219463 /* addNameViewController.m */; };
 		B73B390C12E7E73400219463 /* addNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B73B390B12E7E73400219463 /* addNameViewController.xib */; };
 		B73B394C12E7ECDF00219463 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B73B394B12E7ECDF00219463 /* CoreData.framework */; };
 		B73B394E12E7ED0E00219463 /* ReedKellogg.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B73B394D12E7ED0E00219463 /* ReedKellogg.xcdatamodel */; };
-		B73B3B6F12F1267700219463 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B3B6E12F1267700219463 /* CustomView.m */; };
 		B73B3FEF1303046200219463 /* SentenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B3FEE1303046200219463 /* SentenceViewController.m */; };
 		B73B4012130308DA00219463 /* Sentence.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B400E130308DA00219463 /* Sentence.m */; };
 		B73B40181303090D00219463 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B40171303090D00219463 /* Student.m */; };
@@ -102,8 +100,6 @@
 		B739C99412DE06D500D3F493 /* LessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonViewController.h; sourceTree = "<group>"; };
 		B739C99512DE06D500D3F493 /* LessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonViewController.m; sourceTree = "<group>"; };
 		B739C99612DE06D500D3F493 /* LessonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LessonViewController.xib; path = Classes/LessonViewController.xib; sourceTree = "<group>"; };
-		B739CBF712DEA25700D3F493 /* TouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchViewController.h; sourceTree = "<group>"; };
-		B739CBF812DEA25700D3F493 /* TouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchViewController.m; sourceTree = "<group>"; };
 		B739CBF912DEA25700D3F493 /* TouchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TouchViewController.xib; path = Classes/TouchViewController.xib; sourceTree = "<group>"; };
 		B73B382312E7867200219463 /* LessonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonViewController.xib; sourceTree = "<group>"; };
 		B73B390812E7E71E00219463 /* addNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addNameViewController.h; sourceTree = "<group>"; };
@@ -111,8 +107,6 @@
 		B73B390B12E7E73400219463 /* addNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addNameViewController.xib; sourceTree = "<group>"; };
 		B73B394B12E7ECDF00219463 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B73B394D12E7ED0E00219463 /* ReedKellogg.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = ReedKellogg.xcdatamodel; sourceTree = "<group>"; };
-		B73B3B6D12F1267700219463 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
-		B73B3B6E12F1267700219463 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		B73B3D0112F342BD00219463 /* UpdateCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCustomView.h; sourceTree = "<group>"; };
 		B73B3FED1303046200219463 /* SentenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentenceViewController.h; sourceTree = "<group>"; };
 		B73B3FEE1303046200219463 /* SentenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentenceViewController.m; sourceTree = "<group>"; };
@@ -163,11 +157,7 @@
 				B739C99512DE06D500D3F493 /* LessonViewController.m */,
 				B73B3FED1303046200219463 /* SentenceViewController.h */,
 				B73B3FEE1303046200219463 /* SentenceViewController.m */,
-				B739CBF712DEA25700D3F493 /* TouchViewController.h */,
-				B739CBF812DEA25700D3F493 /* TouchViewController.m */,
 				B73B382312E7867200219463 /* LessonViewController.xib */,
-				B73B3B6D12F1267700219463 /* CustomView.h */,
-				B73B3B6E12F1267700219463 /* CustomView.m */,
 				B73B3D0112F342BD00219463 /* UpdateCustomView.h */,
 				0AA5E6611331806100874C80 /* PasswordEntryModalViewController.h */,
 				0AA5E6621331806100874C80 /* PasswordEntryModalViewController.m */,
@@ -343,10 +333,8 @@
 				1D3623260D0F684500981E51 /* ReedKelloggAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
 				B739C99712DE06D500D3F493 /* LessonViewController.m in Sources */,
-				B739CBFA12DEA25700D3F493 /* TouchViewController.m in Sources */,
 				B73B390A12E7E71E00219463 /* addNameViewController.m in Sources */,
 				B73B394E12E7ED0E00219463 /* ReedKellogg.xcdatamodel in Sources */,
-				B73B3B6F12F1267700219463 /* CustomView.m in Sources */,
 				B73B3FEF1303046200219463 /* SentenceViewController.m in Sources */,
 				B73B4012130308DA00219463 /* Sentence.m in Sources */,
 				B73B40181303090D00219463 /* Student.m in Sources */,
